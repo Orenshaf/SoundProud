@@ -1,0 +1,62 @@
+Started GET "/users/new" for ::1 at 2019-05-28 12:15:43 -0400
+
+PG::ConnectionBad - FATAL:  database "SoundProud_development" does not exist
+:
+
+Started GET "/" for ::1 at 2019-05-28 12:15:45 -0400
+
+PG::ConnectionBad - FATAL:  database "SoundProud_development" does not exist
+:
+
+Started POST "/__better_errors/401e8366969bc629/variables" for ::1 at 2019-05-28 12:15:45 -0400
+Started GET "/users/new" for ::1 at 2019-05-28 13:06:31 -0400
+
+PG::ConnectionBad - FATAL:  database "SoundProud_development" does not exist
+:
+
+  [1m[35m (685.0ms)[0m  [1m[35mCREATE DATABASE "SoundProud_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (504.0ms)[0m  [1m[35mCREATE DATABASE "SoundProud_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-05-28 13:07:04 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (5.5ms)
+Completed 200 OK in 20ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-28 13:07:07 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (4.8ms)
+Completed 200 OK in 13ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-28 13:09:57 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.5ms)
+Completed 200 OK in 13ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-28 13:10:04 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 13ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-28 13:10:29 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 11ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-28 13:11:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 1814ms (Views: 1811.0ms | ActiveRecord: 0.0ms)
+
+
