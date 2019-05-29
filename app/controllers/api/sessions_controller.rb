@@ -1,10 +1,10 @@
 class Api::SessionsController < ApplicationController
 
     def check_email
-        @user = User.find_by(email: params[:user][:email])
+        @user = User.find_by(email: params[:email])
 
         if @user
-            render "api/session/show"
+            render "api/users/show"
         else
             render json: ['That profile url does not exist'], status: 422
         end

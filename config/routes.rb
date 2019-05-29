@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 
     get 'session/check_email', :to => 'sessions#check_email'
+    get 'users/check_email', :to => 'users#check_email'
   end
 
   root to: 'static_pages#root'

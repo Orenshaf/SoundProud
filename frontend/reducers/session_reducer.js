@@ -8,14 +8,18 @@ const _nullUser = Object.freeze({
     id: null
 });
 
-export const SessionReducer = (oldState = _nullUser, action) => {
+const sessionReducer = (oldState = _nullUser, action) => {
     Object.freeze(oldState);
     let newState;
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            newState = action.currentUser
-            return
+            newState = {id: action.currentUser.id} 
+            return merge({}, oldState, newState)
+        case LOGOUT_CURRENT_USER:
+            return _nullUser;
         default:
             return oldState;
     }
 }
+
+export default sessionReducer;
