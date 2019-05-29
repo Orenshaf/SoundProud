@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as SessionAPIUtil from './util/session_api_util';
+import Root from './components/root';
 import configureStore from './store/store';
+import { signup, login, logout } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     const store = configureStore()
@@ -9,13 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
     //FOR TESTING
     window.store = store;
     window.getState = store.getState;
-    window.signup = SessionAPIUtil.signup;
-    window.signupCheckEmail = SessionAPIUtil.signupCheckEmail;
-
-    window.login = SessionAPIUtil.login;
-    window.loginCheckEmail = SessionAPIUtil.loginCheckEmail;
+    window.dispatch = store.dispatch;
     
-    window.logout = SessionAPIUtil.logout;
+    window.signup = signup;
+    // window.signupCheckEmail = signupCheckEmail;
+
+    window.login = login;
+    // window.loginCheckEmail = loginCheckEmail;
+    
+    window.logout = logout;
     //TESTING ENDS
-    ReactDOM.render(<h1>Sound Proud</h1>, root);
+    ReactDOM.render(<Root store={store} />, root);
 })
