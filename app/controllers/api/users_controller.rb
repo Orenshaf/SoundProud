@@ -1,12 +1,12 @@
 class Api::UsersController < ApplicationController 
 
     def check_email
-        @user = User.find_by(email: params[:email])
+        @user = User.where('email = :data OR profile_url = :data', data: params[:loginInfo])
 
         if @user
-            render json: {email: params[:email], exists: true}
+            render json: {loginInfo: params[:loginInfo], exists: true}
         else
-            render json: {email: params[:email], exists: false}
+            render json: {loginInfo: params[:loginInfo], exists: false}
         end
     end
     

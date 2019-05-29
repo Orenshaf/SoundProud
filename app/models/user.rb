@@ -9,6 +9,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  profile_url     :string
 #
 
 class User < ApplicationRecord 
@@ -16,11 +17,11 @@ class User < ApplicationRecord
     validates :email, presence: true, uniqueness: true
     validates :session_token, presence: true, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
-    validate :valid_email
+    validates :profile_url, presence: true, uniqueness: true
 
     attr_reader :password
 
-    after_initialize :ensure_session_token
+    after_initialize :ensure_session_token, :ensure_profile_url
 
     def self.find_by_credentials(email, password)
         user = User.find_by(email: email)
@@ -47,10 +48,9 @@ class User < ApplicationRecord
         self.session_token
     end
 
-
-    private
-
-    def valid_email
-        (self.email.include?('.') && self.email.include?('@')) ? true : errors.add(:base, ['Invalid email address'])
+    def ensure_profile_url
+        profile_url = rand.to_s[2..10]
+        self.profile_url = 'user-' + profile_url
     end
+
 end

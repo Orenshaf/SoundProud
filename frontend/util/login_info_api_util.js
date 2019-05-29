@@ -1,7 +1,7 @@
-export const checkEmail = email => (
+export const checkLoginInfo = loginInfo => (
     $.ajax({
         method: 'GET',
         url: '/api/users/check_email',
-        data: { email }
+        data: { loginInfo }
     })
 )

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import emailReducer from './email_reducer';
+import loginInfoReducer from './login_info_reducer';
 
 const uiReducer = combineReducers({
-    email: emailReducer,
+    loginInfo: loginInfoReducer,
 })
 
 export default uiReducer;
