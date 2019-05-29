@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 import { signup, login, logout } from './actions/session_actions';
+import { checkEmail } from './actions/email_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     const store = configureStore()
@@ -13,10 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.dispatch = store.dispatch;
     
     window.signup = signup;
-    // window.signupCheckEmail = signupCheckEmail;
-
     window.login = login;
-    // window.loginCheckEmail = loginCheckEmail;
+    window.checkEmail = checkEmail;
     
     window.logout = logout;
     //TESTING ENDS

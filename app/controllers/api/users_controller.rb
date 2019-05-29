@@ -4,9 +4,9 @@ class Api::UsersController < ApplicationController
         @user = User.find_by(email: params[:email])
 
         if @user
-            render json: {exists: true} 
+            render json: {email: params[:email], exists: true}
         else
-            render json: {exists: false}
+            render json: {email: params[:email], exists: false}
         end
     end
     
