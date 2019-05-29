@@ -22,6 +22,7 @@
 
  body {
     font-family: 'IBM Plex Sans', sans-serif;
+    letter-spacing: 1px;
  }
 
  #root {
@@ -117,7 +118,7 @@
  .header-mid {
     display: flex;
     justify-content: center;
-    width: 510px;
+    width: 529px;
     margin: 8% auto;
     text-align: center;
  }
