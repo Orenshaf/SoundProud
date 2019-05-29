@@ -1,8 +1,9 @@
 import React from 'react';
+import Splash from './splash';
 
 const App = () => (
-    <div>
-        <h1>SoundProud</h1>
+    <div className="app">
+        <Splash />
     </div>
 );
 

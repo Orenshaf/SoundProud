@@ -6,8 +6,20 @@ import { signup, login, logout } from './actions/session_actions';
 import { checkLoginInfo } from './actions/login_info_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const store = configureStore()
     const root = document.getElementById('root');
+    let store;
+    if (window.currentUser) {
+        const preloadedState = {
+            entities: {
+                users: { [window.currentUser.id]: window.currentUser }
+            },
+            session: { id: window.currentUser.id }
+        };
+        store = configureStore(preloadedState);
+        delete window.currentUser;
+    } else {
+        store = configureStore();
+    }
     //FOR TESTING
     window.store = store;
     window.getState = store.getState;

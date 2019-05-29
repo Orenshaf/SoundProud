@@ -1,12 +1,17 @@
 class Api::UsersController < ApplicationController 
 
     def check_email
-        @user = User.where('email = :data OR profile_url = :data', data: params[:loginInfo])
-
+        @user = User.find_by(email: params[:loginInfo]) || User.find_by(profile_url: params[:loginInfo])
         if @user
             render json: {loginInfo: params[:loginInfo], exists: true}
         else
-            render json: {loginInfo: params[:loginInfo], exists: false}
+            if is_email?(params[:loginInfo]) 
+                render json: {loginInfo: params[:loginInfo], exists: false} 
+            elsif invalid_email?(params[:loginInfo])
+                render json: ['Enter a valid email address or profile url.'], status: 422
+            else
+                render json: ['That profile url does not exist'], status: 422
+            end
         end
     end
     
@@ -25,6 +30,14 @@ class Api::UsersController < ApplicationController
 
     def user_params
         params.require(:user).permit(:email, :password, :username)
+    end
+
+    def is_email?(loginInfo) 
+        loginInfo.include?('@') && loginInfo.include?('.')
+    end
+
+    def invalid_email?(loginInfo)
+        loginInfo.include?('@') || loginInfo.include?('.')
     end
 
 end
