@@ -18,6 +18,18 @@ const Splash = (props) => {
 
             </div>
 
+            <div className="header-mid">
+
+                <div className="header-content">
+
+                    <h1>Discover music on SoundProud</h1>
+                    <p>SoundProud lets you listen to music wherever you are, with over 150 million tracks — and growing.</p>
+                    <button className="demo-login">Demo Login</button>
+
+                </div>
+                
+            </div>
+
         </div>
     )
 }
