@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginForm from './login_form'
 
 class LoginInfoForm extends React.Component {
     constructor(props) {
@@ -6,11 +7,13 @@ class LoginInfoForm extends React.Component {
         this.state = {
             loginInfo: '',
         };
+
+        this.hangleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleNextForm = this.handleNextForm.bind(this);
     }
 
-    update(field) {
+    handleChange(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
@@ -18,12 +21,32 @@ class LoginInfoForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.processForm(this.state).then(this.handleNextForm);
+        this.props.checkLoginInfo(this.state.loginInfo).then(this.handleNextForm);
     }
 
     handleNextForm() {
-        this.props.closeModal()
-        this.props.nextForm === 'signup' ? this.props.openModal('signup') : this.props.openModal('login');
+        switch (this.props.nextForm) {
+            case 'login':
+                return (
+                    <LoginForm email={this.state.loginInfo} login={this.props.login} closeModal={this.props.closeModal} history={this.props.history}/>
+                )
+            default: 
+                return (
+                    <div className="login-info-form-container">
+                        <form onSubmit={this.handleSubmit} className="login-form-box">
+                            <div className="login-info-form">
+                                <input
+                                    type="text"
+                                    value={this.state.loginInfo}
+                                    onChange={this.handleChange('loginInfo')}
+                                    className="login-info-input"
+                                />
+                                <input className="login-info-submit" type="submit" value="Continue" />
+                            </div>
+                        </form>
+                    </div >
+                )
+        }
     }
 
     // renderErrors() {
@@ -39,21 +62,7 @@ class LoginInfoForm extends React.Component {
     // }
 
     render() {
-        return (
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form-box">
-                    <div className="login-form">
-                        <input 
-                            type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')}
-                            className="login-input"
-                        />
-                        <input className="session-submit" type="submit" value="Continue"/>
-                    </div>
-                </form>
-            </div>
-        );
+        return this.handleNextForm()
     }
 }
 

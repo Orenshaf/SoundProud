@@ -23,13 +23,15 @@
  body {
     font-family: 'IBM Plex Sans', sans-serif;
     letter-spacing: 1px;
+    background: #f2f2f2;
  }
 
  #root {
     display: flex;
     width: 1240px;
-    height: 100%;
+    height: 5000px;
     margin: 0 auto;
+    background: white;
  }
 
  .app {
@@ -148,41 +150,39 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(242,242,242,.9);
   z-index: 10;
 }
 
 .modal-child {
   position: absolute;
-  top: 50%;
+  top: 39.5%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.login-form-container {
+.login-info-form-container {
    display: flex;
    justify-content: center;
+   // min-width: 450px;
+   // height: 620px;
  }
 
- .login-form {
+ .login-info-form {
    display: flex;
+   box-sizing: border-box;
    justify-content: center;
    flex-direction: column;
- }
-
- .login-input {
-   margin-left: 20px;
- }
-
- .login-form-box {
-   outline: 1px solid black;
+   min-width: 450px;
+   height: 620px;
    padding: 20px;
    background: white;
    position: relative;
  }
 
- .session-submit {
+ .login-info-submit {
    text-transform: capitalize;
+   background: $orange;
  }
 
 
