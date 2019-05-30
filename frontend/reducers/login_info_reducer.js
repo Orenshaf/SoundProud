@@ -2,6 +2,10 @@ import { RECEIVE_LOGIN_INFO } from '../actions/login_info_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { merge } from 'lodash';
 
+const _nullUser = Object.freeze({
+    loginInfo: null
+});
+
 const loginInfoReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let newState;
@@ -10,7 +14,7 @@ const loginInfoReducer = (oldState = {}, action) => {
             newState = action.loginInfo;
             return merge({}, oldState, newState);
         case RECEIVE_CURRENT_USER:
-            return {};
+            return _nullUser
         default: 
             return oldState;
     }

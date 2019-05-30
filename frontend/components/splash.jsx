@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Splash = (props) => {
+const Splash = ({openModal}) => {
     return (
         <div className="splash-header">
 
@@ -11,11 +11,10 @@ const Splash = (props) => {
                     <span>SOUNDPROUD</span>
                 </div>
                 <div className="header-nav">
-                    <button className="sign-in">Sign in</button>
-                    <button className="create-account">Create account</button>
+                    <button className="sign-in" onClick={() => openModal('loginInfo')}>Sign in</button>
+                    <button className="create-account" onClick={() => openModal('loginInfo')}>Create account</button>
                     <button className="welcome">Welcome</button>
                 </div>
-
             </div>
 
             <div className="header-mid">

@@ -3,10 +3,10 @@ class Api::UsersController < ApplicationController
     def check_email
         @user = User.find_by(email: params[:loginInfo]) || User.find_by(profile_url: params[:loginInfo])
         if @user
-            render json: {loginInfo: params[:loginInfo], exists: true}
+            render json: {loginInfo: params[:loginInfo], loginType: 'login'}
         else
             if is_email?(params[:loginInfo]) 
-                render json: {loginInfo: params[:loginInfo], exists: false} 
+                render json: {loginInfo: params[:loginInfo], loginType: 'signup'} 
             elsif invalid_email?(params[:loginInfo])
                 render json: ['Enter a valid email address or profile url.'], status: 422
             else
