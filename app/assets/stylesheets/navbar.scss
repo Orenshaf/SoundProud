@@ -1,0 +1,9 @@
+// Core
+@import "base/colors.scss";
+
+.nav-bar-container {
+    background: $navBarBlack;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+ }

@@ -40,6 +40,11 @@ class LoginInfoForm extends React.Component {
                     <div className="login-info-form-container">
                         <form onSubmit={this.handleSubmit} className="login-form-box">
                             <div className="login-info-form">
+
+                                <div className='or-line-container'>
+                                    <p>OR</p>
+                                </div>
+                
                                 <input
                                     type="text"
                                     value={this.state.loginInfo}
@@ -47,6 +52,15 @@ class LoginInfoForm extends React.Component {
                                     className="login-info-input"
                                 />
                                 <input className="login-info-submit" type="submit" value="Continue" />
+                                <p className="copyright">
+                                    We may use your email and devices for updates and tips on SoundCloud's products and services, 
+                                    and for activities notifications. You can unsubscribe for free at any time in your notification 
+                                    settings.
+                                </p>
+                                <p className="copyright">
+                                    We may use information you provide us in order to show you targeted ads as described in our Privacy Policy.
+                                </p>
+        
                             </div>
                         </form>
                     </div >
