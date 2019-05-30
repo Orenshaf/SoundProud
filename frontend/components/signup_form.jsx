@@ -12,7 +12,7 @@ class SignupForm extends React.Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleRedirect = this.handleRedirect.bind(this);
+        this.handleRedirect = this.handleRedirect.bind(this);
         this.handleNextForm = this.handleNextForm.bind(this);
         this.handleInitialSubmit = this.handleInitialSubmit.bind(this);
     }
@@ -30,15 +30,13 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.signup(this.state).then(this.handleRedirect, this.handleRedirect);
+        this.props.signup(this.state).then(this.handleRedirect);
     }
 
     handleRedirect() {
         // debugger
-        if (getState().session.id) {
-            this.props.history.push('/discover');
-            this.props.closeModal();
-        }
+        this.props.history.push('/discover');
+        this.props.closeModal();
     }
 
     handleNextForm(){

@@ -20,15 +20,12 @@ class LoginForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.login(this.state).then(this.handleRedirect, this.handleRedirect);
+        this.props.login(this.state).then(this.handleRedirect);
     }
 
     handleRedirect(){
-        // debugger
-        if (getState().session.id) {
-            this.props.history.push('/discover');
-            this.props.closeModal();
-        }
+        this.props.closeModal();
+        this.props.history.push('/discover');
     }
 
     render() {

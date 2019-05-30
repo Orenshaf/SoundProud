@@ -10870,3 +10870,1172 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 37ms (Views: 0.2ms | ActiveRecord: 25.6ms)
 
 
+Started GET "/" for ::1 at 2019-05-30 15:41:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 517ms (Views: 511.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=admin%40soundproud.com" for ::1 at 2019-05-30 15:41:43 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"admin@soundproud.com"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 15:42:41 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 586ms (Views: 582.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=admin%40soundproud.com" for ::1 at 2019-05-30 15:42:50 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"admin@soundproud.com"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 16:00:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 583ms (Views: 579.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=admin%40soundcloud.com" for ::1 at 2019-05-30 16:01:06 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"admin@soundcloud.com"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundcloud.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "admin@soundcloud.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 16:01:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/check_email?loginInfo=admin%40soundproud.com" for ::1 at 2019-05-30 16:01:23 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"admin@soundproud.com"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 16:05:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 502ms (Views: 494.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=admin%40soundproud.com" for ::1 at 2019-05-30 16:05:34 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"admin@soundproud.com"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/session" for ::1 at 2019-05-30 16:05:40 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "H3XBdOrrNt76eZ5aYo8E1A"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-687024251"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (3.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "profile_url" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["session_token", "H3XBdOrrNt76eZ5aYo8E1A"], ["profile_url", "user-687024251"], ["updated_at", "2019-05-30 20:05:40.681701"], ["id", 1]]
+  ↳ app/models/user.rb:51
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 90ms (Views: 8.9ms | ActiveRecord: 8.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-05-30 16:05:45 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "H3XBdOrrNt76eZ5aYo8E1A"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (15.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (3.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "bNTl2j7okB6kAqrtpmGbrQ"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-786606796"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (1.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "profile_url" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["session_token", "bNTl2j7okB6kAqrtpmGbrQ"], ["profile_url", "user-786606796"], ["updated_at", "2019-05-30 20:05:45.537907"], ["id", 1]]
+  ↳ app/models/user.rb:51
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Completed 200 OK in 38ms (Views: 0.3ms | ActiveRecord: 25.1ms)
+
+
+Started GET "/api/users/check_email?loginInfo=admin%40soundproud.com" for ::1 at 2019-05-30 16:07:11 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"admin@soundproud.com"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2019-05-30 16:07:14 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+Completed 422 Unprocessable Entity in 66ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2019-05-30 16:07:15 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+Completed 422 Unprocessable Entity in 71ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/session" for ::1 at 2019-05-30 16:07:19 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "2CblOowmvmVQO5K3-VapoA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-133511496"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "profile_url" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["session_token", "2CblOowmvmVQO5K3-VapoA"], ["profile_url", "user-133511496"], ["updated_at", "2019-05-30 20:07:19.122670"], ["id", 1]]
+  ↳ app/models/user.rb:51
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.2ms)
+Completed 200 OK in 85ms (Views: 8.8ms | ActiveRecord: 5.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-05-30 16:07:21 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2CblOowmvmVQO5K3-VapoA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "VZYQwEZUzwHi9aIZQaUWCw"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-206948767"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "profile_url" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["session_token", "VZYQwEZUzwHi9aIZQaUWCw"], ["profile_url", "user-206948767"], ["updated_at", "2019-05-30 20:07:21.637234"], ["id", 1]]
+  ↳ app/models/user.rb:51
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 16:07:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 493ms (Views: 488.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/check_email?loginInfo=simcha%40aa.com" for ::1 at 2019-05-30 16:07:58 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"simcha@aa.com"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "simcha@aa.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "simcha@aa.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/users" for ::1 at 2019-05-30 16:08:09 -0400
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"simcha@aa.com", "password"=>"[FILTERED]", "age"=>"27", "gender"=>"Female", "form"=>"age-gender"}}
+Unpermitted parameter: :form
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:21
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "simcha@aa.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:21
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "thcRGVeJ84ucpDC0zrFzSg"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:21
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "user-771416143"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:21
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at", "profile_url", "age", "gender") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "user-771416143"], ["email", "simcha@aa.com"], ["password_digest", "$2a$10$lK44mTuTYFbe8oztjm.YCuOuxp8YzuQm/N0.F1Ov0kbOdZ0iwPZKW"], ["session_token", "thcRGVeJ84ucpDC0zrFzSg"], ["created_at", "2019-05-30 20:08:10.040746"], ["updated_at", "2019-05-30 20:08:10.040746"], ["profile_url", "user-771416143"], ["age", 27], ["gender", "Female"]]
+  ↳ app/controllers/api/users_controller.rb:21
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "simcha@aa.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "lqnrT1Nz_28aSD_yoqpfLg"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-771416143"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "lqnrT1Nz_28aSD_yoqpfLg"], ["updated_at", "2019-05-30 20:08:10.049383"], ["id", 5]]
+  ↳ app/models/user.rb:51
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.6ms)
+Completed 200 OK in 88ms (Views: 7.5ms | ActiveRecord: 6.6ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-05-30 16:08:19 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (15.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lqnrT1Nz_28aSD_yoqpfLg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (3.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (4.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "simcha@aa.com"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "UbZcOWzbM4fyzkTgrBqdsQ"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-380211355"], ["id", 5], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "profile_url" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["session_token", "UbZcOWzbM4fyzkTgrBqdsQ"], ["profile_url", "user-380211355"], ["updated_at", "2019-05-30 20:08:19.937074"], ["id", 5]]
+  ↳ app/models/user.rb:51
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Completed 200 OK in 38ms (Views: 0.2ms | ActiveRecord: 28.4ms)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for ::1 at 2019-05-30 16:27:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 715ms (Views: 705.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 16:27:50 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 108ms (Views: 103.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 16:28:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 103ms (Views: 99.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 16:28:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 124ms (Views: 119.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 16:29:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 102ms (Views: 97.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/users/check_email?loginInfo=admin%40soundproud.com" for ::1 at 2019-05-30 16:29:53 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"admin@soundproud.com"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/api/session" for ::1 at 2019-05-30 16:29:57 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "hzhQ1IwKpyvCIwidGeDVHg"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-826332351"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "profile_url" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["session_token", "hzhQ1IwKpyvCIwidGeDVHg"], ["profile_url", "user-826332351"], ["updated_at", "2019-05-30 20:29:57.104160"], ["id", 1]]
+  ↳ app/models/user.rb:51
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.1ms)
+Completed 200 OK in 89ms (Views: 9.1ms | ActiveRecord: 4.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-05-30 16:29:59 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (10.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hzhQ1IwKpyvCIwidGeDVHg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "gHZ4IE7z0f7ewPL1GPygCw"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-852760064"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:51
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "profile_url" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["session_token", "gHZ4IE7z0f7ewPL1GPygCw"], ["profile_url", "user-852760064"], ["updated_at", "2019-05-30 20:29:59.187551"], ["id", 1]]
+  ↳ app/models/user.rb:51
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:51
+Completed 200 OK in 40ms (Views: 0.2ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 16:35:38 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 501ms (Views: 496.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 16:36:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 737ms (Views: 733.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 16:46:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 31ms (Views: 27.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/check_email?loginInfo=eugene%40reym.com" for ::1 at 2019-05-30 16:46:29 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"eugene@reym.com"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "eugene@reym.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "eugene@reym.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 16:48:54 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 32ms (Views: 28.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:48:58 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:48:59 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 5ms (Views: 0.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:48:59 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:48:59 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:48:59 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:48:59 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:48:59 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:00 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:00 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:00 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:00 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:00 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:00 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:01 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:01 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:01 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:01 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:01 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:02 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:02 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:02 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:02 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:02 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:02 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:03 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:03 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:03 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:03 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:03 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:04 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:04 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:04 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:04 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:04 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:05 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:05 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:05 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:05 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:05 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:06 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:06 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:06 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:07 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:07 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:07 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:08 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:08 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:09 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:10 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:11 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:11 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:11 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:11 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:11 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:12 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:12 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 4ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:12 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:12 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:14 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:14 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:15 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:15 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:15 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:15 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:15 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:16 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:16 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:16 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:16 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:16 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:16 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:16 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:17 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:17 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/users/check_email?loginInfo=ewwiouhfoihef" for ::1 at 2019-05-30 16:49:17 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"ewwiouhfoihef"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "ewwiouhfoihef"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 422 Unprocessable Entity in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/users/check_email?loginInfo=eugene%40reym.com" for ::1 at 2019-05-30 16:49:59 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"eugene@reym.com"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "eugene@reym.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "eugene@reym.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+

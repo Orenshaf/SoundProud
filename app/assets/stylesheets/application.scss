@@ -23,10 +23,14 @@
  body {
     font-family: 'IBM Plex Sans', sans-serif;
     letter-spacing: 1px;
-    background: #f2f2f2;
  }
 
  #root {
+    width: 100%;
+    background: #f2f2f2;
+ }
+
+ .app {
     display: flex;
     width: 1240px;
     height: 5000px;
@@ -34,13 +38,10 @@
     background: white;
  }
 
- .app {
-    width: 100%;
- }
-
  .splash-header {
     display: block;
     background: image-url('soundproud_splash.png'); 
+    background-repeat: no-repeat;
     border-top: 4px solid $orange;
     width: 100%;
     min-height: 450px;

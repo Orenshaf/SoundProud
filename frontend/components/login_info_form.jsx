@@ -29,7 +29,7 @@ class LoginInfoForm extends React.Component {
         switch (this.props.nextForm) {
             case 'login':
                 return (
-                    <LoginForm loginInfo={this.state.loginInfo} login={this.props.login} closeModal={this.props.closeModal} history={this.props.history} session={this.props.session}/>
+                    <LoginForm loginInfo={this.state.loginInfo} props={this.props} login={this.props.login} closeModal={this.props.closeModal} history={this.props.history} session={this.props.session}/>
                 )
             case 'signup':
                 return (
