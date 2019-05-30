@@ -10,6 +10,8 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  profile_url     :string
+#  age             :integer
+#  gender          :string
 #
 
 class User < ApplicationRecord 
@@ -18,13 +20,15 @@ class User < ApplicationRecord
     validates :session_token, presence: true, uniqueness: true
     validates :password, length: { minimum: 6 }, allow_nil: true
     validates :profile_url, presence: true, uniqueness: true
+    validates :age, presence: true
+    validates :gender, inclusion: ['Female', 'Male', 'Prefer not to say', 'Custom'] 
 
     attr_reader :password
 
-    after_initialize :ensure_session_token, :ensure_profile_url
+    after_initialize :ensure_session_token, :ensure_profile_url, :ensure_username
 
-    def self.find_by_credentials(email, password)
-        user = User.find_by(email: email)
+    def self.find_by_credentials(loginInfo, password)
+        user = User.find_by(email: loginInfo) || User.find_by(profile_url: loginInfo)
         (user && user.is_password?(password)) ? user : nil
     end
 
@@ -51,6 +55,10 @@ class User < ApplicationRecord
     def ensure_profile_url
         profile_url = rand.to_s[2..10]
         self.profile_url = 'user-' + profile_url
+    end
+
+    def ensure_username
+        self.username ||= self.profile_url
     end
 
 end

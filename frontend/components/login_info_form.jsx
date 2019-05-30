@@ -1,5 +1,6 @@
 import React from 'react';
-import LoginForm from './login_form'
+import LoginForm from './login_form';
+import SignupForm from './signup_form';
 
 class LoginInfoForm extends React.Component {
     constructor(props) {
@@ -28,7 +29,11 @@ class LoginInfoForm extends React.Component {
         switch (this.props.nextForm) {
             case 'login':
                 return (
-                    <LoginForm email={this.state.loginInfo} login={this.props.login} closeModal={this.props.closeModal} history={this.props.history}/>
+                    <LoginForm loginInfo={this.state.loginInfo} login={this.props.login} closeModal={this.props.closeModal} history={this.props.history} session={this.props.session}/>
+                )
+            case 'signup':
+                return (
+                    <SignupForm loginInfo={this.state.loginInfo} signup={this.props.signup} closeModal={this.props.closeModal} history={this.props.history} session={this.props.session}/>
                 )
             default: 
                 return (

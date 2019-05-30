@@ -3,9 +3,8 @@ import React from 'react';
 class LoginForm extends React.Component{
     constructor(props){
         super(props)
-        // debugger
         this.state = {
-            email: props.email,
+            loginInfo: props.loginInfo,
             password: '',
         }
         this.handleChange = this.handleChange.bind(this);
@@ -25,6 +24,7 @@ class LoginForm extends React.Component{
     }
 
     handleRedirect(){
+        // debugger
         if (getState().session.id) {
             this.props.history.push('/discover');
             this.props.closeModal();
@@ -36,7 +36,7 @@ class LoginForm extends React.Component{
             <div className="login-info-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div className="login-info-form">
-                        <span>{this.state.email}</span>
+                        <span>{this.state.loginInfo}</span>
                         <input
                             type="password"
                             value={this.state.password}
