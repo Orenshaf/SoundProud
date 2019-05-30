@@ -185,9 +185,12 @@
    text-transform: capitalize;
    background: $orange;
  }
-
- .logout {
-    color: black;
+ 
+ .nav-bar-container {
+    background: $navBarBlack;
+    position: fixed;
+    height: 50px;
+    width: 100%;
  }
 
 
