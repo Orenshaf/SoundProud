@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route, Redirect } from 'react-router-dom'
 
 class LoginForm extends React.Component{
     constructor(props){
@@ -8,10 +7,10 @@ class LoginForm extends React.Component{
         this.state = {
             email: props.email,
             password: '',
-            redirect: false
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleRedirect = this.handleRedirect.bind(this);
     }
 
     handleChange(field){
@@ -22,8 +21,14 @@ class LoginForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.closeModal();
-        this.props.login(this.state).then(this.props.history.push('/discover'));
+        this.props.login(this.state).then(this.handleRedirect, this.handleRedirect);
+    }
+
+    handleRedirect(){
+        if (getState().session.id) {
+            this.props.history.push('/discover');
+            this.props.closeModal();
+        }
     }
 
     render() {
