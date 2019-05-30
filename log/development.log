@@ -5538,3 +5538,167 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 52ms (Views: 48.3ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for ::1 at 2019-05-29 23:57:46 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 668ms (Views: 664.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 00:00:39 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 514ms (Views: 507.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 00:01:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 495ms (Views: 491.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 00:02:50 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 492ms (Views: 489.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 00:03:55 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 513ms (Views: 505.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-30 00:04:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 58ms (Views: 54.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/users/check_email?loginInfo%5BloginInfo%5D=&loginInfo%5Busername%5D=orenshaf%40gmail.com" for ::1 at 2019-05-30 00:04:31 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>{"loginInfo"=>"", "username"=>"orenshaf@gmail.com"}}
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - can't cast ActionController::Parameters:
+  app/controllers/api/users_controller.rb:4:in `check_email'
+
+Started GET "/api/users/check_email?loginInfo%5BloginInfo%5D=&loginInfo%5Busername%5D=orenshaf%40gmail.com" for ::1 at 2019-05-30 00:04:32 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>{"loginInfo"=>"", "username"=>"orenshaf@gmail.com"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - can't cast ActionController::Parameters:
+  app/controllers/api/users_controller.rb:4:in `check_email'
+
+Started GET "/api/users/check_email?loginInfo%5BloginInfo%5D=&loginInfo%5Busername%5D=orenshaf%40gmail.com" for ::1 at 2019-05-30 00:04:32 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>{"loginInfo"=>"", "username"=>"orenshaf@gmail.com"}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - can't cast ActionController::Parameters:
+  app/controllers/api/users_controller.rb:4:in `check_email'
+
+Started GET "/api/users/check_email?loginInfo%5BloginInfo%5D=&loginInfo%5Busername%5D=orenshaf%40gmail.com" for ::1 at 2019-05-30 00:04:33 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>{"loginInfo"=>"", "username"=>"orenshaf@gmail.com"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - can't cast ActionController::Parameters:
+  app/controllers/api/users_controller.rb:4:in `check_email'
+
+Started GET "/api/users/check_email?loginInfo%5BloginInfo%5D=&loginInfo%5Busername%5D=orenshaf%40gmail.com" for ::1 at 2019-05-30 00:04:33 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>{"loginInfo"=>"", "username"=>"orenshaf@gmail.com"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - can't cast ActionController::Parameters:
+  app/controllers/api/users_controller.rb:4:in `check_email'
+
+Started GET "/api/users/check_email?loginInfo%5BloginInfo%5D=&loginInfo%5Busername%5D=orenshaf%40gmail.com" for ::1 at 2019-05-30 00:04:33 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>{"loginInfo"=>"", "username"=>"orenshaf@gmail.com"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - can't cast ActionController::Parameters:
+  app/controllers/api/users_controller.rb:4:in `check_email'
+
+Started GET "/api/users/check_email?loginInfo%5BloginInfo%5D=&loginInfo%5Busername%5D=orenshaf%40gmail.com" for ::1 at 2019-05-30 00:04:33 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>{"loginInfo"=>"", "username"=>"orenshaf@gmail.com"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - can't cast ActionController::Parameters:
+  app/controllers/api/users_controller.rb:4:in `check_email'
+
+Started GET "/api/users/check_email?loginInfo%5BloginInfo%5D=&loginInfo%5Busername%5D=orenshaf%40gmail.com" for ::1 at 2019-05-30 00:04:33 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>{"loginInfo"=>"", "username"=>"orenshaf@gmail.com"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - can't cast ActionController::Parameters:
+  app/controllers/api/users_controller.rb:4:in `check_email'
+
+Started GET "/api/users/check_email?loginInfo%5BloginInfo%5D=&loginInfo%5Busername%5D=orenshaf%40gmail.com" for ::1 at 2019-05-30 00:04:33 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>{"loginInfo"=>"", "username"=>"orenshaf@gmail.com"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - can't cast ActionController::Parameters:
+  app/controllers/api/users_controller.rb:4:in `check_email'
+
+Started GET "/api/users/check_email?loginInfo%5BloginInfo%5D=&loginInfo%5Busername%5D=orenshaf%40gmail.com" for ::1 at 2019-05-30 00:04:33 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>{"loginInfo"=>"", "username"=>"orenshaf@gmail.com"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - can't cast ActionController::Parameters:
+  app/controllers/api/users_controller.rb:4:in `check_email'
+
+Started GET "/api/users/check_email?loginInfo%5BloginInfo%5D=&loginInfo%5Busername%5D=orenshaf%40gmail.com" for ::1 at 2019-05-30 00:04:34 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>{"loginInfo"=>"", "username"=>"orenshaf@gmail.com"}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+
+TypeError - can't cast ActionController::Parameters:
+  app/controllers/api/users_controller.rb:4:in `check_email'
+

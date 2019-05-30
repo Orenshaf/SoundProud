@@ -14,7 +14,6 @@ const msp = state => {
 const mdp = dispatch => {
     return {
         processForm: (loginInfo) => dispatch(checkLoginInfo(loginInfo)),
-        openModal: (modal) => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal())
     };
 };
