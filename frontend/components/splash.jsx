@@ -6,10 +6,9 @@ const Splash = ({currentUser, openModal}) => {
 
             <div className="header-top">
 
-                <div className="header-name">
-                    <img src={window.soundCloudIcon} />
-                    <span>SOUNDPROUD</span>
-                </div>
+                
+                <span className="header-name"><img src={window.soundCloudIcon} />SOUNDPROUD</span>
+              
                 <div className="header-nav">
                     <button onClick={() => openModal('loginInfo')} className="splash-button sign-in">Sign in</button>
                     <button onClick={() => openModal('loginInfo')} className="splash-button create-account">Create account</button>

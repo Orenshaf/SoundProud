@@ -15,6 +15,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    margin-top: 10px;
  }
 
  .header-name {
@@ -24,18 +25,18 @@
  }
 
  .header-name img {
-    height: 45px;
-    width: 45px;
+        height: 22px;
+    width: 48px;
     margin-right: 10px;
  }
 
- .header-name span {
+ .header-name {
     font-size: 0.9em;
     color: white;
     letter-spacing: 1px;
  }
 
- .header-name span:hover {
+ .header-name:hover {
     cursor: default;
  }
 

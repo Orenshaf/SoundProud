@@ -6,7 +6,7 @@
     position: fixed;
     height: 46px;
     width: 100%;
-    z-index: 100;
+    z-index: 8;
     display: flex;
     justify-content: center;
  }
@@ -21,9 +21,12 @@
      outline: 0;
  }
 
- .nav-bar button:hover {
-     outline: 0;
+ .nav-bar-button:hover {
      filter: contrast(150%)
+ }
+
+ .nav-bar-img-button:hover {
+     filter: none;
  }
 
  .nav-button {
@@ -51,6 +54,7 @@
      font-size: 14px;
      line-height: 1em;
      cursor: pointer;
+     background: transparent;
  } 
 
  .nav-bar-img-button {
@@ -91,10 +95,11 @@
      margin: 0;
      padding: 0;
      border: none;
+     position: relative;
  }
 
  .notification-img {
-     background: $navBarBlack;
+     background: transparent;
      box-sizing: border-box;
      height: 46px;
      padding: 14px 13px;
@@ -102,11 +107,72 @@
  }
 
  .caret {
-     background: $navBarBlack;
+     background: transparent;
      box-sizing: border-box;
      height: 15px;
      padding: 0;
      width: 15px;
      margin-left: 5px;
  }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 1%;
+  top: 100%;
+  background-color: black;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content button {
+  color: #cbcbcb;
+  font-size: 12;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.show {display: block;}
+
+.open {
+    background: black;
+}
+
+.signed-out-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-logo {
+    width: 184px;
+    padding: 0;
+}
+
+
+.search-bar-logged-out {
+     width: 412px;
+     height: 28px;
+     margin: 8px;
+     background: #e5e5e5;
+     font-size: 14px;
+ }
+
+ .header-logo {
+     display: flex;
+     justify-content: center;
+     margin: 0;
+     background: $orange;
+     width: 100%;
+     font-size: 14px;
+ }
+ 
 
