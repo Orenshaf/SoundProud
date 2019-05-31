@@ -15,7 +15,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 14px;
  }
 
  .header-name {
@@ -25,15 +25,14 @@
  }
 
  .header-name img {
-        height: 22px;
+    height: 22px;
     width: 48px;
-    margin-right: 10px;
+    margin-right: 6px;
  }
 
  .header-name {
     font-size: 0.9em;
     color: white;
-    letter-spacing: 1px;
  }
 
  .header-name:hover {
@@ -50,14 +49,14 @@
  .splash-button {
    box-sizing: border-box;
    height: 30px; 
-   padding: 6px 16px;
+   padding: 6px 11px;
    border-radius: 3px;
    margin-right: 10px;
    font-size: 14px;
    color: white;
    background: none;
    font-weight: 100;
-   letter-spacing: 1px;
+   line-height: 0.9em;
  }
 
  .splash-button:focus {outline:0;}
@@ -79,6 +78,7 @@
  .create-account {
     background: $orange;
     border: none;
+    width: 129px;
  }
 
  .header-mid {
@@ -107,4 +107,10 @@
     background: $orange;
     border: none;
     margin: 0;
+ }
+
+ .sign-in {
+    border: 1px solid #ccc;
+    width: 74px;
+    box-sizing: border-box;
  }

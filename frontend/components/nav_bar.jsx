@@ -54,6 +54,7 @@ class NavBar extends React.Component {
                         <div className="signed-out-navbar">
                             <button onClick={() => this.props.openModal('loginInfo')} className="splash-button sign-in">Sign in</button>
                             <button onClick={() => this.props.openModal('loginInfo')} className="splash-button create-account">Create account</button>
+                            <button className="splash-button welcome">Welcome</button>
                         </div>
                     </div>
                 </div>

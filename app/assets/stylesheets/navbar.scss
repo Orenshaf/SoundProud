@@ -43,9 +43,8 @@
  .nav-bar-img {
      background: $orange;
      box-sizing: border-box;
-     height: 46px;
-     padding: 0 14px;
-     width: 70px;
+     height: 22px;
+     width: 48px;
  }
 
  .nav-bar-button {
@@ -58,8 +57,13 @@
  } 
 
  .nav-bar-img-button {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 69px;
      margin: 0;
      padding: 0;
+     background: $orange;
  }
 
  .home {
@@ -155,6 +159,7 @@
 .nav-logo {
     width: 184px;
     padding: 0;
+    background: $orange;
 }
 
 
@@ -174,5 +179,6 @@
      width: 100%;
      font-size: 14px;
  }
+ 
  
 
