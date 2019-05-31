@@ -1,11 +1,11 @@
 import React from 'react';
-import SplashContainer from './splash_container';
-import HomePageContainer from './home_page_container';
-import Modal from './modal';
+import SplashContainer from '../components/splash/splash_container';
+import HomePageContainer from '../components/home_page/home_page_container';
+import Modal from './modal/modal';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
-import NavBarContainer from './nav_bar_container'
-import NoNav from './no_nav'
+import NavBarContainer from './navbar/nav_bar_container'
+import NoNav from './navbar/no_nav'
 
 const App = () => (
     <>
