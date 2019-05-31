@@ -15,6 +15,7 @@ class SignupForm extends React.Component {
         this.handleRedirect = this.handleRedirect.bind(this);
         this.handleNextForm = this.handleNextForm.bind(this);
         this.handleInitialSubmit = this.handleInitialSubmit.bind(this);
+        this.switchModal = this.switchModal.bind(this);
     }
 
     handleChange(field) {
@@ -39,6 +40,11 @@ class SignupForm extends React.Component {
         this.props.closeModal();
     }
 
+    switchModal() {
+        this.props.closeModal();
+        this.props.openModal('loginInfo');
+    }
+
     handleNextForm(){
         switch(this.state.form) {
             case 'age-gender':
@@ -46,20 +52,23 @@ class SignupForm extends React.Component {
                     <div className="login-info-form-container">
                         <form onSubmit={this.handleSubmit} className="login-form-box">
                             <div className="login-info-form">
+                                <h1 className="create-account-modal">Create your SoundProud account</h1>
+                                <h3 className="choose-password">Tell us your age <span className="red-splat">*</span></h3>
                                 <input
                                     type="text"
                                     value={this.state.age}
                                     onChange={this.handleChange('age')}
-                                    className="login-info-input"
+                                    className="login-info-input demo-login modal-item loginInfo"
                                 />
-                                <select onChange={this.handleChange('gender')}>
-                                    <option defaultValue='Select a gender'>Select a gender</option>
+                                <h3 className="choose-password gender">Gender <span className="red-splat">*</span></h3>
+                                <select className="login-info-input demo-login modal-item loginInfo" onChange={this.handleChange('gender')}>
+                                    <option defaultValue='Select a gender'>Indicate your Gender</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                     <option value="Prefer not to say">Prefer not to say</option>
                                     <option value="Custom">Custom</option>
                                 </select>
-                                <input className="login-info-submit" type="submit" value="Signup" />
+                                <input className="splash-button demo-login modal-item signup" type="submit" value="Signup" />
                             </div>
                         </form>
                     </div>
@@ -67,18 +76,31 @@ class SignupForm extends React.Component {
             default:
                 return (
                     <div className="login-info-form-container">
-                        <form onSubmit={this.handleInitialSubmit} className="login-form-box">
-                            <div className="login-info-form">
-                                <span>{this.state.email}</span>
+                        <div className="login-form-box">
+                            <form className="login-info-form">
+                                <h1 className="create-account-modal">Create your SoundProud account</h1>
+                                <button form="" className="login-info-input demo-login modal-item loginInfo" onClick={this.switchModal}>&#9668; {this.state.email}</button>
+                                <h3 className="choose-password">Choose a password <span className="red-splat">*</span></h3>
                                 <input
                                     type="password"
                                     value={this.state.password}
                                     onChange={this.handleChange('password')}
                                     className="login-info-input"
                                 />
-                                <input className="login-info-submit" type="submit" value="Signup" />
-                            </div>
-                        </form>
+                                <p className="copyright">
+                                    By signing up I accept the <span className="privacy-policy">Terms of Use</span>. I have read and understood the <span className="privacy-policy">Privacy Policy</span> and <span className="privacy-policy">Cookies Policy</span>.
+                                </p>
+                                <input className="splash-button demo-login modal-item" type="submit" value="Accept & Continue" onSubmit={this.handleInitialSubmit} onClick={this.handleInitialSubmit}/>
+                                <div className="sign-in-question">
+                                    <h3>Are you trying to sign in?</h3>
+                                    <p>
+                                        The email address that you entered was not found.
+                                        Double-check your email address.
+                                    </p>
+                                </div>
+    
+                            </form>
+                        </div>
                     </div>
                 )
         }

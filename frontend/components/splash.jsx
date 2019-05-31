@@ -11,9 +11,9 @@ const Splash = ({currentUser, openModal}) => {
                     <span>SOUNDPROUD</span>
                 </div>
                 <div className="header-nav">
-                    <button onClick={() => openModal('loginInfo')} className="sign-in">Sign in</button>
-                    <button onClick={() => openModal('loginInfo')} className="create-account">Create account</button>
-                    <button className="welcome">Welcome</button>
+                    <button onClick={() => openModal('loginInfo')} className="splash-button sign-in">Sign in</button>
+                    <button onClick={() => openModal('loginInfo')} className="splash-button create-account">Create account</button>
+                    <button className="splash-button welcome">Welcome</button>
                 </div>
             </div>
 
@@ -23,7 +23,7 @@ const Splash = ({currentUser, openModal}) => {
 
                     <h1>Discover music on SoundProud</h1>
                     <p>SoundProud lets you listen to music wherever you are, with over 150 million tracks — and growing.</p>
-                    <button className="demo-login">Demo Login</button>
+                    <button className="splash-button demo-login">Demo Login</button>
 
                 </div>
                 

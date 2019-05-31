@@ -10,6 +10,7 @@ class LoginForm extends React.Component{
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleRedirect = this.handleRedirect.bind(this);
+        this.switchModal = this.switchModal.bind(this);
     }
 
     handleChange(field){
@@ -28,19 +29,25 @@ class LoginForm extends React.Component{
         this.props.history.push('/discover');
     }
 
+    switchModal(){
+        this.props.closeModal();
+        this.props.openModal('loginInfo');
+    }
+
     render() {
         return (
             <div className="login-info-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div className="login-info-form">
-                        <span>{this.state.loginInfo}</span>
+                        <button form="" className="login-info-input demo-login modal-item loginInfo" onClick={this.switchModal}>&#9668; {this.state.loginInfo}</button>
                         <input
                             type="password"
                             value={this.state.password}
                             onChange={this.handleChange('password')}
-                            className="login-info-input"
+                            className="login-info-input demo-login modal-item"
+                            placeholder="Your Password *"
                         />
-                        <input className="login-info-submit" type="submit" value="Login" />
+                        <input className="splash-button demo-login modal-item" type="submit" value="Sign in" />
                     </div>
                 </form>
             </div>

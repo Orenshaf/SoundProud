@@ -1,6 +1,6 @@
 // Core
  @import "base/colors.scss";
- 
+
 .splash-header {
     display: block;
     background: image-url('soundproud_splash.png'); 
@@ -15,7 +15,6 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-
  }
 
  .header-name {
@@ -47,7 +46,7 @@
     margin-right: 25px;
  }
 
- button {
+ .splash-button {
    box-sizing: border-box;
    height: 30px; 
    padding: 6px 16px;
@@ -60,9 +59,9 @@
    letter-spacing: 1px;
  }
 
- button:focus {outline:0;}
+ .splash-button:focus {outline:0;}
 
- button:hover {
+ .splash-button:hover {
     cursor: pointer;
  }
 
@@ -106,4 +105,5 @@
     font-size: 18px;
     background: $orange;
     border: none;
+    margin: 0;
  }

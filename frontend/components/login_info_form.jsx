@@ -29,36 +29,35 @@ class LoginInfoForm extends React.Component {
         switch (this.props.nextForm) {
             case 'login':
                 return (
-                    <LoginForm loginInfo={this.state.loginInfo} props={this.props} login={this.props.login} closeModal={this.props.closeModal} history={this.props.history} session={this.props.session}/>
+                    <LoginForm loginInfo={this.state.loginInfo} props={this.props} login={this.props.login} closeModal={this.props.closeModal} openModal={this.props.openModal} history={this.props.history} session={this.props.session}/>
                 )
             case 'signup':
                 return (
-                    <SignupForm loginInfo={this.state.loginInfo} signup={this.props.signup} closeModal={this.props.closeModal} history={this.props.history} session={this.props.session}/>
+                    <SignupForm loginInfo={this.state.loginInfo} signup={this.props.signup} closeModal={this.props.closeModal} openModal={this.props.openModal} history={this.props.history} session={this.props.session}/>
                 )
             default: 
                 return (
                     <div className="login-info-form-container">
                         <form onSubmit={this.handleSubmit} className="login-form-box">
                             <div className="login-info-form">
-
-                                <div className='or-line-container'>
-                                    <p>OR</p>
-                                </div>
-                
+                                <button className="splash-button modal demo-login modal-item">Demo Login</button>
+                                <h2><span>or</span></h2>
                                 <input
                                     type="text"
                                     value={this.state.loginInfo}
                                     onChange={this.handleChange('loginInfo')}
-                                    className="login-info-input"
+                                    className="login-info-input demo-login modal-item"
+                                    placeholder="Your email address or profile URL *"
                                 />
-                                <input className="login-info-submit" type="submit" value="Continue" />
+                                <input className="splash-button demo-login modal-item" type="submit" value="Continue" />
+                                <p className="need-help">Need Help?</p>
                                 <p className="copyright">
                                     We may use your email and devices for updates and tips on SoundCloud's products and services, 
                                     and for activities notifications. You can unsubscribe for free at any time in your notification 
                                     settings.
                                 </p>
                                 <p className="copyright">
-                                    We may use information you provide us in order to show you targeted ads as described in our Privacy Policy.
+                                    We may use information you provide us in order to show you targeted ads as described in our <span className="privacy-policy">Privacy Policy.</span>
                                 </p>
         
                             </div>
