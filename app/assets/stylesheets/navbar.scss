@@ -8,13 +8,22 @@
     width: 100%;
     z-index: 100;
     display: flex;
-    align-items: center;
+    justify-content: center;
  }
 
  .nav-bar {
     display: flex;
-    width: 1240;
+    width: 1240px;
     height: 100%;
+ }
+
+ .nav-bar button:focus {
+     outline: 0;
+ }
+
+ .nav-bar button:hover {
+     outline: 0;
+     filter: contrast(150%)
  }
 
  .nav-button {
@@ -24,8 +33,80 @@
     width: 104px;
     height: 46px;
     padding: 12px 0;
-    border-right: 1px solid black;
     color: #cbcbcb;
     background: none;
+ }
+
+ .nav-bar-img {
+     background: $orange;
+     box-sizing: border-box;
+     height: 46px;
+     padding: 0 14px;
+     width: 70px;
+ }
+
+ .nav-bar-button {
+     border: none;
+     border-right: 1px solid black;
+     font-size: 14px;
+     line-height: 1em;
+     cursor: pointer;
+ } 
+
+ .nav-bar-img-button {
+     margin: 0;
+     padding: 0;
+ }
+
+ .home {
+     background:#111;
+ }
+
+ .search-bar {
+     width: 467px;
+     height: 28px;
+     margin: 8px;
+     background: #e5e5e5;
+     font-size: 14px;
+ }
+
+ #profile {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+    width: 236px;
+    height: 46px;
+    padding: 12px 0;
+    color: #cbcbcb;
+    background: none;
+    border-right: none;
+ }
+
+ .dropdown-caret {
+    font-size: 12px;
+ }
+
+ .notification-button {
+     margin: 0;
+     padding: 0;
+     border: none;
+ }
+
+ .notification-img {
+     background: $navBarBlack;
+     box-sizing: border-box;
+     height: 46px;
+     padding: 14px 13px;
+     width: 46px;
+ }
+
+ .caret {
+     background: $navBarBlack;
+     box-sizing: border-box;
+     height: 15px;
+     padding: 0;
+     width: 15px;
+     margin-left: 5px;
  }
 

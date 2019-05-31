@@ -21,7 +21,7 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6 }, allow_nil: true
     validates :profile_url, presence: true, uniqueness: true
     validates :age, presence: true
-    validates :gender, inclusion: ['Female', 'Male', 'Prefer not to say', 'Custom'] 
+    validates :gender, presence: true;
 
     attr_reader :password
 

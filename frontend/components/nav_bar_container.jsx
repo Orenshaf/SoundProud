@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import NavBar from './nav_bar';
 
 const msp = (state, ownProps) => ({
-    currentUser: state.session.id,
+    currentUser: state.entities.users[state.session.id] || null,
 })
 
 const mdp = (dispatch) => ({
