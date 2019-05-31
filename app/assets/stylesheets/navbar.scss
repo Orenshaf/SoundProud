@@ -4,7 +4,28 @@
 .nav-bar-container {
     background: $navBarBlack;
     position: fixed;
-    height: 50px;
+    height: 46px;
     width: 100%;
     z-index: 100;
+    display: flex;
+    align-items: center;
  }
+
+ .nav-bar {
+    display: flex;
+    width: 1240;
+    height: 100%;
+ }
+
+ .nav-button {
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    width: 104px;
+    height: 46px;
+    padding: 12px 0;
+    border-right: 1px solid black;
+    color: #cbcbcb;
+    background: none;
+ }
+

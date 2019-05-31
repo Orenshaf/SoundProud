@@ -16,9 +16,13 @@ class NavBar extends React.Component {
 
         return (
             <div className="nav-bar-container">
-
-                <button className="logout" onClick={this.handleLogout}>Log Out</button>
-
+                <div className="nav-bar">
+                    <img src={window.soundCloudIcon} />
+                    <button className="nav-button">Home</button>
+                    <button className="nav-button">Stream</button>
+                    <button className="nav-button">Library</button>
+                    <button className="logout" onClick={this.handleLogout}>Log Out</button>
+                </div>
             </div>
         )
         
