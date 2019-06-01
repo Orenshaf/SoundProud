@@ -13,6 +13,13 @@ class LoginInfoForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleNextForm = this.handleNextForm.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
+    }
+
+    demoLogin(e) {
+        e.preventDefault();
+        this.props.login({loginInfo: 'admin@soundproud.com', password: 'password'})
+        this.props.closeModal();
     }
 
     handleChange(field) {
@@ -42,7 +49,7 @@ class LoginInfoForm extends React.Component {
                     <div className="login-info-form-container">
                         <form onSubmit={this.handleSubmit} className="login-form-box">
                             <div className="login-info-form">
-                                <button className="splash-button modal demo-login modal-item">Demo Login</button>
+                                <button form="" className="splash-button modal demo-login modal-item" onClick={this.demoLogin}>Demo Login</button>
                                 <h2><span>or</span></h2>
                                 <input
                                     type="text"

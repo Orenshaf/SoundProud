@@ -22,7 +22,7 @@ const Splash = ({currentUser, openModal}) => {
 
                     <h1>Discover music on SoundProud</h1>
                     <p>SoundProud lets you listen to music wherever you are, with over 150 million tracks — and growing.</p>
-                    <button className="splash-button demo-login">Demo Login</button>
+                    <button className="splash-button demo-login" onClick={() => openModal('loginInfo')}>Start Demo Login</button>
 
                 </div>
                 
