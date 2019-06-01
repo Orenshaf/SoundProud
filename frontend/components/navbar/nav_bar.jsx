@@ -23,8 +23,8 @@ class NavBar extends React.Component {
             return (
                 <div className="nav-bar-container">
                     <div className="nav-bar">
-                        <button className="nav-bar-button nav-bar-img-button"><img className="nav-bar-img" src={window.soundCloudIcon} /></button>
-                        <button className="nav-bar-button nav-button home">Home</button>
+                        <button className="nav-bar-button nav-bar-img-button" onClick={() => this.props.history.push('/discover')}><img className="nav-bar-img" src={window.soundCloudIcon} /></button>
+                        <button className="nav-bar-button nav-button home" onClick={() => this.props.history.push('/discover')}>Home</button>
                         <button className="nav-bar-button nav-button stream">Stream</button>
                         <button className="nav-bar-button nav-button stream">Library</button>
                         <input className="login-info-input demo-login modal-item search-bar" type="text" placeholder="Search" />
@@ -34,7 +34,7 @@ class NavBar extends React.Component {
                         <div className="dropdown">
                             <button id="dropDownButton" className="nav-bar-button notification-button" onClick={this.openDropDown}><img className="notification-img" src={window.dotsIcon} /></button>
                             <div id="myDropdown" className="dropdown-content">
-                                <button className="nav-bar-button logout" onClick={this.handleLogout}>Log Out</button>
+                                <button className="nav-bar-button logout nav-bar-logout" onClick={this.handleLogout}>Log Out</button>
                             </div>
                         </div>
                     </div>
