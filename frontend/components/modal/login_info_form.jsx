@@ -12,6 +12,7 @@ class LoginInfoForm extends React.Component {
         this.hangleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleNextForm = this.handleNextForm.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
     handleChange(field) {
@@ -22,6 +23,7 @@ class LoginInfoForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        this.props.clearErrors();
         this.props.checkLoginInfo(this.state.loginInfo).then(this.handleNextForm);
     }
 
@@ -29,11 +31,11 @@ class LoginInfoForm extends React.Component {
         switch (this.props.nextForm) {
             case 'login':
                 return (
-                    <LoginForm loginInfo={this.state.loginInfo} props={this.props} login={this.props.login} closeModal={this.props.closeModal} openModal={this.props.openModal} history={this.props.history} session={this.props.session}/>
+                    <LoginForm loginInfo={this.state.loginInfo} errors={this.props.errors} clearErrors={this.props.clearErrors} login={this.props.login} closeModal={this.props.closeModal} openModal={this.props.openModal} history={this.props.history} session={this.props.session}/>
                 )
             case 'signup':
                 return (
-                    <SignupForm loginInfo={this.state.loginInfo} signup={this.props.signup} closeModal={this.props.closeModal} openModal={this.props.openModal} history={this.props.history} session={this.props.session}/>
+                    <SignupForm loginInfo={this.state.loginInfo} errors={this.props.errors} clearErrors={this.props.clearErrors} signup={this.props.signup} updateUsername={this.props.updateUsername} closeModal={this.props.closeModal} openModal={this.props.openModal} history={this.props.history} session={this.props.session}/>
                 )
             default: 
                 return (
@@ -49,6 +51,7 @@ class LoginInfoForm extends React.Component {
                                     className="login-info-input demo-login modal-item"
                                     placeholder="Your email address or profile URL *"
                                 />
+                                {this.renderErrors()}
                                 <input className="splash-button demo-login modal-item" type="submit" value="Continue" />
                                 <p className="need-help">Need Help?</p>
                                 <p className="copyright">
@@ -67,19 +70,20 @@ class LoginInfoForm extends React.Component {
         }
     }
 
-    // renderErrors() {
-    //     return (
-    //         <ul>
-    //             {this.props.errors.map((error, i) => (
-    //                 <li key={`error-${i}`}>
-    //                     {error}
-    //                 </li>
-    //             ))}
-    //         </ul>
-    //     );
-    // }
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li id="errors" key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
 
     render() {
+        // debugger;
         return this.handleNextForm()
     }
 }

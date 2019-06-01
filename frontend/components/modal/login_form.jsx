@@ -2,6 +2,7 @@ import React from 'react';
 
 class LoginForm extends React.Component{
     constructor(props){
+        // debugger
         super(props)
         this.state = {
             loginInfo: props.loginInfo,
@@ -11,6 +12,7 @@ class LoginForm extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleRedirect = this.handleRedirect.bind(this);
         this.switchModal = this.switchModal.bind(this);
+        this.renderErrors = this.renderErrors.bind(this);
     }
 
     handleChange(field){
@@ -34,6 +36,18 @@ class LoginForm extends React.Component{
         this.props.openModal('loginInfo');
     }
 
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li id="errors" key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
     render() {
         return (
             <div className="login-info-form-container">
@@ -47,6 +61,7 @@ class LoginForm extends React.Component{
                             className="login-info-input demo-login modal-item"
                             placeholder="Your Password *"
                         />
+                        {this.renderErrors()}
                         <input className="splash-button demo-login modal-item" type="submit" value="Sign in" />
                     </div>
                 </form>

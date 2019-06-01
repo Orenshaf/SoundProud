@@ -3,7 +3,6 @@ import React from 'react';
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
-
         this.handleLogout = this.handleLogout.bind(this);
         this.openDropDown = this.openDropDown.bind(this);
         this.toggleNavBar = this.toggleNavBar.bind(this);
@@ -11,11 +10,10 @@ class NavBar extends React.Component {
 
     handleLogout() {
         this.props.logout()
-        this.props.history.push('/')
+        this.props.history.push('/logout')
     }
 
     openDropDown(){
-        // debugger
         document.getElementById("dropDownButton").classList.toggle("open");
         document.getElementById("myDropdown").classList.toggle("show");
     }
@@ -46,7 +44,7 @@ class NavBar extends React.Component {
             return (
                 <div className="nav-bar-container">
                     <div className="nav-bar">
-                        <button className="nav-bar-button nav-logo"><span className="header-name header-logo"><img src={window.soundCloudIcon} />SOUNDPROUD</span></button>
+                        <button id="" className="nav-bar-button nav-logo" onClick={() => this.props.history.push('/')}><span className="header-name header-logo"><img src={window.soundCloudIcon} />SOUNDPROUD</span></button>
                         <button className="nav-bar-button nav-button home">Home</button>
                         <button className="nav-bar-button nav-button stream">Stream</button>
                         <button className="nav-bar-button nav-button stream">Library</button>

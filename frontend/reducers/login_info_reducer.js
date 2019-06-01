@@ -14,8 +14,6 @@ const loginInfoReducer = (oldState = {}, action) => {
         case RECEIVE_LOGIN_INFO:
             newState = action.loginInfo;
             return merge({}, oldState, newState);
-        case RECEIVE_CURRENT_USER:
-            return _nullUser
         case CLOSE_MODAL:
             return _nullUser
         default: 

@@ -12,7 +12,7 @@ const Splash = ({currentUser, openModal}) => {
                 <div className="header-nav">
                     <button onClick={() => openModal('loginInfo')} className="splash-button sign-in">Sign in</button>
                     <button onClick={() => openModal('loginInfo')} className="splash-button create-account">Create account</button>
-                    <button className="splash-button welcome">Welcome</button>
+                    <button className="splash-button welcome">For Creators</button>
                 </div>
             </div>
 
