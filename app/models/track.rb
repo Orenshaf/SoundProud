@@ -15,6 +15,8 @@
 class Track < ApplicationRecord
     validates :title, presence: true
 
+    has_one_attached :track
+
     belongs_to :user,
         primary_key: :id,
         foreign_key: :user_id,
