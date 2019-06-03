@@ -19,6 +19,7 @@
 
  // Core
  @import "base/colors.scss";
+ @import "base/fonts.scss";
 
  // Files
  @import 'splash.scss';
@@ -27,7 +28,7 @@
  
 
  body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Interstate', sans-serif;
  }
 
  #root {
