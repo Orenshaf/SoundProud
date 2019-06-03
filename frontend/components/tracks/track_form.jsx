@@ -28,7 +28,13 @@ class TrackForm extends React.Component {
                 <div className="track-form-container">
                     <div className="upload-file-container">
                         <h1>Drag and drop your tracks & albums here</h1>
-                        <input type="file" onChange={this.handleFile} />
+                        <div className="splash-button demo-login upload-button">
+                            <label htmlFor="files">
+                                <p className="invisible-upload-button">or choose files to upload</p> 
+                                <input id="files" type="file" onChange={this.handleFile} />
+                            </label>
+                        </div>
+                        
                     </div>
                     <div className="file-type-info">
                         Provide FLAC, WAV, ALAC or AIFF for best audio quality. Learn more about high quality audio (HQ).

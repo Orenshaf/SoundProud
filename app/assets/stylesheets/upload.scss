@@ -69,3 +69,24 @@
     padding-bottom: 26px;
     border-bottom: 1px solid #f2f2f2;
 }
+
+#files {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    min-height: 47px;
+}
+
+.upload-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    text-align: center;
+    padding: 0;
+}
+
+.invisible-upload-button {
+    padding: 7px 51px;
+}
+
