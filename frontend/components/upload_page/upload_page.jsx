@@ -2,7 +2,7 @@ import React from 'react';
 import TrackForm from '../tracks/track_form';
 
 const UploadPage = props => {
-    // debugger
+    
     return (
         <div className="upload-page">
             <div className="upload-page-nav">
@@ -12,6 +12,7 @@ const UploadPage = props => {
                 </div>
                 <button id="for-creators" className="upload-page-nav-button">For Creators on SoundProud</button>
             </div>
+            <TrackForm />
         </div>
     )
 }
