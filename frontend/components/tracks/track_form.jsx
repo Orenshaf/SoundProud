@@ -37,9 +37,11 @@ class TrackForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault()
         const formData = new FormData();
-        formData.append('track[user_id]', this.state.userId)
+        formData.append('track[user_id]', this.state.userId);
         formData.append('track[title]', this.state.title);
+        formData.append('track[private]', this.state.private);
         formData.append('track[track_file]', this.state.trackFile);
+        debugger;
         this.props.uploadTrack(formData);
     }
 

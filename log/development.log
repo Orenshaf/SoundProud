@@ -29393,3 +29393,581 @@ Processing by Api::TracksController#create as JSON
 Completed 422 Unprocessable Entity in 299ms (Views: 0.5ms | ActiveRecord: 6.3ms)
 
 
+Started GET "/" for ::1 at 2019-06-03 15:46:42 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C40P6NoKYIxzWsOUZsuQEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (0.6ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (4.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 588ms (Views: 583.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 15:46:48 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C40P6NoKYIxzWsOUZsuQEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (1.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (4.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 73ms (Views: 68.6ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-03 15:48:49 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"undefined", "title"=>"Street Fighter", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007fcd7abf0398 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190603-67699-mu7s4p.mp3>, @original_filename="street-fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"street-fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+[36m  S3 Storage (360.3ms) [0m[32mUploaded file to key: YvvrCZj6E3XGCZ21NgHG5USX (checksum: WksTTIIh7xKLgffetfLYmg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[36mActiveStorage::Blob Create (1.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "YvvrCZj6E3XGCZ21NgHG5USX"], ["filename", "street-fighter.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 377377], ["checksum", "WksTTIIh7xKLgffetfLYmg=="], ["created_at", "2019-06-03 19:48:50.243334"]]
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+Completed 422 Unprocessable Entity in 388ms (Views: 0.3ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 15:48:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C40P6NoKYIxzWsOUZsuQEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (4.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 649ms (Views: 643.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 15:48:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C40P6NoKYIxzWsOUZsuQEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (3.7ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (6.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 75ms (Views: 67.2ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-03 15:50:16 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"Street Fighter", "private"=>"false", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007fcd75cf20c0 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190603-67699-12hg8u8.mp3>, @original_filename="street-fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"street-fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+[36m  S3 Storage (245.1ms) [0m[32mUploaded file to key: LrbiWJmxRwUwTY7YXefBEgBW (checksum: WksTTIIh7xKLgffetfLYmg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[36mActiveStorage::Blob Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "LrbiWJmxRwUwTY7YXefBEgBW"], ["filename", "street-fighter.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 377377], ["checksum", "WksTTIIh7xKLgffetfLYmg=="], ["created_at", "2019-06-03 19:50:16.582981"]]
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mTrack Create (4.9ms)[0m  [1m[32mINSERT INTO "tracks" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Street Fighter"], ["user_id", 1], ["created_at", "2019-06-03 19:50:16.596364"], ["updated_at", "2019-06-03 19:50:16.596364"]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mActiveStorage::Attachment Create (4.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track_file"], ["record_type", "Track"], ["record_id", 2], ["blob_id", 7], ["created_at", "2019-06-03 19:50:16.603582"]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mTrack Update (2.2ms)[0m  [1m[33mUPDATE "tracks" SET "updated_at" = $1 WHERE "tracks"."id" = $2[0m  [["updated_at", "2019-06-03 19:50:16.609725"], ["id", 2]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 91dd858e-d5cf-47f7-a35f-827bf24e12b5) to Async(default) with arguments: #<GlobalID:0x00007fcd79a9d4d8 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/7>>
+  Rendering api/tracks/show.json.jbuilder
+  Rendered api/tracks/_track.json.jbuilder (0.9ms)
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered api/tracks/show.json.jbuilder (6.3ms)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91dd858e-d5cf-47f7-a35f-827bf24e12b5] Performing ActiveStorage::AnalyzeJob (Job ID: 91dd858e-d5cf-47f7-a35f-827bf24e12b5) from Async(default) with arguments: #<GlobalID:0x00007fcd78739388 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/7>>
+Completed 200 OK in 368ms (Views: 22.2ms | ActiveRecord: 16.1ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91dd858e-d5cf-47f7-a35f-827bf24e12b5]   [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91dd858e-d5cf-47f7-a35f-827bf24e12b5]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91dd858e-d5cf-47f7-a35f-827bf24e12b5]   [1m[36mActiveStorage::Blob Update (3.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 7]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91dd858e-d5cf-47f7-a35f-827bf24e12b5]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91dd858e-d5cf-47f7-a35f-827bf24e12b5]   [1m[35m (78.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91dd858e-d5cf-47f7-a35f-827bf24e12b5]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [91dd858e-d5cf-47f7-a35f-827bf24e12b5] Performed ActiveStorage::AnalyzeJob (Job ID: 91dd858e-d5cf-47f7-a35f-827bf24e12b5) from Async(default) in 89.58ms
+Started DELETE "/api/session" for ::1 at 2019-06-03 15:59:57 -0400
+Started DELETE "/api/session" for ::1 at 2019-06-03 15:59:57 -0400
+Processing by Api::SessionsController#destroy as JSON
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C40P6NoKYIxzWsOUZsuQEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C40P6NoKYIxzWsOUZsuQEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[35m (8.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "UwS18Pv2mV5xSKKZWtfjhw"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "lMUrwu7owWfzs3va08aCPQ"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (3.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (3.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "UwS18Pv2mV5xSKKZWtfjhw"], ["updated_at", "2019-06-03 19:59:57.456111"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 50ms (Views: 0.9ms | ActiveRecord: 10.9ms)
+
+
+  [1m[36mUser Update (3.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "lMUrwu7owWfzs3va08aCPQ"], ["updated_at", "2019-06-03 19:59:57.460466"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 87ms (Views: 0.2ms | ActiveRecord: 23.4ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-03 16:00:03 -0400
+Started GET "/api/tracks" for ::1 at 2019-06-03 16:00:03 -0400
+Processing by Api::TracksController#index as JSON
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  Rendering api/tracks/index.json.jbuilder
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[36mTrack Load (73.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Z4_Z_4eZCHCIjGxFtL-qMQ"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mActiveStorage::Attachment Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mUser Update (2.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Z4_Z_4eZCHCIjGxFtL-qMQ"], ["updated_at", "2019-06-03 20:00:03.620984"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendered api/tracks/index.json.jbuilder (148.6ms)
+Completed 200 OK in 175ms (Views: 94.1ms | ActiveRecord: 79.9ms)
+
+
+  ↳ app/models/user.rb:58
+  Rendering api/users/show.json.jbuilder
+  [1m[36mTrack Load (3.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (11.8ms)
+  Rendered api/users/show.json.jbuilder (15.9ms)
+Completed 200 OK in 201ms (Views: 26.2ms | ActiveRecord: 14.8ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-03 16:00:43 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"Street Fighter", "private"=>"false", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007fcd7b8504a8 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190603-67699-1p5fuhh.mp3>, @original_filename="street-fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"street-fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+[36m  S3 Storage (1269.2ms) [0m[32mUploaded file to key: ZU7NZGkHRsf6246Br4jvnUi2 (checksum: WksTTIIh7xKLgffetfLYmg==)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[36mActiveStorage::Blob Create (6.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "ZU7NZGkHRsf6246Br4jvnUi2"], ["filename", "street-fighter.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 377377], ["checksum", "WksTTIIh7xKLgffetfLYmg=="], ["created_at", "2019-06-03 20:00:44.624860"]]
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (2.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mTrack Create (0.7ms)[0m  [1m[32mINSERT INTO "tracks" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Street Fighter"], ["user_id", 1], ["created_at", "2019-06-03 20:00:44.648756"], ["updated_at", "2019-06-03 20:00:44.648756"]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mActiveStorage::Attachment Create (8.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track_file"], ["record_type", "Track"], ["record_id", 3], ["blob_id", 8], ["created_at", "2019-06-03 20:00:44.653478"]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mTrack Update (0.8ms)[0m  [1m[33mUPDATE "tracks" SET "updated_at" = $1 WHERE "tracks"."id" = $2[0m  [["updated_at", "2019-06-03 20:00:44.663720"], ["id", 3]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 39307af5-540c-4999-b922-bb1c8254628c) to Async(default) with arguments: #<GlobalID:0x00007fcd7b83b738 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/8>>
+  Rendering api/tracks/show.json.jbuilder
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39307af5-540c-4999-b922-bb1c8254628c] Performing ActiveStorage::AnalyzeJob (Job ID: 39307af5-540c-4999-b922-bb1c8254628c) from Async(default) with arguments: #<GlobalID:0x00007fcd7b823278 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/8>>
+  Rendered api/tracks/_track.json.jbuilder (0.7ms)
+  Rendered api/tracks/show.json.jbuilder (5.9ms)
+Completed 200 OK in 1346ms (Views: 19.0ms | ActiveRecord: 25.4ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39307af5-540c-4999-b922-bb1c8254628c]   [1m[35m (8.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39307af5-540c-4999-b922-bb1c8254628c]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39307af5-540c-4999-b922-bb1c8254628c]   [1m[36mActiveStorage::Blob Update (11.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 8]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39307af5-540c-4999-b922-bb1c8254628c]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39307af5-540c-4999-b922-bb1c8254628c]   [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39307af5-540c-4999-b922-bb1c8254628c]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [39307af5-540c-4999-b922-bb1c8254628c] Performed ActiveStorage::AnalyzeJob (Job ID: 39307af5-540c-4999-b922-bb1c8254628c) from Async(default) in 40.49ms
+Started GET "/" for ::1 at 2019-06-03 16:08:01 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z4_Z_4eZCHCIjGxFtL-qMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (1.6ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (5.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 958ms (Views: 948.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 16:08:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z4_Z_4eZCHCIjGxFtL-qMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (1.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (4.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 80ms (Views: 75.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-03 16:08:21 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"Street Fighter", "private"=>"false", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007fcd7547edf8 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190603-67699-p96udg.mp3>, @original_filename="street-fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"street-fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+[36m  S3 Storage (355.0ms) [0m[32mUploaded file to key: CzEJCrnKQU5UrBq2QjvxXEcW (checksum: WksTTIIh7xKLgffetfLYmg==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[36mActiveStorage::Blob Create (2.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "CzEJCrnKQU5UrBq2QjvxXEcW"], ["filename", "street-fighter.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 377377], ["checksum", "WksTTIIh7xKLgffetfLYmg=="], ["created_at", "2019-06-03 20:08:21.415405"]]
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mTrack Create (1.0ms)[0m  [1m[32mINSERT INTO "tracks" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Street Fighter"], ["user_id", 1], ["created_at", "2019-06-03 20:08:21.429712"], ["updated_at", "2019-06-03 20:08:21.429712"]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mActiveStorage::Attachment Create (1.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track_file"], ["record_type", "Track"], ["record_id", 4], ["blob_id", 9], ["created_at", "2019-06-03 20:08:21.433333"]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mTrack Update (0.8ms)[0m  [1m[33mUPDATE "tracks" SET "updated_at" = $1 WHERE "tracks"."id" = $2[0m  [["updated_at", "2019-06-03 20:08:21.436571"], ["id", 4]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9172b966-5c5e-4855-a598-2c055e4e3fb0) to Async(default) with arguments: #<GlobalID:0x00007fcd7ab68790 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/9>>
+  Rendering api/tracks/show.json.jbuilder
+  Rendered api/tracks/_track.json.jbuilder (0.6ms)
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9172b966-5c5e-4855-a598-2c055e4e3fb0] Performing ActiveStorage::AnalyzeJob (Job ID: 9172b966-5c5e-4855-a598-2c055e4e3fb0) from Async(default) with arguments: #<GlobalID:0x00007fcd7ab5bdd8 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/9>>
+  Rendered api/tracks/show.json.jbuilder (4.1ms)
+Completed 200 OK in 402ms (Views: 15.6ms | ActiveRecord: 10.0ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9172b966-5c5e-4855-a598-2c055e4e3fb0]   [1m[35m (5.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9172b966-5c5e-4855-a598-2c055e4e3fb0]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9172b966-5c5e-4855-a598-2c055e4e3fb0]   [1m[36mActiveStorage::Blob Update (1.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 9]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9172b966-5c5e-4855-a598-2c055e4e3fb0]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9172b966-5c5e-4855-a598-2c055e4e3fb0]   [1m[35m (41.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9172b966-5c5e-4855-a598-2c055e4e3fb0]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9172b966-5c5e-4855-a598-2c055e4e3fb0] Performed ActiveStorage::AnalyzeJob (Job ID: 9172b966-5c5e-4855-a598-2c055e4e3fb0) from Async(default) in 58.32ms
+Started GET "/" for ::1 at 2019-06-03 16:08:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z4_Z_4eZCHCIjGxFtL-qMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (1.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (8.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 68ms (Views: 62.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 16:08:39 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z4_Z_4eZCHCIjGxFtL-qMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (1.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (4.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 80ms (Views: 72.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 16:08:54 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z4_Z_4eZCHCIjGxFtL-qMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (2.7ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (12.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 550ms (Views: 538.0ms | ActiveRecord: 10.0ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-03 16:10:34 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"Street Fighter", "private"=>"false", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007fcd79fb8f30 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190603-67699-pp21cz.mp3>, @original_filename="street-fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"street-fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+[36m  S3 Storage (347.8ms) [0m[32mUploaded file to key: DLkU3P2wGihUwdmeRqBZiyS3 (checksum: WksTTIIh7xKLgffetfLYmg==)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[36mActiveStorage::Blob Create (1.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "DLkU3P2wGihUwdmeRqBZiyS3"], ["filename", "street-fighter.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 377377], ["checksum", "WksTTIIh7xKLgffetfLYmg=="], ["created_at", "2019-06-03 20:10:34.512910"]]
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mTrack Create (1.0ms)[0m  [1m[32mINSERT INTO "tracks" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Street Fighter"], ["user_id", 1], ["created_at", "2019-06-03 20:10:34.535314"], ["updated_at", "2019-06-03 20:10:34.535314"]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mActiveStorage::Attachment Create (5.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track_file"], ["record_type", "Track"], ["record_id", 5], ["blob_id", 10], ["created_at", "2019-06-03 20:10:34.539096"]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mTrack Update (2.5ms)[0m  [1m[33mUPDATE "tracks" SET "updated_at" = $1 WHERE "tracks"."id" = $2[0m  [["updated_at", "2019-06-03 20:10:34.549137"], ["id", 5]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 280c90e9-fc9e-4ecf-85b3-128208fd32c3) to Async(default) with arguments: #<GlobalID:0x00007fcd7ae28228 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/10>>
+  Rendering api/tracks/show.json.jbuilder
+  Rendered api/tracks/_track.json.jbuilder (1.5ms)
+  Rendered api/tracks/show.json.jbuilder (5.7ms)
+Completed 200 OK in 421ms (Views: 17.5ms | ActiveRecord: 15.7ms)
+
+
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [280c90e9-fc9e-4ecf-85b3-128208fd32c3] Performing ActiveStorage::AnalyzeJob (Job ID: 280c90e9-fc9e-4ecf-85b3-128208fd32c3) from Async(default) with arguments: #<GlobalID:0x00007fcd79f7b4f0 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/10>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [280c90e9-fc9e-4ecf-85b3-128208fd32c3]   [1m[35m (9.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [280c90e9-fc9e-4ecf-85b3-128208fd32c3]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [280c90e9-fc9e-4ecf-85b3-128208fd32c3]   [1m[36mActiveStorage::Blob Update (2.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 10]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [280c90e9-fc9e-4ecf-85b3-128208fd32c3]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [280c90e9-fc9e-4ecf-85b3-128208fd32c3]   [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [280c90e9-fc9e-4ecf-85b3-128208fd32c3]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [280c90e9-fc9e-4ecf-85b3-128208fd32c3] Performed ActiveStorage::AnalyzeJob (Job ID: 280c90e9-fc9e-4ecf-85b3-128208fd32c3) from Async(default) in 64.43ms
+Started GET "/" for ::1 at 2019-06-03 16:11:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z4_Z_4eZCHCIjGxFtL-qMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (1.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (10.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 650ms (Views: 642.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 16:11:19 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z4_Z_4eZCHCIjGxFtL-qMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (4.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 55ms (Views: 50.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 16:11:20 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (17.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z4_Z_4eZCHCIjGxFtL-qMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (16.6ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (19.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (53.4ms)
+Completed 200 OK in 151ms (Views: 113.7ms | ActiveRecord: 34.4ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-03 16:11:44 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"Street Fighter", "private"=>"false", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007fcd79ec25b8 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190603-67699-ugnm4h.mp3>, @original_filename="street-fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"street-fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+[36m  S3 Storage (327.1ms) [0m[32mUploaded file to key: Stym9iTHtD88D2b3D8LgjU7A (checksum: WksTTIIh7xKLgffetfLYmg==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[36mActiveStorage::Blob Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "Stym9iTHtD88D2b3D8LgjU7A"], ["filename", "street-fighter.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 377377], ["checksum", "WksTTIIh7xKLgffetfLYmg=="], ["created_at", "2019-06-03 20:11:45.235105"]]
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mTrack Create (1.3ms)[0m  [1m[32mINSERT INTO "tracks" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Street Fighter"], ["user_id", 1], ["created_at", "2019-06-03 20:11:45.249393"], ["updated_at", "2019-06-03 20:11:45.249393"]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mActiveStorage::Attachment Create (1.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track_file"], ["record_type", "Track"], ["record_id", 6], ["blob_id", 11], ["created_at", "2019-06-03 20:11:45.253674"]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mTrack Update (0.8ms)[0m  [1m[33mUPDATE "tracks" SET "updated_at" = $1 WHERE "tracks"."id" = $2[0m  [["updated_at", "2019-06-03 20:11:45.257691"], ["id", 6]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: db4a0826-8d83-4701-8cb8-688bcc84fe4f) to Async(default) with arguments: #<GlobalID:0x00007fcd75fb0b90 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/11>>
+  Rendering api/tracks/show.json.jbuilder
+  [1m[36mActiveStorage::Blob Load (6.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendered api/tracks/_track.json.jbuilder (0.6ms)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [db4a0826-8d83-4701-8cb8-688bcc84fe4f] Performing ActiveStorage::AnalyzeJob (Job ID: db4a0826-8d83-4701-8cb8-688bcc84fe4f) from Async(default) with arguments: #<GlobalID:0x00007fcd7ad50d28 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/11>>
+  Rendered api/tracks/show.json.jbuilder (3.8ms)
+Completed 200 OK in 385ms (Views: 16.1ms | ActiveRecord: 8.2ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [db4a0826-8d83-4701-8cb8-688bcc84fe4f]   [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [db4a0826-8d83-4701-8cb8-688bcc84fe4f]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [db4a0826-8d83-4701-8cb8-688bcc84fe4f]   [1m[36mActiveStorage::Blob Update (4.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 11]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [db4a0826-8d83-4701-8cb8-688bcc84fe4f]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [db4a0826-8d83-4701-8cb8-688bcc84fe4f]   [1m[35m (41.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [db4a0826-8d83-4701-8cb8-688bcc84fe4f]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [db4a0826-8d83-4701-8cb8-688bcc84fe4f] Performed ActiveStorage::AnalyzeJob (Job ID: db4a0826-8d83-4701-8cb8-688bcc84fe4f) from Async(default) in 52.73ms
+Started GET "/" for ::1 at 2019-06-03 16:13:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z4_Z_4eZCHCIjGxFtL-qMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (0.5ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 545ms (Views: 541.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 16:14:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z4_Z_4eZCHCIjGxFtL-qMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (1.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (5.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 83ms (Views: 77.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 16:15:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Z4_Z_4eZCHCIjGxFtL-qMQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (2.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (6.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 108ms (Views: 101.0ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-03 16:16:06 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"Street Fighter", "private"=>"false", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007fcd75cb0198 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190603-67699-gk21ra.mp3>, @original_filename="street-fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"street-fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+[36m  S3 Storage (289.4ms) [0m[32mUploaded file to key: dUX6C8eZYmpHkgAAn2C9FW6c (checksum: WksTTIIh7xKLgffetfLYmg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[36mActiveStorage::Blob Create (2.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "dUX6C8eZYmpHkgAAn2C9FW6c"], ["filename", "street-fighter.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 377377], ["checksum", "WksTTIIh7xKLgffetfLYmg=="], ["created_at", "2019-06-03 20:16:07.208224"]]
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mTrack Create (0.9ms)[0m  [1m[32mINSERT INTO "tracks" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Street Fighter"], ["user_id", 1], ["created_at", "2019-06-03 20:16:07.221159"], ["updated_at", "2019-06-03 20:16:07.221159"]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mActiveStorage::Attachment Create (2.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track_file"], ["record_type", "Track"], ["record_id", 7], ["blob_id", 12], ["created_at", "2019-06-03 20:16:07.225061"]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[36mTrack Update (1.0ms)[0m  [1m[33mUPDATE "tracks" SET "updated_at" = $1 WHERE "tracks"."id" = $2[0m  [["updated_at", "2019-06-03 20:16:07.229580"], ["id", 7]]
+  ↳ app/controllers/api/tracks_controller.rb:11
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:11
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9ed5fcb8-b1c9-4034-b4c4-314ef66cbf68) to Async(default) with arguments: #<GlobalID:0x00007fcd7a8c1668 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/12>>
+  Rendering api/tracks/show.json.jbuilder
+  [1m[36mActiveStorage::Blob Load (10.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ed5fcb8-b1c9-4034-b4c4-314ef66cbf68] Performing ActiveStorage::AnalyzeJob (Job ID: 9ed5fcb8-b1c9-4034-b4c4-314ef66cbf68) from Async(default) with arguments: #<GlobalID:0x00007fcd7a8887a0 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/12>>
+  Rendered api/tracks/_track.json.jbuilder (0.6ms)
+  Rendered api/tracks/show.json.jbuilder (5.6ms)
+Completed 200 OK in 341ms (Views: 19.0ms | ActiveRecord: 9.8ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ed5fcb8-b1c9-4034-b4c4-314ef66cbf68]   [1m[35m (9.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ed5fcb8-b1c9-4034-b4c4-314ef66cbf68]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ed5fcb8-b1c9-4034-b4c4-314ef66cbf68]   [1m[36mActiveStorage::Blob Update (21.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 12]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ed5fcb8-b1c9-4034-b4c4-314ef66cbf68]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ed5fcb8-b1c9-4034-b4c4-314ef66cbf68]   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ed5fcb8-b1c9-4034-b4c4-314ef66cbf68]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9ed5fcb8-b1c9-4034-b4c4-314ef66cbf68] Performed ActiveStorage::AnalyzeJob (Job ID: 9ed5fcb8-b1c9-4034-b4c4-314ef66cbf68) from Async(default) in 38.19ms
+Started GET "/api/tracks" for ::1 at 2019-06-03 16:17:12 -0400
+Processing by Api::TracksController#index as JSON
+  Rendering api/tracks/index.json.jbuilder
+  [1m[36mTrack Load (1.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (56.7ms)
+Completed 200 OK in 70ms (Views: 58.9ms | ActiveRecord: 10.9ms)
+
+

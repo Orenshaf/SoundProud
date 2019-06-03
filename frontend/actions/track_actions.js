@@ -16,6 +16,6 @@ export const fetchTracks = () => dispatch => (
     TrackAPIUtil.fetchTracks().then(payload => dispatch(receiveTracks(payload)))
 )
 
-export const uploadTrack = (formTrack) => (
+export const uploadTrack = (formTrack) => dispatch => (
     TrackAPIUtil.uploadTrack(formTrack).then(payload => dispatch(receiveTrack(payload)))
 )
