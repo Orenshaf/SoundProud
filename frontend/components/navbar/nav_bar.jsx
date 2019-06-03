@@ -34,7 +34,7 @@ class NavBar extends React.Component {
             return (
                 <div className="nav-bar-container">
                     <div className="nav-bar">
-                        <NavLink to="/discover" className="nav-bar-button nav-bar-img-button" onClick={this.closeDropDown}><img className="nav-bar-img" src={window.soundCloudIcon} /></NavLink>                        
+                        <NavLink to="/discover" className="nav-bar-button nav-bar-img-button logged-out" onClick={this.closeDropDown}><img className="nav-bar-img" src={window.soundCloudIcon} /></NavLink>                        
                         <NavLink to="/discover" className="nav-bar-button nav-button" activeClassName="active" onClick={this.closeDropDown}>Home</NavLink>
                         <NavLink to="/stream" className="nav-bar-button nav-button" activeClassName="active" onClick={this.closeDropDown}>Stream</NavLink>
                         <NavLink to="/library" className="nav-bar-button nav-button" activeClassName="active" onClick={this.closeDropDown}>Library</NavLink>
