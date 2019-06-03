@@ -1,0 +1,279 @@
+/* line 4, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar-container {
+  background: #333;
+  position: fixed;
+  height: 46px;
+  width: 100%;
+  z-index: 8;
+  display: flex;
+  justify-content: center;
+}
+
+/* line 14, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar {
+  display: flex;
+  width: 1240px;
+  height: 100%;
+}
+
+/* line 20, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar button:focus {
+  outline: 0;
+}
+
+/* line 24, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar-button:hover {
+  filter: contrast(500%);
+}
+
+/* line 28, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar-img-button:hover {
+  filter: none;
+}
+
+/* line 32, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-button {
+  display: block;
+  text-align: center;
+  width: 103.5px;
+  height: 46px;
+  padding: 12px 0 14px;
+  color: #eee;
+  background: none;
+}
+
+/* line 42, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar-img {
+  background: transparent;
+  box-sizing: border-box;
+  height: 22px;
+  width: 48px;
+}
+
+/* line 49, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar-button {
+  border: none;
+  border-right: 1px solid #111;
+  font-size: 14px;
+  line-height: 1em;
+  cursor: pointer;
+  background: transparent;
+  letter-spacing: 0;
+}
+
+/* line 59, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar-img-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  margin: 0;
+  padding: 0 0 2px 2px;
+  background: #f50;
+  background-image: linear-gradient(#f70, #f30);
+}
+
+/* line 70, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.home {
+  color: white;
+  background: #111;
+}
+
+/* line 75, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.search-bar {
+  width: 425px;
+  height: 28px;
+  margin: 9px 10px 8px;
+  background: #e5e5e5;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* line 85, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#profile {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  text-align: center;
+  width: 211px;
+  height: 46px;
+  padding: 12px 0 14px;
+  color: #eee;
+  background: none;
+  border-right: none;
+}
+
+/* line 98, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.dropdown-caret {
+  font-size: 12px;
+}
+
+/* line 102, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.notification-button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  position: relative;
+}
+
+/* line 109, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.notification-img {
+  background: transparent;
+  box-sizing: border-box;
+  height: 46px;
+  padding: 14px 13px;
+  width: 46px;
+}
+
+/* line 117, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.caret {
+  background: transparent;
+  box-sizing: border-box;
+  height: 15px;
+  padding: 0;
+  width: 15px;
+  margin-left: 5px;
+}
+
+/* line 126, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* line 131, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 1%;
+  top: 100%;
+  background-color: #111;
+  min-width: 170px;
+  min-height: 32px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* line 144, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.dropdown-content button {
+  color: #eee;
+  font-size: 12;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* line 152, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.show {
+  display: block;
+}
+
+/* line 154, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.open {
+  background: #111;
+}
+
+/* line 158, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.signed-out-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 164, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#nav-logo {
+  width: 184px;
+  padding: 0;
+  background: #f50;
+  background-image: linear-gradient(#f70, #f30);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+
+/* line 174, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#nav-logo:hover {
+  filter: contrast(100%);
+}
+
+/* line 179, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.search-bar-logged-out {
+  width: 392.02px;
+  height: 28px;
+  margin: 9px 10px 8px;
+  background: #e5e5e5;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* line 189, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.header-logo {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  background: transparent;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* line 199, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.header-logo:hover {
+  cursor: pointer;
+}
+
+/* line 203, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#nav-bar-logout {
+  padding: 8px 10px;
+  width: 170px;
+  height: 32px;
+  text-align: left;
+  font-size: 12px;
+}
+
+/* line 211, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#upload {
+  width: 64px;
+  border: none;
+}
+
+/* line 216, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#logged-out-signin {
+  border-color: #666;
+  height: 26px;
+  padding: 2px 11px 2px 10px;
+  font-weight: 400;
+  width: 66px;
+  box-sizing: border-box;
+  font-size: 13.5px;
+  margin: 0 18px 3px 10px;
+}
+
+/* line 227, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#logged-out-create-account {
+  height: 26px;
+  padding: 2px 11px 2px 10px;
+  font-weight: 400;
+  width: 120px;
+  font-size: 14px;
+  margin: 0 18px 3px 0;
+}
+
+/* line 236, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#soundproud {
+  margin-bottom: 2px;
+}
+
+/* line 240, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.home-logged-out {
+  background: transparent;
+}
+
+/* line 244, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.home-logged-out-discover {
+  background: black;
+  color: white;
+}

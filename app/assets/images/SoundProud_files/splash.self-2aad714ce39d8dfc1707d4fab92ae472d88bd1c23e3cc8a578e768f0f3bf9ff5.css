@@ -1,0 +1,151 @@
+/* line 4, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.splash-header {
+  display: block;
+  background: url(/assets/soundproud_splash-6d03e2630d1bd4d17f168108eccb97eedba6f5700a90858732e902fc1544cd06.png);
+  background-repeat: no-repeat;
+  border-top: 4px solid #f50;
+  width: 100%;
+  min-height: 450px;
+}
+
+/* line 13, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 14px;
+}
+
+/* line 21, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-name {
+  display: flex;
+  align-items: center;
+  margin: 10px 31px;
+}
+
+/* line 27, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-name img {
+  height: 22px;
+  width: 48px;
+  margin-right: 3px;
+  margin-bottom: 2px;
+}
+
+/* line 34, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-name {
+  font-size: 0.9em;
+  color: white;
+}
+
+/* line 39, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-name:hover {
+  cursor: default;
+}
+
+/* line 43, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 21px;
+  margin-top: -2px;
+}
+
+/* line 51, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.splash-button {
+  box-sizing: border-box;
+  height: 30px;
+  padding: 6px 11px;
+  border-radius: 3px;
+  margin-right: 10px;
+  font-size: 14px;
+  color: white;
+  background: none;
+  font-weight: 100;
+  line-height: 0.9em;
+}
+
+/* line 64, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.splash-button:focus {
+  outline: 0;
+}
+
+/* line 66, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.splash-button:hover {
+  cursor: pointer;
+}
+
+/* line 70, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.welcome {
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 7px;
+}
+
+/* line 77, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.welcome:hover {
+  cursor: default;
+}
+
+/* line 81, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.create-account {
+  background: #f50;
+  border: none;
+  width: 130px;
+  height: 30px;
+}
+
+/* line 88, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-mid {
+  display: flex;
+  justify-content: center;
+  width: 529px;
+  margin: 8% auto;
+  text-align: center;
+}
+
+/* line 96, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-mid h1 {
+  font-size: 36px;
+  color: white;
+  margin-bottom: 18px;
+}
+
+/* line 102, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-mid p {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 28px;
+  line-height: 24px;
+}
+
+/* line 109, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.demo-login {
+  height: 46px;
+  font-size: 18px;
+  background: #f50;
+  border: none;
+  margin: 0;
+}
+
+/* line 117, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.sign-in {
+  border: 1px solid #ccc;
+  width: 74px;
+  box-sizing: border-box;
+}
+
+/* line 123, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+#soundproud-splash {
+  margin-bottom: 1px;
+  margin-left: 3px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* line 130, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-content {
+  margin-top: -5px;
+}

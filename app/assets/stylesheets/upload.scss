@@ -1,0 +1,36 @@
+// Core
+@import "base/colors.scss";
+
+.upload-page {
+    position: absolute;
+    top: 47px;
+    width: 100%;
+}
+
+.upload-page-nav {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    border-bottom: 1px solid #f2f2f2;
+    padding: 0 15px 2px;
+    height: 48px;
+}
+
+.upload-page-nav-button {
+    height: 100%;
+    border: none;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin: 0 14px;
+}
+
+.upload-page-nav-button:hover {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+
+#for-creators {
+    border: none;
+    cursor: default;
+}

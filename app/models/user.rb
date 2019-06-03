@@ -27,6 +27,8 @@ class User < ApplicationRecord
 
     after_initialize :ensure_session_token, :ensure_profile_url
 
+    has_one_attached :photo
+    
     has_many :tracks,
         primary_key: :id,
         foreign_key: :user_id,

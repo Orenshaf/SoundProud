@@ -1,0 +1,1 @@
+json.extract! track, :id, :title, :private, :user_id, :track_url

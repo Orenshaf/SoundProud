@@ -9,7 +9,7 @@ class LoginInfoForm extends React.Component {
             loginInfo: '',
         };
 
-        this.hangleChange = this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleNextForm = this.handleNextForm.bind(this);
         this.renderErrors = this.renderErrors.bind(this);

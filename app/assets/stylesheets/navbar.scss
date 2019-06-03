@@ -67,11 +67,6 @@
      background-image: linear-gradient(#f70,#f30);
  }
 
- .home {
-     color: white;
-     background:#111;
- }
-
  .search-bar {
      width: 425px;
      height: 28px;
@@ -237,11 +232,11 @@
      margin-bottom: 2px;
  }
 
- .home-logged-out {
-     background: transparent;
- }
+//  .home-logged-out {
+//      background: transparent;
+//  }
 
- .home-logged-out-discover {
+ .selected {
      background: black;
      color: white;
  }
