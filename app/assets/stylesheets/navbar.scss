@@ -32,11 +32,12 @@
  .nav-button {
     display: block;
     text-align: center;
-    width: 103.5px;
+    width: 103.8px;
     height: 46px;
-    padding: 12px 0 14px;
     color: $navBarWhite;
     background: none;
+    box-sizing: border-box;
+    padding-top: 15px;
  }
 
  .nav-bar-img {
@@ -54,18 +55,8 @@
      cursor: pointer;
      background: transparent;
      letter-spacing: 0;
+     text-decoration: none;
  } 
-
- .nav-bar-img-button {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     width: 70px;
-     margin: 0;
-     padding: 0 0 2px 2px;
-     background: $orange;
-     background-image: linear-gradient(#f70,#f30);
- }
 
  .search-bar {
      width: 425px;
@@ -203,8 +194,8 @@
      font-size: 12px;
  }
 
- #upload {
-     width: 64px;
+ .upload {
+     width: 65.24px;
      border: none;
  }
 
@@ -236,10 +227,25 @@
 //      background: transparent;
 //  }
 
- .selected {
+ .active {
      background: black;
      color: white;
  }
+
+ .nav-bar-img-button {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-sizing: border-box;
+     width: 69.5px;
+     margin: 0;
+     padding: 0 0 3px 3px;
+     background: $orange;
+     background-image: linear-gradient(#f70,#f30);
+ }
  
+ .logged-out {
+     border: none;
+ }
  
 
