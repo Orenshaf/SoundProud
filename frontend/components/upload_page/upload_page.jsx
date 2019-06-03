@@ -12,7 +12,7 @@ const UploadPage = props => {
                 </div>
                 <button id="for-creators" className="upload-page-nav-button">For Creators on SoundProud</button>
             </div>
-            <TrackForm />
+            <TrackForm uploadTrack={props.uploadTrack}/>
         </div>
     )
 }
