@@ -1,0 +1,723 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 6, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/base/reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  image-rendering: crisp-edges;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 28, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/base/reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 32, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/base/reset.scss */
+body {
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 36, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/base/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 39, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/base/reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 42, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/base/reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 47, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/base/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 4, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.splash-header {
+  display: block;
+  background: url(/assets/soundproud_splash-6d03e2630d1bd4d17f168108eccb97eedba6f5700a90858732e902fc1544cd06.png);
+  background-repeat: no-repeat;
+  border-top: 4px solid #f50;
+  width: 100%;
+  min-height: 450px;
+}
+
+/* line 13, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 14px;
+}
+
+/* line 21, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-name {
+  display: flex;
+  align-items: center;
+  margin: 10px 31px;
+}
+
+/* line 27, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-name img {
+  height: 22px;
+  width: 48px;
+  margin-right: 3px;
+  margin-bottom: 2px;
+}
+
+/* line 34, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-name {
+  font-size: 0.9em;
+  color: white;
+}
+
+/* line 39, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-name:hover {
+  cursor: default;
+}
+
+/* line 43, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 21px;
+  margin-top: -2px;
+}
+
+/* line 51, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.splash-button {
+  box-sizing: border-box;
+  height: 30px;
+  padding: 6px 11px;
+  border-radius: 3px;
+  margin-right: 10px;
+  font-size: 14px;
+  color: white;
+  background: none;
+  font-weight: 100;
+  line-height: 0.9em;
+}
+
+/* line 64, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.splash-button:focus {
+  outline: 0;
+}
+
+/* line 66, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.splash-button:hover {
+  cursor: pointer;
+}
+
+/* line 70, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.welcome {
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 7px;
+}
+
+/* line 77, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.welcome:hover {
+  cursor: default;
+}
+
+/* line 81, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.create-account {
+  background: #f50;
+  border: none;
+  width: 130px;
+  height: 30px;
+}
+
+/* line 88, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-mid {
+  display: flex;
+  justify-content: center;
+  width: 529px;
+  margin: 8% auto;
+  text-align: center;
+}
+
+/* line 96, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-mid h1 {
+  font-size: 36px;
+  color: white;
+  margin-bottom: 18px;
+}
+
+/* line 102, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-mid p {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 28px;
+  line-height: 24px;
+}
+
+/* line 109, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.demo-login {
+  height: 46px;
+  font-size: 18px;
+  background: #f50;
+  border: none;
+  margin: 0;
+}
+
+/* line 117, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.sign-in {
+  border: 1px solid #ccc;
+  width: 74px;
+  box-sizing: border-box;
+}
+
+/* line 123, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+#soundproud-splash {
+  margin-bottom: 1px;
+  margin-left: 3px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* line 130, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/splash.scss */
+.header-content {
+  margin-top: -5px;
+}
+
+/* line 4, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(242, 242, 242, 0.9);
+  z-index: 10;
+}
+
+/* line 14, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.modal-positioner {
+  position: fixed;
+  min-height: 1px;
+  width: 100%;
+  content: "";
+  z-index: 100;
+}
+
+/* line 22, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.modal-child {
+  position: absolute;
+  top: 387px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* line 29, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.login-info-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 34, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.login-info-form {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 450px;
+  min-width: 450px;
+  height: 620px;
+  padding: 25px;
+  background: white;
+  position: relative;
+}
+
+/* line 47, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.login-info-submit {
+  text-transform: capitalize;
+  background: #f50;
+}
+
+/* line 52, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.login-info-input {
+  background: white;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  color: #111;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+/* line 63, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+::placeholder {
+  color: #999999;
+}
+
+/* line 67, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.copyright {
+  font-family: 'Lato', sans-serif;
+  font-size: 11.5px;
+  margin: 10px 0;
+  color: #999999;
+  line-height: 1.4em;
+}
+
+/* line 76, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+h2 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 20px 0 20px;
+}
+
+/* line 84, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+h2 span {
+  background: #fff;
+  padding: 0 10px;
+}
+
+/* line 89, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.modal {
+  background-image: linear-gradient(#3857A1, #264285);
+  border-color: #264285;
+}
+
+/* line 94, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.need-help {
+  margin-top: 15px;
+  text-align: right;
+  font-size: 12px;
+  color: #368ade;
+}
+
+/* line 101, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.modal-item {
+  height: 40px;
+  font-size: 16px;
+}
+
+/* line 106, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.privacy-policy {
+  color: #368ade;
+  letter-spacing: 0;
+}
+
+/* line 111, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.loginInfo {
+  text-align: left;
+  font-size: 16px;
+}
+
+/* line 116, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.create-account-modal {
+  font-size: 32px;
+  text-align: center;
+  line-height: 1.2em;
+  margin-bottom: 20px;
+  letter-spacing: 0;
+}
+
+/* line 124, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.red-splat {
+  color: red;
+  font-size: 14px;
+}
+
+/* line 129, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.choose-password {
+  font-size: 14px;
+  margin-bottom: 12px;
+  letter-spacing: 0;
+}
+
+/* line 135, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.sign-in-question {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 28px;
+  line-height: 1.4em;
+  letter-spacing: 0;
+}
+
+/* line 147, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.sign-in-question > h3 {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+/* line 152, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.sign-in-question > p {
+  width: 300px;
+  font-weight: bold;
+}
+
+/* line 157, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.signup {
+  margin-top: 14px;
+}
+
+/* line 161, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/modal.scss */
+.gender {
+  font-size: 16px;
+}
+
+/* line 4, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar-container {
+  background: #333;
+  position: fixed;
+  height: 46px;
+  width: 100%;
+  z-index: 8;
+  display: flex;
+  justify-content: center;
+}
+
+/* line 14, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar {
+  display: flex;
+  width: 1240px;
+  height: 100%;
+}
+
+/* line 20, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar button:focus {
+  outline: 0;
+}
+
+/* line 24, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar-button:hover {
+  filter: contrast(500%);
+}
+
+/* line 28, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar-img-button:hover {
+  filter: none;
+}
+
+/* line 32, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-button {
+  display: block;
+  text-align: center;
+  width: 103.5px;
+  height: 46px;
+  padding: 12px 0 14px;
+  color: #eee;
+  background: none;
+}
+
+/* line 42, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar-img {
+  background: transparent;
+  box-sizing: border-box;
+  height: 22px;
+  width: 48px;
+}
+
+/* line 49, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar-button {
+  border: none;
+  border-right: 1px solid #111;
+  font-size: 14px;
+  line-height: 1em;
+  cursor: pointer;
+  background: transparent;
+  letter-spacing: 0;
+}
+
+/* line 59, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.nav-bar-img-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  margin: 0;
+  padding: 0 0 2px 2px;
+  background: #f50;
+  background-image: linear-gradient(#f70, #f30);
+}
+
+/* line 70, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.home {
+  color: white;
+  background: #111;
+}
+
+/* line 75, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.search-bar {
+  width: 425px;
+  height: 28px;
+  margin: 9px 10px 8px;
+  background: #e5e5e5;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* line 85, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#profile {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  text-align: center;
+  width: 211px;
+  height: 46px;
+  padding: 12px 0 14px;
+  color: #eee;
+  background: none;
+  border-right: none;
+}
+
+/* line 98, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.dropdown-caret {
+  font-size: 12px;
+}
+
+/* line 102, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.notification-button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  position: relative;
+}
+
+/* line 109, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.notification-img {
+  background: transparent;
+  box-sizing: border-box;
+  height: 46px;
+  padding: 14px 13px;
+  width: 46px;
+}
+
+/* line 117, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.caret {
+  background: transparent;
+  box-sizing: border-box;
+  height: 15px;
+  padding: 0;
+  width: 15px;
+  margin-left: 5px;
+}
+
+/* line 126, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* line 131, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 1%;
+  top: 100%;
+  background-color: #111;
+  min-width: 170px;
+  min-height: 32px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* line 144, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.dropdown-content button {
+  color: #eee;
+  font-size: 12;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* line 152, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.show {
+  display: block;
+}
+
+/* line 154, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.open {
+  background: #111;
+}
+
+/* line 158, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.signed-out-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 164, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#nav-logo {
+  width: 184px;
+  padding: 0;
+  background: #f50;
+  background-image: linear-gradient(#f70, #f30);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+
+/* line 174, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#nav-logo:hover {
+  filter: contrast(100%);
+}
+
+/* line 179, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.search-bar-logged-out {
+  width: 392.02px;
+  height: 28px;
+  margin: 9px 10px 8px;
+  background: #e5e5e5;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* line 189, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.header-logo {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  background: transparent;
+  width: 100%;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* line 199, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.header-logo:hover {
+  cursor: pointer;
+}
+
+/* line 203, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#nav-bar-logout {
+  padding: 8px 10px;
+  width: 170px;
+  height: 32px;
+  text-align: left;
+  font-size: 12px;
+}
+
+/* line 211, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#upload {
+  width: 64px;
+  border: none;
+}
+
+/* line 216, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#logged-out-signin {
+  border-color: #666;
+  height: 26px;
+  padding: 2px 11px 2px 10px;
+  font-weight: 400;
+  width: 66px;
+  box-sizing: border-box;
+  font-size: 13.5px;
+  margin: 0 18px 3px 10px;
+}
+
+/* line 227, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#logged-out-create-account {
+  height: 26px;
+  padding: 2px 11px 2px 10px;
+  font-weight: 400;
+  width: 120px;
+  font-size: 14px;
+  margin: 0 18px 3px 0;
+}
+
+/* line 236, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+#soundproud {
+  margin-bottom: 2px;
+}
+
+/* line 240, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.home-logged-out {
+  background: transparent;
+}
+
+/* line 244, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/navbar.scss */
+.home-logged-out-discover {
+  background: black;
+  color: white;
+}
+
+/* line 28, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/application.scss */
+body {
+  font-family: 'Interstate Bold Cond', sans-serif;
+}
+
+/* line 32, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/application.scss */
+#root {
+  width: 100%;
+  background: #f2f2f2;
+}
+
+/* line 37, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/application.scss */
+.app {
+  display: flex;
+  width: 1240px;
+  height: 5000px;
+  margin: 0 auto;
+  background: white;
+  position: relative;
+  font-family: 'Interstate Bold Cond', sans-serif;
+}
+
+/* line 48, /Users/orenshafir/Desktop/FinalProject/SoundProud/app/assets/stylesheets/application.scss */
+#errors {
+  color: #cf0000;
+  font-size: 12px;
+  margin-top: -3px;
+  margin-bottom: 17px;
+}

@@ -7,7 +7,7 @@ const Splash = ({currentUser, openModal}) => {
             <div className="header-top">
 
                 
-                <span className="header-name"><img src={window.soundCloudIcon} />SOUNDPROUD</span>
+                <span className="header-name"><img src={window.soundCloudIcon} /><span id="soundproud-splash">SOUNDPROUD</span></span>
               
                 <div className="header-nav">
                     <button onClick={() => openModal('loginInfo')} className="splash-button sign-in">Sign in</button>

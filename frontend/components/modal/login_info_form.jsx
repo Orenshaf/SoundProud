@@ -9,7 +9,7 @@ class LoginInfoForm extends React.Component {
             loginInfo: '',
         };
 
-        this.hangleChange = this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleNextForm = this.handleNextForm.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
@@ -19,6 +19,7 @@ class LoginInfoForm extends React.Component {
     demoLogin(e) {
         e.preventDefault();
         this.props.login({loginInfo: 'admin@soundproud.com', password: 'password'})
+        this.props.history.push('/discover')
         this.props.closeModal();
     }
 

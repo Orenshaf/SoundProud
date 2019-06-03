@@ -22,7 +22,7 @@
  }
 
  .nav-bar-button:hover {
-     filter: contrast(150%)
+     filter: contrast(500%)
  }
 
  .nav-bar-img-button:hover {
@@ -31,17 +31,17 @@
 
  .nav-button {
     display: block;
-    box-sizing: border-box;
     text-align: center;
-    width: 104px;
+    width: 103.8px;
     height: 46px;
-    padding: 12px 0;
-    color: #cbcbcb;
+    color: $navBarWhite;
     background: none;
+    box-sizing: border-box;
+    padding-top: 15px;
  }
 
  .nav-bar-img {
-     background: $orange;
+     background: transparent;
      box-sizing: border-box;
      height: 22px;
      width: 48px;
@@ -49,33 +49,23 @@
 
  .nav-bar-button {
      border: none;
-     border-right: 1px solid black;
+     border-right: 1px solid $black;
      font-size: 14px;
      line-height: 1em;
      cursor: pointer;
      background: transparent;
+     letter-spacing: 0;
+     text-decoration: none;
  } 
 
- .nav-bar-img-button {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     width: 69px;
-     margin: 0;
-     padding: 0;
-     background: $orange;
- }
-
- .home {
-     background:#111;
- }
-
  .search-bar {
-     width: 467px;
+     width: 425px;
      height: 28px;
-     margin: 8px;
+     margin: 9px 10px 8px;
      background: #e5e5e5;
      font-size: 14px;
+     border: none;
+     border-radius: 4px;
  }
 
  #profile {
@@ -83,10 +73,10 @@
     justify-content: center;
     box-sizing: border-box;
     text-align: center;
-    width: 236px;
+    width: 211px;
     height: 46px;
-    padding: 12px 0;
-    color: #cbcbcb;
+    padding: 12px 0 14px;
+    color: $navBarWhite;
     background: none;
     border-right: none;
  }
@@ -129,7 +119,7 @@
   position: absolute;
   right: 1%;
   top: 100%;
-  background-color: black;
+  background-color: $black;
   min-width: 170px;
   min-height: 32px;
   overflow: auto;
@@ -138,7 +128,7 @@
 }
 
 .dropdown-content button {
-  color: #cbcbcb;
+  color: $navBarWhite;
   font-size: 12;
   padding: 12px 16px;
   text-decoration: none;
@@ -148,7 +138,7 @@
 .show {display: block;}
 
 .open {
-    background: black;
+    background: $black;
 }
 
 .signed-out-navbar {
@@ -157,28 +147,39 @@
     justify-content: center;
 }
 
-.nav-logo {
+#nav-logo {
     width: 184px;
     padding: 0;
     background: $orange;
+    background-image: linear-gradient(#f70,#f30);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+}
+
+#nav-logo:hover {
+    filter: contrast(100%)
 }
 
 
 .search-bar-logged-out {
-     width: 412px;
+     width: 392.02px;
      height: 28px;
-     margin: 8px;
+     margin: 9px 10px 8px;
      background: #e5e5e5;
      font-size: 14px;
+     border: none;
+     border-radius: 4px;
  }
 
  .header-logo {
      display: flex;
      justify-content: center;
      margin: 0;
-     background: $orange;
+     background: transparent;
      width: 100%;
-     font-size: 14px;
+     font-size: 15px;
+     font-weight: 600;
  }
 
  .header-logo:hover {
@@ -193,6 +194,58 @@
      font-size: 12px;
  }
 
+ .upload {
+     width: 65.24px;
+     border: none;
+ }
+
+ #logged-out-signin {
+    border-color: #666;
+    height: 26px;
+    padding: 2px 11px 2px 10px;
+    font-weight: 400;
+    width: 66px;
+    box-sizing: border-box;
+    font-size: 13.5px;
+    margin: 0 18px 3px 10px;
+ }
+
+ #logged-out-create-account {
+    height: 26px;
+    padding: 2px 11px 2px 10px;
+    font-weight: 400;
+    width: 120px;
+    font-size: 14px;
+    margin: 0 18px 3px 0;
+ }
+
+ #soundproud {
+     margin-bottom: 2px;
+ }
+
+//  .home-logged-out {
+//      background: transparent;
+//  }
+
+ .active {
+     background: black;
+     color: white;
+ }
+
+ .nav-bar-img-button {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-sizing: border-box;
+     width: 69px;
+     margin: 0;
+     padding: 0 0 3px 3px;
+     background: $orange;
+     background-image: linear-gradient(#f70,#f30);
+ }
  
+ .logged-out {
+     border: none;
+ }
  
 

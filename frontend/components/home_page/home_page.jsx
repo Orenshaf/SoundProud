@@ -3,8 +3,11 @@ import React from 'react';
 class HomePage extends React.Component {
     constructor(props) {
         super(props);
-
         this.handleLogout = this.handleLogout.bind(this);
+    }
+    
+    componentDidMount() {
+        this.props.fetchTracks();
     }
 
     handleLogout(){
@@ -13,9 +16,14 @@ class HomePage extends React.Component {
     }
     
     render() {
+        const tracks = this.props.tracks ? this.props.tracks.map( track => {
+            return <li key={track.id}><audio src={track.trackUrl} controls></audio></li>
+        }) : null ;
         return (
-            <div>
-                
+            <div className="track-index">
+                <ul>
+                    {tracks}
+                </ul>
             </div>
         )
     }

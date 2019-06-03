@@ -27,7 +27,8 @@
  .header-name img {
     height: 22px;
     width: 48px;
-    margin-right: 6px;
+    margin-right: 3px;
+    margin-bottom: 2px;
  }
 
  .header-name {
@@ -44,6 +45,7 @@
     justify-content: flex-end;
     align-items: center;
     margin-right: 21px;
+    margin-top: -2px;
  }
 
  .splash-button {
@@ -69,6 +71,7 @@
     border: none;
     padding-left: 0;
     padding-right: 0;
+    margin-right: 7px;
  }
 
  .welcome:hover {
@@ -78,7 +81,8 @@
  .create-account {
     background: $orange;
     border: none;
-    width: 129px;
+    width: 130px;
+    height: 30px;
  }
 
  .header-mid {
@@ -92,13 +96,14 @@
  .header-mid h1 {
     font-size: 36px;
     color: white;
-    margin-bottom: 26px;
+    margin-bottom: 18px;
  }
 
  .header-mid p {
     font-size: 18px;
     color: white;
-    margin-bottom: 26px;
+    margin-bottom: 28px;
+    line-height: 24px;
  }
 
  .demo-login {
@@ -114,3 +119,17 @@
     width: 74px;
     box-sizing: border-box;
  }
+
+ #soundproud-splash {
+     margin-bottom: 1px;
+     margin-left: 2px;
+     font-weight: 600;
+     letter-spacing: 1px;
+ }
+
+ .header-content {
+    margin-top: -5px;
+ }
+ 
+
+ 
