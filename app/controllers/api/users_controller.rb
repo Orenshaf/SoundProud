@@ -29,6 +29,11 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def show 
+        @user = User.find_by(id: params[:id])
+        render :showpage
+    end
+
     def update
         @user = User.find_by(email: params[:user][:email])
 

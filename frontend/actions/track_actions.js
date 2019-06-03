@@ -1,11 +1,11 @@
 import * as TrackAPIUtil from '../util/track_api_util';
-export const RECEIVE_TRACK = 'RECEIVE_TRACK';
+export const RECEIVE_TRACKS = 'RECEIVE_TRACKS';
 
-export const receiveTrack = track => ({
-    type: RECEIVE_TRACK,
-    track
+export const receiveTracks = tracks => ({
+    type: RECEIVE_TRACKS,
+    tracks
 })
 
-export const createTrack = trackForm => dispatch => (
-    TrackAPIUtil.createTrack(trackForm).then(payload => dispatch(receiveTrack))
+export const fetchTracks = () => dispatch => (
+    TrackAPIUtil.fetchTracks().then(payload => dispatch(receiveTracks(payload)))
 )

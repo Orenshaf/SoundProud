@@ -22602,3 +22602,707 @@ FOREIGN KEY ("blob_id")
 [ActiveJob] [ActiveStorage::AnalyzeJob] [f34e46ff-2383-4eec-a440-c99d7460864f]   [1m[36mActiveStorage::Blob Update (41.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
 [ActiveJob] [ActiveStorage::AnalyzeJob] [f34e46ff-2383-4eec-a440-c99d7460864f]   [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
 [ActiveJob] [ActiveStorage::AnalyzeJob] [f34e46ff-2383-4eec-a440-c99d7460864f] Performed ActiveStorage::AnalyzeJob (Job ID: f34e46ff-2383-4eec-a440-c99d7460864f) from Async(default) in 1035.06ms
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (42.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "User"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (41.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTrack Load (42.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  [1m[35m (3.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrack Create (41.9ms)[0m  [1m[32mINSERT INTO "tracks" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Street Fighter"], ["user_id", 1], ["created_at", "2019-06-03 02:15:01.962000"], ["updated_at", "2019-06-03 02:15:01.962000"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTrack Load (0.5ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" ORDER BY "tracks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+[36m  S3 Storage (591.7ms) [0m[32mUploaded file to key: tX4NLBtk6yKNyqxoi4jh5gji (checksum: WksTTIIh7xKLgffetfLYmg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "tX4NLBtk6yKNyqxoi4jh5gji"], ["filename", "street-fighter.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 377377], ["checksum", "WksTTIIh7xKLgffetfLYmg=="], ["created_at", "2019-06-03 02:16:18.737226"]]
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (42.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track_file"], ["record_type", "Track"], ["record_id", 1], ["blob_id", 2], ["created_at", "2019-06-03 02:16:18.796843"]]
+  [1m[36mTrack Update (1.0ms)[0m  [1m[33mUPDATE "tracks" SET "updated_at" = $1 WHERE "tracks"."id" = $2[0m  [["updated_at", "2019-06-03 02:16:18.841700"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: eb862bc3-1225-4a0a-a11d-858b1ffce1f3) to Async(default) with arguments: #<GlobalID:0x00007fb3efd4f508 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/2>>
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [eb862bc3-1225-4a0a-a11d-858b1ffce1f3] Performing ActiveStorage::AnalyzeJob (Job ID: eb862bc3-1225-4a0a-a11d-858b1ffce1f3) from Async(default) with arguments: #<GlobalID:0x00007fb3ec51d450 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [eb862bc3-1225-4a0a-a11d-858b1ffce1f3]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [eb862bc3-1225-4a0a-a11d-858b1ffce1f3]   [1m[36mActiveStorage::Blob Update (41.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [eb862bc3-1225-4a0a-a11d-858b1ffce1f3]   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [eb862bc3-1225-4a0a-a11d-858b1ffce1f3] Performed ActiveStorage::AnalyzeJob (Job ID: eb862bc3-1225-4a0a-a11d-858b1ffce1f3) from Async(default) in 51.78ms
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2019-06-02 22:59:50 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 2571ms (Views: 2563.6ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-02 22:59:56 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+Started GET "/api/tracks" for ::1 at 2019-06-02 22:59:56 -0400
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "fiXSnpJ5VklMXJwpOr0PEA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+Processing by Api::TracksController#index as JSON
+  [1m[36mUser Update (8.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "fiXSnpJ5VklMXJwpOr0PEA"], ["updated_at", "2019-06-03 02:59:56.968165"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (7.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+  Rendering api/users/show.json.jbuilder
+  [1m[36mTrack Load (1.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (74.0ms)
+  Rendered api/users/show.json.jbuilder (76.2ms)
+Completed 200 OK in 230ms (Views: 75.4ms | ActiveRecord: 43.4ms)
+
+
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/api/tracks_controller.rb:6
+  Rendering api/tracks/index.json.jbuilder
+  [1m[36mTrack Load (0.6ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (115.1ms)
+Completed 200 OK in 8331ms (Views: 102.2ms | ActiveRecord: 23.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-06-02 23:01:35 -0400
+Started DELETE "/api/session" for ::1 at 2019-06-02 23:01:35 -0400
+Processing by Api::SessionsController#destroy as JSON
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fiXSnpJ5VklMXJwpOr0PEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fiXSnpJ5VklMXJwpOr0PEA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (4.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "IIbThkyDgxRQzJm_7lfrHw"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (11.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "FQhwcFxftDRzfyyc1eVZgA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (3.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "IIbThkyDgxRQzJm_7lfrHw"], ["updated_at", "2019-06-03 03:01:35.381282"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Update (6.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "FQhwcFxftDRzfyyc1eVZgA"], ["updated_at", "2019-06-03 03:01:35.382900"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  ↳ app/models/user.rb:58
+Completed 200 OK in 62ms (Views: 0.3ms | ActiveRecord: 18.1ms)
+
+
+  [1m[35m (8.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 65ms (Views: 0.3ms | ActiveRecord: 29.9ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-02 23:01:38 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+Started GET "/api/tracks" for ::1 at 2019-06-02 23:01:38 -0400
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::TracksController#index as JSON
+  ↳ app/models/user.rb:58
+  Rendering api/tracks/index.json.jbuilder
+  [1m[36mUser Exists (5.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mTrack Load (1.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "hrciWkHlTpJeag9KqhTYgQ"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mActiveStorage::Attachment Load (2.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mUser Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (13.5ms)
+  [1m[36mUser Update (2.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "hrciWkHlTpJeag9KqhTYgQ"], ["updated_at", "2019-06-03 03:01:51.127369"], ["id", 1]]
+  ↳ app/models/user.rb:58
+Completed 200 OK in 12422ms (Views: 18.7ms | ActiveRecord: 4.4ms)
+
+
+  [1m[35m (41.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+  Rendering api/users/show.json.jbuilder
+  [1m[36mTrack Load (1.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (4.9ms)
+  Rendered api/users/show.json.jbuilder (6.9ms)
+Completed 200 OK in 12578ms (Views: 16.2ms | ActiveRecord: 59.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-06-02 23:02:38 -0400
+Started DELETE "/api/session" for ::1 at 2019-06-02 23:02:38 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hrciWkHlTpJeag9KqhTYgQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "X7XXxjnxmPg-RRyZOtAvXg"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "X7XXxjnxmPg-RRyZOtAvXg"], ["updated_at", "2019-06-03 03:02:38.398663"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 67ms (Views: 0.8ms | ActiveRecord: 12.2ms)
+
+
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hrciWkHlTpJeag9KqhTYgQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 404 Not Found in 13ms (Views: 0.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for ::1 at 2019-06-02 23:02:43 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hrciWkHlTpJeag9KqhTYgQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 556ms (Views: 552.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-02 23:02:46 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+Started GET "/api/tracks" for ::1 at 2019-06-02 23:02:47 -0400
+Processing by Api::TracksController#index as JSON
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (4.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  Rendering api/tracks/index.json.jbuilder
+  ↳ app/models/user.rb:58
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "KfjOYfXDZH-tatqGvYcH5g"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "KfjOYfXDZH-tatqGvYcH5g"], ["updated_at", "2019-06-03 03:02:47.174022"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+  Rendering api/users/show.json.jbuilder
+  [1m[36mTrack Load (5.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (10.4ms)
+  Rendered api/users/show.json.jbuilder (11.8ms)
+Completed 200 OK in 212ms (Views: 27.1ms | ActiveRecord: 35.9ms)
+
+
+  [1m[36mActiveStorage::Attachment Load (3.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (140.6ms)
+Completed 200 OK in 153ms (Views: 114.1ms | ActiveRecord: 34.0ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-06-02 23:03:35 -0400
+Started DELETE "/api/session" for ::1 at 2019-06-02 23:03:35 -0400
+Processing by Api::SessionsController#destroy as JSON
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (14.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KfjOYfXDZH-tatqGvYcH5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mUser Load (20.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KfjOYfXDZH-tatqGvYcH5g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (3.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "y8cvm-0g8mfpnaqLqWK3yQ"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (6.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (7.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (8.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "yyK4fCkUAS2rqWjL3GEzbA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (3.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "y8cvm-0g8mfpnaqLqWK3yQ"], ["updated_at", "2019-06-03 03:03:36.085076"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  ↳ app/models/user.rb:58
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Update (4.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "yyK4fCkUAS2rqWjL3GEzbA"], ["updated_at", "2019-06-03 03:03:36.092543"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  ↳ app/models/user.rb:58
+Completed 200 OK in 100ms (Views: 0.3ms | ActiveRecord: 40.1ms)
+
+
+  [1m[35m (8.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 114ms (Views: 0.2ms | ActiveRecord: 52.7ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-02 23:03:39 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+Started GET "/api/tracks" for ::1 at 2019-06-02 23:03:39 -0400
+  ↳ app/models/user.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+Processing by Api::TracksController#index as JSON
+  [1m[36mUser Exists (4.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  Rendering api/tracks/index.json.jbuilder
+  ↳ app/models/user.rb:58
+  [1m[36mTrack Load (1.5ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mUser Exists (13.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "PK7X7_9oZLoy7Pu7NG0sdg"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (20.8ms)
+Completed 200 OK in 34ms (Views: 29.6ms | ActiveRecord: 3.5ms)
+
+
+  [1m[36mUser Exists (7.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (3.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "PK7X7_9oZLoy7Pu7NG0sdg"], ["updated_at", "2019-06-03 03:03:39.448072"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (41.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+  Rendering api/users/show.json.jbuilder
+  [1m[36mTrack Load (0.7ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (4.7ms)
+  Rendered api/users/show.json.jbuilder (7.0ms)
+Completed 200 OK in 230ms (Views: 32.1ms | ActiveRecord: 75.4ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-06-02 23:03:58 -0400
+Processing by Api::SessionsController#destroy as JSON
+Started DELETE "/api/session" for ::1 at 2019-06-02 23:03:58 -0400
+  [1m[36mUser Load (56.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK7X7_9oZLoy7Pu7NG0sdg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "vP9w15RL3U2CxMnrusDqvw"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK7X7_9oZLoy7Pu7NG0sdg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  ↳ app/models/user.rb:58
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (2.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "vP9w15RL3U2CxMnrusDqvw"], ["updated_at", "2019-06-03 03:03:58.305328"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "eGH6cVyLbIX-GCjCj3SJwA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (39.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (33.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "eGH6cVyLbIX-GCjCj3SJwA"], ["updated_at", "2019-06-03 03:03:58.315084"], ["id", 1]]
+Completed 200 OK in 133ms (Views: 0.4ms | ActiveRecord: 105.5ms)
+
+
+  ↳ app/models/user.rb:58
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 68ms (Views: 0.2ms | ActiveRecord: 43.1ms)
+
+
+Started GET "/" for ::1 at 2019-06-02 23:04:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 658ms (Views: 653.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-02 23:04:22 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (56.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "fFczBED_xYIneOa8YIH5jQ"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "fFczBED_xYIneOa8YIH5jQ"], ["updated_at", "2019-06-03 03:04:22.252375"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+  Rendering api/users/show.json.jbuilder
+  [1m[36mTrack Load (0.6ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  Rendered api/users/show.json.jbuilder (5.6ms)
+Completed 200 OK in 186ms (Views: 13.1ms | ActiveRecord: 63.1ms)
+
+
+Started GET "/api/tracks" for ::1 at 2019-06-02 23:04:53 -0400
+Processing by Api::TracksController#index as JSON
+  Rendering api/tracks/index.json.jbuilder
+  [1m[36mTrack Load (101.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (114.4ms)
+Completed 200 OK in 129ms (Views: 25.3ms | ActiveRecord: 103.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-06-02 23:04:55 -0400
+Processing by Api::SessionsController#destroy as JSON
+Started DELETE "/api/session" for ::1 at 2019-06-02 23:04:55 -0400
+  [1m[36mUser Load (50.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fFczBED_xYIneOa8YIH5jQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Exists (3.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fFczBED_xYIneOa8YIH5jQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (5.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "sPxntRHGqSMa1UZKpu4x-w"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (2.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "VF40ytLY_5T5MujSLuKQ9A"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (3.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "sPxntRHGqSMa1UZKpu4x-w"], ["updated_at", "2019-06-03 03:04:55.352792"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 94ms (Views: 0.2ms | ActiveRecord: 66.8ms)
+
+
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "VF40ytLY_5T5MujSLuKQ9A"], ["updated_at", "2019-06-03 03:04:55.359153"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 41ms (Views: 0.2ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/" for ::1 at 2019-06-02 23:04:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 530ms (Views: 526.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-02 23:05:02 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "rpzKcN-yy6DqpeCdKTSAZw"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (2.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "rpzKcN-yy6DqpeCdKTSAZw"], ["updated_at", "2019-06-03 03:05:02.700899"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+  Rendering api/users/show.json.jbuilder
+  [1m[36mTrack Load (13.7ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (16.8ms)
+  Rendered api/users/show.json.jbuilder (19.0ms)
+Completed 200 OK in 189ms (Views: 22.3ms | ActiveRecord: 25.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-06-02 23:05:33 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "rpzKcN-yy6DqpeCdKTSAZw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "v266D91b81UN8ErAwDWyfQ"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "v266D91b81UN8ErAwDWyfQ"], ["updated_at", "2019-06-03 03:05:33.379363"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 30ms (Views: 0.6ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/" for ::1 at 2019-06-02 23:05:40 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 485ms (Views: 481.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-02 23:05:44 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+Started GET "/api/tracks" for ::1 at 2019-06-02 23:05:44 -0400
+  [1m[36mUser Load (64.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by Api::TracksController#index as JSON
+  ↳ app/models/user.rb:58
+  Rendering api/tracks/index.json.jbuilder
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "LmAxV0Nur2vVPxzcowsyTg"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mActiveStorage::Blob Load (2.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (14.6ms)
+  [1m[36mUser Update (2.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "LmAxV0Nur2vVPxzcowsyTg"], ["updated_at", "2019-06-03 03:05:44.861069"], ["id", 1]]
+Completed 200 OK in 24ms (Views: 19.2ms | ActiveRecord: 4.2ms)
+
+
+  ↳ app/models/user.rb:58
+  [1m[35m (45.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+  Rendering api/users/show.json.jbuilder
+  [1m[36mTrack Load (1.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (6.0ms)
+  Rendered api/users/show.json.jbuilder (11.1ms)
+Completed 200 OK in 246ms (Views: 19.7ms | ActiveRecord: 116.8ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-06-02 23:06:16 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "LmAxV0Nur2vVPxzcowsyTg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "VIq0_NJhUqS5itGZ8ExlKA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (1.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "VIq0_NJhUqS5itGZ8ExlKA"], ["updated_at", "2019-06-03 03:06:16.325064"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/" for ::1 at 2019-06-02 23:06:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 72ms (Views: 68.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-06-02 23:06:24 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 78ms (Views: 74.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-02 23:06:27 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "ODuDZRvAAadYFF4Pd5T_Sw"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ODuDZRvAAadYFF4Pd5T_Sw"], ["updated_at", "2019-06-03 03:06:27.872943"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+  Rendering api/users/show.json.jbuilder
+  [1m[36mTrack Load (0.6ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (3.2ms)
+  Rendered api/users/show.json.jbuilder (5.5ms)
+Completed 200 OK in 146ms (Views: 18.4ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/api/tracks" for ::1 at 2019-06-02 23:06:43 -0400
+Processing by Api::TracksController#index as JSON
+  Rendering api/tracks/index.json.jbuilder
+  [1m[36mTrack Load (5.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (64.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (7.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (89.4ms)
+Completed 200 OK in 105ms (Views: 26.5ms | ActiveRecord: 78.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-06-02 23:07:58 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "ODuDZRvAAadYFF4Pd5T_Sw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (2.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "w5pHtxWwbuVs6K5z3g00SA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (1.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "w5pHtxWwbuVs6K5z3g00SA"], ["updated_at", "2019-06-03 03:07:58.440112"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 28ms (Views: 0.6ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/" for ::1 at 2019-06-02 23:08:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 570ms (Views: 566.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-06-02 23:08:09 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 69ms (Views: 66.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-02 23:08:11 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (2.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "OcI_m3cXL3b7kPRj5G7RKg"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (3.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "OcI_m3cXL3b7kPRj5G7RKg"], ["updated_at", "2019-06-03 03:08:11.822294"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+  Rendering api/users/show.json.jbuilder
+  [1m[36mTrack Load (0.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (2.5ms)
+  Rendered api/users/show.json.jbuilder (5.0ms)
+Completed 200 OK in 146ms (Views: 19.1ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/api/tracks" for ::1 at 2019-06-02 23:08:15 -0400
+Processing by Api::TracksController#index as JSON
+  Rendering api/tracks/index.json.jbuilder
+  [1m[36mTrack Load (75.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (9.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (3.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (99.7ms)
+Completed 200 OK in 118ms (Views: 30.4ms | ActiveRecord: 87.4ms)
+
+
+Started GET "/" for ::1 at 2019-06-02 23:11:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "OcI_m3cXL3b7kPRj5G7RKg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/views/api/users/_user.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (4.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 784ms (Views: 770.3ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/api/tracks" for ::1 at 2019-06-02 23:11:27 -0400
+Processing by Api::TracksController#index as JSON
+  Rendering api/tracks/index.json.jbuilder
+  [1m[36mTrack Load (123.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (12.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (179.6ms)
+Completed 200 OK in 195ms (Views: 30.8ms | ActiveRecord: 163.2ms)
+
+

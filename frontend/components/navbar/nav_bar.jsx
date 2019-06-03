@@ -12,14 +12,14 @@ class NavBar extends React.Component {
     }
     
     componentDidMount() {
-        debugger
+        // debugger
         if (this.props.currentUser) {
             this.setState({ page: this.props.history.location.pathname.split('/')[1] })
         }
     }
 
     componentDidUpdate() {
-        debugger;
+        // debugger;
         let elements = document.getElementsByClassName('selected');
         if (elements.length > 0) {
             for (let i = 0; i < elements.length; i++) {
