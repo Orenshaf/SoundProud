@@ -10,7 +10,7 @@ const tracksReducer = (oldState = {}, action) => {
             action.tracks.forEach( track => newState[track.id] = track)
             return merge({}, oldState, newState);
         case RECEIVE_TRACK:
-            debugger;
+            // debugger;
             newState = {[action.track.id]: action.track}
             return merge({}, oldState, newState);
         default:

@@ -151,7 +151,7 @@ class SignupForm extends React.Component {
                                     <option value="Custom">Custom</option>
                                 </select>
                                 {this.renderGenderErrors()}
-                                <input className="splash-button demo-login modal-item signup" type="submit" value="Signup" />
+                                <input className="splash-button demo-login modal-item signup" type="submit" value="Continue" />
                             </div>
                         </form>
                     </div>

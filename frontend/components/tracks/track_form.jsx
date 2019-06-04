@@ -19,7 +19,7 @@ class TrackForm extends React.Component {
 
 
     handleFile(e) {
-        debugger;
+        // debugger;
         this.setState({ 
             trackFile: e.currentTarget.files[0], 
             title: this.titleize(e.currentTarget.files[0].name.split('.')[0].split('-'))
@@ -27,7 +27,7 @@ class TrackForm extends React.Component {
     }
 
     handlePrivacy(e) {
-        debugger
+        // debugger
         let flag = new Boolean(this.state.private);
         if (flag.toString() !== e.currentTarget.name) {
             this.setState({private: !this.state.private})
@@ -41,7 +41,7 @@ class TrackForm extends React.Component {
         formData.append('track[title]', this.state.title);
         formData.append('track[private]', this.state.private);
         formData.append('track[track_file]', this.state.trackFile);
-        debugger;
+        // debugger;
         this.props.uploadTrack(formData);
     }
 
@@ -59,7 +59,7 @@ class TrackForm extends React.Component {
     }
     
     handleFormRender() {
-        debugger;
+        // debugger;
         if (this.state.trackFile) {
             return (
                 <>
@@ -133,7 +133,7 @@ class TrackForm extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         return this.handleFormRender();
     }
 }
