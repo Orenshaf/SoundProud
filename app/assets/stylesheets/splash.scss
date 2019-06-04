@@ -5,13 +5,22 @@
  // CSS Reset
  @import "base/reset.scss";
  
-.splash-header {
+.splash-header-one {
     display: block;
     background: image-url('soundproud_splash.png'); 
     background-repeat: no-repeat;
     border-top: 4px solid $orange;
     width: 100%;
     min-height: 450px;
+ }
+
+ .splash-header-two {
+    display: block;
+    background: image-url('splash-second-image.png'); 
+    background-size: cover;
+    border-top: 4px solid $orange;
+    width: 100%;
+    max-height: 450px;
  }
 
  .header-top {

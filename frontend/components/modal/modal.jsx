@@ -13,7 +13,6 @@ class Modal extends React.Component {
     }
 
     componentDidUpdate () {
-        debugger
         if (this.props.modal && !this.state.modalReady) {
             setTimeout(() => this.setState({modalReady: true}), 500)
         } else if (!this.props.modal && this.state.modalReady) {
@@ -23,7 +22,6 @@ class Modal extends React.Component {
 
 
     render () {
-        debugger
         if (!this.props.modal) {
             return null;
         }
