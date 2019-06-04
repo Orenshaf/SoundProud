@@ -36,7 +36,7 @@ class Splash extends React.Component {
 
                         <div className="header-content">
 
-                            <h1>Discover music on SoundProud</h1>
+                            <h1>Discover more music on SoundProud</h1>
                             <p>SoundProud lets you listen to music wherever you are, with over 150 million tracks — and growing.</p>
                             <button className="splash-button demo-login" onClick={() => this.props.openModal('loginInfo')}>Start Demo Login</button>
 
