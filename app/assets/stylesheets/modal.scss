@@ -1,5 +1,6 @@
 // Core
  @import "base/colors.scss";
+ @import "base/fonts.scss";
 
 .modal-background {
   position: fixed;
@@ -49,27 +50,18 @@
    background: $orange;
  }
 
- .login-info-input {
-    background: white;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    color: $black;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 18px;
- }
-
  ::placeholder {
     color: #999999;
  }
 
  .copyright {
-    font-family: 'Lato', sans-serif;
-    font-size: 11.5px;
+    font-family: 'Lucida Grande', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
     margin: 10px 0;
     color: #999999;
     line-height: 1.4em;
+    width: 395px;
  }
 
 
@@ -92,6 +84,7 @@ h2 span {
  }
 
  .need-help {
+     font-family: 'Lucida Grande', sans-serif;
      margin-top: 15px;
      text-align: right;
      font-size: 12px;
@@ -106,11 +99,6 @@ h2 span {
 .privacy-policy {
     color: #368ade;
     letter-spacing: 0;
-}
-
-.loginInfo {
-    text-align: left;
-    font-size: 16px;
 }
 
 .create-account-modal {
@@ -159,6 +147,26 @@ h2 span {
 }
 
 .gender {
+    font-size: 16px;
+}
+
+.modal-buttons {
+    font-weight: bolder;
+}
+
+.login-info-input {
+    background: white;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    color: $black;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 18px;
+ }
+
+ .loginInfo {
+    text-align: left;
     font-size: 16px;
 }
 

@@ -139,7 +139,7 @@ class SignupForm extends React.Component {
                                     type="text"
                                     value={this.state.age}
                                     onChange={this.handleChange('age')}
-                                    className="login-info-input demo-login modal-item loginInfo"
+                                    className="login-info-input demo-login modal-item loginInfo modal-buttons"
                                 />
                                 {this.renderAgeErrors()}
                                 <h3 className="choose-password gender">Gender <span className="red-splat">*</span></h3>
@@ -184,8 +184,8 @@ class SignupForm extends React.Component {
                         <div className="login-form-box">
                             <form className="login-info-form">
                                 <h1 className="create-account-modal">Create your SoundProud account</h1>
-                                <button form="" className="login-info-input demo-login modal-item loginInfo" onClick={this.switchModal}>&#9668; {this.state.email}</button>
-                                <h3 className="choose-password">Choose a password <span className="red-splat">*</span></h3>
+                                <button form="" className="login-info-input demo-login modal-item loginInfo modal-buttons" onClick={this.switchModal}>&#9668; {this.state.email}</button>
+                                <h3 className="choose-password modal-buttons">Choose a password <span className="red-splat">*</span></h3>
                                 <input
                                     type="password"
                                     value={this.state.password}

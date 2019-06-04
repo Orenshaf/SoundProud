@@ -50,17 +50,17 @@ class LoginInfoForm extends React.Component {
                     <div className="login-info-form-container">
                         <form onSubmit={this.handleSubmit} className="login-form-box">
                             <div className="login-info-form">
-                                <button form="" className="splash-button modal demo-login modal-item" onClick={this.demoLogin}>Demo Login</button>
+                                <button form="" className="splash-button modal demo-login modal-item modal-buttons" onClick={this.demoLogin}>Demo Login</button>
                                 <h2><span>or</span></h2>
                                 <input
                                     type="text"
                                     value={this.state.loginInfo}
                                     onChange={this.handleChange('loginInfo')}
-                                    className="login-info-input demo-login modal-item"
+                                    className="login-info-input demo-login modal-item modal-buttons"
                                     placeholder="Your email address or profile URL *"
                                 />
                                 {this.renderErrors()}
-                                <input className="splash-button demo-login modal-item" type="submit" value="Continue" />
+                                <input className="splash-button demo-login modal-item modal-buttons" type="submit" value="Continue" />
                                 <p className="need-help">Need Help?</p>
                                 <p className="copyright">
                                     We may use your email and devices for updates and tips on SoundCloud's products and services, 
