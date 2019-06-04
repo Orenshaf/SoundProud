@@ -6,8 +6,10 @@ class TrackForm extends React.Component {
         this.state = {
             userId: this.props.userId,
             title: '',
+            description: '',
             private: false,
-            trackFile: null
+            trackFile: null,
+            photoUrl: window.defaultPhoto
         }
 
         // this.genres = [
@@ -73,7 +75,9 @@ class TrackForm extends React.Component {
         formData.append('track[user_id]', this.state.userId);
         formData.append('track[title]', this.state.title);
         formData.append('track[private]', this.state.private);
+        formData.append('track[description]', this.state.description)
         formData.append('track[track_file]', this.state.trackFile);
+        formData.append('track[photo_url]', this.state.photoUrl);
         // debugger;
         this.props.uploadTrack(formData);
     }
@@ -103,6 +107,10 @@ class TrackForm extends React.Component {
                     <div className="upload-prompt">
 
                     </div> */}
+                    <div className="file-name">
+                        <div>{this.state.trackFile.name}</div>
+                        <div>Ready. Click Save to post this track.</div>
+                    </div>
                     <div className="border blue"></div>
                     <div className="border orange"></div>
                     <div className="track-form-final-container">
@@ -112,28 +120,47 @@ class TrackForm extends React.Component {
 
                         <div className="upload-form-innards">
                             <div className="track-image">
-
+                                <img src={this.state.photoUrl} />
                             </div>
+
                             <div className="upload-form-innards-form">
-                                <form onSubmit={this.handleSubmit}>
+                                <form id="track-form" onSubmit={this.handleSubmit}>
                                     <label>
                                         Title <span className="red-splat">*</span>
                                         <br />
                                         <input
+                                            className="track-title-input"
                                             type="text"
                                             value={this.state.title}
                                             onChange={this.handleChange('title')}
                                         />
                                     </label>
+                                    <label>
+                                        <h4 className="description">Description</h4> 
+                                        <br />
+                                        <textarea
+                                            className="track-title-input description-input"
+                                            type="textarea"
+                                            value={this.state.description}
+                                            onChange={this.handleChange('description')}
+                                            placeholder="Describe your track"
+                                        />
+                                    </label>
+                                    <br/>
+                                    Privacy:
                                     <br />
+                                    <br/>
                                     <input type="radio" name="false" checked={this.state.private ? "" : "checked"} onChange={this.handlePrivacy} /> <label htmlFor="public"><span className="public">Public</span></label>
                                     <br />
+                                    <br/>
                                     <input type="radio" name="true" checked={this.state.private ? "checked" : ""} onChange={this.handlePrivacy} /> <label htmlFor="private"><span className="public">Private</span></label>
-                                    <br />
-                                    <input type="submit" value="Save" />
                                 </form>
                             </div>
                         </div>
+                    </div>
+                    <div className="save-track-container">
+                        <div><span className="red-splat">*</span>Required fields</div>
+                        <button form="track-form" className="save-track">Save</button>
                     </div>
                 </>
             )

@@ -134,9 +134,8 @@ input[type='radio'] {
     margin: 0 auto;
     width: 801px;
     border: 1px solid #e2e2e2;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
     box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
+    border-bottom: 1px solid #f2f2f2;
     display: flex;
     flex-direction: column;
 }
@@ -186,7 +185,6 @@ input[type='radio'] {
 .track-image {
     width: 260px;
     height: 260px;
-    background-image: linear-gradient(135deg,#846170,#70929c);
 }
 
 .upload-form-innards-form {
@@ -199,3 +197,69 @@ input[type='radio'] {
     font-size: 12px;
 }
 
+.file-name {
+    font-family: 'Lucida Grande';
+    font-size: 12px;
+    color: #666666;
+    margin: 10px auto -10px;
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+}
+
+.track-title-input {
+    width: 449px;
+    display: inline-block;
+    font-family: "Interstate","Lucida Grande","Lucida Sans Unicode","Lucida Sans",Garuda,Verdana,Tahoma,sans-serif;
+    font-weight: 100;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    transition: border-color .1s;
+}
+
+.track-title-input:focus {
+    outline: 0;
+    border: 1px solid #999;
+}
+
+.description {
+    margin-top: 15px;
+    margin-bottom: -11px;
+}
+.description-input {
+    height: 131px;
+}
+
+.save-track-container {
+    margin: 0 auto;
+    padding: 27px;
+    box-sizing: border-box;
+    width: 801px;
+    height: 68px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #e2e2e2;
+    border-top: none;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    font-size: 12px;
+    font-family: 'Lucida Grande';
+}
+
+.save-track {
+    font-family: 'Interstate reg';
+    width: 53.14px;
+    height: 26px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-size: 14px;
+    color: white;
+    background: $orange;
+    border: none;
+    padding-top: 3px;
+}

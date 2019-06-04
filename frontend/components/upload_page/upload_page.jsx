@@ -9,7 +9,8 @@ const UploadPage = props => {
             <div className="upload-page-nav">
                 <div className="upload-page-nav-links">
                     <NavLink to="/upload" className="upload-page-nav-link" activeClassName="active2">Upload</NavLink>
-                    <NavLink to="/tracks" className="upload-page-nav-link" activeClassName="active2">Your tracks</NavLink>
+                    <div className="track-link-placeholder"></div>
+                    {/* <NavLink to="/tracks" className="upload-page-nav-link" activeClassName="active2">Your tracks</NavLink> */}
                 </div>
                 <button id="for-creators" className="upload-page-nav-button">For Creators on SoundProud</button>
             </div>
