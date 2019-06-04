@@ -20,11 +20,18 @@
     z-index: 100;
 }
 
+.modal-child-start {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  transition: all ease-in 5s;
+}
+
 .modal-child {
   position: absolute;
   top: 387px;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all ease-out 0.2s;
 }
 
 .login-info-form-container {
