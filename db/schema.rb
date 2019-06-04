@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_01_235734) do
+ActiveRecord::Schema.define(version: 2019_06_04_213853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2019_06_01_235734) do
     t.string "tags"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description"
     t.index ["genre"], name: "index_tracks_on_genre"
     t.index ["user_id"], name: "index_tracks_on_user_id"
   end

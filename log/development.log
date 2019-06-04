@@ -32188,3 +32188,1392 @@ Processing by Api::TracksController#index as JSON
 Completed 200 OK in 243ms (Views: 124.2ms | ActiveRecord: 118.0ms)
 
 
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3697248837647799420)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddDescriptionToTracksTable (20190604213853)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (55.2ms)[0m  [1m[35mALTER TABLE "tracks" ADD "description" character varying[0m
+  ↳ db/migrate/20190604213853_add_description_to_tracks_table.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190604213853"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (27.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3697248837647799420)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[36mTrack Load (3.2ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" ORDER BY "tracks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTrack Load (1.5ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" ORDER BY "tracks"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Track"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" ORDER BY "tracks"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Track"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  [1m[36mTrack Load (0.6ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" ORDER BY "tracks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  [1m[35m (42.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (8298.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SoundProud_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (245.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SoundProud_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (214.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SoundProud_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (631.8ms)[0m  [1m[35mCREATE DATABASE "SoundProud_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (455.6ms)[0m  [1m[35mCREATE DATABASE "SoundProud_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (42.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (54.2ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "tracks" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "title" character varying NOT NULL, "private" boolean DEFAULT FALSE, "user_id" integer NOT NULL, "genre" character varying, "tags" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "description" character varying)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_genre" ON "tracks"  ("genre")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_user_id" ON "tracks"  ("user_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:52
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_url" character varying, "age" integer, "gender" character varying)[0m
+  ↳ db/schema.rb:52
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_profile_url" ON "users"  ("profile_url")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (9.3ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  ↳ db/schema.rb:67
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190604213853)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190528172912),
+(20190530172804),
+(20190529135713),
+(20190601235734),
+(20190529143244),
+(20190529134925),
+(20190529143129),
+(20190601225704);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-04 22:16:42.700138"], ["updated_at", "2019-06-04 22:16:42.700138"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (18.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments"  ("blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_attachments_uniqueness" ON "active_storage_attachments"  ("record_type", "record_id", "name", "blob_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  ↳ db/schema.rb:28
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "byte_size" bigint NOT NULL, "checksum" character varying NOT NULL, "created_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:28
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_active_storage_blobs_on_key" ON "active_storage_blobs"  ("key")[0m
+  ↳ db/schema.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tracks" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (48.1ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "title" character varying NOT NULL, "private" boolean DEFAULT FALSE, "user_id" integer NOT NULL, "genre" character varying, "tags" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "description" character varying)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_genre" ON "tracks"  ("genre")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE  INDEX  "index_tracks_on_user_id" ON "tracks"  ("user_id")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:52
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_url" character varying, "age" integer, "gender" character varying)[0m
+  ↳ db/schema.rb:52
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_profile_url" ON "users"  ("profile_url")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE  INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:52
+  [1m[35m (4.0ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  ↳ db/schema.rb:67
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190604213853)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190528172912),
+(20190530172804),
+(20190529135713),
+(20190601235734),
+(20190529143244),
+(20190529134925),
+(20190529143129),
+(20190601225704);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-04 22:16:42.968679"], ["updated_at", "2019-06-04 22:16:42.968679"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (1.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-06-04 22:16:42.976407"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8/street-fighter.mp3" for ::1 at 2019-06-04 18:17:03 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26/street-fighter.mp3" for ::1 at 2019-06-04 18:17:03 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b/street-fighter.mp3" for ::1 at 2019-06-04 18:17:03 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8/street-fighter.mp3" for ::1 at 2019-06-04 18:17:03 -0400
+Started GET "/api/tracks" for ::1 at 2019-06-04 18:17:03 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (11.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (15.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TracksController#index as JSON
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8", "filename"=>"street-fighter"}
+  Rendering api/tracks/index.json.jbuilder
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  (erb):3:in `<main>'
+
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 96ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 134ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5/street-fighter.mp3" for ::1 at 2019-06-04 18:17:03 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae/street-fighter.mp3" for ::1 at 2019-06-04 18:17:03 -0400
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+  [1m[36mTrack Load (128.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01a19ef8975a23e2b8d7d9f0b408e047b566e983/01%20Street%20Fighter.mp3" for ::1 at 2019-06-04 18:17:03 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae", "filename"=>"street-fighter"}
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01a19ef8975a23e2b8d7d9f0b408e047b566e983", "filename"=>"01 Street Fighter"}
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms)
+
+
+  Rendered api/tracks/index.json.jbuilder (184.5ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 252ms (Views: 75.0ms | ActiveRecord: 163.2ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2416267946722e8cb0cb94765fa0a8dd940162a4/01%20Street%20Fighter.mp3" for ::1 at 2019-06-04 18:17:03 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2416267946722e8cb0cb94765fa0a8dd940162a4", "filename"=>"01 Street Fighter"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22/street-fighter.mp3" for ::1 at 2019-06-04 18:17:03 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22", "filename"=>"street-fighter"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started DELETE "/api/session" for ::1 at 2019-06-04 18:17:11 -0400
+Processing by Api::SessionsController#destroy as JSON
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 20ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started DELETE "/api/session" for ::1 at 2019-06-04 18:17:11 -0400
+Processing by Api::SessionsController#destroy as JSON
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 9ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started GET "/api/tracks" for ::1 at 2019-06-04 18:17:12 -0400
+Processing by Api::TracksController#index as JSON
+  Rendering api/tracks/index.json.jbuilder
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8/street-fighter.mp3" for ::1 at 2019-06-04 18:17:12 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b/street-fighter.mp3" for ::1 at 2019-06-04 18:17:12 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26/street-fighter.mp3" for ::1 at 2019-06-04 18:17:12 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22/street-fighter.mp3" for ::1 at 2019-06-04 18:17:12 -0400
+  [1m[36mTrack Load (54.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  Rendered api/tracks/index.json.jbuilder (56.6ms)
+Completed 200 OK in 71ms (Views: 16.9ms | ActiveRecord: 54.0ms)
+
+
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8", "filename"=>"street-fighter"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b", "filename"=>"street-fighter"}
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5/street-fighter.mp3" for ::1 at 2019-06-04 18:17:12 -0400
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5", "filename"=>"street-fighter"}
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2416267946722e8cb0cb94765fa0a8dd940162a4/01%20Street%20Fighter.mp3" for ::1 at 2019-06-04 18:17:12 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01a19ef8975a23e2b8d7d9f0b408e047b566e983/01%20Street%20Fighter.mp3" for ::1 at 2019-06-04 18:17:12 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae/street-fighter.mp3" for ::1 at 2019-06-04 18:17:12 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01a19ef8975a23e2b8d7d9f0b408e047b566e983", "filename"=>"01 Street Fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2416267946722e8cb0cb94765fa0a8dd940162a4", "filename"=>"01 Street Fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae", "filename"=>"street-fighter"}
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8/street-fighter.mp3" for ::1 at 2019-06-04 18:17:12 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8", "filename"=>"street-fighter"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started DELETE "/api/session" for ::1 at 2019-06-04 18:17:32 -0400
+Processing by Api::SessionsController#destroy as JSON
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 8ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started DELETE "/api/session" for ::1 at 2019-06-04 18:17:32 -0400
+Processing by Api::SessionsController#destroy as JSON
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 8ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started GET "/api/tracks" for ::1 at 2019-06-04 18:17:40 -0400
+Processing by Api::TracksController#index as JSON
+  Rendering api/tracks/index.json.jbuilder
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26/street-fighter.mp3" for ::1 at 2019-06-04 18:17:40 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8/street-fighter.mp3" for ::1 at 2019-06-04 18:17:40 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b/street-fighter.mp3" for ::1 at 2019-06-04 18:17:40 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26", "filename"=>"street-fighter"}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8/street-fighter.mp3" for ::1 at 2019-06-04 18:17:40 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b", "filename"=>"street-fighter"}
+  [1m[36mTrack Load (24.5ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  Rendered api/tracks/index.json.jbuilder (38.2ms)
+Completed 200 OK in 59ms (Views: 34.6ms | ActiveRecord: 24.5ms)
+
+
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8", "filename"=>"street-fighter"}
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5/street-fighter.mp3" for ::1 at 2019-06-04 18:17:40 -0400
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5", "filename"=>"street-fighter"}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae/street-fighter.mp3" for ::1 at 2019-06-04 18:17:40 -0400
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae", "filename"=>"street-fighter"}
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01a19ef8975a23e2b8d7d9f0b408e047b566e983/01%20Street%20Fighter.mp3" for ::1 at 2019-06-04 18:17:40 -0400
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2416267946722e8cb0cb94765fa0a8dd940162a4/01%20Street%20Fighter.mp3" for ::1 at 2019-06-04 18:17:40 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22/street-fighter.mp3" for ::1 at 2019-06-04 18:17:40 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2416267946722e8cb0cb94765fa0a8dd940162a4", "filename"=>"01 Street Fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22", "filename"=>"street-fighter"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01a19ef8975a23e2b8d7d9f0b408e047b566e983", "filename"=>"01 Street Fighter"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started GET "/api/tracks" for ::1 at 2019-06-04 18:17:43 -0400
+Processing by Api::TracksController#index as JSON
+  Rendering api/tracks/index.json.jbuilder
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b/street-fighter.mp3" for ::1 at 2019-06-04 18:17:43 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8/street-fighter.mp3" for ::1 at 2019-06-04 18:17:43 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8/street-fighter.mp3" for ::1 at 2019-06-04 18:17:43 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26/street-fighter.mp3" for ::1 at 2019-06-04 18:17:43 -0400
+  [1m[36mTrack Load (53.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  Rendered api/tracks/index.json.jbuilder (56.0ms)
+Completed 200 OK in 74ms (Views: 20.1ms | ActiveRecord: 53.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5/street-fighter.mp3" for ::1 at 2019-06-04 18:17:43 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5", "filename"=>"street-fighter"}
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01a19ef8975a23e2b8d7d9f0b408e047b566e983/01%20Street%20Fighter.mp3" for ::1 at 2019-06-04 18:17:43 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01a19ef8975a23e2b8d7d9f0b408e047b566e983", "filename"=>"01 Street Fighter"}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2416267946722e8cb0cb94765fa0a8dd940162a4/01%20Street%20Fighter.mp3" for ::1 at 2019-06-04 18:17:43 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22/street-fighter.mp3" for ::1 at 2019-06-04 18:17:43 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2416267946722e8cb0cb94765fa0a8dd940162a4", "filename"=>"01 Street Fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22", "filename"=>"street-fighter"}
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae/street-fighter.mp3" for ::1 at 2019-06-04 18:17:43 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae", "filename"=>"street-fighter"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+Started GET "/" for ::1 at 2019-06-04 18:20:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (27.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (65.6ms)
+Completed 200 OK in 3569ms (Views: 3523.6ms | ActiveRecord: 41.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-06-04 18:20:35 -0400
+Started DELETE "/api/session" for ::1 at 2019-06-04 18:20:35 -0400
+Processing by Api::SessionsController#destroy as JSON
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 9ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Processing by Api::SessionsController#destroy as JSON
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 7ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started GET "/api/tracks" for ::1 at 2019-06-04 18:20:36 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26/street-fighter.mp3" for ::1 at 2019-06-04 18:20:36 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8/street-fighter.mp3" for ::1 at 2019-06-04 18:20:36 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b/street-fighter.mp3" for ::1 at 2019-06-04 18:20:36 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8/street-fighter.mp3" for ::1 at 2019-06-04 18:20:36 -0400
+Processing by Api::TracksController#index as JSON
+  Rendering api/tracks/index.json.jbuilder
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8", "filename"=>"street-fighter"}
+  [1m[36mTrack Load (17.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  Rendered api/tracks/index.json.jbuilder (19.6ms)
+Completed 200 OK in 31ms (Views: 13.2ms | ActiveRecord: 17.8ms)
+
+
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8", "filename"=>"street-fighter"}
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5/street-fighter.mp3" for ::1 at 2019-06-04 18:20:36 -0400
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5", "filename"=>"street-fighter"}
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2416267946722e8cb0cb94765fa0a8dd940162a4/01%20Street%20Fighter.mp3" for ::1 at 2019-06-04 18:20:36 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22/street-fighter.mp3" for ::1 at 2019-06-04 18:20:36 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01a19ef8975a23e2b8d7d9f0b408e047b566e983/01%20Street%20Fighter.mp3" for ::1 at 2019-06-04 18:20:36 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBGZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--01a19ef8975a23e2b8d7d9f0b408e047b566e983", "filename"=>"01 Street Fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBHQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2416267946722e8cb0cb94765fa0a8dd940162a4", "filename"=>"01 Street Fighter"}
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae/street-fighter.mp3" for ::1 at 2019-06-04 18:20:37 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae", "filename"=>"street-fighter"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+
+Started GET "/" for ::1 at 2019-06-04 18:21:40 -0400
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 2029ms (Views: 2018.4ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/api/users/check_email?loginInfo=admin%40soundproud.com" for ::1 at 2019-06-04 18:21:52 -0400
+Processing by Api::UsersController#check_email as JSON
+  Parameters: {"loginInfo"=>"admin@soundproud.com"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:4
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/api/users" for ::1 at 2019-06-04 18:21:59 -0400
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"admin@soundproud.com", "password"=>"[FILTERED]", "age"=>"27", "gender"=>"Male", "username"=>"", "form"=>"age-gender"}}
+Unpermitted parameter: :form
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:24
+  [1m[36mUser Exists (4.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:24
+  [1m[36mUser Exists (2.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UO8nq7dy3lZs_X9IJnTWqA"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:24
+  [1m[36mUser Exists (15.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 LIMIT $2[0m  [["profile_url", "user-661960860"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:24
+  [1m[36mUser Create (24.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at", "profile_url", "age", "gender") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["username", "user-661960860"], ["email", "admin@soundproud.com"], ["password_digest", "$2a$10$FDlYZgW6X5QtnriIOY00M.RdR19pm0cuFYY/Yy3PKCTfdHDhz.cBa"], ["session_token", "UO8nq7dy3lZs_X9IJnTWqA"], ["created_at", "2019-06-04 22:22:00.023046"], ["updated_at", "2019-06-04 22:22:00.023046"], ["profile_url", "user-661960860"], ["age", 27], ["gender", "Male"]]
+  ↳ app/controllers/api/users_controller.rb:24
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:24
+  [1m[35m (7.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (7.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "yUTA3whxapkWQZdvuZ9ERQ"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-661960860"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "yUTA3whxapkWQZdvuZ9ERQ"], ["updated_at", "2019-06-04 22:22:00.087945"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (3.5ms)
+Completed 200 OK in 286ms (Views: 15.0ms | ActiveRecord: 132.7ms)
+
+
+Started PATCH "/api/users/undefined" for ::1 at 2019-06-04 18:22:01 -0400
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"email"=>"admin@soundproud.com", "password"=>"[FILTERED]", "age"=>"27", "gender"=>"Male", "username"=>"Admin", "form"=>"username"}, "id"=>"undefined"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:33
+Unpermitted parameter: :form
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:35
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:35
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "yUTA3whxapkWQZdvuZ9ERQ"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:35
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-661960860"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:35
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "password_digest" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["username", "Admin"], ["password_digest", "$2a$10$q3gXWymlnw1.H2LEii7.G.6Y7GjJXq1tbi/A5wMktwMz181WeMm2C"], ["updated_at", "2019-06-04 22:22:01.950863"], ["id", 1]]
+  ↳ app/controllers/api/users_controller.rb:35
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/users_controller.rb:35
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.4ms)
+Completed 200 OK in 88ms (Views: 10.2ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/[object%20File]" for ::1 at 2019-06-04 18:22:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/[object%20File]"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/tracks" for ::1 at 2019-06-04 18:23:00 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"01 street fighter", "private"=>"false", "description"=>"Test track", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f92ad27d0e8 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8126-sjta33.mp3>, @original_filename="01 Street Fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"01 Street Fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">, "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f92ad27d048 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8126-1k8cs1n.png>, @original_filename="default-photo.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"track[photo]\"; filename=\"default-photo.png\"\r\nContent-Type: image/png\r\n">}}
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 10.6ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  (erb):3:in `<main>'
+  app/controllers/api/tracks_controller.rb:9:in `create'
+
+Started GET "/" for ::1 at 2019-06-04 18:23:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yUTA3whxapkWQZdvuZ9ERQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 116ms (Views: 100.1ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/[object%20File]" for ::1 at 2019-06-04 18:23:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/[object%20File]"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/[object%20File]" for ::1 at 2019-06-04 18:23:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/[object%20File]"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/tracks" for ::1 at 2019-06-04 18:23:48 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"01 street fighter", "private"=>"false", "description"=>"Test Track", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f92ac2ab250 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8126-1t5nqmf.mp3>, @original_filename="01 Street Fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"01 Street Fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">, "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f92ac2ab1b0 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8126-xgkggr.png>, @original_filename="default-photo.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"track[photo]\"; filename=\"default-photo.png\"\r\nContent-Type: image/png\r\n">}}
+Completed 500 Internal Server Error in 23629ms (ActiveRecord: 8.8ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  (erb):3:in `<main>'
+  app/controllers/api/tracks_controller.rb:10:in `create'
+
+Started POST "/api/tracks" for ::1 at 2019-06-04 18:25:48 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"01 street fighter", "private"=>"false", "description"=>"Test Track", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f92a8dedb58 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8126-5lbd8g.mp3>, @original_filename="01 Street Fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"01 Street Fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">, "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007f92a8dedae0 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8126-1uoj1do.png>, @original_filename="default-photo.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"track[photo]\"; filename=\"default-photo.png\"\r\nContent-Type: image/png\r\n">}}
+Completed 500 Internal Server Error in 23885ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+  app/controllers/api/tracks_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2019-06-04 18:27:41 -0400
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yUTA3whxapkWQZdvuZ9ERQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (58.2ms)
+Completed 200 OK in 1527ms (Views: 1515.7ms | ActiveRecord: 7.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-06-04 18:27:47 -0400
+Processing by Api::SessionsController#destroy as JSON
+Started DELETE "/api/session" for ::1 at 2019-06-04 18:27:47 -0400
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yUTA3whxapkWQZdvuZ9ERQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "61AKQsI4YEROszwNjG3s3g"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-661960860"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "61AKQsI4YEROszwNjG3s3g"], ["updated_at", "2019-06-04 22:27:47.553814"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 6.4ms)
+
+
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yUTA3whxapkWQZdvuZ9ERQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+Completed 404 Not Found in 6ms (Views: 0.4ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-04 18:27:55 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "lTCCaRydehJUN9lmJPwewA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-661960860"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "lTCCaRydehJUN9lmJPwewA"], ["updated_at", "2019-06-04 22:27:55.573886"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (17.1ms)
+Completed 200 OK in 147ms (Views: 48.0ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 18:31:04 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lTCCaRydehJUN9lmJPwewA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 909ms (Views: 902.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-04 18:31:30 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"street fighter", "private"=>"false", "description"=>"Test Track", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffcbc20a2b8 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8383-1vsvuxu.mp3>, @original_filename="01 Street Fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"01 Street Fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">, "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007ffcbc209e08 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8383-1s83c.png>, @original_filename="default-photo.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"track[photo]\"; filename=\"default-photo.png\"\r\nContent-Type: image/png\r\n">}}
+Completed 500 Internal Server Error in 3009ms (ActiveRecord: 14.2ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  (erb):3:in `<main>'
+  app/controllers/api/tracks_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2019-06-04 18:32:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lTCCaRydehJUN9lmJPwewA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 98ms (Views: 86.2ms | ActiveRecord: 8.4ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-04 18:32:35 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"01 street fighter", "private"=>"false", "description"=>"Test track", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffcbda625e0 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8383-cccw68.mp3>, @original_filename="01 Street Fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"01 Street Fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">, "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007ffcbda624f0 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8383-m3zcir.png>, @original_filename="default-photo.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"track[photo]\"; filename=\"default-photo.png\"\r\nContent-Type: image/png\r\n">}}
+Completed 500 Internal Server Error in 2339ms (ActiveRecord: 8.4ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  (erb):3:in `<main>'
+  app/controllers/api/tracks_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2019-06-04 18:33:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lTCCaRydehJUN9lmJPwewA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 135ms (Views: 123.0ms | ActiveRecord: 4.4ms)
+
+
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+Started GET "/" for ::1 at 2019-06-04 18:34:45 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lTCCaRydehJUN9lmJPwewA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 621ms (Views: 617.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 18:35:29 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lTCCaRydehJUN9lmJPwewA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 613ms (Views: 609.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-04 18:35:43 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"street fighter", "private"=>"false", "description"=>"", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffcc38c38f0 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8383-190vntr.mp3>, @original_filename="01 Street Fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"01 Street Fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+Completed 500 Internal Server Error in 4759ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+  app/controllers/api/tracks_controller.rb:10:in `create'
+
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3697248837647799420)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3697248837647799420)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3697248837647799420)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3697248837647799420)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-06-04 18:37:31 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lTCCaRydehJUN9lmJPwewA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 107ms (Views: 97.3ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-04 18:37:44 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"01 street fighter", "private"=>"false", "description"=>"Test Track", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffcc15bce38 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8383-5fy4at.mp3>, @original_filename="01 Street Fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"01 Street Fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+Completed 500 Internal Server Error in 2408ms (ActiveRecord: 10.2ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  (erb):3:in `<main>'
+  app/controllers/api/tracks_controller.rb:10:in `create'
+
+Started POST "/api/tracks" for ::1 at 2019-06-04 18:38:53 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"01 street fighter", "private"=>"false", "description"=>"Test Track", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffcc32324f0 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8383-14veath.mp3>, @original_filename="01 Street Fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"01 Street Fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+Completed 500 Internal Server Error in 28892ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+  app/controllers/api/tracks_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2019-06-04 18:41:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lTCCaRydehJUN9lmJPwewA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 123ms (Views: 118.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-04 18:42:10 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"street fighter", "private"=>"false", "description"=>"Test track", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffcc4842470 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8383-12qb0x7.mp3>, @original_filename="01 Street Fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"01 Street Fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+Completed 500 Internal Server Error in 1842ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+  app/controllers/api/tracks_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2019-06-04 18:45:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lTCCaRydehJUN9lmJPwewA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 82ms (Views: 78.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-04 18:45:32 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"01 street fighter", "private"=>"false", "description"=>"Test track", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffcc3349e10 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8383-1n2k4ky.mp3>, @original_filename="01 Street Fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"01 Street Fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+Completed 500 Internal Server Error in 1686ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+  app/controllers/api/tracks_controller.rb:10:in `create'
+
+Started GET "/" for ::1 at 2019-06-04 18:48:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lTCCaRydehJUN9lmJPwewA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 252ms (Views: 246.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-04 18:48:48 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"01 street fighter", "private"=>"false", "description"=>"", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffcbdcf9330 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8383-6dbz6m.mp3>, @original_filename="01 Street Fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"01 Street Fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+Completed 500 Internal Server Error in 2299ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+  app/controllers/api/tracks_controller.rb:10:in `create'
+
+  [1m[36mTrack Load (1.0ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrack Create (44.6ms)[0m  [1m[32mINSERT INTO "tracks" ("title", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Street Fighter"], ["user_id", 1], ["created_at", "2019-06-04 22:54:41.835464"], ["updated_at", "2019-06-04 22:54:41.835464"]]
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+[36m  S3 Storage (911.7ms) [0m[32mUploaded file to key: Jty3Uu1jq16827Jv9Y2ER2Vu (checksum: bBssVztpc1bXDJ1aIlMXWg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (2.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "Jty3Uu1jq16827Jv9Y2ER2Vu"], ["filename", "street-fighter.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 377377], ["checksum", "bBssVztpc1bXDJ1aIlMXWg=="], ["created_at", "2019-06-04 22:58:30.594558"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (1.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track_file"], ["record_type", "Track"], ["record_id", 1], ["blob_id", 1], ["created_at", "2019-06-04 22:58:30.615154"]]
+  [1m[36mTrack Update (40.4ms)[0m  [1m[33mUPDATE "tracks" SET "updated_at" = $1 WHERE "tracks"."id" = $2[0m  [["updated_at", "2019-06-04 22:58:30.618007"], ["id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 8a58e1ba-94d0-4bce-b032-d24649854e6e) to Async(default) with arguments: #<GlobalID:0x00007ffafc96d080 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8a58e1ba-94d0-4bce-b032-d24649854e6e] Performing ActiveStorage::AnalyzeJob (Job ID: 8a58e1ba-94d0-4bce-b032-d24649854e6e) from Async(default) with arguments: #<GlobalID:0x00007ffaff00a8c8 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8a58e1ba-94d0-4bce-b032-d24649854e6e]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8a58e1ba-94d0-4bce-b032-d24649854e6e]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8a58e1ba-94d0-4bce-b032-d24649854e6e]   [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8a58e1ba-94d0-4bce-b032-d24649854e6e] Performed ActiveStorage::AnalyzeJob (Job ID: 8a58e1ba-94d0-4bce-b032-d24649854e6e) from Async(default) in 95.3ms
+Started GET "/" for ::1 at 2019-06-04 19:01:46 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lTCCaRydehJUN9lmJPwewA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (4.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 1112ms (Views: 1101.8ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-04 19:02:06 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"Street Fighter", "private"=>"false", "description"=>"Test track", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007ffcc13973d8 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-8383-1oltilz.mp3>, @original_filename="street-fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"street-fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+Completed 500 Internal Server Error in 1921ms (ActiveRecord: 0.0ms)
+
+
+
+LoadError - Unable to autoload constant ActiveStorage::Blob::Analyzable, expected /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/models/active_storage/blob/analyzable.rb to define it:
+  app/controllers/api/tracks_controller.rb:10:in `create'
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3697248837647799420)[0m
+  ↳ bin/rails:9
+  [1m[35m (41.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3697248837647799420)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" ORDER BY "tracks"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/" for ::1 at 2019-06-04 19:26:22 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (94.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "lTCCaRydehJUN9lmJPwewA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (154.1ms)
+Completed 200 OK in 3328ms (Views: 3218.3ms | ActiveRecord: 106.2ms)
+
+
+Started GET "/api/tracks" for ::1 at 2019-06-04 19:26:25 -0400
+Processing by Api::TracksController#index as JSON
+  Rendering api/tracks/index.json.jbuilder
+  [1m[36mTrack Load (41.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (4.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (305.1ms)
+Completed 200 OK in 333ms (Views: 179.1ms | ActiveRecord: 141.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--aeedd909d4fb3102f10a2c2fd01d9f25a069d46a/street-fighter.mp3" for ::1 at 2019-06-04 19:26:26 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--aeedd909d4fb3102f10a2c2fd01d9f25a069d46a", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (5.1ms) [0m[34mGenerated URL for file at key: Jty3Uu1jq16827Jv9Y2ER2Vu (https://soundproud-dev.s3.amazonaws.com/Jty3Uu1jq16827Jv9Y2ER2Vu?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T232626Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=50004a751945acd277c36f705c80b11ca4bf1b4dd80bf0f3f5250440decd5145)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/Jty3Uu1jq16827Jv9Y2ER2Vu?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T232626Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=50004a751945acd277c36f705c80b11ca4bf1b4dd80bf0f3f5250440decd5145
+Completed 302 Found in 15ms (ActiveRecord: 0.4ms)
+
+
+Started POST "/api/tracks" for ::1 at 2019-06-04 19:26:47 -0400
+Processing by Api::TracksController#create as JSON
+  Parameters: {"track"=>{"user_id"=>"1", "title"=>"Street Fighter", "private"=>"false", "description"=>"Test Track", "track_file"=>#<ActionDispatch::Http::UploadedFile:0x00007f7f9cc1bd30 @tempfile=#<Tempfile:/var/folders/q0/lj7xb81n3jj6lj27f_78cfyh0000gn/T/RackMultipart20190604-10601-1dg4sk8.mp3>, @original_filename="street-fighter.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"track[track_file]\"; filename=\"street-fighter.mp3\"\r\nContent-Type: audio/mp3\r\n">}}
+[36m  S3 Storage (398.4ms) [0m[32mUploaded file to key: P9b7mvQmuoAgyBzeSR9XFk9A (checksum: bBssVztpc1bXDJ1aIlMXWg==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:10
+  [1m[36mActiveStorage::Blob Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "P9b7mvQmuoAgyBzeSR9XFk9A"], ["filename", "street-fighter.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 377377], ["checksum", "bBssVztpc1bXDJ1aIlMXWg=="], ["created_at", "2019-06-04 23:26:49.973595"]]
+  ↳ app/controllers/api/tracks_controller.rb:10
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/tracks_controller.rb:12
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/tracks_controller.rb:12
+  [1m[36mTrack Create (0.8ms)[0m  [1m[32mINSERT INTO "tracks" ("title", "user_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Street Fighter"], ["user_id", 1], ["created_at", "2019-06-04 23:26:51.353163"], ["updated_at", "2019-06-04 23:26:51.353163"], ["description", "Test Track"]]
+  ↳ app/controllers/api/tracks_controller.rb:12
+  [1m[36mActiveStorage::Attachment Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "track_file"], ["record_type", "Track"], ["record_id", 2], ["blob_id", 2], ["created_at", "2019-06-04 23:26:51.357418"]]
+  ↳ app/controllers/api/tracks_controller.rb:12
+  [1m[36mTrack Update (0.8ms)[0m  [1m[33mUPDATE "tracks" SET "updated_at" = $1 WHERE "tracks"."id" = $2[0m  [["updated_at", "2019-06-04 23:26:51.360813"], ["id", 2]]
+  ↳ app/controllers/api/tracks_controller.rb:12
+  [1m[35m (39.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/tracks_controller.rb:12
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d4134d1a-3ed1-4098-a325-a4c2d14e52d1) to Async(default) with arguments: #<GlobalID:0x00007f7f9acaa578 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/2>>
+  Rendering api/tracks/show.json.jbuilder
+  Rendered api/tracks/_track.json.jbuilder (22.3ms)
+  Rendered api/tracks/show.json.jbuilder (26.7ms)
+Completed 500 Internal Server Error in 3932ms (ActiveRecord: 46.2ms)
+
+
+
+NoMethodError - undefined method `photo' for #<Track:0x00007f7f97dfe558>:
+  app/views/api/tracks/_track.json.jbuilder:3:in `_app_views_api_tracks__track_json_jbuilder__1162934844761759676_70092976121600'
+  app/views/api/tracks/show.json.jbuilder:1:in `_app_views_api_tracks_show_json_jbuilder___2951001136643113716_70092992667400'
+  app/controllers/api/tracks_controller.rb:13:in `create'
+
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4134d1a-3ed1-4098-a325-a4c2d14e52d1] Performing ActiveStorage::AnalyzeJob (Job ID: d4134d1a-3ed1-4098-a325-a4c2d14e52d1) from Async(default) with arguments: #<GlobalID:0x00007f7f97f39e40 @uri=#<URI::GID gid://sound-proud/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4134d1a-3ed1-4098-a325-a4c2d14e52d1]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4134d1a-3ed1-4098-a325-a4c2d14e52d1]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4134d1a-3ed1-4098-a325-a4c2d14e52d1]   [1m[36mActiveStorage::Blob Update (1.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4134d1a-3ed1-4098-a325-a4c2d14e52d1]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4134d1a-3ed1-4098-a325-a4c2d14e52d1]   [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4134d1a-3ed1-4098-a325-a4c2d14e52d1]   ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d4134d1a-3ed1-4098-a325-a4c2d14e52d1] Performed ActiveStorage::AnalyzeJob (Job ID: d4134d1a-3ed1-4098-a325-a4c2d14e52d1) from Async(default) in 15.28ms
+Started GET "/api/tracks" for ::1 at 2019-06-04 19:27:05 -0400
+Processing by Api::TracksController#index as JSON
+  Rendering api/tracks/index.json.jbuilder
+  [1m[36mTrack Load (2.1ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (47.9ms)
+Completed 200 OK in 65ms (Views: 57.0ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--be792ded435dc7856d032d60c0dd0cf9902f5f25/street-fighter.mp3" for ::1 at 2019-06-04 19:27:05 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--be792ded435dc7856d032d60c0dd0cf9902f5f25", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (6.7ms) [0m[34mGenerated URL for file at key: P9b7mvQmuoAgyBzeSR9XFk9A (https://soundproud-dev.s3.amazonaws.com/P9b7mvQmuoAgyBzeSR9XFk9A?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T232705Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4fe6c3659e5ee277bf6bebbcceba403bdee2abfdc3dbd696b4b1e291b9459738)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/P9b7mvQmuoAgyBzeSR9XFk9A?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T232705Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4fe6c3659e5ee277bf6bebbcceba403bdee2abfdc3dbd696b4b1e291b9459738
+Completed 302 Found in 16ms (ActiveRecord: 1.0ms)
+
+

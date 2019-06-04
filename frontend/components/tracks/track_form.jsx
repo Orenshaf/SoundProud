@@ -9,7 +9,7 @@ class TrackForm extends React.Component {
             description: '',
             private: false,
             trackFile: null,
-            photoUrl: window.defaultPhoto
+            // photoFile: null
         }
 
         // this.genres = [
@@ -46,20 +46,28 @@ class TrackForm extends React.Component {
         // ]
 
         this.handleFormRender = this.handleFormRender.bind(this);
-        this.handleFile = this.handleFile.bind(this);
+        this.handleTrackFile = this.handleTrackFile.bind(this);
+        // this.handlePhotoFile = this.handlePhotoFile.bind(this);
         this.handlePrivacy = this.handlePrivacy.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.titleize = this.titleize.bind(this);
     }
 
 
-    handleFile(e) {
+    handleTrackFile(e) {
         // debugger;
         this.setState({ 
             trackFile: e.currentTarget.files[0], 
             title: this.titleize(e.currentTarget.files[0].name.split('.')[0].split('-'))
         })
     }
+
+    // handlePhotoFile(e) {
+    //     debugger;
+    //     this.setState({
+    //         photoFile: e.currentTarget.files[0],
+    //     })
+    // }
 
     handlePrivacy(e) {
         // debugger
@@ -75,10 +83,10 @@ class TrackForm extends React.Component {
         formData.append('track[user_id]', this.state.userId);
         formData.append('track[title]', this.state.title);
         formData.append('track[private]', this.state.private);
-        formData.append('track[description]', this.state.description)
+        formData.append('track[description]', this.state.description);
         formData.append('track[track_file]', this.state.trackFile);
-        formData.append('track[photo_url]', this.state.photoUrl);
-        // debugger;
+        // formData.append('track[photo]', this.state.photoFile);
+        debugger;
         this.props.uploadTrack(formData);
     }
 
@@ -119,9 +127,9 @@ class TrackForm extends React.Component {
                         </div>
 
                         <div className="upload-form-innards">
-                            <div className="track-image">
-                                <img src={this.state.photoUrl} />
-                            </div>
+                            {/* <div className="track-image">
+                                <input type="file" onChange={this.handlePhotoFile} />
+                            </div> */}
 
                             <div className="upload-form-innards-form">
                                 <form id="track-form" onSubmit={this.handleSubmit}>
@@ -172,7 +180,7 @@ class TrackForm extends React.Component {
                         <div className="upload-button">
                             <label htmlFor="files">
                                 <p className="invisible-upload-button">or choose files to upload</p> 
-                                <input id="files" type="file" onChange={this.handleFile} />
+                                <input id="files" type="file" onChange={this.handleTrackFile} />
                             </label>
 
                         </div>
