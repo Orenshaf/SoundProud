@@ -1,5 +1,6 @@
 // Core
 @import "base/colors.scss";
+@import "base/fonts.scss";
 
 .upload-page {
     position: absolute;
@@ -13,7 +14,13 @@
     box-sizing: border-box;
     justify-content: space-between;
     border-bottom: 1px solid #f2f2f2;
-    padding: 0 15px 2px;
+    padding: 0 30px 2px;
+    height: 48px;
+    font-family: 'Interstate';
+}
+
+.upload-page-nav-links {
+    display: flex;
     height: 48px;
 }
 
@@ -22,10 +29,21 @@
     border: none;
     font-size: 14px;
     box-sizing: border-box;
-    margin: 0 14px;
+    margin-right: 24px;
+    padding: 15px 0;
+}
+.upload-page-nav-link {
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    border: none;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin-right: 24px;
+    padding: 16px 0 15px;
 }
 
-.upload-page-nav-button:hover {
+.upload-page-nav-link:hover {
     border-bottom: 1px solid black;
     cursor: pointer;
 }
@@ -33,6 +51,18 @@
 #for-creators {
     border: none;
     cursor: default;
+    margin-right: 0;
 }
 
+.active2 {
+    color: $orange;
+    background: none;
+    text-decoration: none;
+    border-bottom: 1px solid $orange;
+}
+
+.active2:hover {
+    border-bottom: 1px solid $orange;
+    cursor: default;
+}
 

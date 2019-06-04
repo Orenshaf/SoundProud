@@ -6,8 +6,8 @@
     display: block;
     margin: 0 auto;
     margin-top: 90px;
-    width: 800px;
-    height: 457px;
+    width: 798px;
+    height: 386px;
     box-shadow: 0 2px 12px -5px rgba(0,0,0,.1);
     border-radius: 2px;
     border: 1px solid #f2f2f2;
@@ -19,22 +19,23 @@
     height: 344px;
     width: 798px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .upload-file-container h1 {
+    font-family: 'Interstate';
     font-size: 22px;
     margin-bottom: 19px;
+    margin-top: 3px;
 }
 
 .file-type-info {
     text-align: center;
     font-size: 12px;
-    letter-spacing: 0.6px;
     width: 798px;
     height: 16px;
     padding-bottom: 26px;
-    border-bottom: 1px solid #f2f2f2;
+    font-family: "Lucida Grande";
 }
 
 #files {
@@ -63,27 +64,44 @@
     font-weight: 100;
     line-height: 0.9em;
     cursor: pointer;
+    font-family: "Interstate";
 }
 
 .invisible-upload-button {
-    padding: 7px 51px;
+    padding: 7px 51px 9px;
     cursor: pointer;
+}
+
+.playlist-check {
+    margin-right: 5px;
 }
 
 .playlist-question {
     font-size: 12px;
     font-weight: 400;
     margin-top: 10px;
+    font-family: "Lucida Grande"
+}
+
+.private-question {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 13px;
+    margin-bottom: 99px;
+    font-family: "Lucida Grande"
 }
 
 .privacy {
-    margin: 4px;
-    cursor: pointer;
-    
+    margin: 0 6px 0 8px;
+    cursor: pointer; 
 }
 
 .public {
-    margin-right: 4px;
+    margin-right: 9px;
+    cursor: pointer;
+}
+
+.private {
     cursor: pointer;
 }
 
@@ -102,7 +120,7 @@ input[type='radio'] {
 
 .upload-prompt {
     margin: 35px auto;
-    margin-top: 35px;
+    margin-bottom: 18px;
     width: 796px;
     height: 42px;
     background: #f5f5f5;
@@ -115,7 +133,6 @@ input[type='radio'] {
     padding: 27px;
     margin: 0 auto;
     width: 801px;
-    height: 706px;
     border: 1px solid #e2e2e2;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
@@ -135,13 +152,14 @@ input[type='radio'] {
     font-weight: 700;
     padding-bottom: 11px;
     border-bottom: 1px solid $orange;
+    font-family: 'Interstate reg';
 }
 
 .border {
     height: 5px;
     width: 400px;
     display: inline-block;
-    margin-bottom: -3px;
+    margin-bottom: -5px;
 }
 
 .blue {
@@ -155,3 +173,29 @@ input[type='radio'] {
     background-color: #f50;
     background-image: linear-gradient(to right,#fd7722,#fc6621);
 }
+
+.upload-form-innards {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    padding: 27px 0; 
+}
+
+.track-image {
+    width: 260px;
+    height: 260px;
+    background-image: linear-gradient(135deg,#846170,#70929c);
+}
+
+.upload-form-innards-form {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: space-between;
+    padding: 8px 0 0 20px;
+    font-family: 'Lucida Grande';
+    font-size: 12px;
+}
+

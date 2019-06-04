@@ -25,7 +25,6 @@
  @import 'splash.scss';
  @import 'modal.scss';
  @import 'navbar.scss';
- 
 
  body {
     font-family: 'Interstate light', sans-serif;
@@ -39,7 +38,7 @@
  .app {
     display: flex;
     width: 1240px;
-    height: 5000px;
+    height: 100vh;
     margin: 0 auto;
     background: white;
     position: relative;

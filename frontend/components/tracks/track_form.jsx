@@ -10,6 +10,39 @@ class TrackForm extends React.Component {
             trackFile: null
         }
 
+        // this.genres = [
+        //     "Alternative Rock",
+        //     "Ambient",
+        //     "Classical",
+        //     "Country",
+        //     "Dance & EDM",
+        //     "Dancehall",
+        //     "Deep House",
+        //     "Disco",
+        //     "Drum & Bass",
+        //     "Dubstep",
+        //     "Electronic",
+        //     "Folk & Singer-Songwriter",
+        //     "Hip-Hop $ Rap",
+        //     "House",
+        //     "Indie",
+        //     "Jazz & Blues",
+        //     "Latin",
+        //     "Metal",
+        //     "Piano",
+        //     "Pop",
+        //     "R&B & Soul",
+        //     "Reggae",
+        //     "Reggeaton",
+        //     "Rock",
+        //     "Sountrack",
+        //     "Techno",
+        //     "Trance",
+        //     "Trap",
+        //     "Triphop",
+        //     "World"
+        // ]
+
         this.handleFormRender = this.handleFormRender.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handlePrivacy = this.handlePrivacy.bind(this);
@@ -63,13 +96,13 @@ class TrackForm extends React.Component {
         if (this.state.trackFile) {
             return (
                 <>
-                    <div className="extra-files">
+                    {/* <div className="extra-files">
 
                     </div>
 
                     <div className="upload-prompt">
 
-                    </div>
+                    </div> */}
                     <div className="border blue"></div>
                     <div className="border orange"></div>
                     <div className="track-form-final-container">
@@ -78,23 +111,28 @@ class TrackForm extends React.Component {
                         </div>
 
                         <div className="upload-form-innards">
-                            <form onSubmit={this.handleSubmit}>
-                                <label>
-                                    Title <span className="red-splat">*</span>
+                            <div className="track-image">
+
+                            </div>
+                            <div className="upload-form-innards-form">
+                                <form onSubmit={this.handleSubmit}>
+                                    <label>
+                                        Title <span className="red-splat">*</span>
+                                        <br />
+                                        <input
+                                            type="text"
+                                            value={this.state.title}
+                                            onChange={this.handleChange('title')}
+                                        />
+                                    </label>
                                     <br />
-                                    <input
-                                        type="text"
-                                        value={this.state.title}
-                                        onChange={this.handleChange('title')}
-                                    />
-                                </label>
-                                <br />
-                                <input type="radio" name="false" checked={this.state.private ? "" : "checked"} onChange={this.handlePrivacy} /> <label htmlFor="public"><span className="public">Public</span></label>
-                                <br />
-                                <input type="radio" name="true" checked={this.state.private ? "checked" : ""} onChange={this.handlePrivacy} /> <label htmlFor="private"><span className="public">Private</span></label>
-                                <br />
-                                <input type="submit" value="Save" />
-                            </form>
+                                    <input type="radio" name="false" checked={this.state.private ? "" : "checked"} onChange={this.handlePrivacy} /> <label htmlFor="public"><span className="public">Public</span></label>
+                                    <br />
+                                    <input type="radio" name="true" checked={this.state.private ? "checked" : ""} onChange={this.handlePrivacy} /> <label htmlFor="private"><span className="public">Private</span></label>
+                                    <br />
+                                    <input type="submit" value="Save" />
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </>
@@ -112,15 +150,15 @@ class TrackForm extends React.Component {
 
                         </div>
                         <div className="playlist-question">
-                           <input type="checkbox"/>Make a playlist when multiple files are selected
+                            <input className="playlist-check" type="checkbox" />Make a playlist when multiple files are selected
                         </div>
 
-                        <div className="playlist-question">
+                        <div className="private-question">
                             <label>
                                 <span className="privacy">Privacy:</span> 
                                 <input type="radio" name="false" checked={this.state.private ? "" : "checked"} onChange={this.handlePrivacy}/> <label htmlFor="public"><span className="public">Public</span></label>
 
-                                <input type="radio" name="true" checked={this.state.private ? "checked" : ""} onChange={this.handlePrivacy}/> <label htmlFor="private"><span className="public">Private</span></label> 
+                                <input type="radio" name="true" checked={this.state.private ? "checked" : ""} onChange={this.handlePrivacy}/> <label htmlFor="private"><span className="private">Private</span></label> 
                             </label>
                         </div>
                     </div>

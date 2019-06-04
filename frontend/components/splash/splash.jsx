@@ -27,7 +27,7 @@ class Splash extends React.Component {
                     <div className="header-nav">
                         <button onClick={() => this.props.openModal('loginInfo')} className="splash-button sign-in">Sign in</button>
                         <button onClick={() => this.props.openModal('loginInfo')} className="splash-button create-account">Create account</button>
-                        <button className="splash-button welcome">For Creators</button>
+                        {/* <button className="splash-button welcome">For Creators</button> */}
                     </div>
                 </div>
                 <div className={`${this.state.header ? "splash-header-one" : "splash-header-two"}`}>
