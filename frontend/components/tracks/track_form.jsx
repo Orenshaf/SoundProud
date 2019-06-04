@@ -9,7 +9,7 @@ class TrackForm extends React.Component {
             description: '',
             private: false,
             trackFile: null,
-            // photoFile: null
+            photoFile: null
         }
 
         // this.genres = [
@@ -47,7 +47,7 @@ class TrackForm extends React.Component {
 
         this.handleFormRender = this.handleFormRender.bind(this);
         this.handleTrackFile = this.handleTrackFile.bind(this);
-        // this.handlePhotoFile = this.handlePhotoFile.bind(this);
+        this.handlePhotoFile = this.handlePhotoFile.bind(this);
         this.handlePrivacy = this.handlePrivacy.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.titleize = this.titleize.bind(this);
@@ -62,12 +62,12 @@ class TrackForm extends React.Component {
         })
     }
 
-    // handlePhotoFile(e) {
-    //     debugger;
-    //     this.setState({
-    //         photoFile: e.currentTarget.files[0],
-    //     })
-    // }
+    handlePhotoFile(e) {
+        debugger;
+        this.setState({
+            photoFile: e.currentTarget.files[0],
+        })
+    }
 
     handlePrivacy(e) {
         // debugger
@@ -85,8 +85,8 @@ class TrackForm extends React.Component {
         formData.append('track[private]', this.state.private);
         formData.append('track[description]', this.state.description);
         formData.append('track[track_file]', this.state.trackFile);
-        // formData.append('track[photo]', this.state.photoFile);
-        debugger;
+        formData.append('track[photo]', this.state.photoFile);
+        // debugger;
         this.props.uploadTrack(formData);
     }
 
@@ -127,9 +127,9 @@ class TrackForm extends React.Component {
                         </div>
 
                         <div className="upload-form-innards">
-                            {/* <div className="track-image">
+                            <div className="track-image">
                                 <input type="file" onChange={this.handlePhotoFile} />
-                            </div> */}
+                            </div>
 
                             <div className="upload-form-innards-form">
                                 <form id="track-form" onSubmit={this.handleSubmit}>
