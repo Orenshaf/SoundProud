@@ -53,12 +53,12 @@ class LoginForm extends React.Component{
             <div className="login-info-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div className="login-info-form">
-                        <button form="" className="login-info-input demo-login modal-item loginInfo" onClick={this.switchModal}>&#9668; {this.state.loginInfo}</button>
+                        <button form="" className="login-info-input demo-login modal-item loginInfo modal-buttons" onClick={this.switchModal}>&#9668; {this.state.loginInfo}</button>
                         <input
                             type="password"
                             value={this.state.password}
                             onChange={this.handleChange('password')}
-                            className="login-info-input demo-login modal-item"
+                            className="login-info-input demo-login modal-item modal-buttons"
                             placeholder="Your Password *"
                         />
                         {this.renderErrors()}

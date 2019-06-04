@@ -70,24 +70,32 @@ class TrackForm extends React.Component {
                     <div className="upload-prompt">
 
                     </div>
+                    <div className="border blue"></div>
+                    <div className="border orange"></div>
                     <div className="track-form-final-container">
-                        <form onSubmit={this.handleSubmit}>
-                            <label>
-                                Title <span className="red-splat">*</span>
-                                <br/>
-                                <input 
-                                    type="text" 
-                                    value={this.state.title}
-                                    onChange={this.handleChange('title')}
-                                />
-                            </label>
-                            <br/>
-                            <input type="radio" name="false" checked={this.state.private ? "" : "checked"} onChange={this.handlePrivacy} /> <label htmlFor="public"><span className="public">Public</span></label>
-                            <br/>
-                            <input type="radio" name="true" checked={this.state.private ? "checked" : ""} onChange={this.handlePrivacy} /> <label htmlFor="private"><span className="public">Private</span></label> 
-                            <br/>
-                            <input type="submit" value="Save"/>
-                        </form>
+                        <div className="upload-form-tabs">
+                            <button className="basic-info-tab">Basic Info</button>
+                        </div>
+
+                        <div className="upload-form-innards">
+                            <form onSubmit={this.handleSubmit}>
+                                <label>
+                                    Title <span className="red-splat">*</span>
+                                    <br />
+                                    <input
+                                        type="text"
+                                        value={this.state.title}
+                                        onChange={this.handleChange('title')}
+                                    />
+                                </label>
+                                <br />
+                                <input type="radio" name="false" checked={this.state.private ? "" : "checked"} onChange={this.handlePrivacy} /> <label htmlFor="public"><span className="public">Public</span></label>
+                                <br />
+                                <input type="radio" name="true" checked={this.state.private ? "checked" : ""} onChange={this.handlePrivacy} /> <label htmlFor="private"><span className="public">Private</span></label>
+                                <br />
+                                <input type="submit" value="Save" />
+                            </form>
+                        </div>
                     </div>
                 </>
             )
