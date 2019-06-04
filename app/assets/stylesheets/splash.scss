@@ -2,6 +2,9 @@
  @import "base/colors.scss";
  @import "base/fonts.scss";
 
+ // CSS Reset
+ @import "base/reset.scss";
+ 
 .splash-header {
     display: block;
     background: image-url('soundproud_splash.png'); 
@@ -30,6 +33,7 @@
     width: 48px;
     margin-right: 3px;
     margin-bottom: 2px;
+    margin-left: 1px;
  }
 
  .header-name {
@@ -123,8 +127,8 @@
 
  #soundproud-splash {
      font-family: 'Interstate reg';
-     margin-bottom: -3px;
-     margin-left: 2px;
+     margin-bottom: -2px;
+     margin-left: 1px;
      font-weight: 600;
      letter-spacing: 1px;
  }

@@ -31390,3 +31390,440 @@ Completed 200 OK in 44ms (Views: 0.3ms | ActiveRecord: 17.7ms)
 Completed 200 OK in 50ms (Views: 0.2ms | ActiveRecord: 20.0ms)
 
 
+Started GET "/api/tracks" for ::1 at 2019-06-03 20:56:17 -0400
+Started POST "/api/session" for ::1 at 2019-06-03 20:56:17 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Api::TracksController#index as JSON
+  [1m[35m (41.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  Rendering api/tracks/index.json.jbuilder
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mTrack Load (9.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 16ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (4.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (270.5ms)
+Completed 200 OK in 294ms (Views: 213.9ms | ActiveRecord: 70.4ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26/street-fighter.mp3" for ::1 at 2019-06-03 20:56:18 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8/street-fighter.mp3" for ::1 at 2019-06-03 20:56:18 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b/street-fighter.mp3" for ::1 at 2019-06-03 20:56:18 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8", "filename"=>"street-fighter"}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8/street-fighter.mp3" for ::1 at 2019-06-03 20:56:18 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22/street-fighter.mp3" for ::1 at 2019-06-03 20:56:18 -0400
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Blob Load (1.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (22.1ms) [0m[34mGenerated URL for file at key: tX4NLBtk6yKNyqxoi4jh5gji (https://soundproud-dev.s3.amazonaws.com/tX4NLBtk6yKNyqxoi4jh5gji?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=24c63fadef243957d732cfd2720978b0d37330569d25e34bd41a51c76b4ff9a3)[0m
+  [1m[36mActiveStorage::Blob Load (4.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to https://soundproud-dev.s3.amazonaws.com/tX4NLBtk6yKNyqxoi4jh5gji?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=24c63fadef243957d732cfd2720978b0d37330569d25e34bd41a51c76b4ff9a3
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+[36m  S3 Storage (1.7ms) [0m[34mGenerated URL for file at key: LrbiWJmxRwUwTY7YXefBEgBW (https://soundproud-dev.s3.amazonaws.com/LrbiWJmxRwUwTY7YXefBEgBW?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=6295c39db7fd274b1473875473ea33a46cf91384b79304bcb3447cbf01654cb5)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/LrbiWJmxRwUwTY7YXefBEgBW?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=6295c39db7fd274b1473875473ea33a46cf91384b79304bcb3447cbf01654cb5
+Completed 302 Found in 85ms (ActiveRecord: 5.5ms)
+
+
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8", "filename"=>"street-fighter"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22", "filename"=>"street-fighter"}
+Completed 302 Found in 72ms (ActiveRecord: 1.6ms)
+
+
+  [1m[36mActiveStorage::Blob Load (3.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[36m  S3 Storage (2.7ms) [0m[34mGenerated URL for file at key: ZU7NZGkHRsf6246Br4jvnUi2 (https://soundproud-dev.s3.amazonaws.com/ZU7NZGkHRsf6246Br4jvnUi2?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1b52daf9426bf8476c28c93d3bc73ea00648529d5fe34781252039912db2d612)[0m
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to https://soundproud-dev.s3.amazonaws.com/ZU7NZGkHRsf6246Br4jvnUi2?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1b52daf9426bf8476c28c93d3bc73ea00648529d5fe34781252039912db2d612
+Completed 302 Found in 66ms (ActiveRecord: 5.3ms)
+
+
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.0ms) [0m[34mGenerated URL for file at key: CzEJCrnKQU5UrBq2QjvxXEcW (https://soundproud-dev.s3.amazonaws.com/CzEJCrnKQU5UrBq2QjvxXEcW?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ed4fc62745ce3d3698672d65dd5498f117e5d70817ce2958a4688e4dd7934107)[0m
+[36m  S3 Storage (1.7ms) [0m[34mGenerated URL for file at key: DLkU3P2wGihUwdmeRqBZiyS3 (https://soundproud-dev.s3.amazonaws.com/DLkU3P2wGihUwdmeRqBZiyS3?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=cefaed03a5467c93160574064df09c12ca6b2f9840f826b6f0e9908fae507de5)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/DLkU3P2wGihUwdmeRqBZiyS3?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=cefaed03a5467c93160574064df09c12ca6b2f9840f826b6f0e9908fae507de5
+Completed 302 Found in 65ms (ActiveRecord: 9.7ms)
+
+
+Redirected to https://soundproud-dev.s3.amazonaws.com/CzEJCrnKQU5UrBq2QjvxXEcW?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ed4fc62745ce3d3698672d65dd5498f117e5d70817ce2958a4688e4dd7934107
+Completed 302 Found in 97ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5/street-fighter.mp3" for ::1 at 2019-06-03 20:56:18 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.4ms) [0m[34mGenerated URL for file at key: Stym9iTHtD88D2b3D8LgjU7A (https://soundproud-dev.s3.amazonaws.com/Stym9iTHtD88D2b3D8LgjU7A?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f8b6adf34bb36b90497b5244afbea3638fbb4139c102b63c271d9bf6bafaa913)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/Stym9iTHtD88D2b3D8LgjU7A?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005618Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f8b6adf34bb36b90497b5244afbea3638fbb4139c102b63c271d9bf6bafaa913
+Completed 302 Found in 19ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae/street-fighter.mp3" for ::1 at 2019-06-03 20:56:19 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Blob Load (3.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.7ms) [0m[34mGenerated URL for file at key: dUX6C8eZYmpHkgAAn2C9FW6c (https://soundproud-dev.s3.amazonaws.com/dUX6C8eZYmpHkgAAn2C9FW6c?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005619Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=71ac4c44c89b394dac34d109fe93d806fc9fc84d5b67c29e413f67b9f0fbcd74)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/dUX6C8eZYmpHkgAAn2C9FW6c?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T005619Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=71ac4c44c89b394dac34d109fe93d806fc9fc84d5b67c29e413f67b9f0fbcd74
+Completed 302 Found in 29ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 21:09:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 3488ms (Views: 3472.1ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/" for ::1 at 2019-06-03 21:12:26 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 294ms (Views: 289.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-03 21:13:05 -0400
+Started GET "/api/tracks" for ::1 at 2019-06-03 21:13:05 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "NmGNWQwJA2GAD5s4dVTrbQ"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "NmGNWQwJA2GAD5s4dVTrbQ"], ["updated_at", "2019-06-04 01:13:05.418480"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Processing by Api::TracksController#index as JSON
+  ↳ app/models/user.rb:58
+  Rendering api/tracks/index.json.jbuilder
+  Rendering api/users/show.json.jbuilder
+  [1m[36mTrack Load (5.8ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (6.3ms)
+Completed 200 OK in 162ms (Views: 20.4ms | ActiveRecord: 27.6ms)
+
+
+  [1m[36mActiveStorage::Attachment Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (118.2ms)
+Completed 200 OK in 130ms (Views: 109.9ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b/street-fighter.mp3" for ::1 at 2019-06-03 21:13:05 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26/street-fighter.mp3" for ::1 at 2019-06-03 21:13:05 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8/street-fighter.mp3" for ::1 at 2019-06-03 21:13:05 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22/street-fighter.mp3" for ::1 at 2019-06-03 21:13:05 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8/street-fighter.mp3" for ::1 at 2019-06-03 21:13:05 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b", "filename"=>"street-fighter"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Blob Load (4.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.0ms) [0m[34mGenerated URL for file at key: ZU7NZGkHRsf6246Br4jvnUi2 (https://soundproud-dev.s3.amazonaws.com/ZU7NZGkHRsf6246Br4jvnUi2?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011305Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8e46a6171e1bc0279d9a6514bf91adac401ce776d8462a9f8127309549dcdf86)[0m
+  [1m[36mActiveStorage::Blob Load (3.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to https://soundproud-dev.s3.amazonaws.com/ZU7NZGkHRsf6246Br4jvnUi2?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011305Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8e46a6171e1bc0279d9a6514bf91adac401ce776d8462a9f8127309549dcdf86
+Completed 302 Found in 14ms (ActiveRecord: 4.1ms)
+
+
+[36m  S3 Storage (2.3ms) [0m[34mGenerated URL for file at key: CzEJCrnKQU5UrBq2QjvxXEcW (https://soundproud-dev.s3.amazonaws.com/CzEJCrnKQU5UrBq2QjvxXEcW?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011305Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ccb88821c4c547277c4fa5d8264bbf01cb7e4ca30ed42c045d7e8251d59e4158)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/CzEJCrnKQU5UrBq2QjvxXEcW?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011305Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ccb88821c4c547277c4fa5d8264bbf01cb7e4ca30ed42c045d7e8251d59e4158
+Completed 302 Found in 61ms (ActiveRecord: 3.2ms)
+
+
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.5ms) [0m[34mGenerated URL for file at key: DLkU3P2wGihUwdmeRqBZiyS3 (https://soundproud-dev.s3.amazonaws.com/DLkU3P2wGihUwdmeRqBZiyS3?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011305Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0aa6d2ff265624bdcd3203a60678f5ba48192965bb70945d83ff656b3e1da8dc)[0m
+  [1m[36mActiveStorage::Blob Load (3.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to https://soundproud-dev.s3.amazonaws.com/DLkU3P2wGihUwdmeRqBZiyS3?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011305Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0aa6d2ff265624bdcd3203a60678f5ba48192965bb70945d83ff656b3e1da8dc
+Completed 302 Found in 10ms (ActiveRecord: 3.1ms)
+
+
+  [1m[36mActiveStorage::Blob Load (3.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (7.0ms) [0m[34mGenerated URL for file at key: tX4NLBtk6yKNyqxoi4jh5gji (https://soundproud-dev.s3.amazonaws.com/tX4NLBtk6yKNyqxoi4jh5gji?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011305Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2d360b920468115c1d39fa99effe1af54b912ca201e53975e63b76879835d1b7)[0m
+[36m  S3 Storage (2.2ms) [0m[34mGenerated URL for file at key: LrbiWJmxRwUwTY7YXefBEgBW (https://soundproud-dev.s3.amazonaws.com/LrbiWJmxRwUwTY7YXefBEgBW?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011305Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2038acfaf1c48aa3b268bd29c9bd9b54bf2c156693b5ce3e994a668c2e926efd)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/tX4NLBtk6yKNyqxoi4jh5gji?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011305Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2d360b920468115c1d39fa99effe1af54b912ca201e53975e63b76879835d1b7
+Redirected to https://soundproud-dev.s3.amazonaws.com/LrbiWJmxRwUwTY7YXefBEgBW?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011305Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2038acfaf1c48aa3b268bd29c9bd9b54bf2c156693b5ce3e994a668c2e926efd
+Completed 302 Found in 73ms (ActiveRecord: 3.8ms)
+
+
+Completed 302 Found in 41ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5/street-fighter.mp3" for ::1 at 2019-06-03 21:13:05 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.4ms) [0m[34mGenerated URL for file at key: Stym9iTHtD88D2b3D8LgjU7A (https://soundproud-dev.s3.amazonaws.com/Stym9iTHtD88D2b3D8LgjU7A?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011305Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3c1bbcfc65cbd7490ce20f06e3c53c2d4f3fbcbcc98292ff1953a8d4bc0ba397)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/Stym9iTHtD88D2b3D8LgjU7A?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011305Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3c1bbcfc65cbd7490ce20f06e3c53c2d4f3fbcbcc98292ff1953a8d4bc0ba397
+Completed 302 Found in 20ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae/street-fighter.mp3" for ::1 at 2019-06-03 21:13:06 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.7ms) [0m[34mGenerated URL for file at key: dUX6C8eZYmpHkgAAn2C9FW6c (https://soundproud-dev.s3.amazonaws.com/dUX6C8eZYmpHkgAAn2C9FW6c?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011306Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=258b1f5841926639430f70b5c6de2851a63edd662ca16c09317684a66d52b16a)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/dUX6C8eZYmpHkgAAn2C9FW6c?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011306Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=258b1f5841926639430f70b5c6de2851a63edd662ca16c09317684a66d52b16a
+Completed 302 Found in 39ms (ActiveRecord: 0.9ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-06-03 21:14:46 -0400
+Processing by Api::SessionsController#destroy as JSON
+Started DELETE "/api/session" for ::1 at 2019-06-03 21:14:46 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NmGNWQwJA2GAD5s4dVTrbQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NmGNWQwJA2GAD5s4dVTrbQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (5.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "3njntKGlP_13O87z1FctVw"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (3.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (1.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "3njntKGlP_13O87z1FctVw"], ["updated_at", "2019-06-04 01:14:46.972745"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "CFX_HytLFOA0cxUy261dCA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 55ms (Views: 0.3ms | ActiveRecord: 14.5ms)
+
+
+  [1m[36mUser Exists (2.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mUser Update (5.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "CFX_HytLFOA0cxUy261dCA"], ["updated_at", "2019-06-04 01:14:46.998538"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:58
+Completed 200 OK in 57ms (Views: 0.3ms | ActiveRecord: 17.5ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-03 21:14:53 -0400
+Started GET "/api/tracks" for ::1 at 2019-06-03 21:14:53 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"loginInfo"=>"admin@soundproud.com", "password"=>"[FILTERED]"}}
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26/street-fighter.mp3" for ::1 at 2019-06-03 21:14:53 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8/street-fighter.mp3" for ::1 at 2019-06-03 21:14:53 -0400
+  [1m[36mUser Load (14.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "admin@soundproud.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+Processing by Api::TracksController#index as JSON
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ActiveStorage::BlobsController#show as MP3
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b/street-fighter.mp3" for ::1 at 2019-06-03 21:14:53 -0400
+  Rendering api/tracks/index.json.jbuilder
+  ↳ app/models/user.rb:58
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27c3145364f312f13f0e56f1703be5fd3ce70a26", "filename"=>"street-fighter"}
+  [1m[36mTrack Load (1.4ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--453c738e8798af7cd91ec688563657d2cd23dfe8", "filename"=>"street-fighter"}
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b18adac9068d1456e101c0f42b884284ad4c1b", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:1
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (3.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mActiveStorage::Blob Load (2.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[36m  S3 Storage (1.3ms) [0m[34mGenerated URL for file at key: tX4NLBtk6yKNyqxoi4jh5gji (https://soundproud-dev.s3.amazonaws.com/tX4NLBtk6yKNyqxoi4jh5gji?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011453Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=202b35f828017b8fb4f20f4a33e87dd1b8b85db5cddcb2e0c5c4717fdf78bc26)[0m
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.9ms) [0m[34mGenerated URL for file at key: ZU7NZGkHRsf6246Br4jvnUi2 (https://soundproud-dev.s3.amazonaws.com/ZU7NZGkHRsf6246Br4jvnUi2?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011453Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=56c21aedb82dc61a909c7bdf7416682a00b07cdefc45425e3efab87f467c1eda)[0m
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to https://soundproud-dev.s3.amazonaws.com/ZU7NZGkHRsf6246Br4jvnUi2?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011453Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=56c21aedb82dc61a909c7bdf7416682a00b07cdefc45425e3efab87f467c1eda
+  [1m[36mActiveStorage::Attachment Load (8.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+Completed 302 Found in 36ms (ActiveRecord: 2.9ms)
+
+
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Redirected to https://soundproud-dev.s3.amazonaws.com/tX4NLBtk6yKNyqxoi4jh5gji?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011453Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=202b35f828017b8fb4f20f4a33e87dd1b8b85db5cddcb2e0c5c4717fdf78bc26
+  [1m[36mUser Exists (6.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "WNICXGj0ELZ-lQ_6jvw9ig"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (4.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  S3 Storage (2.2ms) [0m[34mGenerated URL for file at key: LrbiWJmxRwUwTY7YXefBEgBW (https://soundproud-dev.s3.amazonaws.com/LrbiWJmxRwUwTY7YXefBEgBW?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011453Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ccc6c6b5132c4e43022908d348e0d3a202df528f2406c11e973a3958440c0c65)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/LrbiWJmxRwUwTY7YXefBEgBW?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011453Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ccc6c6b5132c4e43022908d348e0d3a202df528f2406c11e973a3958440c0c65
+Completed 302 Found in 48ms (ActiveRecord: 1.7ms)
+
+
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+Completed 302 Found in 49ms (ActiveRecord: 0.7ms)
+
+
+  ↳ app/models/user.rb:58
+  [1m[36mActiveStorage::Attachment Load (3.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-301962526"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:58
+  [1m[36mActiveStorage::Blob Load (3.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mUser Update (2.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "WNICXGj0ELZ-lQ_6jvw9ig"], ["updated_at", "2019-06-04 01:14:54.030309"], ["id", 1]]
+  ↳ app/models/user.rb:58
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveStorage::Attachment Load (5.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  ↳ app/models/user.rb:58
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendering api/users/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (7.9ms)
+Completed 200 OK in 232ms (Views: 19.5ms | ActiveRecord: 34.6ms)
+
+
+  [1m[36mActiveStorage::Blob Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22/street-fighter.mp3" for ::1 at 2019-06-03 21:14:54 -0400
+  [1m[36mActiveStorage::Attachment Load (4.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--80c4709a674d99798af9afe8f1a2474f9b28fb22", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+[36m  S3 Storage (5.0ms) [0m[34mGenerated URL for file at key: DLkU3P2wGihUwdmeRqBZiyS3 (https://soundproud-dev.s3.amazonaws.com/DLkU3P2wGihUwdmeRqBZiyS3?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011454Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=df909df7b5cedc65a9c27705e9a7b4d572e88e1ef8e324a75e32d231ae1cd2c5)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/DLkU3P2wGihUwdmeRqBZiyS3?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011454Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=df909df7b5cedc65a9c27705e9a7b4d572e88e1ef8e324a75e32d231ae1cd2c5
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Track"], ["name", "track_file"], ["LIMIT", 1]]
+Completed 302 Found in 27ms (ActiveRecord: 0.8ms)
+
+
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/api/tracks/index.json.jbuilder:3
+  Rendered api/tracks/index.json.jbuilder (184.0ms)
+Completed 200 OK in 194ms (Views: 151.0ms | ActiveRecord: 42.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5/street-fighter.mp3" for ::1 at 2019-06-03 21:14:54 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--43b95041ae8297f924228434f354921e98ec96e5", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (3.0ms) [0m[34mGenerated URL for file at key: Stym9iTHtD88D2b3D8LgjU7A (https://soundproud-dev.s3.amazonaws.com/Stym9iTHtD88D2b3D8LgjU7A?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011454Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f86a1cc570e4ad00393d7bf006733bbab73b7253c62e51962f208a64183a615c)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/Stym9iTHtD88D2b3D8LgjU7A?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011454Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f86a1cc570e4ad00393d7bf006733bbab73b7253c62e51962f208a64183a615c
+Completed 302 Found in 14ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8/street-fighter.mp3" for ::1 at 2019-06-03 21:14:54 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBEZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--716eba6225653b826e8a5dd6c3dbb5c61b1980a8", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.9ms) [0m[34mGenerated URL for file at key: CzEJCrnKQU5UrBq2QjvxXEcW (https://soundproud-dev.s3.amazonaws.com/CzEJCrnKQU5UrBq2QjvxXEcW?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011454Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=12370c66e4f98f660914555de6f3043c876f5f60b7e0aed3f34685d2b62451de)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/CzEJCrnKQU5UrBq2QjvxXEcW?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011454Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=12370c66e4f98f660914555de6f3043c876f5f60b7e0aed3f34685d2b62451de
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae/street-fighter.mp3" for ::1 at 2019-06-03 21:14:54 -0400
+Processing by ActiveStorage::BlobsController#show as MP3
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBFUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--12b2886d37f370966d7fdc09e9c9d188ba468dae", "filename"=>"street-fighter"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ /Users/orenshafir/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.9ms) [0m[34mGenerated URL for file at key: dUX6C8eZYmpHkgAAn2C9FW6c (https://soundproud-dev.s3.amazonaws.com/dUX6C8eZYmpHkgAAn2C9FW6c?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011454Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a0db70229118a41c9633a4ac6a386d0c3e1c940825cde097a10920df721d06aa)[0m
+Redirected to https://soundproud-dev.s3.amazonaws.com/dUX6C8eZYmpHkgAAn2C9FW6c?response-content-disposition=attachment%3B%20filename%3D%22street-fighter.mp3%22%3B%20filename%2A%3DUTF-8%27%27street-fighter.mp3&response-content-type=audio%2Fmpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAX6F3F2YU6NYA7OGW%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T011454Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a0db70229118a41c9633a4ac6a386d0c3e1c940825cde097a10920df721d06aa
+Completed 302 Found in 19ms (ActiveRecord: 0.4ms)
+
+
