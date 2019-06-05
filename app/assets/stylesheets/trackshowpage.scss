@@ -81,8 +81,26 @@
     box-sizing: border-box;
     margin: 5px;
  }
- 
+
  .edit-buttons {
      display: flex;
  }
+
+ .image-edit-button {
+    margin: 20px;
+    z-index: 100;
+    background: white;
+    opacity: 0.5;
+ }
+
+ .image-edit-button p:hover {
+     cursor: pointer;
+     opacity: 0.8;
+ }
+
+ .image-edit-button:hover {
+     cursor: pointer;
+     opacity: 0.8;     
+ }
+
 

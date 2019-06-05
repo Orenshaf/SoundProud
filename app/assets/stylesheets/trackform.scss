@@ -183,6 +183,7 @@ input[type='radio'] {
 }
 
 .track-image {
+    position: absolute;
     width: 260px;
     height: 260px;
 }
@@ -267,7 +268,10 @@ input[type='radio'] {
 
 .track-image-container {
     display: flex;
-    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 260px;
+    height: 260px;
 }
 
 .edit-form {
