@@ -1,4 +1,8 @@
 json.array! @tracks do |track|
     json.extract! track, :id, :title
-    json.photoUrl url_for(track.photo)
+    if track.photo.attached? 
+        json.photoUrl url_for(track.photo)
+    else
+        json.photoUrl image_url('default-photo.png')
+    end
 end

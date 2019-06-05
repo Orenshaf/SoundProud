@@ -94,10 +94,6 @@ class TrackForm extends React.Component {
             formData.append('track[photo]', this.state.photoFile);
             this.props.uploadTrack(formData);
         } else {
-            const file = new File('app/assets/images/default-photo.png');
-            const photoFile = file.open('app/assets/images/default-photo.png', 'default-photo.png');
-            // Continue working on making default file
-            debugger;
             const formData = new FormData();
             formData.append('track[user_id]', this.state.userId);
             formData.append('track[title]', this.state.title);
