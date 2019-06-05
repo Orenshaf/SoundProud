@@ -3,6 +3,8 @@ import React from 'react';
 class TrackShowPage extends React.Component {
     constructor(props) {
         super(props);
+
+        this.deleteTrack = this.deleteTrack.bind(this);
     }
 
     componentDidMount() {
@@ -17,13 +19,19 @@ class TrackShowPage extends React.Component {
         
     }
 
+    deleteTrack(){
+        this.props.deleteTrack(this.props.track.id).then(() => this.props.history.push('/'))
+    }
+
     render() {
+        debugger
         // const player = this.props.track ? <TrackPlayer trackUrl={this.props.track.trackUrl}/>: null;
         const player = null;
         const username = this.props.user ? this.props.user.username : null;
         const title = this.props.track ? this.props.track.title : null;
         const photo = this.props.track ? <img className="track-photo" src={this.props.track.photoUrl}/> : null;
         const editButton = this.props.user && this.props.track.user_id === this.props.currentUserId ? <button className="edit-button" onClick={() => this.props.openModal('trackEditForm')}><img src={window.editIcon} alt="" />Edit</button> : null;
+        const trashButton = this.props.user && this.props.track.user_id === this.props.currentUserId ? <button className="edit-button" onClick={this.deleteTrack}><img src={window.trashIcon} alt="" />Delete</button> : null;        
         let createdAt;
         if (this.props.track) {
             const timeNow = Date.now();
@@ -48,7 +56,11 @@ class TrackShowPage extends React.Component {
                         {photo}
                     </div>
                 </div>
-                {editButton}
+                <div className="edit-buttons">
+                    {editButton}
+                    {trashButton}
+                </div>
+                
             </div>
         )
     }

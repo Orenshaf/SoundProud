@@ -35824,3 +35824,4 @@ Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
   [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" ORDER BY "tracks"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mTrack Load (0.7ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
   [1m[36mTrack Load (1.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  [1m[36mTrack Load (1.9ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m

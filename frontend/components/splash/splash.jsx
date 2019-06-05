@@ -11,7 +11,6 @@ class Splash extends React.Component {
     }
 
     componentDidMount () {
-        // debugger
         this.intervalID = setInterval(() => this.setState({header: !this.state.header}), 5000)
     }
 
@@ -20,7 +19,6 @@ class Splash extends React.Component {
     }
 
     render () {
-        // debugger
         return (
             <>
                 <div className="header-top">

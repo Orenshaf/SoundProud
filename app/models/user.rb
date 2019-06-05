@@ -61,7 +61,6 @@ class User < ApplicationRecord
 
     def ensure_profile_url
         profile_url = rand.to_s[2..10]
-        # debugger
         self.username = nil if self.username.length == 0
         self.profile_url ||= 'user-' + profile_url
         self.username ||= 'user-' + profile_url

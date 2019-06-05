@@ -1,4 +1,4 @@
-import { RECEIVE_TRACKS, RECEIVE_TRACK } from '../actions/track_actions';
+import { RECEIVE_TRACKS, RECEIVE_TRACK, REMOVE_TRACK } from '../actions/track_actions';
 import { LOGOUT_CURRENT_USER } from '../actions/session_actions';
 import { merge } from 'lodash';
 
@@ -13,6 +13,10 @@ const tracksReducer = (oldState = {}, action) => {
         case RECEIVE_TRACK:
             newState = {[action.track.id]: action.track}
             return merge({}, oldState, newState);
+        case REMOVE_TRACK:
+            newState = merge({}, oldState)
+            delete newState[action.id];
+            return newState;
         case LOGOUT_CURRENT_USER:
             return {};
         default:

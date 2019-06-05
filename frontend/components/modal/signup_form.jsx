@@ -15,7 +15,6 @@ class SignupForm extends React.Component {
             usernameErrors: [],
             form: null,
         }
-        // debugger;
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleRedirect = this.handleRedirect.bind(this);
@@ -48,7 +47,6 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger;
         if (this.state.age.length === 0 && (this.state.gender === 'Indicate your gender' || this.state.gender === '')) {
             this.setState({ ageErrors: ['Enter your age.'], genderErrors: ['Please indicate your gender.'] })
         } else if (this.state.age.length === 0) {
@@ -213,7 +211,6 @@ class SignupForm extends React.Component {
     }
 
     render() {
-        // debugger
         return this.handleNextForm()
     }
 }
