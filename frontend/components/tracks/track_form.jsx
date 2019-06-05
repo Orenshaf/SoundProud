@@ -54,7 +54,6 @@ class TrackForm extends React.Component {
         this.titleize = this.titleize.bind(this);
     }
 
-
     handleTrackFile(e) {
         this.setState({ 
             trackFile: e.currentTarget.files[0], 
@@ -63,7 +62,7 @@ class TrackForm extends React.Component {
     }
 
     handlePhotoFile(e) {
-        // debugger;
+        debugger;
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
@@ -85,14 +84,28 @@ class TrackForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        const formData = new FormData();
-        formData.append('track[user_id]', this.state.userId);
-        formData.append('track[title]', this.state.title);
-        formData.append('track[private]', this.state.private);
-        formData.append('track[description]', this.state.description);
-        formData.append('track[track_file]', this.state.trackFile);
-        formData.append('track[photo]', this.state.photoFile);
-        this.props.uploadTrack(formData);
+        if (this.state.photoFile) {
+            const formData = new FormData();
+            formData.append('track[user_id]', this.state.userId);
+            formData.append('track[title]', this.state.title);
+            formData.append('track[private]', this.state.private);
+            formData.append('track[description]', this.state.description);
+            formData.append('track[track_file]', this.state.trackFile);
+            formData.append('track[photo]', this.state.photoFile);
+            this.props.uploadTrack(formData);
+        } else {
+            const file = new File('app/assets/images/default-photo.png');
+            const photoFile = file.open('app/assets/images/default-photo.png', 'default-photo.png');
+            // Continue working on making default file
+            debugger;
+            const formData = new FormData();
+            formData.append('track[user_id]', this.state.userId);
+            formData.append('track[title]', this.state.title);
+            formData.append('track[private]', this.state.private);
+            formData.append('track[description]', this.state.description);
+            formData.append('track[track_file]', this.state.trackFile);
+            this.props.uploadTrack(formData);
+        }
     }
 
     handleChange(field) {
