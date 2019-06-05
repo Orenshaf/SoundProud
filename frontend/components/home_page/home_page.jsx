@@ -6,9 +6,9 @@ class HomePage extends React.Component {
         this.handleLogout = this.handleLogout.bind(this);
     }
     
-    componentDidMount() {
-        this.props.fetchTracks();
-    }
+    // componentDidMount() {
+    //     this.props.fetchTracks();
+    // }
 
     handleLogout(){
         this.props.logout()
@@ -16,6 +16,7 @@ class HomePage extends React.Component {
     }
     
     render() {
+        // debugger;
         const tracks = this.props.tracks ? this.props.tracks.map( track => {
             // <audio src={track.trackUrl} controls></audio>
             return <li key={track.id}>{track.title}<img src={track.photoUrl} /></li>

@@ -63,7 +63,7 @@ class TrackForm extends React.Component {
     }
 
     handlePhotoFile(e) {
-        debugger;
+        // debugger;
         const file = e.currentTarget.files[0];
         const fileReader = new FileReader();
         fileReader.onloadend = () => {
@@ -109,7 +109,7 @@ class TrackForm extends React.Component {
     }
     
     handleFormRender() {
-        debugger;
+        // debugger;
         if (this.state.trackFile) {
             return (
                 <>
@@ -134,7 +134,7 @@ class TrackForm extends React.Component {
                         <div className="upload-form-innards">
                             <div className="track-image-container">
                                 <img className="track-image" src={this.state.photoUrl} />
-                                <div className="track-image">
+                                <div>
                                     <input type="file" onChange={this.handlePhotoFile} />
                                 </div>
                             </div>
