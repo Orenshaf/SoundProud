@@ -91,7 +91,6 @@ class LoginInfoForm extends React.Component {
     }
 
     render() {
-        // debugger;
         return this.handleNextForm()
     }
 }

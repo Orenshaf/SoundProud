@@ -1,5 +1,4 @@
 import React from 'react';
-import TrackPlayer from './track_player.jsx';
 
 class TrackShowPage extends React.Component {
     constructor(props) {
@@ -7,12 +6,12 @@ class TrackShowPage extends React.Component {
     }
 
     componentDidMount() {
-        debugger;
+
         this.props.fetchTrack(this.props.match.params.trackId);
     }
 
     componentDidUpdate() {
-        debugger
+
         if (Object.keys(this.props.track).length === 0) {
             this.props.fetchTrack(this.props.match.params.trackId);
         }
@@ -20,7 +19,6 @@ class TrackShowPage extends React.Component {
     }
 
     render() {
-        debugger;
         // const player = this.props.track ? <TrackPlayer trackUrl={this.props.track.trackUrl}/>: null;
         const player = null;
         const username = this.props.user ? this.props.user.username : null;

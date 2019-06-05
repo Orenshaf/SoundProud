@@ -268,3 +268,14 @@ input[type='radio'] {
     display: flex;
     flex-direction: column;
 }
+
+.edit-form {
+    background: white;
+    border: none;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.edit-form-bottom {
+    border: none;
+}

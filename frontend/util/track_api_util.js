@@ -21,3 +21,11 @@ export const uploadTrack = (formTrack) => (
         processData: false
     })
 )
+
+export const updateTrack = (track) => {
+    $.ajax({
+        method: 'PATCH',
+        url: `api/tracks/${track.id}`,
+        data: {track}
+    })
+}

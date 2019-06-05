@@ -24,3 +24,7 @@ export const uploadTrack = (formTrack) => dispatch => (
 export const fetchTrack = id => dispatch => (
     TrackAPIUtil.fetchTrack(id).then(payload => dispatch(receiveTrack(payload)))
 )
+
+export const updateTrack = (track) => dispatch => (
+    TrackAPIUtil.updateTrack(track.id).then(payload => dispatch(receiveTrack(payload)))
+)

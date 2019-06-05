@@ -5,9 +5,9 @@ class TrackFinalForm extends React.Component {
         super(props);
         this.state = {
             userId: this.props.trackInfo.userId,
+            title: this.props.trackInfo.title,
             private: this.props.trackInfo.private,
             trackFile: this.props.trackInfo.trackFile,
-            title: this.props.trackInfo.title,
             description: '',
             photoFile: null,
             photoUrl: window.defaultPhoto
