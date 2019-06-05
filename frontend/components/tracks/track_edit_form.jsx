@@ -11,12 +11,26 @@ class TrackEditForm extends React.Component {
             title: track.title,
             private: track.private,
             description: track.description,
+            photoFile: null,
             photoUrl: track.photoUrl
         }
 
-
+        this.handlePhotoFile = this.handlePhotoFile.bind(this);
         this.handlePrivacy = this.handlePrivacy.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handlePhotoFile(e) {
+        const file = e.currentTarget.files[0];
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+            this.setState({
+                photoFile: file, photoUrl: fileReader.result
+            })
+        }
+        if (file) {
+            fileReader.readAsDataURL(file);
+        }
     }
 
     handlePrivacy(e) {
@@ -32,8 +46,24 @@ class TrackEditForm extends React.Component {
         });
     }
 
-    handleSubmit () {
-        this.props.updateTrack(this.state).then(() => this.props.closeModal());
+    handleSubmit (e) {
+        e.preventDefault()
+        if (this.state.photoFile) {
+            const formData = new FormData();
+            formData.append('track[id]', this.state.id);
+            formData.append('track[title]', this.state.title);
+            formData.append('track[private]', this.state.private);
+            formData.append('track[description]', this.state.description);
+            formData.append('track[photo]', this.state.photoFile);
+            this.props.updateTrack(formData).then(() => this.props.closeModal());
+        } else {
+            const formData = new FormData();
+            formData.append('track[id]', this.state.id);
+            formData.append('track[title]', this.state.title);
+            formData.append('track[private]', this.state.private);
+            formData.append('track[description]', this.state.description);
+            this.props.updateTrack(formData).then(() => this.props.closeModal());
+        }
     }
 
     render () {
@@ -54,6 +84,9 @@ class TrackEditForm extends React.Component {
                     <div className="upload-form-innards">
                         <div className="track-image-container">
                             <img className="track-image" src={this.state.photoUrl} />
+                            <div>
+                                <input type="file" onChange={this.handlePhotoFile} />
+                            </div>
                         </div>
 
                         <div className="upload-form-innards-form">
