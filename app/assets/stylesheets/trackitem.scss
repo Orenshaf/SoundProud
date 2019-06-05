@@ -1,0 +1,14 @@
+// Core
+ @import "base/colors.scss";
+ @import "base/fonts.scss";
+ .track-item {
+    display: flex;
+    flex-direction: column;
+    width: 173px;
+    height: 200px;
+ }
+
+ .track-item img {
+     width: 173px;
+     height: 173px;
+ }

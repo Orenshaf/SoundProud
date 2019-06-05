@@ -1,0 +1,47 @@
+// Core
+ @import "base/colors.scss";
+ @import "base/fonts.scss";
+
+ .track-show-page-container {
+     display: flex;
+     align-items: flex-start;
+     justify-content: space-between;
+     position: absolute;
+     top: 46px;
+     margin: 0 auto;
+     background-image: linear-gradient(135deg,#846170,#70929c);
+     width: 1240px;
+     min-height: 380px;
+     max-height: 380px;
+     box-sizing: border-box;
+     padding: 20px 30px;
+ }
+
+ .track-info {
+     margin-top: 10px;
+ }
+ .track-info li {
+     width: fit-content;
+     background: black;
+     font-family: 'Interstate';
+ }
+
+ .track-username {
+     margin-bottom: 5px;    
+     color: #ccc;
+     font-size: 16px;
+     line-height: 1.2;
+     padding: 2px 7px 3px;
+ }
+
+ .track-title {
+     font-size: 24px;
+     color: white;
+     padding: 4px 7px;
+ }
+
+ .track-photo {
+     width: 340px;
+     height: 340px;
+     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+ }

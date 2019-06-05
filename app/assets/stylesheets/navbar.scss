@@ -85,6 +85,11 @@
     font-family: 'Interstate';
  }
 
+ #profile:hover {
+     filter: contrast(100%);
+     cursor: default;
+ }
+
  .dropdown-caret {
     font-size: 12px;
  }

@@ -7,9 +7,10 @@ export const receiveTracks = tracks => ({
     tracks
 })
 
-export const receiveTrack = track => ({
+export const receiveTrack = ({track, user}) => ({
     type: RECEIVE_TRACK,
-    track
+    track,
+    user
 })
 
 export const fetchTracks = () => dispatch => (
@@ -18,4 +19,8 @@ export const fetchTracks = () => dispatch => (
 
 export const uploadTrack = (formTrack) => dispatch => (
     TrackAPIUtil.uploadTrack(formTrack).then(payload => dispatch(receiveTrack(payload)))
+)
+
+export const fetchTrack = id => dispatch => (
+    TrackAPIUtil.fetchTrack(id).then(payload => dispatch(receiveTrack(payload)))
 )

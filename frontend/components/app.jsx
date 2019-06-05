@@ -3,6 +3,7 @@ import SplashContainer from '../components/splash/splash_container';
 import HomePageContainer from '../components/home_page/home_page_container';
 import LogoutPageContainer from '../components/logout_page/logout_page_container';
 import UploadPageContainer from '../components/upload_page/upload_page_container';
+import TrackShowPageContainer from '../components/tracks/track_show_page_container';
 import Modal from './modal/modal';
 import { Route, Switch } from 'react-router-dom';
 import { AuthRoute, PermitRoute } from '../util/route_util';
@@ -21,6 +22,7 @@ const App = () => (
                 <Route path="/upload" component={UploadPageContainer} />
                 <Route path="/logout" component={LogoutPageContainer} />
                 <Route path="/discover" component={HomePageContainer} />
+                <Route path="/:trackId" component={TrackShowPageContainer} />
                 <PermitRoute path="/" component={SplashContainer} />
             </Switch>
         </div>

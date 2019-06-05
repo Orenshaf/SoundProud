@@ -1,4 +1,5 @@
 import React from 'react';
+import { TrackItem } from '../tracks/track_item';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -17,8 +18,7 @@ class HomePage extends React.Component {
     
     render() {
         const tracks = this.props.tracks.length > 0 ? this.props.tracks.map( track => {
-            // <audio src={track.trackUrl} controls></audio>
-            return <li key={track.id}>{track.title}<img src={track.photoUrl} /></li>
+            return <TrackItem key={track.id} track={track}/>
         }) : null ;
         return (
             <div className="track-index">

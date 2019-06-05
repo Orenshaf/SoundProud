@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_USER, RECEIVE_USERNAME } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER, RECEIVE_USERNAME, LOGOUT_CURRENT_USER, RECEIVE_TRACK } from '../actions/session_actions';
 import { merge } from 'lodash';
 
 const usersReducer = (oldState = {}, action) => {
@@ -6,11 +6,15 @@ const usersReducer = (oldState = {}, action) => {
     let newState;
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            newState = { [action.currentUser.id]: action.currentUser }
-            return merge({}, oldState, newState)
+            newState = { [action.currentUser.id]: action.currentUser };
+            return merge({}, oldState, newState);
         case RECEIVE_USERNAME:
-            newState = { [action.user.id]: action.user }
-            return merge({}, oldState, newState)
+            newState = { [action.user.id]: action.user };
+            return merge({}, oldState, newState);
+        case LOGOUT_CURRENT_USER:
+            return {};
+        // case RECEIVE_TRACK:
+        //     newState = {}
         default:
             return oldState;
     }

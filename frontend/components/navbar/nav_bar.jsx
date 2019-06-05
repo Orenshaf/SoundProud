@@ -28,12 +28,13 @@ class NavBar extends React.Component {
             this.setState({dropdown: false});
         }
     }
-
+    
     toggleNavBar(){
         if (this.props.currentUser) {
             return (
                 <div className="nav-bar-container">
                     <div className="nav-bar">
+    
                         <NavLink to="/discover" className="nav-bar-button nav-bar-img-button logged-out" onClick={this.closeDropDown}><img className="nav-bar-img" src={window.soundCloudIcon} /></NavLink>                        
                         <NavLink to="/discover" className="nav-bar-button nav-button" activeClassName="active" onClick={this.closeDropDown}>Home</NavLink>
                         <div className="button-placeholder"></div>
@@ -42,8 +43,8 @@ class NavBar extends React.Component {
                         <div className="searchbar-placeholder"></div>
                         {/* <input className="login-info-input demo-login modal-item search-bar" type="text" placeholder="Search" /> */}
                         <NavLink to="/upload" className="nav-bar-button nav-button upload" activeClassName="active" onClick={this.closeDropDown}>Upload</NavLink>
-                        <div className="profile-placeholder"></div>
-                        {/* <button className="nav-bar-button" id="profile">{this.props.currentUser.username}<img className="caret" src={window.caretIcon} /></button> */}
+                        {/* <div className="profile-placeholder"></div> */}
+                        <button className="nav-bar-button" id="profile">{this.props.currentUser.username}{/* <img className="caret" src={window.caretIcon} /> */}</button>
                         <div className="small-button-placeholder"></div>
                         {/* <button className="nav-bar-button notification-button"><img className="notification-img" src={window.notificationIcon} /></button> */}
                         {/* <button className="nav-bar-button notification-button"><img className="notification-img" src={window.mailIcon} /></button> */}

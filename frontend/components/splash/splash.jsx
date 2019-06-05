@@ -12,7 +12,11 @@ class Splash extends React.Component {
 
     componentDidMount () {
         // debugger
-        setInterval(() => this.setState({header: !this.state.header}), 5000)
+        this.intervalID = setInterval(() => this.setState({header: !this.state.header}), 5000)
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.intervalID);
     }
 
     render () {

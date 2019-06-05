@@ -35812,3 +35812,12 @@ Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
 [ActiveJob] [ActiveStorage::PurgeJob] [de606894-9c8e-4de0-afa3-75a9d73fc3a9] [36m  S3 Storage (197.3ms) [0m[31mDeleted file from key: rtUHfnsmxwC9Jb8RvioqCm6E[0m
 [ActiveJob] [ActiveStorage::PurgeJob] [de606894-9c8e-4de0-afa3-75a9d73fc3a9] Performed ActiveStorage::PurgeJob (Job ID: de606894-9c8e-4de0-afa3-75a9d73fc3a9) from Async(default) in 287.69ms
   [1m[36mTrack Load (1.2ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "admin@soundproud.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "c_3WbZMfGzX8meWnhSJ7YA"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."profile_url" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["profile_url", "user-616068711"], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Update (10.8ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["username", "Admin"], ["updated_at", "2019-06-05 13:20:07.640345"], ["id", 1]]
+  [1m[35m (42.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
