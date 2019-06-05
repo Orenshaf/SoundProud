@@ -18,12 +18,7 @@ class HomePage extends React.Component {
     render() {
         const tracks = this.props.tracks ? this.props.tracks.map( track => {
             // <audio src={track.trackUrl} controls></audio>
-            return (
-                <>
-                    <li>{track.title}</li>
-                    <li key={track.id}><img src={track.photoUrl}/></li>
-                </>
-            ) 
+            return <li key={track.id}>{track.title}<img src={track.photoUrl} /></li>
         }) : null ;
         return (
             <div className="track-index">
