@@ -1,7 +1,9 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import LoginInfoFormContainer from './login_info_form_container'
+import LoginInfoFormContainer from './login_info_form_container';
+import TrackEditForm from '../tracks/track_form'
+
 
 class Modal extends React.Component { 
     constructor(props) {
@@ -30,6 +32,9 @@ class Modal extends React.Component {
             case 'loginInfo':
                 component = <LoginInfoFormContainer />;
                 break;
+            case 'trackEditForm':
+                component = <TrackEditForm />;
+                break
             default:
                 return null;
         }
@@ -46,7 +51,7 @@ class Modal extends React.Component {
     }
 }
 
-const msp = state => {
+const msp = (state, ownProps) => {
     return {
         modal: state.ui.modal
     };

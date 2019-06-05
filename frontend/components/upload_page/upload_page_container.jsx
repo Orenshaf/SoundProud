@@ -4,7 +4,7 @@ import { uploadTrack } from '../../actions/track_actions';
 import UploadPage from './upload_page';
 
 const msp = (state, ownProps) => ({
-    userId: state.session.id
+    userId: state.session.id,
 });
 
 const mdp = dispatch => ({

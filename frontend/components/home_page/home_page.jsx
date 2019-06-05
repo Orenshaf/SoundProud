@@ -8,6 +8,7 @@ class HomePage extends React.Component {
     }
     
     componentDidMount() {
+        debugger;
         this.props.fetchTracks();
     }
 

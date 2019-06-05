@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import TrackShowPage from './track_show_page';
 import { fetchTrack } from '../../actions/track_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
     debugger
@@ -15,6 +16,7 @@ const msp = (state, ownProps) => {
 
 const mdp = (dispatch) => ({
     fetchTrack: (id) => dispatch(fetchTrack(id)),
+    openModal: (modal) => dispatch(openModal(modal))
 })
 
 export default withRouter(connect(msp,mdp)(TrackShowPage));

@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import TrackForm from '../tracks/track_form';
 
 const UploadPage = props => {
-    
     return (
         <div className="upload-page">
             <div className="upload-page-nav">
@@ -14,7 +13,7 @@ const UploadPage = props => {
                 </div>
                 <button id="for-creators" className="upload-page-nav-button">For Creators on SoundProud</button>
             </div>
-            <TrackForm userId={props.userId} uploadTrack={props.uploadTrack}/>
+            <TrackForm userId={props.userId} uploadTrack={props.uploadTrack} history={props.history}/>
         </div>
     )
 }
