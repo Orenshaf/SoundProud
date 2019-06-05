@@ -55,7 +55,9 @@ class TrackFinalForm extends React.Component {
             formData.append('track[description]', this.state.description);
             formData.append('track[track_file]', this.state.trackFile);
             formData.append('track[photo]', this.state.photoFile);
-            this.props.uploadTrack(formData);
+            this.props.uploadTrack(formData).then((arg) => {
+                return this.handleRedirect(arg)
+            });
         } else {
             const formData = new FormData();
             formData.append('track[user_id]', this.state.userId);

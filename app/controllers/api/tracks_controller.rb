@@ -20,7 +20,7 @@ class Api::TracksController < ApplicationController
         if @track 
             render "api/tracks/show"
         else
-            render json: @track.errors.full_messages, status: 422
+            render json: ['No entity found'], status: 422
         end
     end
 
@@ -35,7 +35,6 @@ class Api::TracksController < ApplicationController
     end
 
     def destroy
-        debugger
         track = Track.find_by(id: params[:id])
         track.destroy
         render json: {id: params[:id]}

@@ -8,15 +8,13 @@ class TrackShowPage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchTrack(this.props.match.params.trackId);
+        this.props.fetchTrack(this.props.match.params.trackId).fail(() => this.props.history.push('/discover'));;
     }
 
     componentDidUpdate() {
-
-        if (Object.keys(this.props.track).length === 0) {
-            this.props.fetchTrack(this.props.match.params.trackId);
+        if (!this.props.user) {
+            this.props.fetchTrack(this.props.match.params.trackId).fail(() => this.props.history.push('/discover'));
         }
-        
     }
 
     deleteTrack(){
@@ -24,7 +22,6 @@ class TrackShowPage extends React.Component {
     }
 
     render() {
-        debugger
         // const player = this.props.track ? <TrackPlayer trackUrl={this.props.track.trackUrl}/>: null;
         const player = null;
         const username = this.props.user ? this.props.user.username : null;
