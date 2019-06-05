@@ -26,5 +26,5 @@ export const fetchTrack = id => dispatch => (
 )
 
 export const updateTrack = (track) => dispatch => (
-    TrackAPIUtil.updateTrack(track.id).then(payload => dispatch(receiveTrack(payload)))
+    TrackAPIUtil.updateTrack(track).then(payload => dispatch(receiveTrack(payload)))
 )

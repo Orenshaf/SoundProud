@@ -22,10 +22,10 @@ export const uploadTrack = (formTrack) => (
     })
 )
 
-export const updateTrack = (track) => {
+export const updateTrack = (track) => (
     $.ajax({
         method: 'PATCH',
         url: `api/tracks/${track.id}`,
         data: {track}
     })
-}
+)

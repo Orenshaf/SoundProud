@@ -37,7 +37,6 @@ class TrackEditForm extends React.Component {
     }
 
     render () {
-        debugger;
         return (
             <>
                 {/* <div className="extra-files">

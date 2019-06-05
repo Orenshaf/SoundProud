@@ -27,7 +27,7 @@ class Api::TracksController < ApplicationController
     def update
         @track = Track.find_by(id: params[:track][:id])
 
-        if @user.update(track_params)
+        if @track.update(track_params)
             render "api/tracks/show"
         else
             render json: @track.errors.full_messages, status: 422

@@ -6,7 +6,6 @@ class TrackShowPage extends React.Component {
     }
 
     componentDidMount() {
-
         this.props.fetchTrack(this.props.match.params.trackId);
     }
 
