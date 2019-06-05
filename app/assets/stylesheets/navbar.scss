@@ -121,7 +121,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
-  right: 1%;
+  right: 0;
   top: 100%;
   background-color: $black;
   min-width: 170px;
@@ -274,7 +274,7 @@
 
  .small-button-placeholder {
      height: 28px;
-     width: 92px;
+     width: 112px;
  }
 
  .logged-out-searchbar-placeholder {
