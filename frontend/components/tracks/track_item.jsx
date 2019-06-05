@@ -6,7 +6,7 @@ export const TrackItem = ({track}) => {
         <div className="track-item">
             {/* <audio src={track.trackUrl} controls></audio> */}
             <img src={track.photoUrl} />
-            <NavLink to={`/${track.id}`}><h1>{track.title}</h1></NavLink>
+            <NavLink className="track-item-link" to={`/${track.id}`}><h1>{track.title}</h1></NavLink>
         </div>
     )
 }

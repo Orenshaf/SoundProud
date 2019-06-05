@@ -1,7 +1,31 @@
-.track-index {
+// Core
+ @import "base/colors.scss";
+ @import "base/fonts.scss";
+
+.home-page-container {
     position: absolute;
-    top: 100px;
+    top: 46px;
+    width: 100%;
+}
+
+.track-index {
+    margin: 54px auto;
+    width: 90%;
+    overflow: scroll;
+    display: flex;
     height: fit-content;
+}
+
+.track-item {
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.track-item-link {
+    margin-top: 5px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Interstate';
 }
 
 .track-index img {

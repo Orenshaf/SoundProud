@@ -10,7 +10,8 @@ const msp = (state, ownProps) => {
     const user = state.entities.users[track.user_id];
     return ({
         user,
-        track
+        track,
+        currentUserId: state.session.id
     })
 }
 

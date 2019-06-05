@@ -22,10 +22,10 @@ class HomePage extends React.Component {
             return <TrackItem key={track.id} track={track}/>
         }) : null ;
         return (
-            <div className="track-index">
-                <ul>
+            <div className="home-page-container">
+                <div className="track-index">
                     {tracks}
-                </ul>
+                </div>
             </div>
         )
     }
