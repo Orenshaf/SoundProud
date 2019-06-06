@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
+import TrackPlayer from '../tracks/track_player';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -55,6 +56,8 @@ class NavBar extends React.Component {
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             )
         } else {

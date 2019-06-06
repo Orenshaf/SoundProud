@@ -1,0 +1,49 @@
+ @import "base/colors.scss";
+ @import "base/fonts.scss";
+
+ .play-button-photo {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 173px;
+     height: 173px;
+ }
+ .cf {
+     position: absolute;
+     content: " ";
+     display: hidden;
+     width: 100%
+ }
+
+ .photo {
+     position: relative;
+ }
+
+ .photo img {
+     width: 173px;
+     height: 173px;
+ }
+
+ .track-item-image-play {
+     display: none;
+     background: $orange;
+     z-index: 10;
+     width: 50px;
+     height: 50px;
+     padding: 10px;
+     margin-right: -172px;
+     border-radius: 50%;
+ }
+
+ .track-item-image-play:hover {
+    filter: contrast(150%);
+    cursor: pointer;
+ }
+
+ .show {
+     display: block;
+ }
+
+ .show-pos {
+    left: 51px;
+ }

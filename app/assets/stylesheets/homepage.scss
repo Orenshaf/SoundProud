@@ -11,24 +11,8 @@
 .track-index {
     margin: 54px auto;
     width: 90%;
+    padding: 20px;
+    height: fit-content;
     overflow: scroll;
     display: flex;
-    height: fit-content;
-}
-
-.track-item {
-    margin-right: 15px;
-    margin-bottom: 15px;
-}
-
-.track-item-link {
-    margin-top: 5px;
-    text-decoration: none;
-    color: black;
-    font-family: 'Interstate';
-}
-
-.track-index img {
-    max-width: 260px;
-    max-height: 260px;
 }

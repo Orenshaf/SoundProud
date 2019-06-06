@@ -1,12 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import TrackPlayButton from './track_play_button';
 
-export const TrackItem = ({track}) => {
-    return (
-        <div className="track-item">
-            {/* <audio src={track.trackUrl} controls></audio> */}
-            <img src={track.photoUrl} />
-            <NavLink className="track-item-link" to={`/${track.id}`}><h1>{track.title}</h1></NavLink>
-        </div>
-    )
+const TrackItem = ({track, fetchCurrentTrack}) => {
+        return (
+            <div className="track-item">
+                <TrackPlayButton track={track} fetchCurrentTrack={fetchCurrentTrack}/>
+                <NavLink className="track-item-link" to={`/${track.id}`}><h1>{track.title}</h1></NavLink>
+            </div>
+        )
 }
+
+export default TrackItem;
