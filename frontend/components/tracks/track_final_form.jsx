@@ -100,10 +100,12 @@ class TrackFinalForm extends React.Component {
                     <div className="upload-form-innards">
                         <div className="track-image-container">
                             <img className="track-image" src={this.state.photoUrl} />
-                            <div className="edit-button image-edit-button">
+                            <div className="image-edit-button">
                                 <label htmlFor="files">
-                                    <p>Upload image</p>
-                                    <input id="files" type="file" onChange={this.handlePhotoFile} />
+                                    <div className="inside">
+                                        <img src={window.cameraIcon} /><p>Upload image</p>
+                                        <input id="files" type="file" onChange={this.handlePhotoFile} />
+                                    </div>
                                 </label>
                             </div>
                         </div>

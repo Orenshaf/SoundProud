@@ -87,10 +87,19 @@
  }
 
  .image-edit-button {
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Interstate';
+    padding: 2px 6px;
+    box-sizing: border-box;
+    margin: 5px;
     margin: 20px;
     z-index: 100;
     background: white;
     opacity: 0.5;
+    font-size: 14px;
  }
 
  .image-edit-button p:hover {
@@ -101,6 +110,17 @@
  .image-edit-button:hover {
      cursor: pointer;
      opacity: 0.8;     
+ }
+
+ .image-edit-button img {
+     margin-right: 5px;
+     width: 20px;
+     height: 20px;
+ }
+
+ .inside {
+     display: flex;
+     align-items: center;
  }
 
 
