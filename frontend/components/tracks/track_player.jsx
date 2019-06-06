@@ -5,6 +5,7 @@ class TrackPlayer extends React.Component {
     constructor(props) {
         super(props);  
         this.state = {
+            ball: false,
             track: props.track,
             playing: false,
             currentTime: null,
@@ -14,6 +15,8 @@ class TrackPlayer extends React.Component {
     
         this.audioPlayer = React.createRef();
 
+        this.revealBall = this.revealBall.bind(this);
+        this.hideBall = this.hideBall.bind(this);
         this.play = this.play.bind(this);
         this.pause = this.pause.bind(this);
         this.playback = this.playback.bind(this);
@@ -60,6 +63,14 @@ class TrackPlayer extends React.Component {
         return `${hours}${minutes}:${seconds}`;
     }
 
+    revealBall(){
+        this.setState({ball: true});
+    }
+
+    hideBall() {
+        this.setState({ ball: false })
+    }
+
     pause() {
         this.audioPlayer.current.pause();
         this.setState({ playing: false })
@@ -91,8 +102,11 @@ class TrackPlayer extends React.Component {
                         {playback}
                         {playPause}
                         <p className="times current-time">{currentTime}</p>
-                        <div>
-                            <ProgressBar percentage={this.state.percentage} />
+                        <div className="progress-bar-container" onMouseEnter={this.revealBall} onMouseLeave={this.hideBall}>
+                            <div className="progress-bar">
+                                <input type="range" min="0" max="100" value={this.state.percentage} className="progress-bar" />
+                                <div className={`ball ${this.state.ball ? "show" : ""}`} style={{ left: `${this.state.percentage}%` }}></div>
+                            </div>
                         </div>
                         <p className="times">{duration}</p>
                     </div>
