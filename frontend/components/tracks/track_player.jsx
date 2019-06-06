@@ -7,6 +7,7 @@ class TrackPlayer extends React.Component {
         super(props);  
         this.state = {
             track: props.track,
+            playing: false,
             currentTime: null,
             duration: null,
             percentage: 0,
@@ -15,8 +16,9 @@ class TrackPlayer extends React.Component {
         this.audioPlayer = React.createRef();
 
         this.play = this.play.bind(this);
+        this.pause = this.pause.bind(this);
+        this.playback = this.playback.bind(this);
         this.createTimeStamp = this.createTimeStamp.bind(this);
-        this.updateTime = this.updateTime.bind(this);
     }
 
     componentDidMount() {
@@ -59,25 +61,36 @@ class TrackPlayer extends React.Component {
         return `${hours}${minutes}:${seconds}`;
     }
 
-    updateTime() {
-        debugger;
+    pause() {
+        this.audioPlayer.current.pause();
+        this.setState({ playing: false })
     }
+
 
     play() {
         this.audioPlayer.current.play();
+        this.setState({playing: true})
+    }
 
+    playback() {
+        this.audioPlayer.current.currentTime = 0;
+        this.setState({percentage: 0});
+        this.play();
     }
 
     render () {
         const duration = this.state.duration;
         const currentTime = this.state.currentTime;
+        const playback = <img className="pause-play" src={window.playbackIcon} onClick={this.playback} />
+        const playPause = this.state.playing ? <img className="pause-play" src={window.pauseIcon} onClick={this.pause} /> : <img className="pause-play" src={window.playIcon2} onClick={this.play} />
         return (
             <>
                 <audio ref={this.audioPlayer} src={this.state.track.trackUrl} preload="auto"></audio>
                 <div className="track-player-container">
                     <div className="track-player">
-                        <img src={window.playIcon2} onClick={this.play} />
-                        <p className="times">{currentTime}</p>
+                        {playback}
+                        {playPause}
+                        <p className="times current-time">{currentTime}</p>
                         <div>
                             <ProgressBar percentage={this.state.percentage} />
                         </div>

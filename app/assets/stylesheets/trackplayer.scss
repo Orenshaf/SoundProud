@@ -21,14 +21,15 @@
 }
 
 .track-player img {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
+    margin: 0 10px;
 }
 
 .progress-bar {
     position: relative; 
     height: 1px;
-    width: 350px;
+    width: 513px;
     background: #cecece;
 }
 
@@ -43,4 +44,12 @@
     font-family: 'Lucida Grande';
     font-size: 11px;
     margin: 5px;
+}
+
+.current-time {
+    color: $orange;
+}
+
+.pause-play:hover {
+    cursor: pointer;
 }
