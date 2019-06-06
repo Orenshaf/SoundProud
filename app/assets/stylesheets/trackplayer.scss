@@ -17,7 +17,7 @@
 .track-player {
     display: flex;
     align-items: center;
-    width: 1220px;
+    width: 1230px;
 }
 
 .track-player img {
@@ -28,9 +28,16 @@
 
 .progress-bar {
     position: relative; 
+    display: flex;
+    align-items: center;
+    overflow: visible;
     height: 1px;
     width: 513px;
     background: #cecece;
+}
+
+.progress-bar:hover {
+    cursor: pointer;
 }
 
 .filler {
@@ -39,6 +46,7 @@
     border: $orange;
     transition: width .2s ease-in;
 }
+
 
 .times {
     font-family: 'Lucida Grande';
@@ -51,5 +59,25 @@
 }
 
 .pause-play:hover {
+    cursor: pointer;
+}
+
+.ball {
+    display: none;
+    background: $orange;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.progress-bar-container {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding: 10px;
+}
+
+.progress-bar-container:hover {
     cursor: pointer;
 }

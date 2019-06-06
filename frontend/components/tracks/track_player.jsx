@@ -1,5 +1,4 @@
 import React from 'react';
-import ProgessBar from './progress_bar';
 import ProgressBar from './progress_bar';
 
 class TrackPlayer extends React.Component {
