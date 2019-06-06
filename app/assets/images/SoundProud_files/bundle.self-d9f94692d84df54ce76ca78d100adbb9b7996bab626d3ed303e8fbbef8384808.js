@@ -519,7 +519,6 @@ function (_React$Component) {
 
     _classCallCheck(this, LoginForm);
 
-    // debugger
     _this = _possibleConstructorReturn(this, _getPrototypeOf(LoginForm).call(this, props));
     _this.state = {
       loginInfo: props.loginInfo,
@@ -766,7 +765,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // debugger;
       return this.handleNextForm();
     }
   }]);
@@ -965,7 +963,7 @@ function (_React$Component) {
       ageErrors: [],
       genderErrors: [],
       usernameErrors: [],
-      form: null // debugger;
+      form: null ;
 
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
@@ -1223,7 +1221,6 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // debugger
       return this.handleNextForm();
     }
   }]);
@@ -1299,7 +1296,6 @@ function (_React$Component) {
   }, {
     key: "handleHomeButton",
     value: function handleHomeButton() {
-      debugger;
       this.props.history.push('/discover');
       document.getElementById("home-logged-out").classList.toggle("home-logged-out-discover");
     }
