@@ -3,7 +3,6 @@ import React from 'react';
 class TrackEditForm extends React.Component {
     constructor(props) {
         super(props);
-        debugger;
         const trackId = props.history.location.pathname.split("/")[1];
         const track = props.tracks[trackId];
         this.state = {

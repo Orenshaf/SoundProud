@@ -32,7 +32,7 @@ class NavBar extends React.Component {
     toggleNavBar(){
         if (this.props.currentUser) {
             return (
-                <div className="nav-bar-container">
+                <div className="nav-bar-container" onClick={this.closeDropDown}>
                     <div className="nav-bar">
     
                         <NavLink to="/discover" className="nav-bar-button nav-bar-img-button logged-out" onClick={this.closeDropDown}><img className="nav-bar-img" src={window.soundCloudIcon} /></NavLink>                        
@@ -79,6 +79,7 @@ class NavBar extends React.Component {
     }
     
     render() {
+        debugger;
         return this.toggleNavBar()
     }
 }

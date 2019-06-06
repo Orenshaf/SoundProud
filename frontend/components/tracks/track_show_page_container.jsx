@@ -5,7 +5,6 @@ import { fetchTrack, deleteTrack } from '../../actions/track_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
-    debugger
     const track = state.entities.tracks[ownProps.match.params.trackId] || {};
     const user = state.entities.users[track.user_id];
     return ({
