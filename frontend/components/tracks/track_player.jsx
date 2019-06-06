@@ -78,6 +78,7 @@ class TrackPlayer extends React.Component {
     }
 
     render () {
+        debugger
         const duration = this.state.duration;
         const currentTime = this.state.currentTime;
         const playback = <img className="pause-play" src={window.playbackIcon} onClick={this.playback} />
