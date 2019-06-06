@@ -89,6 +89,7 @@ class NavBar extends React.Component {
     }
     
     render() {
+        debugger;
         return this.toggleNavBar()
     }
 }

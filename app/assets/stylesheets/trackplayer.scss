@@ -1,3 +1,7 @@
+// Core
+@import "base/colors.scss";
+@import "base/fonts.scss";
+
 .track-player-container {
     position: fixed;
     display: flex;
@@ -19,4 +23,24 @@
 .track-player img {
     width: 16px;
     height: 16px;
+}
+
+.progress-bar {
+    position: relative; 
+    height: 1px;
+    width: 350px;
+    background: #cecece;
+}
+
+.filler {
+    background: $orange;
+    height: 100%;
+    border: $orange;
+    transition: width .2s ease-in;
+}
+
+.times {
+    font-family: 'Lucida Grande';
+    font-size: 11px;
+    margin: 5px;
 }
