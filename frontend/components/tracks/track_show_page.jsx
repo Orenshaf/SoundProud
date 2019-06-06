@@ -33,7 +33,7 @@ class TrackShowPage extends React.Component {
         if (this.props.track) {
             const timeNow = Date.now();
             const createdTime = new Date(this.props.track.created_at);
-            createdAt = ((timeNow - createdTime) / (1000 * 60 * 60 * 24));
+            createdAt = Math.floor((timeNow - createdTime) / (1000 * 60 * 60 * 24));
             createdAt = createdAt < 1 ? <h1 className="track-time-stamp">less than one day ago</h1> : <h1 className="track-time-stamp">{`${createdAt} days ago`}</h1>;
         } else { 
             createdAt = null;
