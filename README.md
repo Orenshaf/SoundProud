@@ -1,24 +1,7 @@
-# SoundProud
+# SoundProud 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Imgur](https://i.imgur.com/CKUN9PZ.png)
+## SoundProud is a SoundCloud clone. On SoundProud users can: ##
+  + Sign up with a personalized username 
+  + Upload their own music with photos 
+  + Listen to music on SoundProud
