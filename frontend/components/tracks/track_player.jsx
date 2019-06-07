@@ -1,5 +1,4 @@
 import React from 'react';
-import ProgressBar from './progress_bar';
 
 class TrackPlayer extends React.Component {
     constructor(props) {
@@ -14,6 +13,7 @@ class TrackPlayer extends React.Component {
         }
     
         this.audioPlayer = React.createRef();
+        this.progressBar = React.createRef();
 
         this.revealBall = this.revealBall.bind(this);
         this.hideBall = this.hideBall.bind(this);
@@ -21,14 +21,19 @@ class TrackPlayer extends React.Component {
         this.pause = this.pause.bind(this);
         this.playback = this.playback.bind(this);
         this.createTimeStamp = this.createTimeStamp.bind(this);
+        this.handlePercentage = this.handlePercentage.bind(this);
+        this.changePercentage = this.changePercentage.bind(this);
     }
 
     componentDidMount() {
-        debugger;
         this.audioPlayer.current.onloadedmetadata = () => {
             const duration = this.createTimeStamp(this.audioPlayer.current.duration);
             this.play()
             this.setState({duration});
+        }
+
+        if (this.progressBar.current) {
+            this.progressBar.current.value = `${this.state.percentage}`
         }
 
         this.audioPlayer.current.ontimeupdate = () => {
@@ -43,7 +48,6 @@ class TrackPlayer extends React.Component {
     }
 
     componentDidUpdate() {
-        debugger;
         if (this.state.track !== this.props.track) {
             this.play();
             this.setState({ percentage: 0, track: this.props.track})
@@ -88,8 +92,23 @@ class TrackPlayer extends React.Component {
         this.play();
     }
 
+    handlePercentage() {
+        if (this.progressBar.current && this.progressBar.current.value !== `${this.state.percentage}`) {
+            this.progressBar.current.value = `${this.state.percentage}`;
+        }
+    }
+
+    changePercentage() {
+        debugger;
+        this.pause();
+        let trackPercentage = parseInt(this.progressBar.current.value, 10)
+        let newTime = this.audioPlayer.current.duration * (trackPercentage / 100);
+        this.audioPlayer.current.currentTime = newTime;
+        this.setState({percentage: trackPercentage})
+        this.play();
+    }
+
     render () {
-        debugger
         const duration = this.state.duration;
         const currentTime = this.state.currentTime;
         const playback = <img className="pause-play" src={window.playbackIcon} onClick={this.playback} />
@@ -103,9 +122,9 @@ class TrackPlayer extends React.Component {
                         {playPause}
                         <p className="times current-time">{currentTime}</p>
                         <div className="progress-bar-container" onMouseEnter={this.revealBall} onMouseLeave={this.hideBall}>
-                            <div className="progress-bar">
-                                <input type="range" min="0" max="100" value={this.state.percentage} className="progress-bar" />
-                                <div className={`ball ${this.state.ball ? "show" : ""}`} style={{ left: `${this.state.percentage}%` }}></div>
+                            <div className="progress-bar-outer" onClick={this.changePercentage}>
+                                <input ref={this.progressBar} type="range" min="0" max="100" className="progress-bar" onChange={this.handlePercentage()}/>
+                                <button className={`ball ${this.state.ball ? "show" : ""}`} style={{ left: `${this.state.percentage}%` }} onDrag={this.handlePercentage()}></button>
                             </div>
                         </div>
                         <p className="times">{duration}</p>
