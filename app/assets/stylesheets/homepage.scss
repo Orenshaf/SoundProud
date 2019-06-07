@@ -15,8 +15,9 @@
     margin: 15px auto;
     width: 100%;
     padding: 20px 20px 20px 1px;
-    height: fit-content;
-    overflow: scroll;
+    min-height: fit-content;
+    overflow-x: scroll;
+    overflow-y: visible;
     display: flex;
 }
 
