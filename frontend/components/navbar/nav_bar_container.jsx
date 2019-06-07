@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import NavBar from './nav_bar';
 import { openModal } from '../../actions/modal_actions';
+import { logout } from '../../actions/session_actions';
 
 const msp = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id] || null,
