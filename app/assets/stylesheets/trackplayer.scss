@@ -6,6 +6,7 @@
     position: fixed;
     display: flex;
     justify-content: center;
+    align-items: space-around;
     bottom: 0;
     z-index: 100;
     height: 48px;
@@ -17,7 +18,7 @@
 .track-player {
     display: flex;
     align-items: center;
-    width: 1230px;
+    width: 824px;
 }
 
 .track-player img {
@@ -30,7 +31,7 @@
 input[type='range'] {
     width: 100%;
     -webkit-appearance: none;
-    background-color: black;
+    background-color: #ccc;
     overflow: hidden;
 }
 
@@ -137,4 +138,35 @@ input[type='range']::-webkit-slider-thumb:before {
 
 .progress-bar-container {
     padding: 20px;
+}
+
+.track-player-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 48px;
+    width: 400px;
+}
+
+.track-player-photo {
+    width: 40px;
+    height: 40px;
+}
+
+.track-player-user-info {
+    font-family: 'Lucida Grande';
+    font-size: 11px;
+    display: flex;
+    height: 36px;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.author {
+    color: #a9a9a9;
+}
+
+.title {
+    color: #666666;
 }

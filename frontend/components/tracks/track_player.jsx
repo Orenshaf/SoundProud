@@ -108,6 +108,10 @@ class TrackPlayer extends React.Component {
     }
 
     render () {
+        const author = this.props.author;
+        const title = this.state.track.title;
+        const photo = <img className="track-player-photo" src={this.state.track.photoUrl} />;
+
         const duration = this.state.duration;
         const currentTime = this.state.currentTime;
         const playback = <img className="pause-play" src={window.playbackIcon} onClick={this.playback} />
@@ -127,6 +131,14 @@ class TrackPlayer extends React.Component {
                             </div>
                         </div>
                         <p className="times">{duration}</p>
+                    </div>
+
+                    <div className='track-player-info'>
+                        {photo}
+                        <div className="track-player-user-info">
+                            <p className="author">{author}</p>
+                            <p className="title">{title}</p>
+                        </div>
                     </div>
                 </div>
 

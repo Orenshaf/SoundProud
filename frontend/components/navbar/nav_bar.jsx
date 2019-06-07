@@ -30,7 +30,7 @@ class NavBar extends React.Component {
     }
     
     toggleNavBar(){
-        const footer = this.props.currentTrack ? <TrackPlayer track={this.props.currentTrack}/> : null;
+        const footer = this.props.currentTrack ? <TrackPlayer author={this.props.currentTrackAuthor} track={this.props.currentTrack}/> : null;
         if (this.props.currentUser && this.props.location.pathname !== '/logout') {
             return (
                 <>
