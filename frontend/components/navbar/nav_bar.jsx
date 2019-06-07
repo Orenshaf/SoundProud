@@ -31,7 +31,7 @@ class NavBar extends React.Component {
     
     toggleNavBar(){
         const footer = this.props.currentTrack ? <TrackPlayer track={this.props.currentTrack}/> : null;
-        if (this.props.currentUser) {
+        if (this.props.currentUser && this.props.location.pathname !== '/logout') {
             return (
                 <>
                     <div className="nav-bar-container" onClick={this.closeDropDown}>

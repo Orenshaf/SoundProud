@@ -16,6 +16,7 @@ const sessionReducer = (oldState = _nullUser, action) => {
             newState = {id: action.currentUser.id} 
             return merge({}, oldState, newState)
         case LOGOUT_CURRENT_USER:
+            console.log('reducer')
             return _nullUser;
         default:
             return oldState;

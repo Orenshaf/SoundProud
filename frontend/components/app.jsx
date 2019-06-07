@@ -19,7 +19,7 @@ const App = () => (
         <div className="app">
             <Modal />
             <Switch>
-                <PermitRoute path="/logout" component={LogoutPageContainer} />
+                <Route path="/logout" component={LogoutPageContainer} />
                 <Route path="/upload" component={UploadPageContainer} />
                 <Route path="/discover" component={HomePageContainer} />
                 <Route path="/:trackId" component={TrackShowPageContainer} />
