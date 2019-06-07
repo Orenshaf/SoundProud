@@ -99,7 +99,6 @@ class TrackPlayer extends React.Component {
     }
 
     changePercentage() {
-        debugger;
         this.pause();
         let trackPercentage = parseInt(this.progressBar.current.value, 10)
         let newTime = this.audioPlayer.current.duration * (trackPercentage / 100);

@@ -32,10 +32,6 @@ class ProgressBar extends React.Component {
             ball: false,
         })
     }
-
-    changeTrackTime(event) {
-        debugger;
-    }
     
     render () {
         return (

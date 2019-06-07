@@ -1,13 +1,19 @@
 import React from 'react';
 
-const LogoutPage = ({currentUser, logout}) => {
-    if (currentUser) {
-        logout()
+class LogoutPage extends React.Component {
+    
+    componentDidMount() {
+        debugger
+        if (this.props.currentUser) {
+            this.props.logout()
+        }
     }
 
-    return (
-        <h1 className="signout">You've signed out.</h1>
-    )
+    render(){
+        return (
+            <h1 className="signout">You've signed out.</h1>
+        )
+    }
 }
 
 export default LogoutPage;
