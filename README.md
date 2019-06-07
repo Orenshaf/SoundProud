@@ -1,24 +1,17 @@
-# SoundProud
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# SoundProud 
+## SoundProud is a [SoundCloud](http://www.soundcloud.com/ "SoundCloud") clone. ##
+Click here to visit [SoundProud](https://soundproud.herokuapp.com/#/ "SoundProud"). 
+  
+ ![Imgur](https://i.imgur.com/CKUN9PZ.png)
+ 
+## Overview ##
+### On SoundProud users can: ###
+  + Sign up with a personalized username 
+  - - - -
+![Imgur](https://i.imgur.com/1kGhV9r.png)
+  + Upload their own music with photos 
+  - - - -
+![Imgur](https://i.imgur.com/NLpASDc.png)
+![Imgur](https://i.imgur.com/ILQaEDi.png)
+  + Listen to music on SoundProud
+ 
