@@ -9,6 +9,7 @@ class TrackForm extends React.Component {
             title: '',
             private: false,
             trackFile: null,
+            errors: []
         }
 
         this.handleFormRender = this.handleFormRender.bind(this);
@@ -18,10 +19,18 @@ class TrackForm extends React.Component {
     }
 
     handleTrackFile(e) {
-        this.setState({ 
-            trackFile: e.currentTarget.files[0], 
-            title: this.titleize(e.currentTarget.files[0].name.split('.')[0].split('-'))
-        })
+        const file = e.currentTarget.files[0];
+        if (file.type === "audio/mp3") {
+            this.setState({
+                trackFile: file,
+                title: this.titleize(e.currentTarget.files[0].name.split('.')[0].split('-')),
+                errors: []
+            })
+        } else {
+            this.setState({
+                errors: ['Please upload an audio file']
+            })
+        }
     }
 
     titleize(arr) {
@@ -39,6 +48,10 @@ class TrackForm extends React.Component {
     }
     
     handleFormRender() {
+        const errors = this.state.errors.length > 0 ? this.state.errors.map((error, i) => {
+            return <li id="errors2" key={`error-${i}`}>{error}</li>
+        }) : null;
+
         if (this.state.trackFile) {
             return <TrackFinalForm trackInfo={this.state} uploadTrack={this.props.uploadTrack} history={this.props.history}/>
         } else {
@@ -46,12 +59,12 @@ class TrackForm extends React.Component {
                 <div className="track-form-container">
                     <div className="upload-file-container">
                         <h1>Drag and drop your tracks & albums here</h1>
+                        {errors}
                         <div className="upload-button">
                             <label htmlFor="files">
                                 <p className="invisible-upload-button">or choose files to upload</p> 
                                 <input id="files" type="file" onChange={this.handleTrackFile} />
                             </label>
-
                         </div>
                         <div className="playlist-question">
                             <input className="playlist-check" type="checkbox" />Make a playlist when multiple files are selected

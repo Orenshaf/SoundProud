@@ -70,3 +70,15 @@
     width: 71.2px;
     height: 48px;
 }
+
+.track-errors {
+    display: flex;
+    flex-direction: column;
+}
+
+#errors2 {
+    color: #cf0000;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 17px;
+}

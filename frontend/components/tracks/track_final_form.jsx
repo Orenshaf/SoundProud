@@ -10,7 +10,8 @@ class TrackFinalForm extends React.Component {
             trackFile: this.props.trackInfo.trackFile,
             description: '',
             photoFile: null,
-            photoUrl: window.defaultPhoto
+            photoUrl: window.defaultPhoto,
+            errors: []
         }
 
         this.handlePhotoFile = this.handlePhotoFile.bind(this);
@@ -20,15 +21,23 @@ class TrackFinalForm extends React.Component {
     }
 
     handlePhotoFile(e) {
+        debugger
         const file = e.currentTarget.files[0];
-        const fileReader = new FileReader();
-        fileReader.onloadend = () => {
+        if (file.type === "image/jpeg") {
+
+            const fileReader = new FileReader();
+            fileReader.onloadend = () => {
+                this.setState({
+                    photoFile: file, photoUrl: fileReader.result, errors: []
+                })
+            }
+            if (file) {
+                fileReader.readAsDataURL(file);
+            }
+        } else {
             this.setState({
-                photoFile: file, photoUrl: fileReader.result
+                errors: ['Please upload an image file']
             })
-        }
-        if (file) {
-            fileReader.readAsDataURL(file);
         }
     }
 
@@ -46,8 +55,8 @@ class TrackFinalForm extends React.Component {
     }
 
     handleSubmit(e) {
-        e.preventDefault()
-        if (this.state.photoFile) {
+        e.preventDefault() 
+        if (this.state.photoFile && this.state.photoFile.type === "image/jpeg") {
             const formData = new FormData();
             formData.append('track[user_id]', this.state.userId);
             formData.append('track[title]', this.state.title);
@@ -77,6 +86,9 @@ class TrackFinalForm extends React.Component {
     }
 
     render () {
+        const errors = this.state.errors.length > 0 ? this.state.errors.map( (error, i) => {
+            return <li id="errors2" key={`error-${i}`}>{error}</li> 
+        }) : null;
         return (
             <>
                 {/* <div className="extra-files">
@@ -98,16 +110,19 @@ class TrackFinalForm extends React.Component {
                     </div>
 
                     <div className="upload-form-innards">
-                        <div className="track-image-container">
-                            <img className="track-image" src={this.state.photoUrl} />
-                            <div className="image-edit-button">
-                                <label htmlFor="files">
-                                    <div className="inside">
-                                        <img src={window.cameraIcon} /><p>Upload image</p>
-                                        <input id="files" type="file" onChange={this.handlePhotoFile} />
-                                    </div>
-                                </label>
+                        <div className="track-errors">
+                            <div className="track-image-container">
+                                <img className="track-image" src={this.state.photoUrl} />
+                                <div className="image-edit-button">
+                                    <label htmlFor="files">
+                                        <div className="inside">
+                                            <img src={window.cameraIcon} /><p>Upload image</p>
+                                            <input id="files" type="file" onChange={this.handlePhotoFile} />
+                                        </div>
+                                    </label>
+                                </div>
                             </div>
+                            {errors}
                         </div>
 
                         <div className="upload-form-innards-form">
