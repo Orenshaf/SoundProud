@@ -7,6 +7,7 @@
      justify-content: center;
      width: 173px;
      height: 173px;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);
  }
  .cf {
      position: absolute;
@@ -17,6 +18,7 @@
 
  .photo {
      position: relative;
+    height: 172px;
  }
 
  .photo img {
@@ -45,5 +47,5 @@
  }
 
  .show-pos {
-    left: 51px;
+    left: 48px;
  }

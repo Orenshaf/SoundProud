@@ -23,6 +23,9 @@ class HomePage extends React.Component {
         }) : null ;
         return (
             <div className="home-page-container">
+                <h1 className="track-header">More of SoundProud's music</h1>
+                <p className="track-subheader">Music from some of our artists</p>
+
                 <div className="track-index">
                     {tracks}
                 </div>
