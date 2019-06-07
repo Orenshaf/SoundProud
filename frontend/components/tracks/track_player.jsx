@@ -108,7 +108,7 @@ class TrackPlayer extends React.Component {
     }
 
     render () {
-        const author = this.props.author;
+        const author = this.state.track.username;
         const title = this.state.track.title;
         const photo = <img className="track-player-photo" src={this.state.track.photoUrl} />;
 

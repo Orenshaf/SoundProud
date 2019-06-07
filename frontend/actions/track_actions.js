@@ -21,9 +21,10 @@ export const removeTrack = ({id}) => ({
     id,
 })
 
-export const receiveCurrentTrack = ({track}) => ({
+export const receiveCurrentTrack = ({track, user}) => ({
     type: RECEIVE_CURRENT_TRACK,
-    currentTrack: track
+    currentTrack: track,
+    user
 })
 
 export const fetchTracks = () => dispatch => (
