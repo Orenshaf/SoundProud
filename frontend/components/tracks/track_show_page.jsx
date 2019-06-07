@@ -23,7 +23,11 @@ class TrackShowPage extends React.Component {
 
     render() {
         // const player = this.props.track ? <TrackPlayer trackUrl={this.props.track.trackUrl}/>: null;
-        const player = null;
+        const player = this.props.track ? <img
+            className="track-show-page-play"
+            onClick={() => this.props.fetchCurrentTrack(this.props.track.id)}
+            src={window.playIcon}
+        /> : null;
         const username = this.props.user ? this.props.user.username : null;
         const title = this.props.track ? this.props.track.title : null;
         const photo = this.props.track ? <img className="track-photo" src={this.props.track.photoUrl}/> : null;

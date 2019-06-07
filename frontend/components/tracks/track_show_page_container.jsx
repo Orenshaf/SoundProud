@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import TrackShowPage from './track_show_page';
-import { fetchTrack, deleteTrack } from '../../actions/track_actions';
+import { fetchTrack, deleteTrack, fetchCurrentTrack} from '../../actions/track_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
@@ -17,7 +17,8 @@ const msp = (state, ownProps) => {
 const mdp = (dispatch) => ({
     fetchTrack: (id) => dispatch(fetchTrack(id)),
     openModal: (modal) => dispatch(openModal(modal)),
-    deleteTrack: (id) => dispatch(deleteTrack(id))
+    deleteTrack: (id) => dispatch(deleteTrack(id)),
+    fetchCurrentTrack: (id) => dispatch(fetchCurrentTrack(id))
 })
 
 export default withRouter(connect(msp,mdp)(TrackShowPage));
