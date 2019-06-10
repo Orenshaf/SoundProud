@@ -13,7 +13,7 @@ class HomePage extends React.Component {
     render() {
         const fetchCurrentTrack = this.props.fetchCurrentTrack;
         const tracks = this.props.tracks.length > 0 ? this.props.tracks.map( track => {
-            return <TrackItem key={track.id} track={track} fetchCurrentTrack={fetchCurrentTrack}/>
+            return <TrackItem key={track.id} trackId={track.id} photo={track.photoUrl} title={track.title} fetchCurrentTrack={fetchCurrentTrack} history={this.props.history}/>
         }) : null ;
         return (
             <div className="home-page-container">

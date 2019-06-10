@@ -1,52 +1,21 @@
+// Core
  @import "base/colors.scss";
  @import "base/fonts.scss";
 
- .play-button-photo {
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     width: 173px;
-     height: 173px;
-     box-shadow: rgba(0,0,0,.1)0 0 0 1px inset;
-     opacity: 1;
- }
- .cf {
-     position: absolute;
-     content: " ";
-     display: hidden;
-     width: 100%
- }
-
- .photo {
-     position: relative;
-    height: 172px;
- }
-
- .photo img {
-     width: 173px;
-     height: 173px;
- }
-
- .track-item-image-play {
+ .play-button {
      display: none;
      background: $orange;
-     z-index: 10;
-     width: 50px;
-     height: 50px;
-     padding: 10px 10px 10px 15px;
-     margin-right: -172px;
+     width: 40px;
+     height: 40px;
+     padding: 8px 8px 8px 10px;
      border-radius: 50%;
- }
-
- .track-item-image-play:hover {
-    filter: contrast(150%);
-    cursor: pointer;
+     z-index: 20;
  }
 
  .show {
      display: block;
  }
 
- .show-pos {
-    left: 48px;
+ .in-play-button {
+     filter: contrast(150%);
  }

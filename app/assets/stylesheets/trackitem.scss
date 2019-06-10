@@ -1,19 +1,28 @@
 // Core
  @import "base/colors.scss";
  @import "base/fonts.scss";
+
  .track-item {
     display: flex;
     flex-direction: column;
     width: 173px;
-    height: 200px;
+    height: 210px;
     margin-right: 15px;
  }
 
+ .track-item-photo-container {
+     display: flex;
+     width: 173px;
+     height: 173px;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+ }
+ 
+ .track-item-photo {
+     position: absolute;
+     width: 173px;
+     height: 173px;
+ }
 
-.track-item-link {
-    margin-top: 5px;
-    text-decoration: none;
-    color: black;
-    font-family: 'Interstate';
-}
 

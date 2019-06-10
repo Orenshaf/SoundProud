@@ -1,42 +1,42 @@
 import React from 'react';
 
+
 class TrackPlayButton extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            playButton: false,
+            inPlayButton: false,
         }
-        this.photo = props.track.photoUrl;
-        this.trackId = props.track.id;
-        this.fetchCurrentTrack = props.fetchCurrentTrack
+        
+        this.trackId = props.trackId;
+        this.fetchCurrentTrack = props.fetchCurrentTrack;
 
-        this.revealPlayButton = this.revealPlayButton.bind(this);
-        this.hidePlayButton = this.hidePlayButton.bind(this);
+        this.highlightPlayButton = this.highlightPlayButton.bind(this);
+        this.removeHighlightPlayButton = this.removeHighlightPlayButton.bind(this);
     }
 
-    revealPlayButton() {
-        this.setState({ playButton: true })
+    highlightPlayButton() {
+        this.setState({ inPlayButton: true})
     }
 
-    hidePlayButton() {
-        this.setState({ playButton: false })
+    removeHighlightPlayButton() {
+        this.setState({ inPlayButton: false })
     }
+    
 
-    render () {
+    render() {
+        debugger;
         return (
-            <div className="play-button-photo" onMouseEnter={this.revealPlayButton} onMouseLeave={this.hidePlayButton}>
-                <div className="cf"></div>
                 <img
-                    className={`track-item-image-play ${this.state.playButton ? "show" : ""}`}
-                    onClick={() => this.fetchCurrentTrack(this.trackId)}
+                    className={`play-button ${this.props.playButton ? "show" : ""} ${this.state.inPlayButton ? "in-play-button" : ""}`}
                     src={window.playIcon}
+                    onClick={() => this.fetchCurrentTrack(this.trackId)}
+                    onMouseEnter={this.highlightPlayButton} 
+                    onMouseLeave={this.removeHighlightPlayButton}
                 />
-                <div className={`photo ${this.state.playButton ? "show-pos" : ""}`} >
-                    <img src={this.photo} />
-                </div>
-            </div>
-        )
+            )
     }
 }
+    
 
 export default TrackPlayButton;
