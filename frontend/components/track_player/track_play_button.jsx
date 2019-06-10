@@ -28,7 +28,7 @@ class TrackPlayButton extends React.Component {
         debugger;
         return (
                 <img
-                    className={`play-button ${this.props.playButton ? "show" : ""} ${this.state.inPlayButton ? "in-play-button" : ""}`}
+                    className={`play-button ${this.props.playButton ? "show" : ""} ${this.state.inPlayButton ? "in-play-button" : ""} ${this.props.className === "large" ? "large" : ""}`}
                     src={window.playIcon}
                     onClick={() => this.fetchCurrentTrack(this.trackId)}
                     onMouseEnter={this.highlightPlayButton} 
