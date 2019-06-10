@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
-import TrackPlayer from '../tracks/track_player';
+import TrackPlayer from '../track_player/track_player';
 
 class NavBar extends React.Component {
     constructor(props) {

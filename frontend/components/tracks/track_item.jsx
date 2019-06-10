@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import TrackPlayButton from './track_play_button';
+import TrackPlayButton from '../track_player/track_play_button';
 
 class TrackItem extends React.Component {
     constructor(props) {
@@ -34,10 +34,11 @@ class TrackItem extends React.Component {
     render () {
         return (
             <div className="track-item">
-                <div className="track-item-photo-container" onClick={this.redirectToTrackShowPage} onMouseEnter={this.revealPlayButton} onMouseLeave={this.hidePlayButton}>
+                <div className="track-item-photo-container" onMouseEnter={this.revealPlayButton} onMouseLeave={this.hidePlayButton}>
                     <img
                         className="track-item-photo"
                         src={this.photo}
+                        onClick={this.redirectToTrackShowPage}
                     />
                     <TrackPlayButton
                         trackId={this.trackId}

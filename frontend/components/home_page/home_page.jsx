@@ -1,5 +1,5 @@
 import React from 'react';
-import TrackItem from '../tracks/track_item';
+import TracksIndex from '../tracks/tracks_index';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -12,9 +12,7 @@ class HomePage extends React.Component {
     
     render() {
         const fetchCurrentTrack = this.props.fetchCurrentTrack;
-        const tracks = this.props.tracks.length > 0 ? this.props.tracks.map( track => {
-            return <TrackItem key={track.id} trackId={track.id} photo={track.photoUrl} title={track.title} fetchCurrentTrack={fetchCurrentTrack} history={this.props.history}/>
-        }) : null ;
+        const tracks = this.props.tracks.length > 0 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack}/> : null ;
         return (
             <div className="home-page-container">
                 <h1 className="track-header">More of SoundProud's music</h1>
