@@ -23,7 +23,7 @@ class TrackFinalForm extends React.Component {
     handlePhotoFile(e) {
         debugger
         const file = e.currentTarget.files[0];
-        if (file.type === "image/jpeg") {
+        if (file.type.includes("image")) {
 
             const fileReader = new FileReader();
             fileReader.onloadend = () => {

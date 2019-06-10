@@ -20,7 +20,7 @@ class TrackForm extends React.Component {
 
     handleTrackFile(e) {
         const file = e.currentTarget.files[0];
-        if (file.type === "audio/mp3") {
+        if (file.type.includes("audio")) {
             this.setState({
                 trackFile: file,
                 title: this.titleize(e.currentTarget.files[0].name.split('.')[0].split('-')),
