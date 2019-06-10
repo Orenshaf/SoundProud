@@ -1,7 +1,7 @@
 class Api::TracksController < ApplicationController
 
     def index
-        @tracks = Track.all
+        @tracks = Track.limit(6)
         render :index
     end
     
