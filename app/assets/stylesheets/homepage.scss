@@ -16,9 +16,29 @@
     width: 100%;
     padding: 20px 20px 20px 1px;
     min-height: fit-content;
-    overflow-x: scroll;
-    overflow-y: visible;
+    overflow: hidden;
     display: flex;
+}
+
+.track-index-inner {
+    margin: 15px auto;
+    width: 100%;
+    padding: 20px 20px 20px 1px;
+    min-height: fit-content;
+    display: flex;
+    transition: all ease-in-out 2s;
+    transform: translate(0%, 0%);
+}
+
+.track-index-inner-slide {
+    margin: 15px auto;
+    width: 100%;
+    padding: 20px 20px 20px 1px;
+    min-height: fit-content;
+    display: flex;
+    transition: all ease-in-out 2s;
+    transform: translate(-90%, 0%);
+    overflow: visible;
 }
 
 .track-header {
@@ -34,3 +54,4 @@
     font-size: 14px;
     color: #999;
 }
+

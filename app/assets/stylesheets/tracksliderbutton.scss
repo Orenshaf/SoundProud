@@ -1,0 +1,64 @@
+// Core
+ @import "base/colors.scss";
+ @import "base/fonts.scss";
+
+.track-slider-button {
+    display: flex;
+    position: absolute;
+    right: 88px;
+    top: 290px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
+    padding: 2px 11px 2px 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    background: #fff;
+    z-index: 25;
+    cursor: pointer;
+}
+
+.track-slider-arrow {
+    height: 6px;
+    width: 6px;
+    border-right: 1px solid #333;
+    border-top: 1px solid #333;
+    transform: rotate(45deg) translate(-1px,1px);
+}
+
+.left-button {
+    display: flex;
+    position: absolute;
+    right: 89%;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 32px;
+    height: 32px;
+    padding: 2px 11px 2px 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    background: #fff;
+    z-index: 25;
+    cursor: pointer;
+}
+
+
+.left-arrow {
+    height: 6px;
+    width: 6px;
+    border-right: 1px solid #333;
+    border-top: 1px solid #333;
+    transform: rotate(225deg) translate(-1px,1px);
+}
+
+.orange {
+    border: 1px solid $orange;
+}
+
+.orange-arrow {
+    border-right: 1px solid $orange;
+    border-top: 1px solid $orange;
+}
