@@ -18,7 +18,7 @@ class LoginInfoForm extends React.Component {
 
     demoLogin(e) {
         e.preventDefault();
-        this.props.login({loginInfo: 'admin@soundproud.com', password: 'password'})
+        this.props.login({loginInfo: 'demoLogin@soundproud.com', password: 'password'})
         this.props.history.push('/discover')
         this.props.closeModal();
     }
