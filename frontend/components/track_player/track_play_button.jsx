@@ -25,7 +25,6 @@ class TrackPlayButton extends React.Component {
     
 
     render() {
-        debugger;
         return (
                 <img
                     className={`play-button ${this.props.playButton ? "show" : ""} ${this.state.inPlayButton ? "in-play-button" : ""} ${this.props.className === "large" ? "large" : ""}`}

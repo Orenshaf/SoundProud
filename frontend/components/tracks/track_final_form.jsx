@@ -21,10 +21,9 @@ class TrackFinalForm extends React.Component {
     }
 
     handlePhotoFile(e) {
-        debugger
         const file = e.currentTarget.files[0];
         if (file.type.includes("image")) {
-
+            debugger;
             const fileReader = new FileReader();
             fileReader.onloadend = () => {
                 this.setState({
@@ -56,7 +55,8 @@ class TrackFinalForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault() 
-        if (this.state.photoFile && this.state.photoFile.type === "image/jpeg") {
+        debugger;
+        if (this.state.photoFile && this.state.photoFile.type.includes("image")) {
             const formData = new FormData();
             formData.append('track[user_id]', this.state.userId);
             formData.append('track[title]', this.state.title);
