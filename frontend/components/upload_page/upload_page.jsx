@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import TrackForm from '../tracks/track_form';
+import TrackForm from './track_form';
 
 const UploadPage = props => {
     return (

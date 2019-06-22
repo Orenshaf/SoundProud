@@ -1,8 +1,8 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import LoginInfoFormContainer from './login_info_form_container';;
-import TrackEditFormContainer from '../tracks/track_edit_form_container';
+import LoginInfoFormContainer from '../splash/login_info_form_container';;
+import TrackEditFormContainer from '../track_edit/track_edit_form_container';
 
 
 class Modal extends React.Component { 

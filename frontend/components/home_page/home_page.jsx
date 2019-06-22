@@ -1,6 +1,6 @@
 import React from 'react';
-import TracksIndex from '../tracks/tracks_index';
-import TrackSliderButton from '../tracks/track_slider_button';
+import TracksIndex from './tracks_index';
+import TrackSliderButton from './track_slider_button';
 
 class HomePage extends React.Component {
     constructor(props) {

@@ -4,7 +4,6 @@ export const RECEIVE_TRACK = 'RECEIVE_TRACK';
 export const REMOVE_TRACK = 'REMOVE_TRACK';
 export const RECEIVE_CURRENT_TRACK = 'RECEIVE_CURRENT_TRACK';
 
-
 export const receiveTracks = tracks => ({
     type: RECEIVE_TRACKS,
     tracks

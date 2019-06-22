@@ -1,5 +1,5 @@
-import { RECEIVE_CURRENT_USER, RECEIVE_USERNAME, LOGOUT_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_TRACK } from '../actions/track_actions';
+import { RECEIVE_CURRENT_USER, RECEIVE_USERNAME, LOGOUT_CURRENT_USER } from '../../actions/session_actions';
+import { RECEIVE_TRACK } from '../../actions/track_actions';
 import { merge } from 'lodash';
 
 const usersReducer = (oldState = {}, action) => {
