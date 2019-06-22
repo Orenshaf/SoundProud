@@ -1,4 +1,5 @@
 import { PLAY_MUSIC, PAUSE_MUSIC } from '../../actions/track_player_actions';
+import { RECEIVE_CURRENT_TRACK } from '../../actions/track_actions';
 import { merge } from 'lodash';
 
 const notPlaying = {playing: false};
@@ -8,10 +9,14 @@ const trackPlayerReducer = (oldState = notPlaying, action) => {
     Object.freeze(oldState);
     switch (action.type) {
         case PLAY_MUSIC:
-            newState = { playing: action.playing };
-            return merge({}, oldState, newState)
+            newState = { playing: true };
+            return merge({}, oldState, newState);
         case PAUSE_MUSIC:
-            newState = {playing: action.playing};
+            newState = { playing: false };
+            return merge({}, oldState, newState);
+        case RECEIVE_CURRENT_TRACK:
+            newState = { playing: true };
+            return merge({}, oldState, newState);
         default:
             return oldState
     }

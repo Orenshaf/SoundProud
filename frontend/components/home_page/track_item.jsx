@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import TrackPlayButton from '../track_player/track_play_button';
+import TrackPlayButton from '../tracks/track_play_button';
 
 class TrackItem extends React.Component {
     constructor(props) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import TrackPlayButton from '../track_player/track_play_button';
+import TrackPlayButton from '../tracks/track_play_button';
 
 class TrackShowPage extends React.Component {
     constructor(props) {
@@ -23,8 +23,9 @@ class TrackShowPage extends React.Component {
     }
 
     render() {
+        debugger;
         // const player = this.props.track ? <TrackPlayer trackUrl={this.props.track.trackUrl}/>: null;
-        const player = this.props.track ? <TrackPlayButton trackId={this.props.track.id} fetchCurrentTrack={this.props.fetchCurrentTrack} playButton={true} className={"large"}/> : null;
+        const player = this.props.track.id ? <TrackPlayButton trackId={this.props.track.id} fetchCurrentTrack={this.props.fetchCurrentTrack} inPlayButton={true} playButton={true} className={"large"}/> : null;
         const username = this.props.user ? this.props.user.username : null;
         const title = this.props.track ? this.props.track.title : null;
         const photo = this.props.track ? <img className="track-photo" src={this.props.track.photoUrl}/> : null;
