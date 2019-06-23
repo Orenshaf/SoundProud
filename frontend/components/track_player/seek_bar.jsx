@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { seekPercentage, clearSeekTime } from '../../actions/track_player_actions';
 
 class SeekBar extends React.Component {
     constructor(props) {
@@ -28,8 +30,9 @@ class SeekBar extends React.Component {
     }
 
     changeSeekPercentage() {
-        const trackPercentage = parseInt(this.progressBar.current.value, 10);
-        this.props.changePercentage(trackPercentage);
+        const newPercentage = parseInt(this.progressBar.current.value, 10);
+        debugger;
+        this.props.seekPercentage(newPercentage);
     }
 
     revealBall() {
@@ -52,4 +55,19 @@ class SeekBar extends React.Component {
     }
 }
 
-export default SeekBar;
+const msp = (state) => {
+    const duration = state.ui.trackPlayer.duration;
+    const currentTime = state.ui.trackPlayer.currentTime;
+    const percentage = (currentTime / duration * 100);
+    return {
+        duration,
+        currentTime,
+        percentage
+    }
+}
+
+const mdp = dispatch => ({
+    seekPercentage: (newPercentage) => dispatch(seekPercentage(newPercentage)),
+})
+
+export default connect(msp, mdp)(SeekBar);

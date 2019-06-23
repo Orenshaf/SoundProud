@@ -30,34 +30,42 @@ class TrackPlayer extends React.Component {
     }
 
     componentDidUpdate() {
-        this.audioPlayer.current.ontimeupdate = () => {
-            this.props.updateCurrentTime(this.audioPlayer.current.currentTime);
+        debugger;
+        if (this.props.seekPercentage) {
+            this.changePercentage(this.props.seekPercentage);
+        } else {
+            this.audioPlayer.current.ontimeupdate = () => {
 
-            const currentTimeStamp = this.createTimeStamp(this.props.currentTime);
+                this.props.updateCurrentTime(this.audioPlayer.current.currentTime);
 
-            this.setState({ currentTimeStamp });
-
-            const percentage = ((this.props.currentTime / this.props.duration) * 100)
-            if (percentage >= 99.9) {
-                this.pause();
-                this.setState({ percentage: 0 });
-                this.props.updateCurrentTime(0);
-                this.audioPlayer.current.currentTime = this.props.currentTime;
                 const currentTimeStamp = this.createTimeStamp(this.props.currentTime);
+
                 this.setState({ currentTimeStamp });
-            } else if (percentage > this.state.percentage) {
-                this.setState({ percentage });
+
+                if (this.props.percentage >= 99.9) {
+                    this.pause();
+                    this.props.updateCurrentTime(0);
+                    this.audioPlayer.current.currentTime = this.props.currentTime;
+                }
+            }
+
+            if (this.state.currentTrack !== this.props.currentTrack) {
+                this.setState({ currentTrack: this.props.currentTrack })
+                this.play()
+            } else if (!this.props.playing) {
+                this.audioPlayer.current.pause();
+            } else if (this.props.playing) {
+                this.audioPlayer.current.play();
             }
         }
+    }
 
-        if (this.state.currentTrack !== this.props.currentTrack) {
-            this.setState({ currentTrack: this.props.currentTrack })
-            this.play()
-        } else if (!this.props.playing) {
-            this.audioPlayer.current.pause();
-        } else if (this.props.playing) {
-            this.audioPlayer.current.play();
-        }
+    changePercentage(seekPercentage) {
+        debugger;
+        let newTime = this.props.duration * (seekPercentage / 100);
+        this.audioPlayer.current.currentTime = newTime;
+        this.props.clearSeekPercentage();
+        this.props.updateCurrentTime(newTime);
     }
 
     createTimeStamp(fullTime) {
@@ -90,13 +98,6 @@ class TrackPlayer extends React.Component {
         this.play();
     }
 
-    changePercentage(trackPercentage) {
-        let newTime = this.props.duration * (trackPercentage / 100);
-        this.audioPlayer.current.currentTime = newTime;
-        const duration = newTime * 100 / trackPercentage
-        this.props.updateCurrentTime(duration);
-    }
-
     render() {
         const author = this.state.currentTrack.username;
         const title = this.state.currentTrack.title;
@@ -115,11 +116,7 @@ class TrackPlayer extends React.Component {
                         {playback}
                         {playPause}
                         <p className="times current-time">{currentTime}</p>
-                        <SeekBar
-                            percentage={this.props.percentage}
-                            changePercentage={this.changePercentage}
-                            percentage={this.props.percentage}
-                        />
+                        <SeekBar />
                         <p className="times">{trackTime}</p>
                     </div>
 

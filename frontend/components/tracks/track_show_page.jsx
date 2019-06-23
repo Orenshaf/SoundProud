@@ -1,5 +1,6 @@
 import React from 'react';
 import TrackPlayButton from '../tracks/track_play_button';
+import SeekBar from '../track_player/seek_bar';
 
 class TrackShowPage extends React.Component {
     constructor(props) {
@@ -42,12 +43,15 @@ class TrackShowPage extends React.Component {
         return (
             <div className="track-show-page">
                 <div className="track-show-page-container">
-                    <div className="track-show-page-player">
-                        {player}
-                        <ul className="track-info">
-                            <li className="track-username">{username}</li>
-                            <li className="track-title">{title}</li>
-                        </ul>
+                    <div className="track-show-page-player-container">
+                        <div className="track-show-page-player">
+                            {player}
+                            <ul className="track-info">
+                                <li className="track-username">{username}</li>
+                                <li className="track-title">{title}</li>
+                            </ul>
+                        </div>
+                        <SeekBar />
                     </div>
                     <div className="track-photo-container">
                         {createdAt}

@@ -1,8 +1,9 @@
-import { PLAY_MUSIC, PAUSE_MUSIC, RECEIVE_TRACK_INFO, UPDATE_CURRENT_TIME } from '../../actions/track_player_actions';
+import { PLAY_MUSIC, PAUSE_MUSIC, RECEIVE_TRACK_INFO, UPDATE_CURRENT_TIME, SEEK_PERCENTAGE, CLEAR_SEEK_PERCENTAGE } from '../../actions/track_player_actions';
 import { LOGOUT_CURRENT_USER } from '../../actions/session_actions';
 import { merge } from 'lodash';
 
-const notPlaying = {playing: false};
+const notPlaying = {playing: false, seekTime: null};
+const nullSeekPercentage = {seekPercentage: null};
 
 const trackPlayerReducer = (oldState = notPlaying, action) => {
     let newState;
@@ -21,6 +22,11 @@ const trackPlayerReducer = (oldState = notPlaying, action) => {
         case UPDATE_CURRENT_TIME:
             newState = { currentTime: action.currentTime};
             return merge({}, oldState, newState);
+        case SEEK_PERCENTAGE:
+            newState = { seekPercentage: action.newPercentage };
+            return merge({}, oldState, newState);
+        case CLEAR_SEEK_PERCENTAGE:
+            return merge({}, oldState, nullSeekPercentage);           
         case LOGOUT_CURRENT_USER:
             newState = { playing: false };
             return merge({}, oldState, newState);
