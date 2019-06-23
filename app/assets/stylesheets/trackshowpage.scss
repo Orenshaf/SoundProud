@@ -144,3 +144,9 @@
     cursor: pointer;
  }
 
+ .track-show-page-player-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 330px;
+ }

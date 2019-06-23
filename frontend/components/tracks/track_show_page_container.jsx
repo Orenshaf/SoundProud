@@ -7,12 +7,12 @@ import { openModal } from '../../actions/modal_actions';
 const msp = (state, ownProps) => {
     const track = state.entities.tracks[ownProps.match.params.trackId] || {};
     const user = state.entities.users[track.user_id];
-    const currentTrackId = state.ui.currentTrack.id;
+    const currentTrack = state.ui.currentTrack;
     return ({
         user,
         track,
         currentUserId: state.session.id,
-        currentTrackId
+        currentTrack,
     })
 }
 
