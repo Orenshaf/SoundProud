@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { playMusic, pauseMusic } from '../../actions/track_player_actions';
+import SeekBar from './seek_bar';
 
 class TrackPlayer extends React.Component {
     constructor(props) {
@@ -49,8 +52,12 @@ class TrackPlayer extends React.Component {
 
     componentDidUpdate() {
         if (this.state.track !== this.props.track) {
-            this.play();
+            this.props.playMusic()
             this.setState({ percentage: 0, track: this.props.track})
+        } else if (!this.props.playing) {
+            this.audioPlayer.current.pause();            
+        } else if (this.props.playing) {
+            this.audioPlayer.current.play();            
         }
     }
 
@@ -76,14 +83,14 @@ class TrackPlayer extends React.Component {
     }
 
     pause() {
-        this.audioPlayer.current.pause();
-        this.setState({ playing: false })
+        // this.audioPlayer.current.pause();
+        this.props.pauseMusic();
     }
 
 
     play() {
-        this.audioPlayer.current.play();
-        this.setState({playing: true})
+        // this.audioPlayer.current.play();
+        this.props.playMusic();
     }
 
     playback() {
@@ -115,7 +122,7 @@ class TrackPlayer extends React.Component {
         const duration = this.state.duration;
         const currentTime = this.state.currentTime;
         const playback = <img className="pause-play" src={window.playbackIcon} onClick={this.playback} />
-        const playPause = this.state.playing ? <img className="pause-play" src={window.pauseIcon} onClick={this.pause} /> : <img className="pause-play" src={window.playIcon2} onClick={this.play} />
+        const playPause = this.props.playing ? <img className="pause-play" src={window.pauseIcon} onClick={this.pause} /> : <img className="pause-play" src={window.playIcon2} onClick={this.play} />
         return (
             <>
                 <audio ref={this.audioPlayer} src={this.state.track.trackUrl} preload="auto"></audio>
@@ -124,12 +131,15 @@ class TrackPlayer extends React.Component {
                         {playback}
                         {playPause}
                         <p className="times current-time">{currentTime}</p>
-                        <div className="progress-bar-container" onMouseEnter={this.revealBall} onMouseLeave={this.hideBall}>
-                            <div className="progress-bar-outer" onClick={this.changePercentage}>
-                                <input ref={this.progressBar} type="range" min="0" max="100" className="progress-bar" onChange={this.handlePercentage()}/>
-                                <button className={`ball ${this.state.ball ? "show" : ""}`} style={{ left: `${this.state.percentage}%` }} onDrag={this.handlePercentage()}></button>
-                            </div>
-                        </div>
+                        <SeekBar 
+                            revealBall={this.revealBall} 
+                            hideBall={this.hideBall} 
+                            changePercentage={this.changePercentage} 
+                            progressBar={this.progressBar} 
+                            ball={this.state.ball} 
+                            percentage={this.state.percentage} 
+                            handlePercentage={this.handlePercentage} 
+                        />
                         <p className="times">{duration}</p>
                     </div>
 
@@ -137,7 +147,7 @@ class TrackPlayer extends React.Component {
                         {photo}
                         <div className="track-player-user-info">
                             <p className="author">{author}</p>
-                            <p className="title">{title}</p>
+                            <p className="title" onClick={() => this.props.history.push(`/${this.state.track.id}`)}>{title}</p>
                         </div>
                     </div>
                 </div>
@@ -148,4 +158,13 @@ class TrackPlayer extends React.Component {
     }
 }
 
-export default TrackPlayer;
+const msp = state => ({
+    playing: state.ui.trackPlayer.playing
+})
+
+const mdp = dispatch => ({
+    playMusic: () => dispatch(playMusic()),
+    pauseMusic: () => dispatch(pauseMusic())
+})
+
+export default connect(msp, mdp)(TrackPlayer);
