@@ -80,20 +80,16 @@ class TrackPlayer extends React.Component {
     }
 
     pause() {
-        // this.audioPlayer.current.pause();
         this.props.pauseMusic();
     }
 
 
     play() {
-        // this.audioPlayer.current.play();
         this.props.playMusic();
     }
 
     playback() {
-        this.props.updateCurrentTime(0);
-        this.audioPlayer.current.currentTime = this.props.currentTime;
-        this.play();
+        this.changePercentage(0);
     }
 
     render() {
