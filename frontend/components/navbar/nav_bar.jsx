@@ -5,9 +5,9 @@ import TrackPlayerContainer from '../track_player/track_player_container';
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state =({
+        this.state = {
             dropdown: false,
-        })
+        }
 
         this.handleLogout = this.handleLogout.bind(this);
         this.openDropDown = this.openDropDown.bind(this);
