@@ -30,7 +30,6 @@ class TrackPlayer extends React.Component {
     }
 
     componentDidUpdate() {
-        debugger;
         if (this.props.seekPercentage) {
             this.changePercentage(this.props.seekPercentage);
         } else {
@@ -61,7 +60,6 @@ class TrackPlayer extends React.Component {
     }
 
     changePercentage(seekPercentage) {
-        debugger;
         let newTime = this.props.duration * (seekPercentage / 100);
         this.audioPlayer.current.currentTime = newTime;
         this.props.clearSeekPercentage();

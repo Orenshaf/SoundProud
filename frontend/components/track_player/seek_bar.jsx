@@ -18,20 +18,21 @@ class SeekBar extends React.Component {
     }
 
     componentDidUpdate() {
-        if (this.progressBar.current) {
-            this.progressBar.current.value = `${this.props.percentage}`
-        }
+        this.progressBar.current.value = `${this.props.percentage}`
     }
 
-    handlePercentage() {
-        if (this.progressBar.current && this.progressBar.current.value !== `${this.props.percentage}`) {
-            this.progressBar.current.value = `${this.props.percentage}`;
+    handlePercentage(e) {
+        let newPercentage
+        if (this.props.long) {
+            newPercentage = Math.floor(((e.clientX - (e.currentTarget.offsetLeft * 1.5)) / (e.currentTarget.offsetWidth ) * 100));
+        } else {
+            newPercentage = Math.floor(((e.clientX - e.currentTarget.offsetLeft) / (e.currentTarget.offsetWidth) * 100));
         }
+        this.props.seekPercentage(newPercentage);
     }
 
     changeSeekPercentage() {
         const newPercentage = parseInt(this.progressBar.current.value, 10);
-        debugger;
         this.props.seekPercentage(newPercentage);
     }
 
@@ -45,11 +46,9 @@ class SeekBar extends React.Component {
 
     render() {
         return (
-            <div className="progress-bar-container" onMouseEnter={this.revealBall} onMouseLeave={this.hideBall}>
-                <div className={`progress-bar-outer ${this.props.long ? "long" : ""}`} onClick={this.changeSeekPercentage}>
-                    <input ref={this.progressBar} type="range" min="0" max="100" className="progress-bar" onChange={this.handlePercentage()} />
-                    <button className={`ball ${this.state.ball ? "show" : ""}`} style={{ left: `${this.props.percentage}%` }} onDrag={this.handlePercentage()}></button>
-                </div>
+            <div className={`progress-bar-outer ${this.props.long ? "long" : ""}`} onClick={(e) => this.handlePercentage(e)} onMouseEnter={this.revealBall} onMouseLeave={this.hideBall}>
+                <input ref={this.progressBar} type="range" min="0" max="100" className="progress-bar" onChange={this.changeSeekPercentage} />
+                <button className={`ball ${this.state.ball ? "show" : ""}`} style={{ left: `${this.props.percentage * 0.99}%` }} onDrag={this.changeSeekPercentage}></button>
             </div>
         )
     }
