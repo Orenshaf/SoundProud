@@ -46,7 +46,7 @@ class SeekBar extends React.Component {
     render() {
         return (
             <div className="progress-bar-container" onMouseEnter={this.revealBall} onMouseLeave={this.hideBall}>
-                <div className="progress-bar-outer" onClick={this.changeSeekPercentage}>
+                <div className={`progress-bar-outer ${this.props.long ? "long" : ""}`} onClick={this.changeSeekPercentage}>
                     <input ref={this.progressBar} type="range" min="0" max="100" className="progress-bar" onChange={this.handlePercentage()} />
                     <button className={`ball ${this.state.ball ? "show" : ""}`} style={{ left: `${this.props.percentage}%` }} onDrag={this.handlePercentage()}></button>
                 </div>

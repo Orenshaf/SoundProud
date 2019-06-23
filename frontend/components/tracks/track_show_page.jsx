@@ -31,7 +31,7 @@ class TrackShowPage extends React.Component {
         const photo = this.props.track ? <img className="track-photo" src={this.props.track.photoUrl}/> : null;
         const editButton = this.props.user && this.props.track.user_id === this.props.currentUserId ? <button className="edit-button" onClick={() => this.props.openModal('trackEditForm')}><img src={window.editIcon} alt="" />Edit</button> : null;
         const trashButton = this.props.user && this.props.track.user_id === this.props.currentUserId ? <button className="edit-button" onClick={this.deleteTrack}><img src={window.trashIcon} alt="" />Delete</button> : null;        
-        const seekBar = ((this.props.track && this.props.currentTrack) && (this.props.track.id === this.props.currentTrack.id)) ? <SeekBar /> : null;
+        const seekBar = ((this.props.track && this.props.currentTrack) && (this.props.track.id === this.props.currentTrack.id)) ? <SeekBar long={true} /> : null;
         let createdAt;
         if (this.props.track) {
             const timeNow = Date.now();

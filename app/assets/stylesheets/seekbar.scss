@@ -1,0 +1,78 @@
+// Core
+@import "base/colors.scss";
+@import "base/fonts.scss";
+
+.progress-bar-outer input {
+    width: 100%;
+    -webkit-appearance: none;
+    background-color: #ccc;
+    overflow: hidden;
+}
+
+.progress-bar-outer input:focus {
+    outline: none;
+}
+    
+.progress-bar-outer input::-webkit-slider-runnable-track {
+    height: 10px;
+    -webkit-appearance: none;
+    color: $orange;
+    margin-top: -1px;
+    z-index: 10;
+}
+
+.progress-bar-outer input::-webkit-slider-thumb {
+    width: 5px;
+    -webkit-appearance: none;
+    height: 5px;
+    margin-top: 3px;
+    cursor: pointer;
+    background: $orange;
+    box-shadow: -500px 0 0 500px $orange;
+}
+
+.progress-bar-outer input::-webkit-slider-thumb:before {
+    width: 2px;
+    -webkit-appearance: none;
+    height: 2px;
+    background: $orange;
+}
+
+
+.progress-bar {
+    position: relative; 
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    // background: black;
+    height: 21px;
+    border: 10px solid #f2f2f2;
+    border-left: none;
+    border-right: none;
+    overflow: visible;
+    padding-left: 0;
+}
+
+.progress-bar-outer {
+    position: relative; 
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    // background: black;
+    height: 21px;
+    border: 10px solid #f2f2f2;
+    border-left: none;
+    border-right: none;
+    width: 510px;
+    overflow: visible;
+}
+
+.progress-bar:hover {
+    cursor: pointer;
+}
+
+.long {
+    width: 781px;
+    margin-right: -191px;
+
+}
