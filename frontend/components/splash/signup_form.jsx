@@ -54,8 +54,9 @@ class SignupForm extends React.Component {
         } else if (this.state.gender === 'Indicate your gender' || this.state.gender === '') {
             this.setState({ ageErrors: [], genderErrors: ['Please indicate your gender.'] })
         } else {
+            this.handleRedirect();
             this.setState({form: 'username'})
-            this.props.signup(this.state).then(this.handleRedirect);
+            this.props.signup(this.state);
         }
     }
 
