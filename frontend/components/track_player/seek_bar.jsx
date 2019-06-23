@@ -1,14 +1,34 @@
 import React from 'react';
 
-const SeekBar = ({revealBall, hideBall, changePercentage, progressBar, ball, percentage, handlePercentage }) => {
-    return (
-        <div className="progress-bar-container" onMouseEnter={revealBall} onMouseLeave={hideBall}>
-            <div className="progress-bar-outer" onClick={changePercentage}>
-                <input ref={progressBar} type="range" min="0" max="100" className="progress-bar" onChange={handlePercentage()} />
-                <button className={`ball ${ball ? "show" : ""}`} style={{ left: `${percentage}%` }} onDrag={handlePercentage()}></button>
+class SeekBar extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            ball: false,
+        }
+
+        this.revealBall = this.revealBall.bind(this);
+        this.hideBall = this.hideBall.bind(this);
+    }
+
+    revealBall(){
+        this.setState({ ball: true });
+    }
+
+    hideBall() {
+        this.setState({ ball: false })
+    }
+
+    render() {
+        return (
+            <div className="progress-bar-container" onMouseEnter={this.revealBall} onMouseLeave={this.hideBall}>
+                <div className="progress-bar-outer" onClick={this.props.changePercentage}>
+                    <input ref={this.props.progressBar} type="range" min="0" max="100" className="progress-bar" onChange={this.props.handlePercentage()} />
+                    <button className={`ball ${this.state.ball ? "show" : ""}`} style={{ left: `${this.props.percentage}%` }} onDrag={this.props.handlePercentage()}></button>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default SeekBar;

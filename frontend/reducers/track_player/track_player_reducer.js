@@ -1,5 +1,4 @@
-import { PLAY_MUSIC, PAUSE_MUSIC } from '../../actions/track_player_actions';
-import { RECEIVE_CURRENT_TRACK } from '../../actions/track_actions';
+import { PLAY_MUSIC, PAUSE_MUSIC, RECEIVE_TRACK_INFO, UPDATE_CURRENT_TIME } from '../../actions/track_player_actions';
 import { LOGOUT_CURRENT_USER } from '../../actions/session_actions';
 import { merge } from 'lodash';
 
@@ -15,8 +14,12 @@ const trackPlayerReducer = (oldState = notPlaying, action) => {
         case PAUSE_MUSIC:
             newState = { playing: false };
             return merge({}, oldState, newState);
-        case RECEIVE_CURRENT_TRACK:
-            newState = { playing: true };
+        case RECEIVE_TRACK_INFO:
+            const duration = action.trackInfo.duration;
+            newState = { duration };
+            return merge({}, oldState, newState);
+        case UPDATE_CURRENT_TIME:
+            newState = { currentTime: action.currentTime};
             return merge({}, oldState, newState);
         case LOGOUT_CURRENT_USER:
             newState = { playing: false };

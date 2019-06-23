@@ -55,8 +55,8 @@ class TrackPlayButton extends React.Component {
                     className={`play-button ${this.props.playButton ? "show" : ""} ${this.state.inPlayButton || this.props.inPlayButton ? "in-play-button" : ""} ${this.props.className === "large" ? "large" : ""}`}
                     src={window.playIcon}
                     onClick={this.playMusic}
-                    // onMouseEnter={this.highlightPlayButton}
-                    // onMouseLeave={this.removeHighlightPlayButton}
+                    onMouseEnter={this.highlightPlayButton}
+                    onMouseLeave={this.removeHighlightPlayButton}
                 />
             )
     

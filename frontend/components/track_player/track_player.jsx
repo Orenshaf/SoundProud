@@ -1,25 +1,19 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { playMusic, pauseMusic } from '../../actions/track_player_actions';
 import SeekBar from './seek_bar';
 
 class TrackPlayer extends React.Component {
     constructor(props) {
         super(props);  
         this.state = {
-            ball: false,
-            track: props.track,
-            playing: false,
-            currentTime: null,
-            duration: null,
+            currentTrack: props.currentTrack,
+            currentTimeStamp: null,
+            trackTimeStamp: null,
             percentage: 0,
         }
     
         this.audioPlayer = React.createRef();
         this.progressBar = React.createRef();
 
-        this.revealBall = this.revealBall.bind(this);
-        this.hideBall = this.hideBall.bind(this);
         this.play = this.play.bind(this);
         this.pause = this.pause.bind(this);
         this.playback = this.playback.bind(this);
@@ -30,30 +24,40 @@ class TrackPlayer extends React.Component {
 
     componentDidMount() {
         this.audioPlayer.current.onloadedmetadata = () => {
-            const duration = this.createTimeStamp(this.audioPlayer.current.duration);
+            this.props.receiveTrackInfo(this.audioPlayer.current);
+            const trackTimeStamp = this.createTimeStamp(this.props.duration);
             this.play()
-            this.setState({duration});
-        }
-
-        if (this.progressBar.current) {
-            this.progressBar.current.value = `${this.state.percentage}`
+            this.setState({trackTimeStamp});
         }
 
         this.audioPlayer.current.ontimeupdate = () => {
-            const currentTime = this.createTimeStamp(this.audioPlayer.current.currentTime)
-            this.setState({ currentTime });
+            this.props.updateCurrentTime(this.audioPlayer.current.currentTime);
 
-            const percentage = ((this.audioPlayer.current.currentTime / this.audioPlayer.current.duration) * 100)
-            if (percentage > this.state.percentage) {
+            const currentTimeStamp = this.createTimeStamp(this.props.currentTime);
+
+            this.setState({ currentTimeStamp });
+
+            const percentage = ((this.props.currentTime / this.props.duration) * 100)
+            if (percentage >= 99.9) {
+                this.pause();
+                this.setState({ percentage: 0 });
+                this.props.updateCurrentTime(0);
+                this.audioPlayer.current.currentTime = this.props.currentTime;
+                const currentTimeStamp = this.createTimeStamp(this.props.currentTime);
+                this.setState({ currentTimeStamp });
+            } else if (percentage > this.state.percentage) {
                 this.setState({ percentage });
-            }
+            } 
         }
     }
 
     componentDidUpdate() {
-        if (this.state.track !== this.props.track) {
-            this.props.playMusic()
-            this.setState({ percentage: 0, track: this.props.track})
+        if (this.progressBar.current) {
+            this.progressBar.current.value = `${this.state.percentage}`
+        }
+        if (this.state.currentTrack !== this.props.currentTrack) {
+            this.play()
+            this.setState({ percentage: 0, currentTrack: this.props.currentTrack})
         } else if (!this.props.playing) {
             this.audioPlayer.current.pause();            
         } else if (this.props.playing) {
@@ -74,14 +78,6 @@ class TrackPlayer extends React.Component {
         return `${hours}${minutes}:${seconds}`;
     }
 
-    revealBall(){
-        this.setState({ball: true});
-    }
-
-    hideBall() {
-        this.setState({ ball: false })
-    }
-
     pause() {
         // this.audioPlayer.current.pause();
         this.props.pauseMusic();
@@ -94,7 +90,7 @@ class TrackPlayer extends React.Component {
     }
 
     playback() {
-        this.audioPlayer.current.currentTime = 0;
+        this.audioPlayer.current.currentTime = this.props.currentTime;
         this.setState({percentage: 0});
         this.play();
     }
@@ -106,48 +102,51 @@ class TrackPlayer extends React.Component {
     }
 
     changePercentage() {
-        this.pause();
-        let trackPercentage = parseInt(this.progressBar.current.value, 10)
-        let newTime = this.audioPlayer.current.duration * (trackPercentage / 100);
-        this.audioPlayer.current.currentTime = newTime;
-        this.setState({percentage: trackPercentage})
-        this.play();
+        if (this.props.playing) {
+            let trackPercentage = parseInt(this.progressBar.current.value, 10)
+            let newTime = this.props.duration * (trackPercentage / 100);
+            this.audioPlayer.current.currentTime = newTime;
+            this.setState({ percentage: trackPercentage })
+        } else {
+            let trackPercentage = parseInt(this.progressBar.current.value, 10)
+            let newTime = this.props.duration * (trackPercentage / 100);
+            this.audioPlayer.current.currentTime = newTime;
+            this.setState({ percentage: trackPercentage })
+        }
     }
 
     render () {
-        const author = this.state.track.username;
-        const title = this.state.track.title;
-        const photo = <img className="track-player-photo" src={this.state.track.photoUrl} />;
+        const author = this.state.currentTrack.username;
+        const title = this.state.currentTrack.title;
+        const photo = <img className="track-player-photo" src={this.state.currentTrack.photoUrl} />;
 
-        const duration = this.state.duration;
-        const currentTime = this.state.currentTime;
+        const trackTime = this.state.trackTimeStamp;
+        const currentTime = this.state.currentTimeStamp;
         const playback = <img className="pause-play" src={window.playbackIcon} onClick={this.playback} />
         const playPause = this.props.playing ? <img className="pause-play" src={window.pauseIcon} onClick={this.pause} /> : <img className="pause-play" src={window.playIcon2} onClick={this.play} />
+
         return (
             <>
-                <audio ref={this.audioPlayer} src={this.state.track.trackUrl} preload="auto"></audio>
+                <audio ref={this.audioPlayer} src={this.state.currentTrack.trackUrl} preload="auto"></audio>
                 <div className="track-player-container">
                     <div className="track-player">
                         {playback}
                         {playPause}
                         <p className="times current-time">{currentTime}</p>
-                        <SeekBar 
-                            revealBall={this.revealBall} 
-                            hideBall={this.hideBall} 
+                        <SeekBar
                             changePercentage={this.changePercentage} 
                             progressBar={this.progressBar} 
-                            ball={this.state.ball} 
                             percentage={this.state.percentage} 
                             handlePercentage={this.handlePercentage} 
                         />
-                        <p className="times">{duration}</p>
+                        <p className="times">{trackTime}</p>
                     </div>
 
                     <div className='track-player-info'>
                         {photo}
                         <div className="track-player-user-info">
                             <p className="author">{author}</p>
-                            <p className="title" onClick={() => this.props.history.push(`/${this.state.track.id}`)}>{title}</p>
+                            <p className="title" onClick={() => this.props.history.push(`/${this.state.currentTrack.id}`)}>{title}</p>
                         </div>
                     </div>
                 </div>
@@ -158,13 +157,4 @@ class TrackPlayer extends React.Component {
     }
 }
 
-const msp = state => ({
-    playing: state.ui.trackPlayer.playing
-})
-
-const mdp = dispatch => ({
-    playMusic: () => dispatch(playMusic()),
-    pauseMusic: () => dispatch(pauseMusic())
-})
-
-export default connect(msp, mdp)(TrackPlayer);
+export default TrackPlayer;

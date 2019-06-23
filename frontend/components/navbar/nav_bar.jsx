@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
-import TrackPlayer from '../track_player/track_player';
+import TrackPlayerContainer from '../track_player/track_player_container';
 
 class NavBar extends React.Component {
     constructor(props) {
@@ -30,7 +30,7 @@ class NavBar extends React.Component {
     }
     
     toggleNavBar(){
-        const footer = this.props.currentTrack ? <TrackPlayer track={this.props.currentTrack} history={this.props.history}/> : null;
+        const footer = this.props.currentTrack ? <TrackPlayerContainer /> : null;
         if (this.props.currentUser && this.props.location.pathname !== '/logout') {
             return (
                 <>
