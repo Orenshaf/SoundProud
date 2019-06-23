@@ -34,6 +34,11 @@ class User < ApplicationRecord
         foreign_key: :user_id,
         class_name: 'Track'
 
+    has_many :comments,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: 'Comment'
+
     def self.find_by_credentials(loginInfo, password)
         user = User.find_by(email: loginInfo) || User.find_by(profile_url: loginInfo)
         (user && user.is_password?(password)) ? user : nil
