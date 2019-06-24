@@ -11,6 +11,11 @@
     cursor: pointer;
 }
 
+.black {
+    background-color: black;
+    z-index: 10;
+}
+
 .progress-bar:focus {
     outline: none;
 }
@@ -57,7 +62,21 @@
 }
 
 .long {
-    width: 781px;
+    width: 783px;
     margin-right: -191px;
+    margin-bottom: 20px;
+}
 
+.hidden {
+    display: none;
+}
+
+.empty-seek {
+    width: 779px;
+    height: 1px;
+    background: black;
+    margin-bottom: 40px;
+    margin-right: -191px;
+    margin-left: 2px;
+    z-index: 10;
 }

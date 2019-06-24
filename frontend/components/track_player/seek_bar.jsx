@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { seekPercentage, clearSeekTime } from '../../actions/track_player_actions';
+import { seekPercentage } from '../../actions/track_player_actions';
 
 class SeekBar extends React.Component {
     constructor(props) {
@@ -47,8 +47,8 @@ class SeekBar extends React.Component {
     render() {
         return (
             <div className={`progress-bar-outer ${this.props.long ? "long" : ""}`} onClick={(e) => this.handlePercentage(e)} onMouseEnter={this.revealBall} onMouseLeave={this.hideBall}>
-                <input ref={this.progressBar} type="range" min="0" max="100" className="progress-bar" onChange={this.changeSeekPercentage} />
-                <button className={`ball ${this.state.ball ? "show" : ""}`} style={{ left: `${this.props.percentage * 0.99}%` }} onDrag={this.changeSeekPercentage}></button>
+                <input ref={this.progressBar} type="range" min="0" max="100" className={`progress-bar ${this.props.long ? "black" : ""}`} onChange={this.changeSeekPercentage} />
+                <button className={`ball ${this.state.ball ? "show" : ""} ${this.props.long ? "hidden" : ""}`} style={{ left: `${this.props.percentage * 0.99}%` }} onDrag={this.changeSeekPercentage}></button>
             </div>
         )
     }

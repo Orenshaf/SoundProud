@@ -8,11 +8,14 @@ const msp = (state, ownProps) => {
     const track = state.entities.tracks[ownProps.match.params.trackId] || {};
     const user = state.entities.users[track.user_id];
     const currentTrack = state.ui.currentTrack;
+    const currentTime = state.ui.trackPlayer.currentTime ? state.ui.trackPlayer.currentTime : null;
+    
     return ({
         user,
         track,
         currentUserId: state.session.id,
         currentTrack,
+        currentTime,
     })
 }
 

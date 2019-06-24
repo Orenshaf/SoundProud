@@ -150,3 +150,29 @@
     justify-content: space-between;
     height: 330px;
  }
+
+ .show-current-time {
+    background: black;
+    color: #f50;
+    font-size: 10px;
+    font-family: 'Lucida Grande';
+    width: fit-content;
+    padding: 2px;
+    position: absolute;
+    bottom: 71px;
+    left: 32px;
+    z-index: 2;
+}
+
+ .show-track-time {
+    background: black;
+    color: #959595;
+    font-size: 10px;
+    font-family: 'Lucida Grande';
+    width: fit-content;
+    padding: 2px;
+    position: absolute;
+    left: 779px;
+    bottom: 71px;
+    z-index: 2;
+}
