@@ -139,7 +139,7 @@ class TrackPlayer extends React.Component {
         return (
             <>
                 <audio ref={this.audioPlayer} src={this.state.currentTrack.trackUrl} preload="auto"></audio>
-                <div className="track-player-container">
+                <div className="track-player-container" onMouseLeave={this.hideVolumeBar}>
                     <div className="track-player">
                         {playback}
                         {playPause}

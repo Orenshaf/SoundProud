@@ -119,6 +119,8 @@
     background: #f2f2f2;
     border: 1px solid #cecece;
     padding: 1px 5px 21px 4px;
+    animation-name: volume-height;
+    animation-duration: 0.1s;
 }
 
 .triangle {
@@ -133,11 +135,31 @@
     border-left: none;
     width: 12px;
     height: 12px;
+    animation-name: triangle-height;
+    animation-duration: 0.1s;
+}
+
+@keyframes volume-height {
+    from {height: 0;}
+    to {height: 150px;}
+}
+
+@keyframes triangle-height {
+    from {height: 0;}
+    to {height: 12px;}
 }
 
 .show-volume {
     display: inline-block;
+    animation-name: hover-effect;
+    animation-duration: 0.1s;
 }
+
+@keyframes triangle-height {
+    from {display: none;}
+    to {display: inline-block;}
+}
+
 
 .volume-slider {
   -webkit-appearance: none;
@@ -149,6 +171,13 @@
   background-color: $orange;
   cursor: pointer;
   outline: none;
+  animation-name: show-volume;
+  animation-duration: 0.1s;
+}
+
+@keyframes show-volume {
+    from {width: 0}
+    to {width: 150px}
 }
 
 .volume-slider::-webkit-slider-thumb {
@@ -159,6 +188,13 @@
   border-radius: 50%; 
   background: $orange;
   cursor: pointer;
+  animation-name: show-slider;
+  animation-duration: 0.1s;
+}
+
+@keyframes show-slider {
+    from {width: 0}
+    to {width: 10px}
 }
 
 
