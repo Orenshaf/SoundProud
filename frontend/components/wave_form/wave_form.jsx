@@ -5,10 +5,12 @@ import { connect } from 'react-redux';
 class WaveForm extends React.Component {
     constructor(props){
         super(props);
+        
+        this.wavesurfer = null;
     }
 
     componentDidMount() {
-        const wavesurfer = WaveSurfer.create({
+        this.wavesurfer = WaveSurfer.create({
             container: '#waveform',
             waveColor: '#cdcfd1',
             progressColor: '#f50',
@@ -17,7 +19,11 @@ class WaveForm extends React.Component {
             barGraph: 10,
             barWidth: 2,
         });
-        wavesurfer.load(this.props.trackUrl);
+        this.wavesurfer.load(this.props.trackUrl);
+    }
+
+    componentDidUpdate() {
+        this.wavesurfer.seekTo(this.props.percentage);
     }
 
     render() {
@@ -29,6 +35,15 @@ class WaveForm extends React.Component {
     }
 }
 
-export default WaveForm;
+const msp = state => {
+    const duration = state.ui.trackPlayer.duration;
+    const currentTime = state.ui.trackPlayer.currentTime;
+    const percentage = (currentTime / duration);
+    return {
+        percentage
+    }
+}
+
+export default connect(msp, null)(WaveForm);
 
 

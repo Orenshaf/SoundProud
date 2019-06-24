@@ -12,7 +12,7 @@
 }
 
 .black {
-    background-color: black;
+    background-image: linear-gradient(135deg,#846170,#70929c);
     z-index: 10;
 }
 
@@ -64,7 +64,9 @@
 .long {
     width: 783px;
     margin-right: -191px;
-    margin-bottom: 20px;
+    margin-bottom: -27px;
+    margin-left: 0px;
+    padding: 68px 0;
 }
 
 .hidden {
@@ -74,7 +76,7 @@
 .empty-seek {
     width: 779px;
     height: 1px;
-    background: black;
+    background-image: linear-gradient(135deg, #846170, #70929c);
     margin-bottom: 40px;
     margin-right: -191px;
     margin-left: 2px;
