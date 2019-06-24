@@ -115,12 +115,10 @@ class TrackPlayer extends React.Component {
 
     mute() {
         if (this.audioPlayer.current.volume !== 0) {
-            debugger;
             this.setState({previousVolume: this.audioPlayer.current.volume * 100, mute: true});
             this.audioPlayer.current.volume = 0;
             this.volumeBar.current.value = 0;
         } else {
-            debugger;
             this.setState({mute: false})
             this.audioPlayer.current.volume = this.state.previousVolume / 100;
             this.volumeBar.current.value = this.state.previousVolume;
