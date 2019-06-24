@@ -24,7 +24,7 @@ class WaveForm extends React.Component {
     }
 
     componentDidUpdate() {
-        if (this.props.disabled !== true) {
+        if (this.props.disabled !== true && this.props.percentage) {
             this.wavesurfer.seekTo(this.props.percentage);
         }
     }

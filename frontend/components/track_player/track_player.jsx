@@ -58,8 +58,9 @@ class TrackPlayer extends React.Component {
             }
 
             if (this.state.currentTrack !== this.props.currentTrack) {
+                this.pause();
                 this.setState({ currentTrack: this.props.currentTrack })
-                this.play()
+                this.play();
             } else if (!this.props.playing) {
                 this.audioPlayer.current.pause();
             } else if (this.props.playing) {
