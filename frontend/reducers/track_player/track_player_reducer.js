@@ -2,7 +2,7 @@ import { PLAY_MUSIC, PAUSE_MUSIC, RECEIVE_TRACK_INFO, UPDATE_CURRENT_TIME, SEEK_
 import { LOGOUT_CURRENT_USER } from '../../actions/session_actions';
 import { merge } from 'lodash';
 
-const notPlaying = {playing: false, seekTime: null};
+const notPlaying = {playing: false, seekPercentage: null};
 const nullSeekPercentage = {seekPercentage: null};
 
 const trackPlayerReducer = (oldState = notPlaying, action) => {

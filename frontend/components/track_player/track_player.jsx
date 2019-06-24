@@ -9,15 +9,23 @@ class TrackPlayer extends React.Component {
             currentTrack: props.currentTrack,
             currentTimeStamp: null,
             trackTimeStamp: null,
+            volumeBar: false,
+            previousVolume: 0,
+            mute: false
         }
 
         this.audioPlayer = React.createRef();
+        this.volumeBar = React.createRef();
 
         this.play = this.play.bind(this);
         this.pause = this.pause.bind(this);
         this.playback = this.playback.bind(this);
         this.createTimeStamp = this.createTimeStamp.bind(this);
         this.changePercentage = this.changePercentage.bind(this);
+        this.showVolumeBar = this.showVolumeBar.bind(this);
+        this.hideVolumeBar = this.hideVolumeBar.bind(this);
+        this.changeVolume = this.changeVolume.bind(this);
+        this.mute = this.mute.bind(this);
     }
 
     componentDidMount() {
@@ -26,6 +34,7 @@ class TrackPlayer extends React.Component {
             const trackTimeStamp = this.createTimeStamp(this.props.duration);
             this.play()
             this.setState({ trackTimeStamp });
+            this.audioPlayer.current.volume = (this.volumeBar.current.value / 100);
         }
     }
 
@@ -92,6 +101,32 @@ class TrackPlayer extends React.Component {
         this.changePercentage(0);
     }
 
+    showVolumeBar() {
+        this.setState({ volumeBar: true });
+    }
+
+    hideVolumeBar() {
+        this.setState({ volumeBar: false });
+    }
+
+    changeVolume() {
+        this.audioPlayer.current.volume = (this.volumeBar.current.value / 100);
+    }
+
+    mute() {
+        if (this.audioPlayer.current.volume !== 0) {
+            debugger;
+            this.setState({previousVolume: this.audioPlayer.current.volume * 100, mute: true});
+            this.audioPlayer.current.volume = 0;
+            this.volumeBar.current.value = 0;
+        } else {
+            debugger;
+            this.setState({mute: false})
+            this.audioPlayer.current.volume = this.state.previousVolume / 100;
+            this.volumeBar.current.value = this.state.previousVolume;
+        }
+    }
+
     render() {
         const author = this.state.currentTrack.username;
         const title = this.state.currentTrack.title;
@@ -101,7 +136,8 @@ class TrackPlayer extends React.Component {
         const trackTime = this.props.duration ? this.createTimeStamp(this.props.duration) : this.createTimeStamp(0);
         const playback = <img className="pause-play" src={window.playbackIcon} onClick={this.playback} />
         const playPause = this.props.playing ? <img className="pause-play" src={window.pauseIcon} onClick={this.pause} /> : <img className="pause-play" src={window.playIcon2} onClick={this.play} />
-
+        const volume = <img className="pause-play" src={this.state.mute ? window.muteIcon : window.volumeIcon} onMouseEnter={this.showVolumeBar} onClick={this.mute}/>
+        const volumeBar = <input ref={this.volumeBar} type="range" min="0" max="100" defaultValue="50" className="volume-slider" onChange={this.changeVolume}/>
         return (
             <>
                 <audio ref={this.audioPlayer} src={this.state.currentTrack.trackUrl} preload="auto"></audio>
@@ -112,8 +148,14 @@ class TrackPlayer extends React.Component {
                         <p className="times current-time">{currentTime}</p>
                         <SeekBar />
                         <p className="times">{trackTime}</p>
-                    </div>
+                        {volume}
+                        <div className={`volume-slider-container ${this.state.volumeBar ? "show-volume" : ""}`} onMouseEnter={this.showVolumeBar} onMouseLeave={this.hideVolumeBar}>
+                            {volumeBar}
+                        </div>
+                        <div className={`triangle ${this.state.volumeBar ? "show-volume" : ""}`} onMouseEnter={this.showVolumeBar} onMouseLeave={this.hideVolumeBar}>
 
+                        </div>
+                    </div>
                     <div className='track-player-info'>
                         {photo}
                         <div className="track-player-user-info">
