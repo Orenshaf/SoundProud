@@ -35,13 +35,6 @@ class TrackPlayer extends React.Component {
             this.play()
             this.setState({ trackTimeStamp });
             this.audioPlayer.current.volume = (this.volumeBar.current.value / 100);
-            const ctx = new AudioContext();
-            const audioSrc = ctx.createMediaElementSource(this.audioPlayer.current);
-            const analyser = ctx.createAnalyser();
-            audioSrc.connect(analyser);
-            debugger;
-            const frequencyData = new Uint8Array(analyser.frequencyBinCount);
-            debugger;
         }
     }
 
