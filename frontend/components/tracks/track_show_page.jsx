@@ -63,7 +63,12 @@ class TrackShowPage extends React.Component {
         const editButton = this.props.user && this.props.track.user_id === this.props.currentUserId ? <button className="edit-button" onClick={() => this.props.openModal('trackEditForm')}><img src={window.editIcon} alt="" />Edit</button> : null;
         const trashButton = this.props.user && this.props.track.user_id === this.props.currentUserId ? <button className="edit-button" onClick={this.deleteTrack}><img src={window.trashIcon} alt="" />Delete</button> : null;        
         const seekBar = ((this.props.track && this.props.currentTrack) && (this.props.track.id === this.props.currentTrack.id)) ? <SeekBar long={true} /> : <div className="empty-seek"></div>;
-        const waveForm = this.props.track.trackUrl ? <WaveForm trackUrl={this.props.track.trackUrl} /> : null;
+        let waveForm = null;
+        if ((this.props.track && this.props.currentTrack) && (this.props.track.id === this.props.currentTrack.id)) {
+            waveForm = <WaveForm trackUrl={this.props.track.trackUrl} />
+        } else if (this.props.track.trackUrl) {
+            waveForm = <WaveForm trackUrl={this.props.track.trackUrl} disabled={true}/>
+        } 
         const currentTime = ((this.props.track && this.props.currentTrack) && (this.props.track.id === this.props.currentTrack.id)) ? <span className="show-current-time">{this.createTimeStamp(this.props.currentTime)}</span>  : null;
         const trackTime = this.state.trackTimeStamp ? <span className="show-track-time">{this.state.trackTimeStamp}</span> : null;
         let createdAt;

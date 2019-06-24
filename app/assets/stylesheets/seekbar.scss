@@ -38,6 +38,10 @@
     box-shadow: -500px 0 0 500px $orange;
 }
 
+.black::-webkit-slider-thumb {
+    box-shadow: none;
+}
+
 .progress-bar::-webkit-slider-thumb:before {
     width: 100px;
     -webkit-appearance: none;
@@ -70,7 +74,8 @@
 }
 
 .hidden {
-    display: none;
+    width: 0;
+    height: 0;
 }
 
 .empty-seek {

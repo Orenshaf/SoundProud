@@ -10,20 +10,23 @@ class WaveForm extends React.Component {
     }
 
     componentDidMount() {
+        const interact = this.props.disabled ? false : true;
         this.wavesurfer = WaveSurfer.create({
             container: '#waveform',
             waveColor: '#cdcfd1',
             progressColor: '#f50',
             cursorColor: 'transparent',
-            interact: true,
             barGraph: 10,
             barWidth: 2,
+            interact
         });
         this.wavesurfer.load(this.props.trackUrl);
     }
 
     componentDidUpdate() {
-        this.wavesurfer.seekTo(this.props.percentage);
+        if (this.props.disabled !== true) {
+            this.wavesurfer.seekTo(this.props.percentage);
+        }
     }
 
     render() {
