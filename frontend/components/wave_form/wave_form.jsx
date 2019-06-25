@@ -18,8 +18,10 @@ class WaveForm extends React.Component {
             cursorColor: 'transparent',
             barGraph: 10,
             barWidth: 2,
+            partialRender: true,
             interact
         });
+
         this.wavesurfer.load(this.props.trackUrl);
     }
 
