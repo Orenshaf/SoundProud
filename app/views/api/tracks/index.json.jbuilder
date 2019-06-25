@@ -1,5 +1,6 @@
 json.array! @tracks do |track|
-    json.extract! track, :id, :title
+    json.extract! track, :id, :title, :user_id
+    json.trackUrl url_for(track.track_file)
     if track.photo.attached? 
         json.photoUrl url_for(track.photo)
     else

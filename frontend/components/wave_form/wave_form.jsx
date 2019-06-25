@@ -12,9 +12,21 @@ class WaveForm extends React.Component {
         this.waveForm = React.createRef();
         this.wavesurfer = null;
         
+        this.drawWave = this.drawWave.bind(this);
     }
 
     componentDidMount() {
+        this.drawWave();
+    }
+
+    componentDidUpdate() {
+        const percentage = Number(this.props.percentage);
+        if (this.props.active && this.state.ready) {
+            this.wavesurfer.seekTo(percentage);
+        } 
+    }
+
+    drawWave() {
         const interact = this.props.active ? true : false;
         this.wavesurfer = WaveSurfer.create({
             container: this.waveForm.current,
@@ -25,18 +37,11 @@ class WaveForm extends React.Component {
             barWidth: 2,
             interact
         });
-        
+
         this.wavesurfer.load(this.props.trackUrl);
         this.wavesurfer.on('ready', () => {
-            this.setState({ready: true})
+            this.setState({ ready: true })
         })
-    }
-
-    componentDidUpdate() {
-        const percentage = Number(this.props.percentage);
-        if (this.props.active && this.state.ready && percentage !== NaN) {
-            this.wavesurfer.seekTo(percentage);
-        } 
     }
 
     render() {
