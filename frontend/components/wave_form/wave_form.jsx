@@ -5,14 +5,19 @@ import { connect } from 'react-redux';
 class WaveForm extends React.Component {
     constructor(props){
         super(props);
-        
+
+        this.state = {
+            ready: false,
+        }
+        this.waveForm = React.createRef();
         this.wavesurfer = null;
+        
     }
 
     componentDidMount() {
-        const interact = this.props.disabled ? false : true;
+        const interact = this.props.active ? true : false;
         this.wavesurfer = WaveSurfer.create({
-            container: '#waveform',
+            container: this.waveForm.current,
             waveColor: '#cdcfd1',
             progressColor: '#f50',
             cursorColor: 'transparent',
@@ -22,18 +27,21 @@ class WaveForm extends React.Component {
         });
         
         this.wavesurfer.load(this.props.trackUrl);
-
+        this.wavesurfer.on('ready', () => {
+            this.setState({ready: true})
+        })
     }
 
     componentDidUpdate() {
-        if (this.props.disabled !== true && this.props.percentage && this.wavesurfer) {
-            this.wavesurfer.seekTo(this.props.percentage);
-        }
+        const percentage = Number(this.props.percentage);
+        if (this.props.active && this.state.ready && percentage !== NaN) {
+            this.wavesurfer.seekTo(percentage);
+        } 
     }
 
     render() {
         return (
-            <div id="waveform">
+            <div ref={this.waveForm} id="waveform">
 
             </div>
         )
