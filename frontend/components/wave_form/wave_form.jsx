@@ -9,6 +9,8 @@ class WaveForm extends React.Component {
         this.state = {
             ready: false,
         }
+
+        this.trackUrl = props.trackUrl;
         this.waveForm = React.createRef();
         this.wavesurfer = null;
         
@@ -38,7 +40,7 @@ class WaveForm extends React.Component {
             interact
         });
 
-        this.wavesurfer.load(this.props.trackUrl);
+        this.wavesurfer.load(this.trackUrl);
         this.wavesurfer.on('ready', () => {
             this.setState({ ready: true })
         })

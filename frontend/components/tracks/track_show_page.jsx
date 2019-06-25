@@ -25,7 +25,6 @@ class TrackShowPage extends React.Component {
     }
 
     componentDidMount() {
-        debugger;
         this.props.fetchTrack(this.props.match.params.trackId).then(payload => {
                 const trackId = payload.track.id;
                 const username = payload.user.username;
@@ -35,26 +34,7 @@ class TrackShowPage extends React.Component {
                 const createdAt = payload.track.created_at;
                 const trackUrl = payload.track.trackUrl
                 this.setState({ trackId, username, title, photoUrl, userId, createdAt, trackUrl });
-        }).then(() => this.createTrackTimeStamp())
-        ;
-        // if (this.props.currentTrack.id) {
-        //     if (this.props.currentTrack.id !== this.trackId) {
-        //         this.props.fetchTrack(this.trackId).fail(() => this.props.history.push('/discover'));
-        //     }
-        // } else {
-        //     this.props.fetchTrack(this.trackId).fail(() => this.props.history.push('/discover'));
-        // }
-        // if (!this.state.trackTimeStamp) {
-        //     const source = this.props.track.trackUrl
-        //     const audio = new Audio();
-        //     audio.src = source;
-
-        //     audio.onloadedmetadata = () => {
-        //         const duration = audio.duration;
-        //         const trackTimeStamp = this.createTimeStamp(duration);
-        //         this.setState({ trackTimeStamp });
-        //     }
-        // }
+        }).then(() => this.createTrackTimeStamp());
     }
 
     componentDidUpdate() {
@@ -68,7 +48,7 @@ class TrackShowPage extends React.Component {
                 const createdAt = payload.track.created_at;
                 const trackUrl = payload.track.trackUrl
                 this.setState({ trackId, username, title, photoUrl, userId, createdAt, trackUrl });
-            }).then(() => this.createTrackTimeStamp())
+            }).then(() => this.createTrackTimeStamp());
         }
     }
 
@@ -101,7 +81,6 @@ class TrackShowPage extends React.Component {
     }
 
     render() {
-        debugger;
         // const player = this.props.track ? <TrackPlayer trackUrl={this.props.track.trackUrl}/>: null;
         const player = this.state.trackId ? <TrackPlayButton trackId={this.state.trackId} fetchCurrentTrack={this.fetchCurrentTrack} inPlayButton={true} playButton={true} className={"large"}/> : null;
         const username = this.state.username ? this.state.username : null;
@@ -111,7 +90,7 @@ class TrackShowPage extends React.Component {
         const trashButton = (this.state.userId === this.props.currentUserId) ? <button className="edit-button" onClick={this.deleteTrack}><img src={window.trashIcon} alt="" />Delete</button> : null;        
         const seekBar = (this.props.currentTrack && this.state.trackId === this.props.currentTrack.id) ? <SeekBar long={true} /> : <div className="empty-seek"></div>;
         let waveForm = null;
-        if (this.state.trackId === this.props.currentTrack.id) {
+        if (this.props.currentTrack && this.state.trackId === this.props.currentTrack.id) {
             waveForm = <WaveForm trackUrl={this.state.trackUrl} active={true} />
         } else if (this.state.trackUrl) {
             waveForm = <WaveForm trackUrl={this.state.trackUrl} active={false}/>
