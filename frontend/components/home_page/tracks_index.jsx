@@ -1,8 +1,8 @@
 import React from 'react';
 import TrackItem from './track_item';
 
-const TracksIndex = ({tracks, fetchCurrentTrack, history}) => {
-    const tracksIndex = tracks.map(track => {
+const TracksIndex = ({tracks, fetchCurrentTrack, history, limit}) => {
+    const tracksIndex = tracks.slice(0, limit).map(track => {
         return (
             <TrackItem 
                 key={track.id} 

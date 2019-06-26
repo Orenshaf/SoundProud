@@ -26,7 +26,7 @@ class HomePage extends React.Component {
     
     render() {
         const fetchCurrentTrack = this.props.fetchCurrentTrack;
-        const tracks = this.props.tracks.length > 0 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack}/> : null ;
+        const tracks = this.props.tracks.length > 0 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack} limit={10}/> : null ;
         return (
             <div className="home-page-container">
                 <h1 className="track-header">More of SoundProud's music</h1>
