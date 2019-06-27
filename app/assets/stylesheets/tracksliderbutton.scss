@@ -2,11 +2,17 @@
  @import "base/colors.scss";
  @import "base/fonts.scss";
 
+
+ .track-index-container {
+    position: relative;
+    width: 110%;
+ }
+
 .track-slider-button {
     display: flex;
     position: absolute;
-    right: 108px;
-    top: 245px;
+    right: 86px;
+    top: 90px;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
@@ -31,8 +37,8 @@
 .left-button {
     display: flex;
     position: absolute;
-    right: 89%;
-    top: 245px;
+    left: -14px;
+    top: 90px;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
