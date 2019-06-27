@@ -23,7 +23,7 @@ class Splash extends React.Component {
 
     render () {
         const fetchCurrentTrack = this.props.fetchCurrentTrack;
-        const tracks = this.props.tracks.length > 0 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack} limit={6}/> : null;
+        const tracks = this.props.tracks.length > 0 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack} limit={6} includePlayButton={false}/> : null;
         return (
             <>
                 <div className="splash-page">

@@ -32,6 +32,11 @@ class TrackItem extends React.Component {
     }
 
     render () {
+        const trackPlayButton = this.props.includePlayButton ? <TrackPlayButton
+            trackId={this.trackId}
+            fetchCurrentTrack={this.fetchCurrentTrack}
+            playButton={this.state.playButton}
+        /> : null;
         return (
             <div className="track-item">
                 <div className="track-item-photo-container" onMouseEnter={this.revealPlayButton} onMouseLeave={this.hidePlayButton}>
@@ -40,11 +45,7 @@ class TrackItem extends React.Component {
                         src={this.photo}
                         onClick={this.redirectToTrackShowPage}
                     />
-                    <TrackPlayButton
-                        trackId={this.trackId}
-                        fetchCurrentTrack={this.fetchCurrentTrack}
-                        playButton={this.state.playButton}
-                    />
+                    {trackPlayButton}
                 </div>
                 <NavLink className="track-item-link" to={`/${this.trackId}`}>
                     <h1>{this.title}</h1>
