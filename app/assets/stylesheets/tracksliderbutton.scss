@@ -2,12 +2,6 @@
  @import "base/colors.scss";
  @import "base/fonts.scss";
 
-
- .track-index-container {
-    position: relative;
-    width: 110%;
- }
-
 .track-slider-button {
     display: flex;
     position: absolute;
@@ -61,7 +55,7 @@
     transform: rotate(225deg) translate(-1px,1px);
 }
 
-.orange {
+.orange-slider {
     border: 1px solid $orange;
 }
 

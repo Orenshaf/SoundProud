@@ -33,6 +33,7 @@ class TracksIndex extends React.Component {
     render() {
         const fetchCurrentTrack = this.props.fetchCurrentTrack;
         const includePlayButton = this.props.includePlayButton;
+        const history = this.props.history;
         const tracksIndex = this.tracks.map(track => {
             return (
                 <TrackItem
@@ -50,8 +51,8 @@ class TracksIndex extends React.Component {
         return (
             <>
                 <div className="track-index-container">
-                    <div className="track-index">
-                        <div className={`track-index-inner ${this.state.trackButton === "left" ? "track-index-inner-slide" : ""}`}>
+                    <div className={`track-index ${includePlayButton ? "" : "home-page-index"}`}>
+                        <div className={`track-index-inner ${this.state.trackButton === "left" ? "track-index-inner-slide" : ""} ${includePlayButton ? "" : "home-page-index"}`}>
                             {tracksIndex}
                         </div>
                     </div>

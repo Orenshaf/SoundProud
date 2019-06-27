@@ -2,6 +2,11 @@
  @import "base/colors.scss";
  @import "base/fonts.scss";
 
+ .track-index-container {
+    position: relative;
+    width: 110%;
+ }
+
 .home-page-container {
     margin: 0 auto;
     margin-top: 46px;
@@ -52,5 +57,11 @@
     width: fit-content;
     font-size: 14px;
     color: #999;
+}
+
+
+.home-page-index {
+    width: 100% ;
+    border: none;
 }
 

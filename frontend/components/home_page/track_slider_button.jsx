@@ -22,7 +22,7 @@ class TrackSliderButton extends React.Component {
 
     render () {
         return (
-            <div className={`track-slider-button ${this.state.overButton ? 'orange' : ''} ${this.props.leftRight === "left" ? "left-button" : ""}`} onMouseEnter={this.changeColor} onMouseLeave={this.removeColor} onClick={this.props.slideTracks}>
+            <div className={`track-slider-button ${this.state.overButton ? 'orange-slider' : ''} ${this.props.leftRight === "left" ? "left-button" : ""}`} onMouseEnter={this.changeColor} onMouseLeave={this.removeColor} onClick={this.props.slideTracks}>
                 <div className={`track-slider-arrow ${this.state.overButton ? 'orange-arrow' : ''} ${this.props.leftRight === "left" ? "left-arrow" : ""}`}>
 
                 </div>
