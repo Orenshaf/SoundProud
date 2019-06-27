@@ -5,39 +5,23 @@ import TrackSliderButton from './track_slider_button';
 class HomePage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            trackButton: "right"
-        }
-
-        this.slideTracks = this.slideTracks.bind(this);
     }
     
     componentDidMount() {
         this.props.fetchTracks();
     }
-
-    slideTracks() {
-        if (this.state.trackButton === "right") {
-            this.setState({trackButton: "left"})
-        } else if (this.state.trackButton === "left") {
-            this.setState({ trackButton: "right" })
-        }
-    }
     
     render() {
         const fetchCurrentTrack = this.props.fetchCurrentTrack;
-        const tracks = this.props.tracks.length > 0 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack} includePlayButton={true} limit={10}/> : null ;
+        const tracks1 = this.props.tracks.length > 0 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack} includePlayButton={true} limit={10}/> : null ;
+        const tracks2 = this.props.tracks.length > 0 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack} includePlayButton={true} limit={11} /> : null;
+        
         return (
             <div className="home-page-container">
                 <h1 className="track-header">More of SoundProud's music</h1>
                 <p className="track-subheader">Music from some of our artists</p>
-
-                <div className="track-index">
-                    <div className={`track-index-inner ${this.state.trackButton === "left" ? "track-index-inner-slide" : ""}`}>
-                        {tracks}
-                    </div>
-                </div>
-                <TrackSliderButton slideTracks={this.slideTracks} leftRight={this.state.trackButton}/>
+                {tracks1}
+                {tracks2}
             </div>
         )
     }
