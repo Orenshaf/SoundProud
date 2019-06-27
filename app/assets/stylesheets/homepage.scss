@@ -21,6 +21,7 @@
     min-height: fit-content;
     overflow: hidden;
     display: flex;
+    border-bottom: 1px solid #f2f2f2;    
 }
 
 .track-index-inner {
@@ -31,7 +32,7 @@
     display: flex;
     transition: all ease-in-out 1s;
     transform: translate(0%, 0%);
-    border-bottom: 1px solid #f2f2f2;
+
 }
 
 .track-index-inner-slide {
@@ -43,6 +44,7 @@
     transition: all ease-in-out 1s;
     transform: translate(-86.5%, 0%);
     overflow: visible;
+
 }
 
 .track-header {
