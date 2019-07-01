@@ -10,7 +10,7 @@ Click here to visit [SoundProud](https://soundproud.herokuapp.com/#/ "SoundProud
 ## Features ##
 ### On SoundProud users are able to: ###
 
-Sign up with a personalized username. The modals were made by dispatching actions which both open and closed the modal and allowed for users to sign in/out without refreshing the page.
+Sign up with a personalized username. The modals were made by dispatching actions which both opened and closed the modals and allowed for users to sign in/out without refreshing the page.
 
 ![Giphy](https://media.giphy.com/media/iJmtWYxfqgU0qMgujr/giphy.gif)
 
@@ -28,7 +28,7 @@ Listen to music on SoundProud. The waveform and the trackplayer at the bottom ar
 
   ![Giphy](https://media.giphy.com/media/PnrensvlfFUgoGCcCO/giphy.gif)
   
-+ This was done by creating a UI slice of state to dispatch the necessary information (current track's duration, current time and whether or not it was playing) both in the track player and on the track's show page.
++ This was done by creating a UI slice of state to dispatch the necessary information (current track's duration, current time and whether or not it was playing) both in the track player component and on the track's show page component.
 
   - - - -
 ## Future Directions ##
