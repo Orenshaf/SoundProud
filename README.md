@@ -9,10 +9,11 @@ Click here to visit [SoundProud](https://soundproud.herokuapp.com/#/ "SoundProud
  
 ## Features ##
 ### On SoundProud users are able to: ###
+
 Sign up with a personalized username. The modals were made by dispatching actions which both open and closed the modal and allowed for users to sign in/out without refreshing the page.
 
-<center><img src="https://media.giphy.com/media/iJmtWYxfqgU0qMgujr/giphy.gif" /></center>
-![Imgur](https://media.giphy.com/media/iJmtWYxfqgU0qMgujr/giphy.gif)
+![Giphy](https://media.giphy.com/media/iJmtWYxfqgU0qMgujr/giphy.gif)
+
 SoundCloud is unique in that it's user authentication actually takes 5 steps to sign a user up. As shown in the gif above the steps are as follows:
 
  + First a user is prompted for an email. If the email exists, then the sign in form is rendered, otherwise the sign up form is rendered.
@@ -20,9 +21,15 @@ SoundCloud is unique in that it's user authentication actually takes 5 steps to 
  + Finally they are signed in (in the background) and asked for a username.
 
 The user authentication proved to be more complicated than I anticipated because most sites just ask for a username and password on one form, but SoundCloud first checks to see if the user already exists and then prompts the user for their password. 
+
   - - - -
-  + Listen to music on SoundProud. The waveform and the trackplayer at the bottom are synchronized. This was done by creating a UI slice of state to dispatch the necessary information (current track's duration, current time and whether or not it was playing) both in the track player and on the track's show page.
-![Imgur](https://i.imgur.com/wcA2OyB.png)
+  
+Listen to music on SoundProud. The waveform and the trackplayer at the bottom are synchronized. 
+
+  ![Giphy](https://media.giphy.com/media/PnrensvlfFUgoGCcCO/giphy.gif)
+  
++ This was done by creating a UI slice of state to dispatch the necessary information (current track's duration, current time and whether or not it was playing) both in the track player and on the track's show page.
+
   - - - -
 ## Future Directions ##
  + Users will be able to comment on tracks, but more specifically on a particular timestamp of a track.
