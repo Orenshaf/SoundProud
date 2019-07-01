@@ -2,10 +2,10 @@
 ## SoundProud is a [SoundCloud](http://www.soundcloud.com/ "SoundCloud") clone. ##
 Click here to visit [SoundProud](https://soundproud.herokuapp.com/#/ "SoundProud"). SoundCloud is an application for artists to upload and share thei music for the masses to listen to. The official site does not utilize React, so I sought out to create a clone which does.
 
+![Imgur](https://i.imgur.com/Vfpoby9.png)
+
 ## Technologies ##
 + React, Redux, Ruby, Rails, jQuery, PostgreSQL, and AWS S3
-  
- ![Imgur](https://i.imgur.com/Vfpoby9.png)
  
 ## Features ##
 ### On SoundProud users are able to: ###
