@@ -11,21 +11,15 @@ Click here to visit [SoundProud](https://soundproud.herokuapp.com/#/ "SoundProud
 ### On SoundProud users are able to: ###
 Sign up with a personalized username. The modals were made by dispatching actions which both open and closed the modal and allowed for users to sign in/out without refreshing the page.
 
-![Imgur](https://i.imgur.com/1kGhV9r.png)
+![Imgur](https://i.imgur.com/tHcUXkf.gifv)
 
-SoundCloud is unique in that it's user authentication actually takes 2 steps to sign in and 5 to sign up, whereas most sites render one form to sign you in/up. On SoundCloud the "Create account" and "Sign up" button have the exact same functionality - they only ask for an email or profile-url. Once the email or profile-url are received, if that information exists in the database, then either a sign up form or sign in form are rendered. This made the user authentication process a little more complicated. So in order to create this effect on SoundProud, I first receive an email address and send out an ajax request to see if the user is already signed up, if they are, I render the sign in form, which asks for the password associated with the account, otherwise I render a sign up form, which asks to create a password for the new account.
+SoundCloud is unique in that it's user authentication actually takes 5 steps to sign a user up. As shown in the gif above the steps are as follows:
 
-![Imgur](https://i.imgur.com/38li43p.png)
+ + First a user is prompted for an email. If the email exists, then the sign in form is rendered, otherwise the sign up form is rendered.
+ + After the user gives an email and a password, they are prompted for their age and gender.
+ + Finally they are signed in (in the background) and asked for a username.
 
-In the case of a sign up, after the password is received, then a user must give their age and gender. 
-
-![Imgur](https://i.imgur.com/czdTjQF.png)
-
-Once all this information is received the user is signed in, but the modal does not close, instead the user is prompted for a username. 
-
-![Imgur](https://i.imgur.com/4NogR5E.png)
-
-The user authentication proved to be more complicated than I anticipated.
+The user authentication proved to be more complicated than I anticipated because most sites just ask for a username and password on one form, but SoundCloud first checks to see if the user already exists and then prompts the user for their password. 
   - - - -
   + Listen to music on SoundProud. The waveform and the trackplayer at the bottom are synchronized. This was done by creating a UI slice of state to dispatch the necessary information (current track's duration, current time and whether or not it was playing) both in the track player and on the track's show page.
 ![Imgur](https://i.imgur.com/wcA2OyB.png)
