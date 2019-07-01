@@ -7,14 +7,13 @@ Click here to visit [SoundProud](https://soundproud.herokuapp.com/#/ "SoundProud
   
  ![Imgur](https://i.imgur.com/Vfpoby9.png)
  
-## Overview ##
-### On SoundProud users can: ###
-  + Sign up with a personalized username. The modals were made by dispatching actions which both open and closed the modal and allowed for users to sign in/out without refreshing the page.
+## Features ##
+### On SoundProud users are able to: ###
+Sign up with a personalized username. The modals were made by dispatching actions which both open and closed the modal and allowed for users to sign in/out without refreshing the page.
+
 ![Imgur](https://i.imgur.com/1kGhV9r.png)
-  - - - -
-  + Upload their own music with photos. To store the audio and image files I used AWS S3 and a rails backend. 
-![Imgur](https://i.imgur.com/NLpASDc.png)
-![Imgur](https://i.imgur.com/ILQaEDi.png)
+
+SoundCloud is unique in that it's user authentication actually takes 2 steps to sign in and 5 to sign up, whereas most sites render one form to sign you in/up. On SoundCloud the "Create account" and "Sign up" button have the exact same functionality - they only ask for an email or profile-url. Once the email or profile-url are received, if that information exists in the database, then either a sign up form or sign in form are rendered. This made the user authentication process a little more complicated. So in order to create this effect on SoundProud, I first receive an email address and send out an ajax request to see if the user is already signed up, if they are, I render the sign in form, which asks for the password associated with the account, otherwise I render a sign up form, which asks to create a password for the new account. In the case of a sign up, after the password is received, then a user must give their age and gender. Once all this information is received the user is signed in, but the modal does not close
   - - - -
   + Listen to music on SoundProud. The waveform and the trackplayer at the bottom are synchronized. This was done by creating a UI slice of state to dispatch the necessary information (current track's duration, current time and whether or not it was playing) both in the track player and on the track's show page.
 ![Imgur](https://i.imgur.com/wcA2OyB.png)
