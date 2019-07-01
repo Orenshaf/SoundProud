@@ -10,13 +10,14 @@ Click here to visit [SoundProud](https://soundproud.herokuapp.com/#/ "SoundProud
 ## Overview ##
 ### On SoundProud users can: ###
   + Sign up with a personalized username 
-  - - - -
 ![Imgur](https://i.imgur.com/1kGhV9r.png)
-  + Upload their own music with photos 
   - - - -
+  + Upload their own music with photos 
 ![Imgur](https://i.imgur.com/NLpASDc.png)
 ![Imgur](https://i.imgur.com/ILQaEDi.png)
-  + Listen to music on SoundProud
   - - - -
+  + Listen to music on SoundProud
 ![Imgur](https://i.imgur.com/mOJsTW8.png)
+  - - - -
+  
  
