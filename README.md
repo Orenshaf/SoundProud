@@ -11,8 +11,8 @@ Click here to visit [SoundProud](https://soundproud.herokuapp.com/#/ "SoundProud
 ### On SoundProud users are able to: ###
 Sign up with a personalized username. The modals were made by dispatching actions which both open and closed the modal and allowed for users to sign in/out without refreshing the page.
 
-<center>![Imgur](https://media.giphy.com/media/iJmtWYxfqgU0qMgujr/giphy.gif)</center>
-
+<center><img src="https://media.giphy.com/media/iJmtWYxfqgU0qMgujr/giphy.gif" /></center>
+![Imgur](https://media.giphy.com/media/iJmtWYxfqgU0qMgujr/giphy.gif)
 SoundCloud is unique in that it's user authentication actually takes 5 steps to sign a user up. As shown in the gif above the steps are as follows:
 
  + First a user is prompted for an email. If the email exists, then the sign in form is rendered, otherwise the sign up form is rendered.
