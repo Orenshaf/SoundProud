@@ -1,8 +1,11 @@
 # SoundProud 
 ## SoundProud is a [SoundCloud](http://www.soundcloud.com/ "SoundCloud") clone. ##
 Click here to visit [SoundProud](https://soundproud.herokuapp.com/#/ "SoundProud"). 
+
+# Technologies
++ React, Redux, Ruby, Rails, jQuery, PostgreSQL, and AWS S3
   
- ![Imgur](https://i.imgur.com/CKUN9PZ.png)
+ ![Imgur](https://i.imgur.com/Vfpoby9.png)
  
 ## Overview ##
 ### On SoundProud users can: ###
