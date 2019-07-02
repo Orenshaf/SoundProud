@@ -1,0 +1,30 @@
+@import "base/colors.scss";
+@import "base/fonts.scss";
+
+.comment-form-container {
+    display: block;
+    padding: 5px;
+    width: 100%;
+    margin: 10px 0;
+    box-sizing: border-box;
+    background: #f2f2f2;
+    border: 1px solid #cccccc;
+}
+
+.comment-form {
+    background: white;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    color: #111;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    height: 27px;
+    font-family: 'Lucida Grande';
+}
+
+.comment-form:focus {
+    outline: none;
+    border: 1px solid #999999;
+}

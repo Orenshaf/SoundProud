@@ -75,15 +75,15 @@
     border: 1px solid #e5e5e5;
     border-radius: 3px;
     width: fit-content;
-    height: fit-content;
     font-family: 'Interstate';
     padding: 5px 10px;
     box-sizing: border-box;
-    margin: 5px;
+    margin-right: 5px;
  }
 
  .edit-buttons {
-     display: flex;
+     display: block;
+     float: left;
  }
 
  .image-edit-button {
@@ -159,7 +159,7 @@
     width: fit-content;
     padding: 2px;
     position: absolute;
-    bottom: 71px;
+    top: 296px;
     left: 32px;
     z-index: 10;
 }
@@ -173,6 +173,13 @@
     padding: 2px;
     position: absolute;
     left: 779px;
-    bottom: 71px;
+    top: 296px;
     z-index: 10;
+}
+
+.show-page-bottom {
+    width: 840px;
+    height: fit-content;
+    padding: 10px 20px;
+    border-right: 1px solid #f2f2f2;
 }

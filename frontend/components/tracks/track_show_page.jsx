@@ -2,6 +2,7 @@ import React from 'react';
 import TrackPlayButton from '../tracks/track_play_button';
 import SeekBar from '../track_player/seek_bar';
 import WaveForm from '../wave_form/wave_form';
+import CommentForm from '../comments/comment_form';
 
 class TrackShowPage extends React.Component {
     constructor(props) {
@@ -83,6 +84,7 @@ class TrackShowPage extends React.Component {
     render() {
         // const player = this.props.track ? <TrackPlayer trackUrl={this.props.track.trackUrl}/>: null;
         const player = this.state.trackId ? <TrackPlayButton trackId={this.state.trackId} fetchCurrentTrack={this.fetchCurrentTrack} playButton={true} className={"large"}/> : null;
+        const commentForm = this.state.trackId ? <CommentForm trackId={this.state.trackId} /> : null;
         const username = this.state.username ? this.state.username : null;
         const title = this.state.title ? this.state.title : null;
         const photo = this.state.photoUrl ? <img className="track-photo" src={this.state.photoUrl}/> : null;
@@ -128,9 +130,12 @@ class TrackShowPage extends React.Component {
                         {photo}
                     </div>
                 </div>
-                <div className="edit-buttons">
-                    {editButton}
-                    {trashButton}
+                <div className="show-page-bottom">
+                    {commentForm}
+                    <div className="edit-buttons">
+                        {editButton}
+                        {trashButton}
+                    </div>
                 </div>
                 
             </div>
