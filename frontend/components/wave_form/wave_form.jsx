@@ -28,6 +28,10 @@ class WaveForm extends React.Component {
         } 
     }
 
+    // componentWillUnmount() {
+    //     debugger;
+    // }
+
     drawWave() {
         const interact = this.props.active ? true : false;
         this.wavesurfer = WaveSurfer.create({
