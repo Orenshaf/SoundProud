@@ -23,7 +23,6 @@ class CommentForm extends React.Component {
 
     setTrackTimeStamp() {
         this.setState({trackTimeStamp: this.props.trackTimeStamp});
-        debugger;
     }
 
     handleSubmit() {

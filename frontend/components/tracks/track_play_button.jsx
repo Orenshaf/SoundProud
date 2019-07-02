@@ -27,6 +27,7 @@ class TrackPlayButton extends React.Component {
     }
 
     playMusic() {
+        debugger;
         if (this.props.currentTrackId === this.trackId) {
             this.props.playMusic();
         } else {
