@@ -139,7 +139,7 @@ class TrackPlayer extends React.Component {
         const volumeBar = <input ref={this.volumeBar} type="range" min="0" max="100" defaultValue="50" className="volume-slider" onChange={this.changeVolume}/>
         return (
             <>
-                <audio crossOrigin="anonymous" ref={this.audioPlayer} src={this.state.currentTrack.trackUrl} preload="auto"></audio>
+                <audio ref={this.audioPlayer} src={this.state.currentTrack.trackUrl} preload="auto"></audio>
                 <div className="track-player-container" onMouseLeave={this.hideVolumeBar}>
                     <div className="track-player">
                         {playback}
