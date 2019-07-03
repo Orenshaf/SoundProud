@@ -131,10 +131,12 @@ class TrackShowPage extends React.Component {
                     </div>
                 </div>
                 <div className="show-page-bottom">
-                    {commentForm}
-                    <div className="edit-buttons">
-                        {editButton}
-                        {trashButton}
+                    <div className="comment-divider">
+                        {commentForm}
+                        <div className="edit-buttons">
+                            {editButton}
+                            {trashButton}
+                        </div>
                     </div>
                 </div>
                 
