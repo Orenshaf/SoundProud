@@ -1,7 +1,7 @@
 class Api::TracksController < ApplicationController
 
     def index
-        @tracks = Track.all.with_attached_photo.with_attached_track_file.includes(:user).includes(:comments)
+        @tracks = Track.all.with_attached_photo.with_attached_track_file.includes(:user)
         render :index
     end
     
@@ -15,7 +15,7 @@ class Api::TracksController < ApplicationController
     end
 
     def show
-        @track = Track.find_by(id: params[:id])
+        @track = Track.includes(:comments).find_by(id: params[:id])
 
         if @track 
             render "api/tracks/show"
