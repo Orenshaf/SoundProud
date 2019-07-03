@@ -15,7 +15,7 @@ class Api::TracksController < ApplicationController
     end
 
     def show
-        @track = Track.includes(:comments).find_by(id: params[:id])
+        @track = Track.joins(:comments).where("comments.parent_cmt_id IS NULL").find_by(id: params[:id])
 
         if @track 
             render "api/tracks/show"

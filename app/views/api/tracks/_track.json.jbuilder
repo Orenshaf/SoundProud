@@ -5,4 +5,5 @@ if track.photo.attached?
 else
     json.photoUrl image_url('default-photo.png')
 end
-json.comments track.comments.pluck(:id)
+
+json.comments track.comments.where(parent_cmt_id: nil).pluck(:id)

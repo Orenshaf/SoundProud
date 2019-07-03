@@ -1,5 +1,6 @@
 import React from 'react';
 import { createComment } from '../../actions/comment_actions';
+import { connect } from 'react-redux';
 
 class CommentReplyForm extends React.Component {
     constructor(props) {
@@ -9,7 +10,10 @@ class CommentReplyForm extends React.Component {
             track_time: props.trackTime,
             user_id: props.currentUserId,
             track_id: props.trackId,
+            parent_cmt_id: props.parentCommentId
         }
+
+        this.commentReplyForm = React.createRef();
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -25,21 +29,23 @@ class CommentReplyForm extends React.Component {
         e.preventDefault();
         const that = this;
         this.props.createComment(this.state).then(() => {
-            that.props.addNewComment(that.state);
-            that.resetForm();
-            that.commentForm.current.blur();
+            that.commentReplyForm.current.remove();
         });
     }
 
     render() {
         return (
-            <div className="comment-reply-form-container">
+            <div ref={this.commentReplyForm} className="comment-reply-form-container">
                 <form onSubmit={this.handleSubmit}>
-                    <input ref={this.commentForm} className="comment-reply-form" type="text" placeholder="Write a reply" value={this.state.body} onChange={this.handleChange("body")} />
+                    <input className="comment-reply-form" type="text" placeholder="Write a reply" value={this.state.body} onChange={this.handleChange("body")} />
                 </form>
             </div>
         )
     }
 }
 
-export default CommentReplyForm;
+const mdp = dispatch => ({
+    createComment: (comment) => dispatch(createComment(comment))
+})
+
+export default connect(null, mdp)(CommentReplyForm);

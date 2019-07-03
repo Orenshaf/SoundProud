@@ -25,7 +25,6 @@ class TrackShowPage extends React.Component {
 
         this.deleteTrack = this.deleteTrack.bind(this);
         this.createTimeStamp = this.createTimeStamp.bind(this);
-        this.addNewComment = this.addNewComment.bind(this);
     }
 
     componentDidMount() {
@@ -84,14 +83,8 @@ class TrackShowPage extends React.Component {
         }
     }
 
-    addNewComment(comment) {
-        const newComments = this.state.newComments;
-        newComments.unshift(comment);
-        this.setState({newComments})
-    }
-
     render() {
-        const comments = this.props.comments ? <CommentIndex comments={this.props.comments} currentUserId={this.props.currentUserId} newComments={this.state.newComments}/> : null;
+        const comments = this.props.comments ? <CommentIndex comments={this.props.comments} currentUserId={this.props.currentUserId} /> : null;
         const player = this.state.trackId ? <TrackPlayButton trackId={this.state.trackId} fetchCurrentTrack={this.fetchCurrentTrack} playButton={true} className={"large"}/> : null;
         const commentForm = this.state.trackId ? <CommentForm trackId={this.state.trackId} addNewComment={this.addNewComment}/> : null;
         const username = this.state.username ? this.state.username : null;

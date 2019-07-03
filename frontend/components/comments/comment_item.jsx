@@ -66,7 +66,7 @@ class CommentItem extends React.Component {
             usernameStamp = username;
         }
 
-        const commentReplyForm = this.state.commentReplyForm ? <CommentReplyForm parentCommentId={this.props.id} currentUserId={currentUserId} trackId={this.props.track_id} trackTime={trackTime}/> : null;
+        const commentReplyForm = this.state.commentReplyForm ? <CommentReplyForm parentCommentId={this.props.id} currentUserId={currentUserId} trackId={this.props.trackId} trackTime={trackTime}/> : null;
 
         return (
             <div className="comment-item" onMouseEnter={this.showReply} onMouseLeave={this.hideReply}>
@@ -76,7 +76,7 @@ class CommentItem extends React.Component {
                 </div>
                 <div className="comment-info">
                     <p className="comment-body">{body}</p>
-                    <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.showCommentReplyForm}> <i class="fas fa-reply"></i>  Reply</button>
+                    <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.showCommentReplyForm}> <i className="fas fa-reply"></i>  Reply</button>
                 </div>
                 {commentReplyForm}
             </div>

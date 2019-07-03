@@ -56,7 +56,6 @@ class CommentForm extends React.Component {
         e.preventDefault();
         const that = this;
         this.props.createComment(this.state).then(() => {
-            that.props.addNewComment(that.state);
             that.resetForm();
             that.commentForm.current.blur();
         });
