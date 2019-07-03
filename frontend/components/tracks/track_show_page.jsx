@@ -84,7 +84,7 @@ class TrackShowPage extends React.Component {
     render() {
         // const player = this.props.track ? <TrackPlayer trackUrl={this.props.track.trackUrl}/>: null;
         const player = this.state.trackId ? <TrackPlayButton trackId={this.state.trackId} fetchCurrentTrack={this.fetchCurrentTrack} playButton={true} className={"large"}/> : null;
-        const commentForm = this.state.trackId ? <CommentForm trackId={this.state.trackId} /> : null;
+        // const commentForm = this.state.trackId ? <CommentForm trackId={this.state.trackId} /> : null;
         const username = this.state.username ? this.state.username : null;
         const title = this.state.title ? this.state.title : null;
         const photo = this.state.photoUrl ? <img className="track-photo" src={this.state.photoUrl}/> : null;
@@ -131,7 +131,7 @@ class TrackShowPage extends React.Component {
                     </div>
                 </div>
                 <div className="show-page-bottom">
-                    {commentForm}
+                    {/* {commentForm} */}
                     <div className="edit-buttons">
                         {editButton}
                         {trashButton}
