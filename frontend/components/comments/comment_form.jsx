@@ -9,7 +9,7 @@ class CommentForm extends React.Component {
             body: "",
             track_time: null,
             user_id: props.currentUserId,
-            track_id: props.trackId
+            track_id: props.trackId,
         }
 
         this.commentForm = React.createRef();

@@ -1,42 +1,87 @@
 import React from 'react';
+import CommentReplyForm from './comment_reply_form';
 
-const CommentItem = ({username, trackTime, body, createdAt, userId, currentUserId}) => {
-    let createdAtStamp;
-    const timeNow = Date.now();
-    const createdTime = new Date(createdAt);
-    let rawCreatedAtStamp = (timeNow - createdTime) / (1000 * 60 * 60);
-    if (rawCreatedAtStamp < 1) {
-        createdAtStamp = Math.floor(rawCreatedAtStamp * 60);
-        createdAtStamp = `${createdAtStamp} minutes ago`;
-    } else if (rawCreatedAtStamp < 24) {
-        createdAtStamp = Math.floor(rawCreatedAtStamp);
-        if (createdAtStamp === 1) {
-            createdAtStamp = `${createdAtStamp} hour ago`;
-        } else {
-            createdAtStamp = `${createdAtStamp} hours ago`;
+class CommentItem extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            inComment: false,
+            commentReplyForm: false
         }
-    } else {
-        createdAtStamp = Math.floor((timeNow - createdTime) / (1000 * 60 * 60 * 24));
-        createdAtStamp = `${createdAtStamp} days ago`;
+
+        this.createdAtStamp = this.createdAtStamp.bind(this);
+        this.showReply = this.showReply.bind(this);
+        this.hideReply = this.hideReply.bind(this);
+        this.showCommentReplyForm = this.showCommentReplyForm.bind(this);
     }
 
-    let usernameStamp;
-    if (userId === currentUserId) {
-        usernameStamp = "You"
-    } else {
-        usernameStamp = username;
+    createdAtStamp(createdAtDate) {
+        let createdAtStamp;
+        const timeNow = Date.now();
+        const createdTime = new Date(createdAtDate);
+        let rawCreatedAtStamp = (timeNow - createdTime) / (1000 * 60 * 60);
+        if (rawCreatedAtStamp < 1) {
+            createdAtStamp = Math.floor(rawCreatedAtStamp * 60);
+            return `${createdAtStamp} minutes ago`;
+        } else if (rawCreatedAtStamp < 24) {
+            createdAtStamp = Math.floor(rawCreatedAtStamp);
+            if (createdAtStamp === 1) {
+                return `${createdAtStamp} hour ago`;
+            } else {
+                return `${createdAtStamp} hours ago`;
+            }
+        } else {
+            createdAtStamp = Math.floor((timeNow - createdTime) / (1000 * 60 * 60 * 24));
+            return `${createdAtStamp} days ago`;
+        }
+    } 
+
+    showReply() {
+        this.setState({ inComment: true});
     }
-    return (
-        <div className="comment-item">
-            <div className="comment-info">
-                <p>{usernameStamp} <span className="comment-at">at</span> {trackTime}:</p>
-                <p>{createdAtStamp}</p>
+
+    hideReply() {
+        this.setState({ inComment: false});
+    }
+
+    showCommentReplyForm() {
+        this.setState({ commentReplyForm: true });
+    }
+
+    render() {
+        const username = this.props.username;
+        const trackTime = this.props.trackTime;
+        const body = this.props.body;
+        const createdAt = this.props.createdAt;
+        const userId = this.props.userId;
+        const currentUserId = this.props.currentUserId;
+
+        let createdAtStamp = this.createdAtStamp(createdAt);
+
+        let usernameStamp;
+        if (userId === currentUserId) {
+            usernameStamp = "You"
+        } else {
+            usernameStamp = username;
+        }
+
+        const commentReplyForm = this.state.commentReplyForm ? <CommentReplyForm parentCommentId={this.props.id} currentUserId={currentUserId} trackId={this.props.track_id} trackTime={trackTime}/> : null;
+
+        return (
+            <div className="comment-item" onMouseEnter={this.showReply} onMouseLeave={this.hideReply}>
+                <div className="comment-info">
+                    <p>{usernameStamp} <span className="comment-at">at</span> {trackTime}:</p>
+                    <p>{createdAtStamp}</p>
+                </div>
+                <div className="comment-info">
+                    <p className="comment-body">{body}</p>
+                    <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.showCommentReplyForm}> <i class="fas fa-reply"></i>  Reply</button>
+                </div>
+                {commentReplyForm}
             </div>
-            <div>
-                <p className="comment-body">{body}</p>
-            </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default CommentItem;
