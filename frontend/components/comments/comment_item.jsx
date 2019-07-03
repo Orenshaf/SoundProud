@@ -2,13 +2,23 @@ import React from 'react';
 
 const CommentItem = ({username, trackTime, body, createdAt, userId, currentUserId}) => {
     let createdAtStamp;
-    if (createdAt !== "less than one day ago") {
-        const timeNow = Date.now();
-        const createdTime = new Date(createdAt);
-        createdAtStamp = Math.floor((timeNow - createdTime) / (1000 * 60 * 60 * 24));
-        createdAtStamp = createdAtStamp < 1 ? "less than one day ago" : `${createdAtStamp} days ago`;
+    const timeNow = Date.now();
+    const createdTime = new Date(createdAt);
+    let rawCreatedAtStamp = (timeNow - createdTime) / (1000 * 60 * 60);
+    if (rawCreatedAtStamp < 1) {
+        createdAtStamp = Math.floor(rawCreatedAtStamp * 60);
+        createdAtStamp = `${createdAtStamp} minutes ago`;
+    } else if (rawCreatedAtStamp < 24) {
+        if (rawCreatedAtStamp === 1) {
+            createdAtStamp = Math.floor(rawCreatedAtStamp);
+            createdAtStamp = `${createdAtStamp} hour ago`;
+        } else {
+            createdAtStamp = Math.floor(rawCreatedAtStamp);
+            createdAtStamp = `${createdAtStamp} hours ago`;
+        }
     } else {
-        createdAtStamp = createdAt;
+        rawCreatedAtStamp = Math.floor((timeNow - createdTime) / (1000 * 60 * 60 * 24));
+        rawCreatedAtStamp = `${rawCreatedAtStamp} days ago`;
     }
 
     let usernameStamp;

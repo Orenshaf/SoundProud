@@ -5,6 +5,8 @@
 .comment-index-container {
     width: 100%;
     height: fit-content;
+    display: flex;
+    flex-direction: column-reverse;
     padding-top: 10px;
     padding-bottom: 50px;
 }
