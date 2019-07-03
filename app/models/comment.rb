@@ -25,7 +25,7 @@ class Comment < ApplicationRecord
         foreign_key: :track_id,
         class_name: 'Track'
     
-    belongs_to :parent_comment,
+    belongs_to :parent_comment, optional: true,
         primary_key: :id,
         foreign_key: :parent_cmt_id,
         class_name: 'Comment'
