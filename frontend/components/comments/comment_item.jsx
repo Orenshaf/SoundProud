@@ -9,6 +9,7 @@ const CommentItem = ({username, trackTime, body, createdAt, userId, currentUserI
         createdAtStamp = Math.floor(rawCreatedAtStamp * 60);
         createdAtStamp = `${createdAtStamp} minutes ago`;
     } else if (rawCreatedAtStamp < 24) {
+        rawCreatedAtStamp = Math.floor(rawCreatedAtStamp);
         if (rawCreatedAtStamp === 1) {
             createdAtStamp = Math.floor(rawCreatedAtStamp);
             createdAtStamp = `${createdAtStamp} hour ago`;
