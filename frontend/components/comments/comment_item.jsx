@@ -1,16 +1,14 @@
 import React from 'react';
 
 const CommentItem = ({username, trackTime, body, createdAt, userId, currentUserId}) => {
-    const timeNow = Date.now();
-    const createdTime = new Date(createdAt);
-    let createdAtStamp = Math.floor((timeNow - createdTime) / (1000 * 60 * 60 * 24));
-    createdAtStamp = createdAtStamp < 1 ? "less than one day ago" : `${createdAtStamp} days ago`;
-
-    let trackTimeStamp;
-    if (trackTime === "NaN:NaN:NaN") {
-        trackTimeStamp ="00:00";
+    let createdAtStamp;
+    if (createdAt !== "less than one day ago") {
+        const timeNow = Date.now();
+        const createdTime = new Date(createdAt);
+        createdAtStamp = Math.floor((timeNow - createdTime) / (1000 * 60 * 60 * 24));
+        createdAtStamp = createdAtStamp < 1 ? "less than one day ago" : `${createdAtStamp} days ago`;
     } else {
-        trackTimeStamp = trackTime;
+        createdAtStamp = createdAt;
     }
 
     let usernameStamp;
@@ -22,7 +20,7 @@ const CommentItem = ({username, trackTime, body, createdAt, userId, currentUserI
     return (
         <div className="comment-item">
             <div className="comment-info">
-                <p>{usernameStamp} <span className="comment-at">at</span> {trackTimeStamp}:</p>
+                <p>{usernameStamp} <span className="comment-at">at</span> {trackTime}:</p>
                 <p>{createdAtStamp}</p>
             </div>
             <div>

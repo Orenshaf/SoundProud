@@ -17,13 +17,15 @@ class TrackShowPage extends React.Component {
             photoUrl: null,
             userId: null,
             createdAt: null,
-            trackUrl: null
+            trackUrl: null,
+            newComments: []
         }
 
         this.fetchCurrentTrack = props.fetchCurrentTrack;
 
         this.deleteTrack = this.deleteTrack.bind(this);
         this.createTimeStamp = this.createTimeStamp.bind(this);
+        this.addNewComment = this.addNewComment.bind(this);
     }
 
     componentDidMount() {
@@ -82,10 +84,16 @@ class TrackShowPage extends React.Component {
         }
     }
 
+    addNewComment(comment) {
+        const newComments = this.state.newComments;
+        newComments.push(comment);
+        this.setState({newComments})
+    }
+
     render() {
-        const comments = this.props.comments ? <CommentIndex comments={this.props.comments} currentUserId={this.props.currentUserId}/> : null;
+        const comments = this.props.comments ? <CommentIndex comments={this.props.comments} currentUserId={this.props.currentUserId} newComments={this.state.newComments}/> : null;
         const player = this.state.trackId ? <TrackPlayButton trackId={this.state.trackId} fetchCurrentTrack={this.fetchCurrentTrack} playButton={true} className={"large"}/> : null;
-        const commentForm = this.state.trackId ? <CommentForm trackId={this.state.trackId} /> : null;
+        const commentForm = this.state.trackId ? <CommentForm trackId={this.state.trackId} addNewComment={this.addNewComment}/> : null;
         const username = this.state.username ? this.state.username : null;
         const title = this.state.title ? this.state.title : null;
         const photo = this.state.photoUrl ? <img className="track-photo" src={this.state.photoUrl}/> : null;

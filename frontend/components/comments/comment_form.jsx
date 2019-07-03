@@ -27,7 +27,12 @@ class CommentForm extends React.Component {
 
     setTrackTimeStamp() {
         if (this.state.body.length < 1) {
-            const track_time = this.createTimeStamp(this.props.trackTimeStamp);
+            let track_time; 
+            if (this.props.trackTimeStamp === undefined) {
+                track_time = "00:00";
+            } else {
+                track_time = this.createTimeStamp(this.props.trackTimeStamp);
+            }
             this.setState({ track_time });
         }
     }
@@ -47,8 +52,11 @@ class CommentForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createComment(this.state);
-        this.resetForm()
+        const that = this;
+        this.props.createComment(this.state).then(() => {
+            that.props.addNewComment(that.state);
+            that.resetForm();
+        });
     }
 
     resetForm() {
@@ -62,7 +70,7 @@ class CommentForm extends React.Component {
         return (
             <div className="comment-form-container">
                 <form onSubmit={this.handleSubmit}>
-                    <input className="comment-form" type="text" placeholder="Write a comment" onClick={this.setTrackTimeStamp} onChange={this.handleChange("body")}/>
+                    <input className="comment-form" type="text" placeholder="Write a comment" value={this.state.body} onClick={this.setTrackTimeStamp} onChange={this.handleChange("body")}/>
                 </form>
             </div>
         )
