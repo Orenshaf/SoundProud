@@ -86,7 +86,7 @@ class TrackShowPage extends React.Component {
 
     addNewComment(comment) {
         const newComments = this.state.newComments;
-        newComments.push(comment);
+        newComments.unshift(comment);
         this.setState({newComments})
     }
 

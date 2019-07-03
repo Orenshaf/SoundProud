@@ -12,6 +12,8 @@ class CommentForm extends React.Component {
             track_id: props.trackId
         }
 
+        this.commentForm = React.createRef();
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.setTrackTimeStamp = this.setTrackTimeStamp.bind(this);
@@ -56,6 +58,7 @@ class CommentForm extends React.Component {
         this.props.createComment(this.state).then(() => {
             that.props.addNewComment(that.state);
             that.resetForm();
+            that.commentForm.current.blur();
         });
     }
 
@@ -70,7 +73,7 @@ class CommentForm extends React.Component {
         return (
             <div className="comment-form-container">
                 <form onSubmit={this.handleSubmit}>
-                    <input className="comment-form" type="text" placeholder="Write a comment" value={this.state.body} onClick={this.setTrackTimeStamp} onChange={this.handleChange("body")}/>
+                    <input ref={this.commentForm} className="comment-form" type="text" placeholder="Write a comment" value={this.state.body} onClick={this.setTrackTimeStamp} onChange={this.handleChange("body")}/>
                 </form>
             </div>
         )
