@@ -83,7 +83,7 @@ class TrackShowPage extends React.Component {
     }
 
     render() {
-        const comments = this.props.comments ? <CommentIndex comments={this.props.comments}/> : null;
+        const comments = this.props.comments ? <CommentIndex comments={this.props.comments} currentUserId={this.props.currentUserId}/> : null;
         const player = this.state.trackId ? <TrackPlayButton trackId={this.state.trackId} fetchCurrentTrack={this.fetchCurrentTrack} playButton={true} className={"large"}/> : null;
         const commentForm = this.state.trackId ? <CommentForm trackId={this.state.trackId} /> : null;
         const username = this.state.username ? this.state.username : null;
