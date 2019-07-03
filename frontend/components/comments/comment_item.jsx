@@ -9,17 +9,15 @@ const CommentItem = ({username, trackTime, body, createdAt, userId, currentUserI
         createdAtStamp = Math.floor(rawCreatedAtStamp * 60);
         createdAtStamp = `${createdAtStamp} minutes ago`;
     } else if (rawCreatedAtStamp < 24) {
-        rawCreatedAtStamp = Math.floor(rawCreatedAtStamp);
-        if (rawCreatedAtStamp === 1) {
-            createdAtStamp = Math.floor(rawCreatedAtStamp);
+        createdAtStamp = Math.floor(rawCreatedAtStamp);
+        if (createdAtStamp === 1) {
             createdAtStamp = `${createdAtStamp} hour ago`;
         } else {
-            createdAtStamp = Math.floor(rawCreatedAtStamp);
             createdAtStamp = `${createdAtStamp} hours ago`;
         }
     } else {
-        rawCreatedAtStamp = Math.floor((timeNow - createdTime) / (1000 * 60 * 60 * 24));
-        rawCreatedAtStamp = `${rawCreatedAtStamp} days ago`;
+        createdAtStamp = Math.floor((timeNow - createdTime) / (1000 * 60 * 60 * 24));
+        createdAtStamp = `${createdAtStamp} days ago`;
     }
 
     let usernameStamp;
