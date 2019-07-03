@@ -19,6 +19,8 @@ class TrackShowPage extends React.Component {
             trackUrl: null
         }
 
+        this.comments = [];
+
         this.fetchCurrentTrack = props.fetchCurrentTrack;
 
         this.deleteTrack = this.deleteTrack.bind(this);
@@ -35,7 +37,11 @@ class TrackShowPage extends React.Component {
                 const createdAt = payload.track.created_at;
                 const trackUrl = payload.track.trackUrl
                 this.setState({ trackId, username, title, photoUrl, userId, createdAt, trackUrl });
-        }).then(() => this.createTrackTimeStamp());
+        }).then(() => {
+            this.createTrackTimeStamp();
+            this.props.fetchComments(this.state.trackId)
+        });
+        
     }
 
     componentDidUpdate() {

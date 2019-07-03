@@ -52,7 +52,6 @@ class CommentForm extends React.Component {
     }
 
     resetForm() {
-        debugger;
         this.setState({
             body: "",
             track_time: null,

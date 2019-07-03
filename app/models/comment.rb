@@ -34,4 +34,8 @@ class Comment < ApplicationRecord
         primary_key: :id,
         foreign_key: :parent_cmt_id,
         class_name: 'Comment'
+
+    def username
+        self.user.username
+    end
 end

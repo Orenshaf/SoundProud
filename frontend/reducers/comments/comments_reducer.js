@@ -1,11 +1,12 @@
-import { RECEIVE_COMMENTS, RECEIVE_COMMENT } from '../../actions/comment_actions';
+import { RECEIVE_COMMENT } from '../../actions/comment_actions';
+import { RECEIVE_TRACK } from '../../actions/track_actions';
 import { merge } from 'lodash';
 
 const commentsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     let newState;
     switch (action.type) {
-        case RECEIVE_COMMENTS:
+        case RECEIVE_TRACK:
             newState = {};
             action.comments.forEach( comment => newState[comment.id] = comment);
             return merge({}, oldState, newState);

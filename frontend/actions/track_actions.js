@@ -9,11 +9,14 @@ export const receiveTracks = tracks => ({
     tracks
 })
 
-export const receiveTrack = ({track, user}) => ({
-    type: RECEIVE_TRACK,
-    track,
-    user
-})
+export const receiveTrack = ({track, user, comments}) => {
+    return {
+        type: RECEIVE_TRACK,
+        track,
+        user,
+        comments
+    }
+}
 
 export const removeTrack = ({id}) => ({
     type: REMOVE_TRACK,

@@ -23,7 +23,7 @@ const mdp = (dispatch) => ({
     fetchTrack: (id) => dispatch(fetchTrack(id)),
     openModal: (modal) => dispatch(openModal(modal)),
     deleteTrack: (id) => dispatch(deleteTrack(id)),
-    fetchCurrentTrack: (id) => dispatch(fetchCurrentTrack(id))
+    fetchCurrentTrack: (id) => dispatch(fetchCurrentTrack(id)),
 })
 
 export default withRouter(connect(msp,mdp)(TrackShowPage));
