@@ -3,6 +3,7 @@ import TrackPlayButton from '../tracks/track_play_button';
 import SeekBar from '../track_player/seek_bar';
 import WaveForm from '../wave_form/wave_form';
 import CommentForm from '../comments/comment_form';
+import CommentIndex from '../comments/comment_index';
 
 class TrackShowPage extends React.Component {
     constructor(props) {
@@ -19,8 +20,6 @@ class TrackShowPage extends React.Component {
             trackUrl: null
         }
 
-        this.comments = [];
-
         this.fetchCurrentTrack = props.fetchCurrentTrack;
 
         this.deleteTrack = this.deleteTrack.bind(this);
@@ -35,13 +34,9 @@ class TrackShowPage extends React.Component {
                 const photoUrl = payload.track.photoUrl;
                 const userId = payload.track.user_id;
                 const createdAt = payload.track.created_at;
-                const trackUrl = payload.track.trackUrl
+                const trackUrl = payload.track.trackUrl;
                 this.setState({ trackId, username, title, photoUrl, userId, createdAt, trackUrl });
-        }).then(() => {
-            this.createTrackTimeStamp();
-            this.props.fetchComments(this.state.trackId)
-        });
-        
+        }).then(() => this.createTrackTimeStamp());
     }
 
     componentDidUpdate() {
@@ -88,7 +83,7 @@ class TrackShowPage extends React.Component {
     }
 
     render() {
-        // const player = this.props.track ? <TrackPlayer trackUrl={this.props.track.trackUrl}/>: null;
+        const comments = this.props.comments ? <CommentIndex comments={this.props.comments}/> : null;
         const player = this.state.trackId ? <TrackPlayButton trackId={this.state.trackId} fetchCurrentTrack={this.fetchCurrentTrack} playButton={true} className={"large"}/> : null;
         const commentForm = this.state.trackId ? <CommentForm trackId={this.state.trackId} /> : null;
         const username = this.state.username ? this.state.username : null;
@@ -144,6 +139,7 @@ class TrackShowPage extends React.Component {
                             {trashButton}
                         </div>
                     </div>
+                    {comments}
                 </div>
                 
             </div>

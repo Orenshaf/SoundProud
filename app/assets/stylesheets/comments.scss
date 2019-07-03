@@ -1,0 +1,37 @@
+@import "base/colors.scss";
+@import "base/fonts.scss";
+
+
+.comment-index-container {
+    width: 100%;
+    height: fit-content;
+    padding-top: 10px;
+}
+
+.comment-item {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 11px;
+    font-family: 'Lucida Grande';
+    color: #999;
+    margin: 10px 0;
+}
+
+.comment-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-at {
+    color: #cfcfcf;
+}
+
+.comment-body {
+    font-size: 12px;
+    color: black;
+}
+
+
