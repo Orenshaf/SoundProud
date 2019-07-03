@@ -18,7 +18,6 @@ class TrackShowPage extends React.Component {
             userId: null,
             createdAt: null,
             trackUrl: null,
-            newComments: []
         }
 
         this.fetchCurrentTrack = props.fetchCurrentTrack;
