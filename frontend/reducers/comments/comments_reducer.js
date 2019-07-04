@@ -11,8 +11,15 @@ const commentsReducer = (oldState = {}, action) => {
             action.comments.forEach( comment => newState[comment.id] = comment);
             return merge({}, oldState, newState);
         case RECEIVE_COMMENT:
-            newState = { [action.comment.id]: action.comment };
-            return merge({}, oldState, newState);
+            if (action.comment.parent_cmt_id === null) {
+                newState = { [action.comment.id]: action.comment };
+                return merge({}, oldState, newState);
+            } else {
+                newState = { [action.comment.id]: action.comment };
+                newState = merge({}, oldState, newState);
+                newState[action.comment.parent_cmt_id].childComments.push(action.comment.id);
+                return newState;
+            }   
         default: 
             return oldState;
     }

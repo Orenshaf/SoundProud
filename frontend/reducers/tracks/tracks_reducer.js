@@ -20,7 +20,7 @@ const tracksReducer = (oldState = {}, action) => {
             return newState;
         case RECEIVE_COMMENT:
             if (action.comment.parent_cmt_id === null) {
-                newState = Object.freeze(oldState);
+                newState = merge({}, oldState);
                 newState[action.comment.track_id].comments.push(action.comment.id);
                 return merge({}, oldState, newState);
             } else {

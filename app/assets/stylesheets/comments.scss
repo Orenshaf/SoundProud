@@ -2,16 +2,14 @@
 @import "base/fonts.scss";
 
 
-.comment-index-container {
+.comment-index-container, .child-comment-index-container {
     width: 100%;
     height: fit-content;
     display: flex;
     flex-direction: column-reverse;
-    padding-top: 10px;
-    padding-bottom: 50px;
 }
 
-.comment-item {
+.comment-item, .child-comment-item {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -56,7 +54,6 @@
     display: block;
     padding: 5px;
     width: 95%;
-    margin: 10px 0;
     box-sizing: border-box;
     background: #f2f2f2;
     border: 1px solid #e5e5e5;
@@ -68,6 +65,11 @@
     font-size: 12px; 
     padding: 5px;
     height: 20px;
+}
+
+.child-comment-index-container {
+    width: 95%;
+    margin-left: 40px;
 }
 
 

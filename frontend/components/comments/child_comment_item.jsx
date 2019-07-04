@@ -1,12 +1,11 @@
 import React from 'react';
 
-class CommentItem extends React.Component {
+class ChildCommentItem extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             inComment: false,
-            commentReplyForm: false
         }
 
         this.createdAtStamp = this.createdAtStamp.bind(this);
@@ -43,10 +42,6 @@ class CommentItem extends React.Component {
         this.setState({ inComment: false });
     }
 
-    showCommentReplyForm() {
-        this.setState({ commentReplyForm: true });
-    }
-
     render() {
         const username = this.props.username;
         const trackTime = this.props.trackTime;
@@ -63,16 +58,15 @@ class CommentItem extends React.Component {
         } else {
             usernameStamp = username;
         }
-
         return (
-            <div className="comment-item" onMouseEnter={this.showReply} onMouseLeave={this.hideReply}>
+            <div className="child-comment-item" onMouseEnter={this.showReply} onMouseLeave={this.hideReply}>
                 <div className="comment-info">
                     <p>{usernameStamp} <span className="comment-at">at</span> {trackTime}:</p>
                     <p>{createdAtStamp}</p>
                 </div>
                 <div className="comment-info">
                     <p className="comment-body">{body}</p>
-                    <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.props.showCommentReplyForm}> <i className="fas fa-reply"></i>  Reply</button>
+                    <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={() => this.props.showCommentReplyForm()}> <i className="fas fa-reply"></i>  Reply</button>
                 </div>
             </div>
         )

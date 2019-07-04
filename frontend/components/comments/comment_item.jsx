@@ -15,6 +15,7 @@ class CommentItem extends React.Component {
         this.showReply = this.showReply.bind(this);
         this.hideReply = this.hideReply.bind(this);
         this.showCommentReplyForm = this.showCommentReplyForm.bind(this);
+        this.resetCommentReplyForm = this.resetCommentReplyForm.bind(this);
     }
 
     createdAtStamp(createdAtDate) {
@@ -47,7 +48,13 @@ class CommentItem extends React.Component {
     }
 
     showCommentReplyForm() {
-        this.setState({ commentReplyForm: true });
+        if (!this.state.commentReplyForm) {
+            this.setState({ commentReplyForm: true });
+        }
+    }
+
+    resetCommentReplyForm() {
+        this.setState({commentReplyForm: false})
     }
 
     render() {
@@ -66,21 +73,24 @@ class CommentItem extends React.Component {
         } else {
             usernameStamp = username;
         }
+
         const childCommentIndex = (this.props.childComments && this.props.childComments.length > 0) ? <ChildCommentIndex childComments={this.props.childComments} currentUserId={currentUserId} showCommentReplyForm={this.showCommentReplyForm}/> : null;
-        const commentReplyForm = this.state.commentReplyForm ? <CommentReplyForm parentCommentId={this.props.id} currentUserId={currentUserId} trackId={this.props.trackId} trackTime={trackTime}/> : null;
+        const commentReplyForm = this.state.commentReplyForm ? <CommentReplyForm parentCommentId={this.props.id} currentUserId={currentUserId} trackId={this.props.trackId} trackTime={trackTime} resetCommentReplyForm={this.resetCommentReplyForm}/> : null;
         // add a way to render child comments properly
         return (
-            <div className="comment-item" onMouseEnter={this.showReply} onMouseLeave={this.hideReply}>
-                <div className="comment-info">
-                    <p>{usernameStamp} <span className="comment-at">at</span> {trackTime}:</p>
-                    <p>{createdAtStamp}</p>
+            <div className="comment-item-container">
+                <div className="comment-item" onMouseEnter={this.showReply} onMouseLeave={this.hideReply}>
+                    <div className="comment-info">
+                        <p>{usernameStamp} <span className="comment-at">at</span> {trackTime}:</p>
+                        <p>{createdAtStamp}</p>
+                    </div>
+                    <div className="comment-info">
+                        <p className="comment-body">{body}</p>
+                        <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.showCommentReplyForm}> <i className="fas fa-reply"></i>  Reply</button>
+                    </div>
                 </div>
-                <div className="comment-info">
-                    <p className="comment-body">{body}</p>
-                    <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.showCommentReplyForm}> <i className="fas fa-reply"></i>  Reply</button>
-                </div>
-                {childCommentIndex}
-                {commentReplyForm}
+                    {childCommentIndex}
+                    {commentReplyForm}
             </div>
         )
     }

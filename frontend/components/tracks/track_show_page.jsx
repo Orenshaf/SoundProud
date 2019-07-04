@@ -17,7 +17,7 @@ class TrackShowPage extends React.Component {
             photoUrl: null,
             userId: null,
             createdAt: null,
-            trackUrl: null,
+            trackUrl: null
         }
 
         this.fetchCurrentTrack = props.fetchCurrentTrack;
@@ -35,7 +35,7 @@ class TrackShowPage extends React.Component {
                 const userId = payload.track.user_id;
                 const createdAt = payload.track.created_at;
                 const trackUrl = payload.track.trackUrl;
-                this.setState({ trackId, username, title, photoUrl, userId, createdAt, trackUrl });
+                this.setState({ trackId, username, title, photoUrl, userId, createdAt, trackUrl});
         }).then(() => this.createTrackTimeStamp());
     }
 
@@ -83,7 +83,7 @@ class TrackShowPage extends React.Component {
     }
 
     render() {
-        const comments = this.props.comments ? <CommentIndex comments={this.props.comments} currentUserId={this.props.currentUserId} /> : null;
+        const comments = (this.props.track.comments && this.props.track.comments.length > 0) ? <CommentIndex trackComments={this.props.track.comments} currentUserId={this.props.currentUserId} /> : null;
         const player = this.state.trackId ? <TrackPlayButton trackId={this.state.trackId} fetchCurrentTrack={this.fetchCurrentTrack} playButton={true} className={"large"}/> : null;
         const commentForm = this.state.trackId ? <CommentForm trackId={this.state.trackId} addNewComment={this.addNewComment}/> : null;
         const username = this.state.username ? this.state.username : null;

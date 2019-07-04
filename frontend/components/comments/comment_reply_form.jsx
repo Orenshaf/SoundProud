@@ -29,7 +29,7 @@ class CommentReplyForm extends React.Component {
         e.preventDefault();
         const that = this;
         this.props.createComment(this.state).then(() => {
-            that.commentReplyForm.current.remove();
+            that.props.resetCommentReplyForm();
         });
     }
 
