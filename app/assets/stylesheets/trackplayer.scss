@@ -17,6 +17,7 @@
 
 .track-player {
     display: flex;
+    position: relative;
     align-items: center;
     width: 824px;
 }
@@ -111,7 +112,7 @@
 .volume-slider-container {
     display: none;
     position: absolute;
-    left: 692px;
+    left: 663px;
     bottom: 43px;
     width: 20px;
     height: 150px;
@@ -126,7 +127,7 @@
 .triangle {
     display: none;
     position: absolute;
-    left: 701px;
+    left: 672px;
     bottom: 37px;
     transform: rotate(45deg);
     background: #f2f2f2;

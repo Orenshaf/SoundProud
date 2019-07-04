@@ -8,14 +8,15 @@ const msp = (state, ownProps) => {
     const track = state.entities.tracks[ownProps.match.params.trackId] || {};
     const user = state.entities.users[track.user_id];
     const currentTrack = state.ui.currentTrack;
+    const comments = state.entities.comments;
     const currentTime = state.ui.trackPlayer.currentTime ? state.ui.trackPlayer.currentTime : null;
-    
     return ({
         user,
         track,
         currentUserId: state.session.id,
         currentTrack,
         currentTime,
+        comments
     })
 }
 
@@ -23,7 +24,7 @@ const mdp = (dispatch) => ({
     fetchTrack: (id) => dispatch(fetchTrack(id)),
     openModal: (modal) => dispatch(openModal(modal)),
     deleteTrack: (id) => dispatch(deleteTrack(id)),
-    fetchCurrentTrack: (id) => dispatch(fetchCurrentTrack(id))
+    fetchCurrentTrack: (id) => dispatch(fetchCurrentTrack(id)),
 })
 
 export default withRouter(connect(msp,mdp)(TrackShowPage));
