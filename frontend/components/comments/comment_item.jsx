@@ -64,6 +64,7 @@ class CommentItem extends React.Component {
         const createdAt = this.props.createdAt;
         const userId = this.props.userId;
         const currentUserId = this.props.currentUserId;
+        const profilePicture = <div className="profile-picture-comment"><span className="empty-profile">p</span> </div>
 
         let createdAtStamp = this.createdAtStamp(createdAt);
 
@@ -79,14 +80,18 @@ class CommentItem extends React.Component {
         // add a way to render child comments properly
         return (
             <div className="comment-item-container">
-                <div className="comment-item" onMouseEnter={this.showReply} onMouseLeave={this.hideReply}>
-                    <div className="comment-info">
-                        <p>{usernameStamp} <span className="comment-at">at</span> {trackTime}:</p>
-                        <p>{createdAtStamp}</p>
-                    </div>
-                    <div className="comment-info">
-                        <p className="comment-body">{body}</p>
-                        <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.showCommentReplyForm}> <i className="fas fa-reply"></i>  Reply</button>
+                <div className="comment-item-inner-container">
+                    {profilePicture}
+                    <div className="comment-item" onMouseEnter={this.showReply} onMouseLeave={this.hideReply}>
+                        
+                        <div className="comment-info">
+                            <p>{usernameStamp} <span className="comment-at">at</span> {trackTime}:</p>
+                            <p>{createdAtStamp}</p>
+                        </div>
+                        <div className="comment-info">
+                            <p className="comment-body">{body}</p>
+                            <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.showCommentReplyForm}> <i className="fas fa-reply"></i>  Reply</button>
+                        </div>
                     </div>
                 </div>
                     {childCommentIndex}
