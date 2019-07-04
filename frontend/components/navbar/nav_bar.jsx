@@ -31,6 +31,7 @@ class NavBar extends React.Component {
     
     toggleNavBar(){
         const footer = this.props.currentTrack ? <TrackPlayerContainer /> : null;
+        const profilePicture = <div className="profile-picture-nav"><span className="empty-profile">p</span> </div>
         if (this.props.currentUser && this.props.location.pathname !== '/logout') {
             return (
                 <>
@@ -46,7 +47,7 @@ class NavBar extends React.Component {
                             {/* <input className="login-info-input demo-login modal-item search-bar" type="text" placeholder="Search" /> */}
                             <NavLink to="/upload" className="nav-bar-button nav-button upload" activeClassName="active" onClick={this.closeDropDown}>Upload</NavLink>
                             {/* <div className="profile-placeholder"></div> */}
-                            <button className="nav-bar-button" id="profile">{this.props.currentUser.username}{/* <img className="caret" src={window.caretIcon} /> */}</button>
+                            <button className="nav-bar-button" id="profile">{profilePicture} <span className="nav-bar-username">{this.props.currentUser.username}</span>{/* <img className="caret" src={window.caretIcon} /> */}</button>
                             <div className="small-button-placeholder"></div>
                             {/* <button className="nav-bar-button notification-button"><img className="notification-img" src={window.notificationIcon} /></button> */}
                             {/* <button className="nav-bar-button notification-button"><img className="notification-img" src={window.mailIcon} /></button> */}
