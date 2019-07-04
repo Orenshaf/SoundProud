@@ -28,7 +28,6 @@ class CommentForm extends React.Component {
     }
 
     setTrackTimeStamp() {
-        debugger;
         if (this.state.body.length < 1) {
             let track_time; 
             if (this.state.track_id === this.props.currentTrackId) {
