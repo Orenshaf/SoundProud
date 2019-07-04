@@ -69,11 +69,15 @@ class CommentForm extends React.Component {
     }
 
     render() {
+        const profilePicture = <div className="profile-picture-comment-form"><span className="empty-profile">p</span> </div>
         return (
-            <div className="comment-form-container">
-                <form onSubmit={this.handleSubmit}>
-                    <input ref={this.commentForm} className="comment-form" type="text" placeholder="Write a comment" value={this.state.body} onClick={this.setTrackTimeStamp} onChange={this.handleChange("body")}/>
-                </form>
+            <div className="comment-form-container-outer">
+                {profilePicture}
+                <div className="comment-form-container">
+                    <form onSubmit={this.handleSubmit}>
+                        <input ref={this.commentForm} className="comment-form" type="text" placeholder="Write a comment" value={this.state.body} onClick={this.setTrackTimeStamp} onChange={this.handleChange("body")}/>
+                    </form>
+                </div>
             </div>
         )
     }

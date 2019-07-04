@@ -4,6 +4,7 @@
 .comment-form-container {
     display: block;
     padding: 5px;
+    height: 40px;
     width: 100%;
     margin: 10px 0;
     box-sizing: border-box;
@@ -27,4 +28,11 @@
 .comment-form:focus {
     outline: none;
     border: 1px solid #999999;
+}
+
+
+.comment-form-container-outer {
+    display: flex;
+    width: 100%;
+    align-items: center;
 }
