@@ -34,11 +34,15 @@ class CommentReplyForm extends React.Component {
     }
 
     render() {
+        const profilePicture = <div className="profile-picture-comment-reply-form"><span className="empty-profile">p</span> </div>
         return (
             <div ref={this.commentReplyForm} className="comment-reply-form-container">
-                <form onSubmit={this.handleSubmit}>
-                    <input className="comment-reply-form" type="text" placeholder="Write a reply" value={this.state.body} onChange={this.handleChange("body")} />
-                </form>
+                <div className="comment-reply-form-inner-container">
+                    {profilePicture}
+                    <form id="comment-reply-form-input" onSubmit={this.handleSubmit}>
+                        <input className="comment-reply-form" type="text" placeholder="Write a reply" value={this.state.body} onChange={this.handleChange("body")} />
+                    </form>
+                </div>
             </div>
         )
     }
