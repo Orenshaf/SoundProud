@@ -7,7 +7,7 @@ class CommentForm extends React.Component {
         super(props);
         this.state = {
             body: "",
-            track_time: null,
+            track_time: "00:00",
             user_id: props.currentUserId,
             track_id: props.trackId,
         }
@@ -28,14 +28,20 @@ class CommentForm extends React.Component {
     }
 
     setTrackTimeStamp() {
+        debugger;
         if (this.state.body.length < 1) {
             let track_time; 
-            if (this.props.trackTimeStamp === undefined) {
-                track_time = "00:00";
+            if (this.state.track_id === this.props.currentTrackId) {
+                if (this.props.trackTimeStamp === undefined) {
+                    track_time = "00:00";
+                } else {
+                    track_time = this.createTimeStamp(this.props.trackTimeStamp);
+                }
+                this.setState({ track_time });
             } else {
-                track_time = this.createTimeStamp(this.props.trackTimeStamp);
+                track_time = "00:00";
+                this.setState({ track_time });
             }
-            this.setState({ track_time });
         }
     }
 
@@ -83,10 +89,14 @@ class CommentForm extends React.Component {
     }
 }
 
-const msp = state => ({
-    trackTimeStamp: state.ui.trackPlayer.currentTime,
-    currentUserId: state.session.id
-})
+const msp = state => {
+    const currentTrackId = state.ui.currentTrack ? state.ui.currentTrack.id : null;
+    return {
+        trackTimeStamp: state.ui.trackPlayer.currentTime,
+        currentUserId: state.session.id,
+        currentTrackId
+    }
+}
 
 const mdp = dispatch => ({
    createComment: (comment) => dispatch(createComment(comment))
