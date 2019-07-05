@@ -9,7 +9,8 @@ class TrackForm extends React.Component {
             title: '',
             private: false,
             trackFile: null,
-            errors: []
+            errors: [],
+            dragFile: false
         }
 
         this.handleFormRender = this.handleFormRender.bind(this);
@@ -17,21 +18,23 @@ class TrackForm extends React.Component {
         this.handlePrivacy = this.handlePrivacy.bind(this);
         this.titleize = this.titleize.bind(this);
         this.dragOverHandler = this.dragOverHandler.bind(this);
+        this.dragLeaveHandler = this.dragLeaveHandler.bind(this);
         this.dropHandler = this.dropHandler.bind(this);
     }
 
     handleTrackFile(e) {
-        debugger;
         const file = e.currentTarget.files[0];
         if (file.type.includes("audio")) {
             this.setState({
                 trackFile: file,
                 title: this.titleize(file.name.split('.')[0].split('-')),
-                errors: []
+                errors: [], 
+                dragFile: false
             })
         } else {
             this.setState({
-                errors: ['Please upload an audio file']
+                errors: ['Please upload an audio file'],
+                dragFile: false
             })
         }
     }
@@ -52,6 +55,12 @@ class TrackForm extends React.Component {
 
     dragOverHandler(e) {
         e.preventDefault();
+        this.setState({ dragFile: true})
+    }
+
+    dragLeaveHandler(e) {
+        e.preventDefault();
+        this.setState({ dragFile: false })
     }
 
     dropHandler(e) {
@@ -61,11 +70,13 @@ class TrackForm extends React.Component {
             this.setState({
                 trackFile: file,
                 title: this.titleize(file.name.split('.')[0].split('-')),
-                errors: []
+                errors: [],
+                dragFile: false
             })
         } else {
             this.setState({
-                errors: ['Please upload an audio file']
+                errors: ['Please upload an audio file'],
+                dragFile: false
             })
         }
     }
@@ -104,6 +115,15 @@ class TrackForm extends React.Component {
                     </div>
                     <div className="file-type-info">
                         Provide FLAC, WAV, ALAC or AIFF for best audio quality. Learn more about high quality audio (HQ).
+                    </div>
+                    <div className={`drag-over-modal-background ${this.state.dragFile ? "show-drag-over" : ""}`} onDragLeave={this.dragLeaveHandler}>
+                        <div className={`drag-over-modal-child ${this.state.dragFile ? "show-drag-over" : ""}`} >
+                            <div className={`drag-over-file-upload ${this.state.dragFile ? "show-drag-over" : ""}`}>
+                                <div className={`drag-over-file-upload-inner ${this.state.dragFile ? "show-drag-over" : ""}`}>
+                                    <p>Drop your files here</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )

@@ -8,7 +8,7 @@ const msp = (state, ownProps) => ({
 });
 
 const mdp = dispatch => ({
-    uploadTrack: (formTrack) => dispatch(uploadTrack(formTrack))
+    uploadTrack: (formTrack) => dispatch(uploadTrack(formTrack)),
 })
 
 export default withRouter(connect(msp, mdp)(UploadPage));

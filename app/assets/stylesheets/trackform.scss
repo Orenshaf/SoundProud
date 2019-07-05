@@ -164,7 +164,7 @@ input[type='radio'] {
 .blue {
     background-color: #06c;
     background-image: linear-gradient(to right,#2189c9,#1c75c9);
-    margin-left: 212px;
+    margin-left: 220px;
     margin-right: 1px;
 }
 
@@ -283,4 +283,60 @@ input[type='radio'] {
 
 .edit-form-bottom {
     border: none;
+}
+
+.drag-over-modal-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(242,242,242,.9);
+    z-index: 14;
+}
+
+
+
+.drag-over-modal-child {
+  display: none;
+  position: absolute;
+  top: 380px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.show-drag-over {
+    display: block;
+}
+
+.drag-over-file-upload {
+    width: 798px;
+    height: 386px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drag-over-file-upload-inner {
+    width: 758px;
+    height: 346px;
+    box-sizing: border-box;
+    background: white;
+    display: flex;
+    border: 1px dashed gray;
+    align-items: center;
+    justify-content: center;
+}
+
+.drag-over-file-upload-inner p {
+    font-family: 'Interstate reg';
+    color: white;
+    font-size: 36px;
+    text-shadow:
+		-1px -1px 0 gray,
+		1px -1px 0 gray,
+		-1px 1px 0 gray,
+		1px 1px 0 gray;
 }
