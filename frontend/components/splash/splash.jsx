@@ -37,7 +37,7 @@ class Splash extends React.Component {
 
     render () {
         const fetchCurrentTrack = this.props.fetchCurrentTrack;
-        const tracks = this.props.tracks.length > 0 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack} limit={6} includePlayButton={false}/> : null;
+        const tracks = this.props.tracks.length > 0 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack} limit={6} includePlayButton={false} trackSlider={false}/> : null;
         const headerImages = <div ref={this.imageContainer} className={`header-images ${this.state.header ? "slide" : ""}`}>
             <img src={window.splashFirstImage} />
             <div className='splash-header-two'></div>

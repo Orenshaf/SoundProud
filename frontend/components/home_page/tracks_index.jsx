@@ -48,6 +48,8 @@ class TracksIndex extends React.Component {
             )
         })
 
+        const trackSlider = this.props.trackSlider ? <TrackSliderButton slideTracks={this.slideTracks} leftRight={this.state.trackButton} /> : null;
+
         return (
             <>
                 <div className="track-index-container">
@@ -56,7 +58,7 @@ class TracksIndex extends React.Component {
                             {tracksIndex}
                         </div>
                     </div>
-                    <TrackSliderButton slideTracks={this.slideTracks} leftRight={this.state.trackButton} />
+                    {trackSlider}
                 </div>
             </>
         )

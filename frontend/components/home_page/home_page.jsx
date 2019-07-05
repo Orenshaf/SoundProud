@@ -12,8 +12,8 @@ class HomePage extends React.Component {
     
     render() {
         const fetchCurrentTrack = this.props.fetchCurrentTrack;
-        const tracks1 = this.props.tracks.length > 1 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack} includePlayButton={true} limit={10}/> : null ;
-        const tracks2 = this.props.tracks.length > 1 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack} includePlayButton={true} limit={11} /> : null;
+        const tracks1 = this.props.tracks.length > 1 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack} includePlayButton={true} limit={10} trackSlider={true}/> : null ;
+        const tracks2 = this.props.tracks.length > 1 ? <TracksIndex tracks={this.props.tracks} history={this.props.history} fetchCurrentTrack={fetchCurrentTrack} includePlayButton={true} limit={11} trackSlider={true}/> : null;
 
         return (
             <div className="home-page-container">
