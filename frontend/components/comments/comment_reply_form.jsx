@@ -1,5 +1,6 @@
 import React from 'react';
 import { createComment } from '../../actions/comment_actions';
+import { openModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 
 class CommentReplyForm extends React.Component {
@@ -27,10 +28,14 @@ class CommentReplyForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const that = this;
-        this.props.createComment(this.state).then(() => {
-            that.props.resetCommentReplyForm();
-        });
+        if (this.props.currentUserId === null) {
+            this.props.openModal('loginInfo');
+        } else {
+            const that = this;
+            this.props.createComment(this.state).then(() => {
+                that.props.resetCommentReplyForm();
+            });
+        }
     }
 
     render() {
@@ -49,7 +54,8 @@ class CommentReplyForm extends React.Component {
 }
 
 const mdp = dispatch => ({
-    createComment: (comment) => dispatch(createComment(comment))
+    createComment: (comment) => dispatch(createComment(comment)),
+    openModal: (modal) => dispatch(openModal(modal))
 })
 
 export default connect(null, mdp)(CommentReplyForm);

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createComment } from '../../actions/comment_actions';
+import { openModal } from '../../actions/modal_actions';
 
 class CommentForm extends React.Component {
     constructor(props){ 
@@ -59,11 +60,15 @@ class CommentForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const that = this;
-        this.props.createComment(this.state).then(() => {
-            that.resetForm();
-            that.commentForm.current.blur();
-        });
+        if (this.props.currentUserId === null) {
+            this.props.openModal('loginInfo');
+        } else {
+            const that = this;
+            this.props.createComment(this.state).then(() => {
+                that.resetForm();
+                that.commentForm.current.blur();
+            });
+        }
     }
 
     resetForm() {
@@ -98,7 +103,8 @@ const msp = state => {
 }
 
 const mdp = dispatch => ({
-   createComment: (comment) => dispatch(createComment(comment))
+   createComment: (comment) => dispatch(createComment(comment)),
+   openModal: (modal) => dispatch(openModal(modal))
 })
 
 
