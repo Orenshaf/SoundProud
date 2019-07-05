@@ -118,10 +118,8 @@ class TrackForm extends React.Component {
                     </div>
                     <div className={`drag-over-modal-background ${this.state.dragFile ? "show-drag-over" : ""}`} onDragLeave={this.dragLeaveHandler}>
                         <div className={`drag-over-modal-child ${this.state.dragFile ? "show-drag-over" : ""}`} >
-                            <div className={`drag-over-file-upload ${this.state.dragFile ? "show-drag-over" : ""}`}>
-                                <div className={`drag-over-file-upload-inner ${this.state.dragFile ? "show-drag-over" : ""}`}>
-                                    <p>Drop your files here</p>
-                                </div>
+                            <div className={`drag-over-file-upload ${this.state.dragFile ? "show-drag-over" : ""}`} >
+                                Drop your files here
                             </div>
                         </div>
                     </div>
