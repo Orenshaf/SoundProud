@@ -16,14 +16,17 @@ class TrackForm extends React.Component {
         this.handleTrackFile = this.handleTrackFile.bind(this);
         this.handlePrivacy = this.handlePrivacy.bind(this);
         this.titleize = this.titleize.bind(this);
+        this.dragOverHandler = this.dragOverHandler.bind(this);
+        this.dropHandler = this.dropHandler.bind(this);
     }
 
     handleTrackFile(e) {
+        debugger;
         const file = e.currentTarget.files[0];
         if (file.type.includes("audio")) {
             this.setState({
                 trackFile: file,
-                title: this.titleize(e.currentTarget.files[0].name.split('.')[0].split('-')),
+                title: this.titleize(file.name.split('.')[0].split('-')),
                 errors: []
             })
         } else {
@@ -46,6 +49,26 @@ class TrackForm extends React.Component {
             this.setState({private: !this.state.private})
         }
     }
+
+    dragOverHandler(e) {
+        e.preventDefault();
+    }
+
+    dropHandler(e) {
+        e.preventDefault()
+        const file = e.dataTransfer.items[0].getAsFile();
+        if (file.type.includes("audio")) {
+            this.setState({
+                trackFile: file,
+                title: this.titleize(file.name.split('.')[0].split('-')),
+                errors: []
+            })
+        } else {
+            this.setState({
+                errors: ['Please upload an audio file']
+            })
+        }
+    }
     
     handleFormRender() {
         const errors = this.state.errors.length > 0 ? this.state.errors.map((error, i) => {
@@ -56,7 +79,7 @@ class TrackForm extends React.Component {
             return <TrackFinalForm trackInfo={this.state} uploadTrack={this.props.uploadTrack} history={this.props.history}/>
         } else {
             return (
-                <div className="track-form-container">
+                <div className="track-form-container" onDrop={this.dropHandler} onDragOver={this.dragOverHandler}>
                     <div className="upload-file-container">
                         <h1>Drag and drop your tracks & albums here</h1>
                         {errors}
