@@ -30,7 +30,7 @@ class Comment < ApplicationRecord
         foreign_key: :parent_cmt_id,
         class_name: 'Comment'
     
-    has_many :child_comments,
+    has_many :child_comments, dependent: :destroy,
         primary_key: :id,
         foreign_key: :parent_cmt_id,
         class_name: 'Comment'

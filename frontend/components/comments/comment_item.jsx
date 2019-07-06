@@ -1,6 +1,8 @@
 import React from 'react';
 import CommentReplyForm from './comment_reply_form';
 import ChildCommentIndex from './child_comment_index';
+import { connect } from 'react-redux';
+import { deleteComment } from '../../actions/comment_actions';
 
 class CommentItem extends React.Component {
     constructor(props){
@@ -11,11 +13,14 @@ class CommentItem extends React.Component {
             commentReplyForm: false
         }
 
+        this.commentId = props.id;
+
         this.createdAtStamp = this.createdAtStamp.bind(this);
         this.showReply = this.showReply.bind(this);
         this.hideReply = this.hideReply.bind(this);
         this.showCommentReplyForm = this.showCommentReplyForm.bind(this);
         this.resetCommentReplyForm = this.resetCommentReplyForm.bind(this);
+        this.deleteComment = this.deleteComment.bind(this);
     }
 
     createdAtStamp(createdAtDate) {
@@ -57,6 +62,10 @@ class CommentItem extends React.Component {
         this.setState({commentReplyForm: false})
     }
 
+    deleteComment() {
+        this.props.deleteComment(this.commentId);
+    }
+
     render() {
         const username = this.props.username;
         const trackTime = this.props.trackTime;
@@ -75,6 +84,8 @@ class CommentItem extends React.Component {
             usernameStamp = username;
         }
 
+        const deleteButton = (userId === currentUserId) ? <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.deleteComment} > <i className="fas fa-trash"></i></button> : null;
+
         const childCommentIndex = (this.props.childComments && this.props.childComments.length > 0) ? <ChildCommentIndex childComments={this.props.childComments} currentUserId={currentUserId} showCommentReplyForm={this.showCommentReplyForm}/> : null;
         const commentReplyForm = this.state.commentReplyForm ? <CommentReplyForm parentCommentId={this.props.id} currentUserId={currentUserId} trackId={this.props.trackId} trackTime={trackTime} resetCommentReplyForm={this.resetCommentReplyForm}/> : null;
         // add a way to render child comments properly
@@ -90,7 +101,10 @@ class CommentItem extends React.Component {
                         </div>
                         <div className="comment-info">
                             <p className="comment-body">{body}</p>
-                            <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.showCommentReplyForm}> <i className="fas fa-reply"></i>  Reply</button>
+                            <div className="comment-edit-things">
+                                <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.showCommentReplyForm}> <i className="fas fa-reply"></i>  Reply</button>
+                                {deleteButton}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -101,4 +115,8 @@ class CommentItem extends React.Component {
     }
 }
 
-export default CommentItem;
+const mdp = dispatch => ({
+    deleteComment: (commentId) => dispatch(deleteComment(commentId)) 
+})
+
+export default connect(null, mdp)(CommentItem);

@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { deleteComment } from '../../actions/comment_actions';
 
 class ChildCommentItem extends React.Component {
     constructor(props) {
@@ -8,9 +10,12 @@ class ChildCommentItem extends React.Component {
             inComment: false,
         }
 
+        this.commentId = props.id;
+
         this.createdAtStamp = this.createdAtStamp.bind(this);
         this.showReply = this.showReply.bind(this);
         this.hideReply = this.hideReply.bind(this);
+        this.deleteComment = this.deleteComment.bind(this);
     }
 
     createdAtStamp(createdAtDate) {
@@ -42,6 +47,10 @@ class ChildCommentItem extends React.Component {
         this.setState({ inComment: false });
     }
 
+    deleteComment(){
+        this.props.deleteComment(this.commentId);
+    }
+
     render() {
         const username = this.props.username;
         const trackTime = this.props.trackTime;
@@ -59,6 +68,8 @@ class ChildCommentItem extends React.Component {
         } else {
             usernameStamp = username;
         }
+
+        const deleteButton = (userId === currentUserId) ? <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.deleteComment} > <i className="fas fa-trash"></i></button> : null;
         return (
             <div className="comment-item-inner-container">
                 {profilePicture}
@@ -69,7 +80,10 @@ class ChildCommentItem extends React.Component {
                     </div>
                     <div className="comment-info">
                         <p className="comment-body">{body}</p>
-                        <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={() => this.props.showCommentReplyForm()}> <i className="fas fa-reply"></i>  Reply</button>
+                        <div className="comment-edit-things">
+                            <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.showCommentReplyForm}> <i className="fas fa-reply"></i>  Reply</button>
+                            {deleteButton}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -77,4 +91,8 @@ class ChildCommentItem extends React.Component {
     }
 }
 
-export default ChildCommentItem;
+const mdp = dispatch => ({
+    deleteComment: (commentId) => dispatch(deleteComment(commentId))
+})
+
+export default connect(null, mdp)(ChildCommentItem);
