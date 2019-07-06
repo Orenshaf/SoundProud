@@ -17,7 +17,7 @@ class Api::CommentsController < ApplicationController
     def destroy
         comment = Comment.find_by(id: params[:id])
         comment.destroy
-        render json: {id: comment.id, parent_cmt_id: comment.parent_cmt_id}
+        render json: {id: comment.id, parent_cmt_id: comment.parent_cmt_id, track_id: comment.track_id}
     end
 
     def track_params 

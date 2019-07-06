@@ -1,6 +1,6 @@
 import { RECEIVE_TRACKS, RECEIVE_TRACK, REMOVE_TRACK } from '../../actions/track_actions';
 import { LOGOUT_CURRENT_USER } from '../../actions/session_actions';
-import { RECEIVE_COMMENT } from '../../actions/comment_actions';
+import { RECEIVE_COMMENT, REMOVE_COMMENT } from '../../actions/comment_actions';
 import { merge } from 'lodash';
 
 const tracksReducer = (oldState = {}, action) => {
@@ -23,6 +23,17 @@ const tracksReducer = (oldState = {}, action) => {
                 newState = merge({}, oldState);
                 newState[action.comment.track_id].comments.push(action.comment.id);
                 return merge({}, oldState, newState);
+            } else {
+                return oldState;
+            }
+        case REMOVE_COMMENT:
+            if (action.comment.parent_cmt_id === null) {
+                newState = merge({}, oldState);
+                const newCommentsArray = newState[action.comment.track_id].comments.filter(commentId => {
+                    if (commentId !== action.comment.id) return commentId;
+                })
+                newState[action.comment.track_id].comments = newCommentsArray;
+                return newState;
             } else {
                 return oldState;
             }
