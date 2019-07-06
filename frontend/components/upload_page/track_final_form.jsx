@@ -11,7 +11,8 @@ class TrackFinalForm extends React.Component {
             description: '',
             photoFile: null,
             photoUrl: window.defaultPhoto,
-            errors: []
+            imageErrors: [],
+            titleErrors: []
         }
 
         this.handlePhotoFile = this.handlePhotoFile.bind(this);
@@ -27,7 +28,7 @@ class TrackFinalForm extends React.Component {
             const fileReader = new FileReader();
             fileReader.onloadend = () => {
                 this.setState({
-                    photoFile: file, photoUrl: fileReader.result, errors: []
+                    photoFile: file, photoUrl: fileReader.result, imageErrors: []
                 })
             }
             if (file) {
@@ -35,7 +36,7 @@ class TrackFinalForm extends React.Component {
             }
         } else {
             this.setState({
-                errors: ['Please upload an image file']
+                imageErrors: ['Please upload an image file']
             })
         }
     }
@@ -47,10 +48,21 @@ class TrackFinalForm extends React.Component {
         }
     }
 
-    handleChange(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
+    handleChange(field) {  
+        return e => {
+            if (field === "title" && e.currentTarget.value === '') {
+                this.setState({
+                    [field]: e.currentTarget.value,
+                    titleErrors: ["Enter a title."]
+                })
+            } else {
+                this.setState({
+                    [field]: e.currentTarget.value,
+                    titleErrors: []
+                });
+            }
+        }
+        
     }
 
     handleSubmit(e) {
@@ -83,10 +95,14 @@ class TrackFinalForm extends React.Component {
     handleRedirect(arg) {
         return this.props.history.push(`/${arg.track.id}`);
     }
+    
 
     render () {
-        const errors = this.state.errors.length > 0 ? this.state.errors.map( (error, i) => {
+        const imageErrors = this.state.imageErrors.length > 0 ? this.state.imageErrors.map( (error, i) => {
             return <li id="errors2" key={`error-${i}`}>{error}</li> 
+        }) : null;
+        const titleErrors = this.state.titleErrors.length > 0 ? this.state.titleErrors.map((error, i) => {
+            return <li id="errors2" key={`error-${i}`}>{error}</li>
         }) : null;
         return (
             <>
@@ -121,7 +137,7 @@ class TrackFinalForm extends React.Component {
                                     </label>
                                 </div>
                             </div>
-                            {errors}
+                            {imageErrors}
                         </div>
 
                         <div className="upload-form-innards-form">
@@ -136,6 +152,7 @@ class TrackFinalForm extends React.Component {
                                         onChange={this.handleChange('title')}
                                     />
                                 </label>
+                                {titleErrors}
                                 <label>
                                     <h4 className="description">Description</h4>
                                     <br />
