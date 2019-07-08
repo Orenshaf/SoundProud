@@ -2,7 +2,8 @@ import React from 'react';
 import CommentReplyForm from './comment_reply_form';
 import ChildCommentIndex from './child_comment_index';
 import { connect } from 'react-redux';
-import { deleteComment } from '../../actions/comment_actions';
+import { deleteComment, fetchComments } from '../../actions/comment_actions';
+
 
 class CommentItem extends React.Component {
     constructor(props){
@@ -63,7 +64,10 @@ class CommentItem extends React.Component {
     }
 
     deleteComment() {
-        this.props.deleteComment(this.commentId);
+        const that = this;
+        this.props.deleteComment(this.commentId).then(() => {
+            that.props.fetchComments(that.props.trackId);
+        })
     }
 
     render() {
@@ -86,7 +90,7 @@ class CommentItem extends React.Component {
 
         const deleteButton = (userId === currentUserId) ? <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.deleteComment} > <i className="fas fa-trash"></i></button> : null;
 
-        const childCommentIndex = (this.props.childComments && this.props.childComments.length > 0) ? <ChildCommentIndex childComments={this.props.childComments} currentUserId={currentUserId} showCommentReplyForm={this.showCommentReplyForm}/> : null;
+        const childCommentIndex = (this.props.childComments.length > 0) ? <ChildCommentIndex childComments={this.props.childComments} currentUserId={currentUserId} showCommentReplyForm={this.showCommentReplyForm}/> : null;
         const commentReplyForm = this.state.commentReplyForm ? <CommentReplyForm parentCommentId={this.props.id} currentUserId={currentUserId} trackId={this.props.trackId} trackTime={trackTime} resetCommentReplyForm={this.resetCommentReplyForm}/> : null;
         // add a way to render child comments properly
         return (
@@ -115,8 +119,10 @@ class CommentItem extends React.Component {
     }
 }
 
+
 const mdp = dispatch => ({
-    deleteComment: (commentId) => dispatch(deleteComment(commentId)) 
+    deleteComment: (commentId) => dispatch(deleteComment(commentId)) ,
+    fetchComments: (trackId) => dispatch(fetchComments(trackId))
 })
 
 export default connect(null, mdp)(CommentItem);

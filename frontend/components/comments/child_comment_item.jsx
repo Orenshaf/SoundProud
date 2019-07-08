@@ -81,7 +81,7 @@ class ChildCommentItem extends React.Component {
                     <div className="comment-info">
                         <p className="comment-body">{body}</p>
                         <div className="comment-edit-things">
-                            <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.showCommentReplyForm}> <i className="fas fa-reply"></i>  Reply</button>
+                            <button className={`comment-reply-button ${this.state.inComment ? "comment-reply-show" : ""}`} onClick={this.props.showCommentReplyForm}> <i className="fas fa-reply"></i>  Reply</button>
                             {deleteButton}
                         </div>
                     </div>

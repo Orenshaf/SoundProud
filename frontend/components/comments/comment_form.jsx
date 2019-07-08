@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createComment } from '../../actions/comment_actions';
+import { createComment, fetchComments } from '../../actions/comment_actions';
 import { openModal } from '../../actions/modal_actions';
 
 class CommentForm extends React.Component {
@@ -67,6 +67,7 @@ class CommentForm extends React.Component {
             this.props.createComment(this.state).then(() => {
                 that.resetForm();
                 that.commentForm.current.blur();
+                that.props.fetchComments(that.state.track_id);
             });
         }
     }
@@ -104,6 +105,7 @@ const msp = state => {
 
 const mdp = dispatch => ({
    createComment: (comment) => dispatch(createComment(comment)),
+   fetchComments: (trackId) => dispatch(fetchComments(trackId)),
    openModal: (modal) => dispatch(openModal(modal))
 })
 
