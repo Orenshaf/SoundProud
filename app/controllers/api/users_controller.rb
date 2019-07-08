@@ -39,6 +39,16 @@ class Api::UsersController < ApplicationController
         end
     end
 
+    def show
+        @user = User.find_by(id: params[:id])
+
+        if @user 
+            render "api/users/showpage"
+        else
+            render json: ['That profile url does not exist'], status: 422
+        end
+    end
+
     private
 
     def user_params
