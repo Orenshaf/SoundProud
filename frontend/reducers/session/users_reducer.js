@@ -16,7 +16,7 @@ const usersReducer = (oldState = {}, action) => {
         case LOGOUT_CURRENT_USER:
             return {};
         case RECEIVE_USER:
-            newState = { [action.user.id]: action,user };
+            newState = { [action.user.id]: action.user };
             return merge({}, oldState, newState);
         case RECEIVE_TRACK:
             newState = { [action.user.id]: action.user };

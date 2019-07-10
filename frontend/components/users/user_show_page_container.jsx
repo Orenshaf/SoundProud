@@ -4,7 +4,7 @@ import UserShowPage from './user_show_page';
 import { fetchUser } from '../../actions/user_actions';
 
 
-const msp = state => {
+const msp = (state, ownProps) => {
     const user = state.entities.users[ownProps.match.params.trackId] || null;
     let tracks;
     if (user) {

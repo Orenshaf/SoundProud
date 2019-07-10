@@ -23,8 +23,8 @@ const App = () => (
                 <Route exact path="/logout" component={LogoutPageContainer} />
                 <Route path="/upload" component={UploadPageContainer} />
                 <Route path="/discover" component={HomePageContainer} />
-                <Route path="/:trackId" component={TrackShowPageContainer} />
                 <Route path="/users/:userId" component={UserShowPageContainer} />
+                <Route path="/:trackId" component={TrackShowPageContainer} />
                 <PermitRoute path="/" component={SplashContainer} />
             </Switch>
         </div>

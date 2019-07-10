@@ -6,10 +6,11 @@ class UserShowPage extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchTracks(this.props.match.params.userId);
+        this.props.fetchUser(this.props.match.params.userId);
     }
 
     render() {
+        debugger;
         return (
             <div>
 
