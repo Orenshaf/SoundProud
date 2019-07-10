@@ -1,10 +1,14 @@
 @import "base/colors.scss";
 @import "base/fonts.scss";
 
+.user-showpage {
+    width: 100%;
+}
 .user-showpage-header {
     width: 100%;
     height: 260px;
     margin-top: 46px;
+    margin-bottom: 20px;
     box-sizing: border-box;
     padding-left: 30px;
     padding-top: 39px;
@@ -17,11 +21,49 @@
 }
 
 .user-showpage-info li {
-     width: max-content;
-     background: black;
-     font-family: 'Interstate';
+    width: max-content;
+    background: rgba(0, 0, 0, 0.8);
+    font-family: 'Interstate';
  }
 
 .user-showpage-username {
     padding: 8px 7px;
+    margin-top: -9px;
+}
+
+.user-showpage-tracks-index {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-showpage-track-item {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.user-showpage-track-item-photo {
+    width: 160px;
+    height: 160px;
+    margin-right: 15px;
+}
+
+.user-showpage-track-item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-showpage-track-item-info-top {
+    display: flex;
+    width: 644px;
+}
+
+.user-showpage-track-item-left {
+    display: flex;
+}
+
+.user-showpage-track-item-trackinfo {
+    display: flex;
+    flex-direction: column;
 }

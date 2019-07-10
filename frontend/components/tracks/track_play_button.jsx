@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { playMusic, pauseMusic } from '../../actions/track_player_actions';
+import { fetchCurrentTrack } from '../../actions/track_actions';
 
 class TrackPlayButton extends React.Component {
     constructor(props) {
@@ -42,7 +43,7 @@ class TrackPlayButton extends React.Component {
 
         if (this.props.playing && this.props.currentTrackId === this.trackId) {
             return (
-                <div className={`play-button show in-play-button ${this.props.className === "large" ? "large" : ""}`}>
+                <div className={`play-button show in-play-button ${this.props.class}`}>
                     <img
                         src={window.pauseIcon2}
                         onClick={this.pauseMusic}
@@ -52,7 +53,7 @@ class TrackPlayButton extends React.Component {
         } else {
             return (
                 <img
-                    className={`play-button ${this.props.playButton ? "show" : ""} ${this.state.inPlayButton ? "in-play-button" : ""} ${this.props.className === "large" ? "large" : ""}`}
+                    className={`play-button ${this.props.playButton ? "show" : ""} ${this.state.inPlayButton ? "in-play-button" : ""} ${this.props.class}`}
                     src={window.playIcon}
                     onClick={this.playMusic}
                     onMouseEnter={this.highlightPlayButton}
@@ -71,7 +72,8 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     playMusic: () => dispatch(playMusic()),
-    pauseMusic: () => dispatch(pauseMusic())
+    pauseMusic: () => dispatch(pauseMusic()),
+    fetchCurrentTrack: (id) => dispatch(fetchCurrentTrack(id)),
 })
 
 

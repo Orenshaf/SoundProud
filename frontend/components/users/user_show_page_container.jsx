@@ -7,7 +7,7 @@ import { fetchUser } from '../../actions/user_actions';
 const msp = (state, ownProps) => {
     const user = state.entities.users[ownProps.match.params.userId];
     let tracks;
-    if (user.tracks) {
+    if (user.tracks && user.tracks.length > 0) {
         tracks = user.tracks.map( trackId => {
             return state.entities.tracks[trackId];
         })

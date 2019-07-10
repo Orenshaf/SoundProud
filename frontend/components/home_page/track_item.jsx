@@ -12,7 +12,6 @@ class TrackItem extends React.Component {
         this.trackId = props.trackId;
         this.photo = props.photo;
         this.title = props.title;
-        this.fetchCurrentTrack = props.fetchCurrentTrack;
 
         this.revealPlayButton = this.revealPlayButton.bind(this);
         this.hidePlayButton = this.hidePlayButton.bind(this);
@@ -34,8 +33,8 @@ class TrackItem extends React.Component {
     render () {
         const trackPlayButton = this.props.includePlayButton ? <TrackPlayButton
             trackId={this.trackId}
-            fetchCurrentTrack={this.fetchCurrentTrack}
             playButton={this.state.playButton}
+            class={""}
         /> : null;
         return (
             <div className="track-item">
