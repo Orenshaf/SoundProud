@@ -1,0 +1,13 @@
+@import "base/colors.scss";
+@import "base/fonts.scss";
+
+.user-showpage-header {
+    width: 100%;
+    height: 260px;
+    margin-top: 46px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-top: 39px;
+    background: linear-gradient(315deg, #846170 0%, #e6846e 100%);
+    display: flex;
+}

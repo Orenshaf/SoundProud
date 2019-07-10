@@ -5,14 +5,12 @@ import { fetchUser } from '../../actions/user_actions';
 
 
 const msp = (state, ownProps) => {
-    const user = state.entities.users[ownProps.match.params.trackId] || null;
+    const user = state.entities.users[ownProps.match.params.userId];
     let tracks;
-    if (user) {
-        tracks = user.tracks.map(trackId => {
+    if (user.tracks) {
+        tracks = user.tracks.map( trackId => {
             return state.entities.tracks[trackId];
         })
-    } else {
-        tracks = null;
     }
     return ({
         user,
@@ -24,4 +22,4 @@ const mdp = (dispatch) => ({
     fetchUser: (id) => dispatch(fetchUser(id))
 })
 
-export default connect(msp, mdp)(UserShowPage);
+export default withRouter(connect(msp, mdp)(UserShowPage));

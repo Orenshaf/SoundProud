@@ -10,10 +10,10 @@ class UserShowPage extends React.Component {
     }
 
     render() {
-        debugger;
+        const profilePicture = <div className="user-showpage-profile-picture"><span className="empty-profile">p</span> </div>
         return (
-            <div>
-
+            <div className="user-showpage-header">
+                {profilePicture}
             </div>
         )
     }

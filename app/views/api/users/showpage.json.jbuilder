@@ -4,5 +4,7 @@ json.user do
 end
 
 json.tracks do
-    json.array! @user.tracks
+    json.array! @user.tracks.each do |track|
+        json.partial! '/api/tracks/track', track: track
+    end
 end
