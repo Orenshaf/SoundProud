@@ -11,9 +11,13 @@ class UserShowPage extends React.Component {
 
     render() {
         const profilePicture = <div className="user-showpage-profile-picture"><span className="empty-profile">p</span> </div>
+        const username = this.props.user.username;
         return (
             <div className="user-showpage-header">
                 {profilePicture}
+                <ul className="user-showpage-info">
+                    <li className="user-showpage-username">{username}</li>
+                </ul>
             </div>
         )
     }

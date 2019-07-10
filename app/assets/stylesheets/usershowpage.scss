@@ -11,3 +11,17 @@
     background: linear-gradient(315deg, #846170 0%, #e6846e 100%);
     display: flex;
 }
+
+.user-showpage-info {
+    margin-left: 20px;
+}
+
+.user-showpage-info li {
+     width: max-content;
+     background: black;
+     font-family: 'Interstate';
+ }
+
+.user-showpage-username {
+    padding: 8px 7px;
+}
