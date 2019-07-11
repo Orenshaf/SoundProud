@@ -30,20 +30,18 @@
     height: 19px;
  }
 
- .small img {
+ 
+ .play-button img {
+     width: 30px;
+     height: 33px;
+     margin: 3px 0 0 4px;
+}
+    
+.small img {
     width: 16px;
     height: 16px;
-    width: 8px;
-    height: 8px;
-    margin: 2px 0 0 4px;
- }
-
- .play-button img {
-    width: 30px;
-    height: 33px;
-    margin: 3px 0 0 4px;
- }
-
+    margin: 1px 0 0 0.5px;
+}
  .large img {
     width: 30px;
     height: 33px;
