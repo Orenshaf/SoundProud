@@ -1,5 +1,6 @@
 import React from 'react';
 import TrackPlayButton from '../../components/tracks/track_play_button';
+import WaveForm from '../wave_form/wave_form';
 
 const UserTrackItem = ({track}) =>  {
     const photo = <img className="user-showpage-track-item-photo" src={track.photoUrl} />
@@ -27,6 +28,7 @@ const UserTrackItem = ({track}) =>  {
                     </div>
                     {createdAt}
                 </div>
+                <WaveForm trackUrl={track.trackUrl} active={false} waveStyle={"userShowPage"} />
             </div>
         </div>
     )

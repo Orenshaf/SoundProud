@@ -77,9 +77,9 @@ class TrackShowPage extends React.Component {
         const seekBar = (this.props.currentTrack && this.props.track.id === this.props.currentTrack.id) ? <SeekBar long={true} /> : <div className="empty-seek"></div>;
         let waveForm = null;
         if (this.props.currentTrack && this.props.track.id === this.props.currentTrack.id) {
-            waveForm = <WaveForm trackUrl={this.props.track.trackUrl} active={true} />
+            waveForm = <WaveForm trackUrl={this.props.track.trackUrl} active={true} waveStyle={"trackShowPage"}/>
         } else if (this.props.track) {
-            waveForm = <WaveForm trackUrl={this.props.track.trackUrl} active={false}/>
+            waveForm = <WaveForm trackUrl={this.props.track.trackUrl} active={false} waveStyle={"trackShowPage"}/>
         } 
         const currentTime = (this.props.currentTrack && this.props.track.id === this.props.currentTrack.id) ? <span className="show-current-time">{this.createTimeStamp(this.props.currentTime)}</span>  : null;
         const trackTime = this.state.trackTimeStamp ? <span className="show-track-time">{this.state.trackTimeStamp}</span> : null;

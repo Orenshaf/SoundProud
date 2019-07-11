@@ -30,15 +30,27 @@ class WaveForm extends React.Component {
 
     drawWave() {
         const interact = this.props.active ? true : false;
-        this.wavesurfer = WaveSurfer.create({
-            container: this.waveForm.current,
-            waveColor: '#cdcfd1',
-            progressColor: '#f50',
-            cursorColor: 'transparent',
-            barGraph: 10,
-            barWidth: 2,
-            interact
-        });
+        if (this.props.waveStyle === "trackShowPage") {
+            this.wavesurfer = WaveSurfer.create({
+                container: this.waveForm.current,
+                waveColor: '#cdcfd1',
+                progressColor: '#f50',
+                cursorColor: 'transparent',
+                barGraph: 10,
+                barWidth: 2,
+                interact
+            });
+        } else if (this.props.waveStyle === "userShowPage") {
+            this.wavesurfer = WaveSurfer.create({
+                container: this.waveForm.current,
+                waveColor: 'black',
+                progressColor: '#f50',
+                cursorColor: 'transparent',
+                barGraph: 10,
+                barWidth: 2,
+                interact
+            });
+        }
 
         this.wavesurfer.load(this.trackUrl);
         this.wavesurfer.on('ready', () => {
@@ -48,7 +60,7 @@ class WaveForm extends React.Component {
 
     render() {
         return (
-            <div ref={this.waveForm} id="waveform">
+            <div ref={this.waveForm} id={`${this.props.waveStyle === "trackShowPage" ? "waveform" : "waveform-small"}`}>
 
             </div>
         )
