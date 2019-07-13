@@ -12,7 +12,7 @@ class UserShowPage extends React.Component {
 
     render() {
         const profilePicture = <div className="user-showpage-profile-picture"><span className="empty-profile">p</span> </div>
-        const username = this.props.user.username;
+        const username = this.props.user ? this.props.user.username : null;
         const tracksIndex = this.props.tracks ? <UserTracksIndex tracks={this.props.tracks}/> : null;
         return (
             <div className="user-showpage">

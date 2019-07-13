@@ -50,6 +50,7 @@ class WaveForm extends React.Component {
                 cursorColor: 'transparent',
                 barGraph: 10,
                 barWidth: 2,
+                barHeight: 0.5,
                 interact
             });
         }
