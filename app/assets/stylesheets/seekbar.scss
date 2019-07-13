@@ -11,7 +11,7 @@
     cursor: pointer;
 }
 
-.black {
+.transparent {
     background-image: linear-gradient(135deg,#846170,#70929c);
     z-index: 10;
 }
@@ -38,7 +38,7 @@
     box-shadow: -500px 0 0 500px $orange;
 }
 
-.black::-webkit-slider-thumb {
+.tranparent::-webkit-slider-thumb {
     box-shadow: none;
 }
 
@@ -93,4 +93,13 @@
     position: absolute;
     top: 44px;
     left: 15px;
+}
+
+.white {
+    background: white;
+    z-index: 10;
+}
+
+.white::-webkit-slider-thumb {
+    box-shadow: none;
 }

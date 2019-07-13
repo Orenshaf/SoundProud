@@ -31,16 +31,18 @@ class UserTrackItem extends React.Component {
     }
 
     createTimeStamp(fullTime) {
-        let seconds = Math.floor(fullTime);
-        let hours = Math.floor(fullTime / 3600);
-        let minutes = Math.floor((fullTime % 3600) / 60);
-        seconds = seconds % 60;
+        if (fullTime) {
+            let seconds = Math.floor(fullTime);
+            let hours = Math.floor(fullTime / 3600);
+            let minutes = Math.floor((fullTime % 3600) / 60);
+            seconds = seconds % 60;
 
-        seconds = seconds < 10 ? '0' + seconds : seconds;
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        hours = hours < 1 ? "" : hours + ':';
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            hours = hours < 1 ? "" : hours + ':';
 
-        return `${hours}${minutes}:${seconds}`;
+            return `${hours}${minutes}:${seconds}`;
+        }
     }
 
 
@@ -49,7 +51,7 @@ class UserTrackItem extends React.Component {
         const photo = <img className="user-showpage-track-item-photo" src={track.photoUrl} />
         
         const trackTime = this.state.trackTimeStamp ? <span className="user-showpage-track-timestamp">{this.state.trackTimeStamp}</span> : null;
-        const currentTime = (this.props.currentTrack && track.id === this.props.currentTrack.id) ? <span className="show-current-time">{this.createTimeStamp(this.props.currentTime)}</span> : null;
+        const currentTime = (this.props.currentTrack && track.id === this.props.currentTrack.id) ? <span className="user-showpage-current-time">{this.createTimeStamp(this.props.currentTime)}</span> : null;
 
         let waveForm;
         if (this.props.currentTrack && track.id === this.props.currentTrack.id) {

@@ -25,7 +25,9 @@ class WaveForm extends React.Component {
         const percentage = Number(this.props.percentage);
         if (this.props.active && this.state.ready && percentage) {
             this.wavesurfer.seekTo(percentage);
-        } 
+        } else {
+            this.wavesurfer.seekTo(0);
+        }
     }
 
     drawWave() {
