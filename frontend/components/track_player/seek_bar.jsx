@@ -24,11 +24,14 @@ class SeekBar extends React.Component {
     handlePercentage(e) {
         let newPercentage
         const windowSize = ((window.innerWidth - 1280) / 2);
-        if (this.props.seekBarStyle) {
-            newPercentage = Math.floor((((e.clientX - windowSize) - (e.currentTarget.offsetLeft * 1.5)) / (e.currentTarget.offsetWidth ) * 100));
+        if (this.props.seekBarStyle === "long") {
+            newPercentage = Math.floor((((e.clientX - windowSize) - (e.currentTarget.offsetLeft * 1.5)) / (e.currentTarget.offsetWidth) * 100));
+        } else if (this.props.seekBarStyle === "medium") {
+            newPercentage = Math.floor((((e.clientX - windowSize) + (e.currentTarget.offsetLeft * 107)) / (e.currentTarget.offsetWidth) * 100));
         } else {
             newPercentage = Math.floor((((e.clientX - windowSize) - (e.currentTarget.offsetLeft * 1.25)) / (e.currentTarget.offsetWidth) * 100));
         }
+        debugger;
         this.props.seekPercentage(newPercentage);
     }
 
