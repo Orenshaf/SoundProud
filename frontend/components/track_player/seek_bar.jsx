@@ -24,7 +24,7 @@ class SeekBar extends React.Component {
     handlePercentage(e) {
         let newPercentage
         const windowSize = ((window.innerWidth - 1280) / 2);
-        if (this.props.long) {
+        if (this.props.seekBarStyle) {
             newPercentage = Math.floor((((e.clientX - windowSize) - (e.currentTarget.offsetLeft * 1.5)) / (e.currentTarget.offsetWidth ) * 100));
         } else {
             newPercentage = Math.floor((((e.clientX - windowSize) - (e.currentTarget.offsetLeft * 1.25)) / (e.currentTarget.offsetWidth) * 100));
@@ -38,7 +38,7 @@ class SeekBar extends React.Component {
     }
 
     revealBall() {
-        if (this.props.long !== true) {
+        if (this.props.seekBarStyle === undefined) {
             this.setState({ ball: true });
         }
     }
@@ -49,9 +49,9 @@ class SeekBar extends React.Component {
 
     render() {
         return (
-            <div className={`progress-bar-outer ${this.props.long ? "long" : ""}`} onClick={(e) => this.handlePercentage(e)} onMouseEnter={this.revealBall} onMouseLeave={this.hideBall}>
-                <input ref={this.progressBar} type="range" min="0" max="100" className={`progress-bar ${this.props.long ? "black" : ""}`} onChange={this.changeSeekPercentage} />
-                <button className={`ball ${this.state.ball ? "show" : ""}`} style={{ left: `${this.props.long ? 0 : this.props.percentage * 0.99}%` }} onDrag={this.changeSeekPercentage}></button>
+            <div className={`progress-bar-outer ${this.props.seekBarStyle}`} onClick={(e) => this.handlePercentage(e)} onMouseEnter={this.revealBall} onMouseLeave={this.hideBall}>
+                <input ref={this.progressBar} type="range" min="0" max="100" className={`progress-bar ${this.props.seekBarStyle ? "black" : ""}`} onChange={this.changeSeekPercentage} />
+                <button className={`ball ${this.state.ball ? "show" : ""}`} style={{ left: `${this.props.seekBarStyle ? 0 : this.props.percentage * 0.99}%` }} onDrag={this.changeSeekPercentage}></button>
             </div>
         )
     }

@@ -84,9 +84,20 @@
 }
 
 
-.showpage-track-time-stamp {
+.user-showpage-track-time-created-at {
     color: #cccccc;
     font-family: 'Interstate';
     font-size: 12px;
 }
+
+.user-showpage-waveform {
+    position: relative;
+}
+
+.user-showpage-track-timestamp {
+    left: 614px;
+    top: 51px;
+}
+
+
 

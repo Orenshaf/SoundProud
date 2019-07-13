@@ -23,7 +23,7 @@ class WaveForm extends React.Component {
 
     componentDidUpdate() {
         const percentage = Number(this.props.percentage);
-        if (this.props.active && this.state.ready) {
+        if (this.props.active && this.state.ready && percentage) {
             this.wavesurfer.seekTo(percentage);
         } 
     }
@@ -43,7 +43,7 @@ class WaveForm extends React.Component {
         } else if (this.props.waveStyle === "userShowPage") {
             this.wavesurfer = WaveSurfer.create({
                 container: this.waveForm.current,
-                waveColor: 'black',
+                waveColor: '#8c8c8c',
                 progressColor: '#f50',
                 cursorColor: 'transparent',
                 barGraph: 10,

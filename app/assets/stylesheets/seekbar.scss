@@ -65,7 +65,7 @@
     cursor: pointer;
 }
 
-.long {
+.long{
     width: 783px;
     margin-right: -191px;
     margin-bottom: -27px;
@@ -86,4 +86,11 @@
     margin-right: -191px;
     margin-left: 2px;
     z-index: 10;
+}
+
+.medium {
+    width: 633px;
+    position: absolute;
+    top: 44px;
+    left: 15px;
 }
