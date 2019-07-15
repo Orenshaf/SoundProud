@@ -6,27 +6,35 @@ class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            dropdown: false,
+            sessionDropdown: false,
+            profileDropdown: false,
         }
 
         this.handleLogout = this.handleLogout.bind(this);
         this.openDropDown = this.openDropDown.bind(this);
         this.toggleNavBar = this.toggleNavBar.bind(this);
         this.closeDropDown = this.closeDropDown.bind(this);
+        this.redirectToProfilePage = this.redirectToProfilePage.bind(this);
     }
 
     handleLogout() {
         this.props.logout().then(() => this.props.history.push('/logout'))
     }
 
-    openDropDown(){
-        this.setState({dropdown: !this.state.dropdown});
+    openDropDown(dropdown){
+        this.setState({[dropdown]: true});
     }
 
     closeDropDown(){
-        if (this.state.dropdown) {
-            this.setState({dropdown: false});
+        if (this.state.sessionDropdown) {
+            this.setState({ sessionDropdown: false});
+        } else if (this.state.profileDropdown) {
+            this.setState({ profileDropdown: false });
         }
+    }
+
+    redirectToProfilePage(){
+        this.props.history.push(`/users/${this.props.currentUser.id}`);
     }
     
     toggleNavBar(){
@@ -46,14 +54,19 @@ class NavBar extends React.Component {
                             <div className="searchbar-placeholder"></div>
                             {/* <input className="login-info-input demo-login modal-item search-bar" type="text" placeholder="Search" /> */}
                             <NavLink to="/upload" className="nav-bar-button nav-button upload" activeClassName="active" onClick={this.closeDropDown}>Upload</NavLink>
+                            <div className="dropdown">
+                                <button id="profile" className={`nav-bar-button notification-button ${this.state.profileDropdown ? "open" : ""}`} onClick={() => this.openDropDown("profileDropdown")}>{profilePicture} <span className="nav-bar-username">{this.props.currentUser.username}</span><img className="caret" src={window.caretIcon} /></button>
+                                <div id="myDropdown" className={`dropdown-content ${this.state.profileDropdown ? "show" : ""}`}>
+                                    <button className="nav-bar-button logout" id="nav-bar-logout" onClick={this.handleLogout}>Profile</button>
+                                </div>
+                            </div>
                             {/* <div className="profile-placeholder"></div> */}
-                            <button className="nav-bar-button" id="profile">{profilePicture} <span className="nav-bar-username">{this.props.currentUser.username}</span>{/* <img className="caret" src={window.caretIcon} /> */}</button>
                             <div className="small-button-placeholder"></div>
                             {/* <button className="nav-bar-button notification-button"><img className="notification-img" src={window.notificationIcon} /></button> */}
                             {/* <button className="nav-bar-button notification-button"><img className="notification-img" src={window.mailIcon} /></button> */}
                             <div className="dropdown">
-                                <button id="dropDownButton" className={`nav-bar-button notification-button ${this.state.dropdown ? "open" : ""}`} onClick={this.openDropDown}><img className="notification-img" src={window.dotsIcon} /></button>
-                                <div id="myDropdown" className={`dropdown-content ${this.state.dropdown ? "show" : ""}`}>
+                                <button id="dropDownButton" className={`nav-bar-button notification-button ${this.state.sessionDropdown ? "open" : ""}`} onClick={() => this.openDropDown("sessionDropdown")}><img className="notification-img" src={window.dotsIcon} /></button>
+                                <div id="myDropdown" className={`dropdown-content ${this.state.sessionDropdown ? "show" : ""}`}>
                                     <button className="nav-bar-button logout" id="nav-bar-logout" onClick={this.handleLogout}>Sign out</button>
                                 </div>
                             </div>

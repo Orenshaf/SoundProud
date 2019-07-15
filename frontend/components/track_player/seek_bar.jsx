@@ -31,7 +31,6 @@ class SeekBar extends React.Component {
         } else {
             newPercentage = Math.floor((((e.clientX - windowSize) - (e.currentTarget.offsetLeft * 1.25)) / (e.currentTarget.offsetWidth) * 100));
         }
-        debugger;
         this.props.seekPercentage(newPercentage);
     }
 
