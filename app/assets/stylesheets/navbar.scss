@@ -71,12 +71,12 @@
      box-sizing: border-box;
  }
 
- #profile {
+ .profile {
     display: flex;
     justify-content: center;
     box-sizing: border-box;
     text-align: center;
-    width: 212px;
+    width: 176px;
     height: 46px;
     padding: 12px 0 14px;
     color: $navBarWhite;
@@ -85,8 +85,9 @@
     font-family: 'Interstate';
  }
 
- #profile:hover {
-     filter: contrast(100%);
+ .profile:hover {
+    color: white;   
+    filter: contrast(100%);
  }
 
  .dropdown-caret {
@@ -123,7 +124,7 @@
   display: inline-block;
 }
 
-.dropdown-content {
+.dropdown-content, .dropdown-content-profile {
   display: none;
   position: absolute;
   right: 0;
@@ -291,4 +292,8 @@
      margin-top: 4px;
  }
  
+ .dropdown-content-profile {
+    right: 6px; 
+ }
+
 

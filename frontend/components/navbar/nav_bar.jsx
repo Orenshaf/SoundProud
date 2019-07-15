@@ -55,9 +55,9 @@ class NavBar extends React.Component {
                             {/* <input className="login-info-input demo-login modal-item search-bar" type="text" placeholder="Search" /> */}
                             <NavLink to="/upload" className="nav-bar-button nav-button upload" activeClassName="active" onClick={this.closeDropDown}>Upload</NavLink>
                             <div className="dropdown">
-                                <button id="profile" className={`nav-bar-button notification-button ${this.state.profileDropdown ? "open" : ""}`} onClick={() => this.openDropDown("profileDropdown")}>{profilePicture} <span className="nav-bar-username">{this.props.currentUser.username}</span><img className="caret" src={window.caretIcon} /></button>
-                                <div id="myDropdown" className={`dropdown-content ${this.state.profileDropdown ? "show" : ""}`}>
-                                    <button className="nav-bar-button logout" id="nav-bar-logout" onClick={this.handleLogout}>Profile</button>
+                                <button className={`profile nav-bar-button notification-button ${this.state.profileDropdown ? "open" : ""}`} onClick={() => this.openDropDown("profileDropdown")}>{profilePicture} <span className="nav-bar-username">{this.props.currentUser.username}</span><img className="caret" src={window.caretIcon} /></button>
+                                <div id="myDropdown" className={`dropdown-content ${this.state.profileDropdown ? "show" : ""} dropdown-content-profile`}>
+                                    <button className="nav-bar-button logout" id="nav-bar-logout" onClick={this.redirectToProfilePage}>Profile</button>
                                 </div>
                             </div>
                             {/* <div className="profile-placeholder"></div> */}
