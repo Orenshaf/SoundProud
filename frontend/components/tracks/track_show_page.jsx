@@ -17,6 +17,7 @@ class TrackShowPage extends React.Component {
 
         this.deleteTrack = this.deleteTrack.bind(this);
         this.createTimeStamp = this.createTimeStamp.bind(this);
+        this.redirectToUserPage = this.redirectToUserPage.bind(this);
     }
 
     componentDidMount() {
@@ -65,6 +66,10 @@ class TrackShowPage extends React.Component {
         }
     }
 
+    redirectToUserPage() {
+        this.props.history.push(`/users/${this.props.user.id}`);
+    }
+
     render() {
         const comments = this.props.track ? <CommentIndex trackId={this.props.track.id} currentUserId={this.props.currentUserId} /> : null;
         const player = this.props.track ? <TrackPlayButton trackId={this.props.track.id} fetchCurrentTrack={this.fetchCurrentTrack} playButton={true} class={"large"}/> : null;
@@ -99,7 +104,7 @@ class TrackShowPage extends React.Component {
                         <div className="track-show-page-player">
                             {player}
                             <ul className="track-info">
-                                <li className="track-username">{username}</li>
+                                <li className="track-username" onClick={this.redirectToUserPage}>{username}</li>
                                 <li className="track-title">{title}</li>
                             </ul>
                         </div>
