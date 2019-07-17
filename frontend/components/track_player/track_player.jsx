@@ -158,7 +158,7 @@ class TrackPlayer extends React.Component {
                     <div className='track-player-info'>
                         {photo}
                         <div className="track-player-user-info">
-                            <p className="author">{author}</p>
+                            <p className="author" onClick={() => this.props.history.push(`/users/${this.state.currentTrack.user_id}`)}>{author}</p>
                             <p className="title" onClick={() => this.props.history.push(`/${this.state.currentTrack.id}`)}>{title}</p>
                         </div>
                     </div>

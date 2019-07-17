@@ -102,11 +102,20 @@
 
 .author {
     color: #a9a9a9;
+    cursor: pointer;
+}
+
+.author:hover {
+    color: black;
 }
 
 .title {
     color: #666666;
     cursor: pointer;
+}
+
+.title:hover {
+    color: black;
 }
 
 .volume-slider-container {

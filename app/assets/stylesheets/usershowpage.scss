@@ -81,6 +81,11 @@
 .showpage-title {
     font-size: 15px;
     color: #333333;
+    cursor: pointer;
+}
+
+.showpage-title:hover {
+    color: black;
 }
 
 

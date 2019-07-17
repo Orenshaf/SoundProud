@@ -3,6 +3,7 @@ import TrackPlayButton from '../../components/tracks/track_play_button';
 import WaveForm from '../wave_form/wave_form';
 import SeekBar from '../track_player/seek_bar';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class UserTrackItem extends React.Component {
     constructor(props) {
@@ -74,7 +75,7 @@ class UserTrackItem extends React.Component {
                                 <p className="showpage-username">
                                     {track.username}
                                 </p>
-                                <p className="showpage-title">
+                                <p className="showpage-title" onClick={() => this.props.history.push(`/${track.id}`)}>
                                     {track.title}
                                 </p>
                             </div>
@@ -98,4 +99,4 @@ const msp = (state) => ({
     currentTime: state.ui.trackPlayer.currentTime,
 })
 
-export default connect(msp, null)(UserTrackItem);
+export default withRouter(connect(msp, null)(UserTrackItem));

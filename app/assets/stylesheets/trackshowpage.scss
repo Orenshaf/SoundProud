@@ -40,6 +40,10 @@
      cursor: pointer;
  }
 
+ .track-username:hover {
+     filter: contrast(500%);
+ }
+
  .track-title, .user-showpage-username {
      font-size: 24px;
      color: white;
