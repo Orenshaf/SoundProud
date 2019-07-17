@@ -30,18 +30,22 @@ class UserShowPage extends React.Component {
         const profilePicture = <img className="user-showpage-profile-picture" src={this.props.user.photoUrl}/>
         const username = this.props.user ? this.props.user.username : null;
         const tracksIndex = this.props.tracks ? <UserTracksIndex tracks={this.props.tracks}/> : null;
+        const profilePictureButton = this.props.user && this.props.user.id === this.props.currentUserId ? 
+            <div className="image-edit-button user-showpage-image-edit-button">
+                <label htmlFor="files">
+                    <div className="inside">
+                        <img src={window.cameraIcon} /><p>Upload image</p>
+                        <input id="files" type="file" onChange={this.handlePhotoFile} />
+                    </div>
+                </label>
+            </div> 
+            :
+            null;
         return (
             <div className="user-showpage">
                 <div className="user-showpage-header">
                     {profilePicture}
-                    <div className="image-edit-button user-showpage-image-edit-button">
-                        <label htmlFor="files">
-                            <div className="inside">
-                                <img src={window.cameraIcon} /><p>Upload image</p>
-                                <input id="files" type="file" onChange={this.handlePhotoFile} />
-                            </div>
-                        </label>
-                    </div>
+                    {profilePictureButton}
                     <ul className="user-showpage-info">
                         <li className="user-showpage-username">{username}</li>
                     </ul>

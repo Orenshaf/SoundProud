@@ -6,6 +6,7 @@ import { fetchUser, updateUser } from '../../actions/user_actions';
 
 const msp = (state, ownProps) => {
     const user = state.entities.users[ownProps.match.params.userId];
+    const currentUserId = state.session.id
     let tracks;
     if (user && user.tracks && user.tracks.length > 0) {
         tracks = user.tracks.map( trackId => {
@@ -14,7 +15,8 @@ const msp = (state, ownProps) => {
     }
     return ({
         user,
-        tracks
+        tracks,
+        currentUserId
     })
 }
 
