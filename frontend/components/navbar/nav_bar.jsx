@@ -39,7 +39,7 @@ class NavBar extends React.Component {
     
     toggleNavBar(){
         const footer = this.props.currentTrack ? <TrackPlayerContainer /> : null;
-        const profilePicture = <div className="profile-picture-nav"><span className="empty-profile">p</span> </div>
+        const profilePicture = <img className="profile-picture-nav" src={this.props.currentUser.photoUrl} />
         if (this.props.currentUser && this.props.location.pathname !== '/logout') {
             return (
                 <>

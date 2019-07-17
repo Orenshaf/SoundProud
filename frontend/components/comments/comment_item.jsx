@@ -77,7 +77,7 @@ class CommentItem extends React.Component {
         const createdAt = this.props.createdAt;
         const userId = this.props.userId;
         const currentUserId = this.props.currentUserId;
-        const profilePicture = <div className="profile-picture-comment"><span className="empty-profile">p</span> </div>
+        const profilePicture = <img src={this.props.photoUrl} className="profile-picture-comment" />
 
         let createdAtStamp = this.createdAtStamp(createdAt);
 
@@ -92,7 +92,6 @@ class CommentItem extends React.Component {
 
         const childCommentIndex = (this.props.childComments.length > 0) ? <ChildCommentIndex childComments={this.props.childComments} currentUserId={currentUserId} showCommentReplyForm={this.showCommentReplyForm}/> : null;
         const commentReplyForm = this.state.commentReplyForm ? <CommentReplyForm parentCommentId={this.props.id} currentUserId={currentUserId} trackId={this.props.trackId} trackTime={trackTime} resetCommentReplyForm={this.resetCommentReplyForm}/> : null;
-        // add a way to render child comments properly
         return (
             <div className="comment-item-container">
                 <div className="comment-item-inner-container">

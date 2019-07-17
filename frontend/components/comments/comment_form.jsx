@@ -80,7 +80,7 @@ class CommentForm extends React.Component {
     }
 
     render() {
-        const profilePicture = <div className="profile-picture-comment-form"><span className="empty-profile">p</span> </div>
+        const profilePicture = this.props.currentUser ? <img className="profile-picture-comment-form" src={this.props.currentUser.photoUrl} /> : <div className="profile-picture-comment-form"><span className="empty-profile">p</span> </div>;
         return (
             <div className="comment-form-container-outer">
                 {profilePicture}
@@ -96,9 +96,11 @@ class CommentForm extends React.Component {
 
 const msp = state => {
     const currentTrackId = state.ui.currentTrack ? state.ui.currentTrack.id : null;
+    const currentUser = state.session.id ? state.entities.users[state.session.id] : null;
     return {
         trackTimeStamp: state.ui.trackPlayer.currentTime,
         currentUserId: state.session.id,
+        currentUser,
         currentTrackId
     }
 }
