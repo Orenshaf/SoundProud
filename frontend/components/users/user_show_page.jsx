@@ -7,7 +7,6 @@ class UserShowPage extends React.Component {
 
         this.state = {
             photoFile: null,
-            photoUrl: props.user.photoUrl
         }
 
         this.handlePhotoFile = this.handlePhotoFile.bind(this);
@@ -27,7 +26,7 @@ class UserShowPage extends React.Component {
     }
 
     render() {
-        const profilePicture = <img className="user-showpage-profile-picture" src={this.props.user.photoUrl}/>
+        const profilePicture = this.props.user ? <img className="user-showpage-profile-picture" src={this.props.user.photoUrl}/> : null;
         const username = this.props.user ? this.props.user.username : null;
         const tracksIndex = this.props.tracks ? <UserTracksIndex tracks={this.props.tracks}/> : null;
         const profilePictureButton = this.props.user && this.props.user.id === this.props.currentUserId ? 
