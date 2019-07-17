@@ -10,3 +10,7 @@ export const receiveUser = ({ user, tracks }) => ({
 export const fetchUser = id => dispatch => (
     UserAPIUtil.fetchUser(id).then(payload => dispatch(receiveUser(payload)))
 )
+
+export const updateUser = user => dispatch => (
+    UserAPIUtil.updateUser(user).then(payload => dispatch(receiveUser(payload)))
+)

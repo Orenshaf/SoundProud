@@ -18,20 +18,16 @@ class UserShowPage extends React.Component {
     }
 
     handlePhotoFile(e) {
+        e.preventDefault();
         const file = e.currentTarget.files[0];
-        const fileReader = new FileReader();
-        fileReader.onloadend = () => {
-            this.setState({
-                photoFile: file, photoUrl: fileReader.result
-            })
-        }
-        if (file) {
-            fileReader.readAsDataURL(file);
-        }
+        const formData = new FormData();
+        formData.append('user[id]', this.props.match.params.userId);
+        formData.append('user[photo]', file);
+        this.props.updateUser(formData);
     }
 
     render() {
-        const profilePicture = <img className="user-showpage-profile-picture" src={this.state.photoUrl}/>
+        const profilePicture = <img className="user-showpage-profile-picture" src={this.props.user.photoUrl}/>
         const username = this.props.user ? this.props.user.username : null;
         const tracksIndex = this.props.tracks ? <UserTracksIndex tracks={this.props.tracks}/> : null;
         return (

@@ -30,10 +30,10 @@ class Api::UsersController < ApplicationController
     end
 
     def update
-        @user = User.find_by(email: params[:user][:email])
+        @user = User.find_by(id: params[:user][:id])
 
         if @user.update(user_params)
-            render "api/users/show"
+            render "api/users/showpage"
         else
             render json: @user.errors.full_messages, status: 422
         end
@@ -52,7 +52,7 @@ class Api::UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:email, :password, :age, :gender, :username)
+        params.require(:user).permit(:email, :password, :age, :gender, :username, :photo)
     end
 
     def is_email?(loginInfo) 
