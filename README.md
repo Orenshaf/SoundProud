@@ -94,10 +94,8 @@ handlePercentage(e) {
 
   - - - -
 ## Future Directions ##
- + Users will be able to comment on tracks, but more specifically on a particular timestamp of a track.
  + Users will be able to like music.
  + Users will be able to create playlists.
- + Users will have personal pages with their music and music they liked.
 
 
  
