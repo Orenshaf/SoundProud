@@ -34,17 +34,17 @@ Creating a custom audio player was pretty difficult. In order to sync up the tra
 
 ```javascript
 this.audioPlayer.current.ontimeupdate = () => {
-    this.props.updateCurrentTime(this.audioPlayer.current.currentTime);
+         this.props.updateCurrentTime(this.audioPlayer.current.currentTime);
 
-    const currentTimeStamp = this.createTimeStamp(this.props.currentTime);
+         const currentTimeStamp = this.createTimeStamp(this.props.currentTime);
 
-    this.setState({ currentTimeStamp });
+         this.setState({ currentTimeStamp });
 
-    if (this.props.percentage >= 99.9) {
-        this.pause();
-        this.props.updateCurrentTime(0);
-        this.audioPlayer.current.currentTime = this.props.currentTime;
-    }
+         if (this.props.percentage >= 99.9) {
+             this.pause();
+             this.props.updateCurrentTime(0);
+             this.audioPlayer.current.currentTime = this.props.currentTime;
+         }
 }
 ```
 
