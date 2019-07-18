@@ -12,7 +12,7 @@ const ChildCommentIndex = (props) => {
     }) 
 
     const childCommentIndex = childCommentIndexFilter.map(comment => {
-        return <ChildCommentItem key={comment.id} id={comment.id} trackId={comment.track_id} username={comment.username} trackTime={comment.track_time} body={comment.body} createdAt={comment.created_at} userId={comment.user_id} currentUserId={currentUserId} showCommentReplyForm={showCommentReplyForm} />
+        return <ChildCommentItem key={comment.id} id={comment.id} trackId={comment.track_id} username={comment.username} trackTime={comment.track_time} body={comment.body} createdAt={comment.created_at} userId={comment.user_id} currentUserId={currentUserId} photoUrl={comment.photoUrl} showCommentReplyForm={showCommentReplyForm} />
     })
     return (
         <div className="child-comment-index-container">

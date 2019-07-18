@@ -58,7 +58,7 @@ class ChildCommentItem extends React.Component {
         const createdAt = this.props.createdAt;
         const userId = this.props.userId;
         const currentUserId = this.props.currentUserId;
-        const profilePicture = <div className="profile-picture-comment"><span className="empty-profile">p</span> </div>
+        const profilePicture = <img src={this.props.photoUrl} className="profile-picture-comment" />
 
         let createdAtStamp = this.createdAtStamp(createdAt);
 

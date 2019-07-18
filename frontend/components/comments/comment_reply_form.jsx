@@ -40,7 +40,7 @@ class CommentReplyForm extends React.Component {
     }
 
     render() {
-        const profilePicture = <div className="profile-picture-comment-reply-form"><span className="empty-profile">p</span> </div>
+        const profilePicture = this.props.currentUser ? <img className="profile-picture-comment-reply-form" src={this.props.currentUser.photoUrl} /> : <div className="profile-picture-comment-form"><span className="empty-profile">p</span> </div>;
         return (
             <div ref={this.commentReplyForm} className="comment-reply-form-container">
                 <div className="comment-reply-form-inner-container">
@@ -54,10 +54,18 @@ class CommentReplyForm extends React.Component {
     }
 }
 
+const msp = state => {   
+    const currentUser = state.session.id ? state.entities.users[state.session.id] : null;
+    return {
+        currentUser,
+
+    }
+}
+
 const mdp = dispatch => ({
     createComment: (comment) => dispatch(createComment(comment)),
     fetchComments: (trackId) => dispatch(fetchComments(trackId)),
     openModal: (modal) => dispatch(openModal(modal))
 })
 
-export default connect(null, mdp)(CommentReplyForm);
+export default connect(msp, mdp)(CommentReplyForm);
