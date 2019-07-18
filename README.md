@@ -20,7 +20,7 @@ SoundCloud is unique in that it's user authentication actually takes 5 steps to 
  + After the user gives an email and a password, they are prompted for their age and gender.
  + Finally they are signed in (in the background) and asked for a username.
 
-The user authentication proved to be more complicated than I anticipated because most sites just ask for a username and password on one form, but SoundCloud first checks to see if the user already exists and then prompts the user for their password. 
+The user authentication proved to be more complicated than I anticipated because most sites just ask for a username and password on one form, but SoundCloud first checks to see if the user already exists and then prompts the user for their password.
 
   - - - -
   
@@ -30,12 +30,45 @@ Listen to music on SoundProud. The waveform and the trackplayer at the bottom ar
   
 + This was done by creating a UI slice of state to dispatch the necessary information (current track's duration, current time and whether or not it was playing) both in the track player component and on the track's show page component.
 
+Creating a custom audio player was pretty difficult. In order to sync up the trackPlayer with the waveform on a tracks showPage I needed to constanstly update the currentTime in my redux global state. I did that by listening for a timeupdate on the audio player element and dispatching a updateCurrentTime action. Here is the code for that: 
+
+```javascript
+this.audioPlayer.current.ontimeupdate = () => {
+         this.props.updateCurrentTime(this.audioPlayer.current.currentTime);
+
+         const currentTimeStamp = this.createTimeStamp(this.props.currentTime);
+
+         this.setState({ currentTimeStamp });
+
+         if (this.props.percentage >= 99.9) {
+             this.pause();
+             this.props.updateCurrentTime(0);
+             this.audioPlayer.current.currentTime = this.props.currentTime;
+         }
+}
+```
+
+One of the other challenges I faced was making the seekbar clickable, while still being only about 1 pixel in height. In order to make it responsive on different windows I had to use the clientX and the window size in order to make sure the audio player adjusted accordingly. Here is some code I wrote to do that:
+
+```javascript
+handlePercentage(e) {
+        let newPercentage
+        const windowSize = ((window.innerWidth - 1280) / 2);
+        if (this.props.seekBarStyle === "long") {
+            newPercentage = Math.floor((((e.clientX - windowSize) - (e.currentTarget.offsetLeft * 1.5)) / (e.currentTarget.offsetWidth) * 100));
+        } else if (this.props.seekBarStyle === "medium") {
+            newPercentage = Math.floor((((e.clientX - windowSize) + (e.currentTarget.offsetLeft * 107)) / (e.currentTarget.offsetWidth) * 100));
+        } else {
+            newPercentage = Math.floor((((e.clientX - windowSize) - (e.currentTarget.offsetLeft * 1.25)) / (e.currentTarget.offsetWidth) * 100));
+        }
+        this.props.seekPercentage(newPercentage);
+}
+```
+
   - - - -
 ## Future Directions ##
- + Users will be able to comment on tracks, but more specifically on a particular timestamp of a track.
  + Users will be able to like music.
  + Users will be able to create playlists.
- + Users will have personal pages with their music and music they liked.
 
 
  
