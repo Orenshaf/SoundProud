@@ -62,7 +62,7 @@ handlePercentage(e) {
             newPercentage = Math.floor((((e.clientX - windowSize) - (e.currentTarget.offsetLeft * 1.25)) / (e.currentTarget.offsetWidth) * 100));
         }
         this.props.seekPercentage(newPercentage);
-    }
+}
 ```
 
   - - - -
