@@ -30,8 +30,7 @@ class Api::UsersController < ApplicationController
     end
 
     def update
-        @user = User.find_by(id: params[:user][:id])
-
+        @user = User.find_by(id: params[:user][:id]) || User.find_by(email: params[:user][:email])
         if @user.update(user_params)
             render "api/users/showpage"
         else

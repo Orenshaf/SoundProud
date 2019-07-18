@@ -19,7 +19,7 @@ export const receiveErrors = errors => ({
     errors,
 })
 
-export const receiveUsername = user => ({
+export const receiveUsername = ({user}) => ({
     type: RECEIVE_USERNAME,
     user,
 })

@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux'; 
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -65,7 +66,8 @@ class SignupForm extends React.Component {
         if (this.state.username.length === 0) {
             this.setState({ usernameErrors: ['Enter your display name. You can change it later.']})
         }
-        this.props.updateUsername(this.state).then(() => this.props.closeModal());
+
+        this.props.updateUsername({id: this.props.currentUserId, username: this.state.username, email: this.state.email}).then(() => this.props.closeModal());
     }
 
     handleRedirect() {
@@ -216,4 +218,8 @@ class SignupForm extends React.Component {
     }
 }
 
-export default SignupForm;
+const msp = state => ({
+    currentUserId: state.session.id
+})
+
+export default connect(msp, null)(SignupForm);
