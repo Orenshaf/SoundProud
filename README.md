@@ -34,18 +34,18 @@ Creating a custom audio player was pretty difficult. In order to sync up the tra
 
 ```javascript
 this.audioPlayer.current.ontimeupdate = () => {
-                this.props.updateCurrentTime(this.audioPlayer.current.currentTime);
+    this.props.updateCurrentTime(this.audioPlayer.current.currentTime);
 
-                const currentTimeStamp = this.createTimeStamp(this.props.currentTime);
+    const currentTimeStamp = this.createTimeStamp(this.props.currentTime);
 
-                this.setState({ currentTimeStamp });
+    this.setState({ currentTimeStamp });
 
-                if (this.props.percentage >= 99.9) {
-                    this.pause();
-                    this.props.updateCurrentTime(0);
-                    this.audioPlayer.current.currentTime = this.props.currentTime;
-                }
-            }
+    if (this.props.percentage >= 99.9) {
+        this.pause();
+        this.props.updateCurrentTime(0);
+        this.audioPlayer.current.currentTime = this.props.currentTime;
+    }
+}
 ```
 
 One of the other challenges I faced was making the seekbar clickable, while still being only about 1 pixel in height. In order to make it responsive on different windows I had to use the clientX and the window size in order to make sure the audio player adjusted accordingly. Here is some code I wrote to do that:
