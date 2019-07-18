@@ -57,7 +57,9 @@ class TrackShowPage extends React.Component {
 
     createTrackTimeStamp() {
         const audio = new Audio();
-        audio.src = this.props.track.trackUrl;
+        if (this.props.track) {
+            audio.src = this.props.track.trackUrl;
+        }
 
         audio.onloadedmetadata = () => {
             const duration = audio.duration;

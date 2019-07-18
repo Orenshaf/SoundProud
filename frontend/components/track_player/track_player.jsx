@@ -41,31 +41,32 @@ class TrackPlayer extends React.Component {
     componentDidUpdate() {
         if (this.props.seekPercentage) {
             this.changePercentage(this.props.seekPercentage);
-        } else {
+        } else if (this.state.currentTrack) {
             this.audioPlayer.current.ontimeupdate = () => {
-
-                this.props.updateCurrentTime(this.audioPlayer.current.currentTime);
-
-                const currentTimeStamp = this.createTimeStamp(this.props.currentTime);
-
-                this.setState({ currentTimeStamp });
-
-                if (this.props.percentage >= 99.9) {
-                    this.pause();
-                    this.props.updateCurrentTime(0);
-                    this.audioPlayer.current.currentTime = this.props.currentTime;
+                if (this.audioPlayer.current) {
+                    this.props.updateCurrentTime(this.audioPlayer.current.currentTime);
+    
+                    const currentTimeStamp = this.createTimeStamp(this.props.currentTime);
+    
+                    this.setState({ currentTimeStamp });
+    
+                    if (this.props.percentage >= 99.9) {
+                        this.pause();
+                        this.props.updateCurrentTime(0);
+                        this.audioPlayer.current.currentTime = this.props.currentTime;
+                    }
                 }
-            }
-
-            if (this.state.currentTrack !== this.props.currentTrack) {
-                this.pause();
-                this.setState({ currentTrack: this.props.currentTrack })
-                this.play();
-            } else if (!this.props.playing) {
-                this.audioPlayer.current.pause();
-            } else if (this.props.playing) {
-                this.audioPlayer.current.play();
-            }
+    
+                if (this.state.currentTrack !== this.props.currentTrack) {
+                    this.pause();
+                    this.setState({ currentTrack: this.props.currentTrack })
+                    this.play();
+                } else if (!this.props.playing) {
+                    this.audioPlayer.current.pause();
+                } else if (this.props.playing) {
+                    this.audioPlayer.current.play();
+                }
+                }
         }
     }
 
