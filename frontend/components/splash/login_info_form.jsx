@@ -22,13 +22,13 @@ class LoginInfoForm extends React.Component {
         this.props.history.push('/discover')
         this.props.closeModal();
     }
-
+    
     handleChange(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
     }
-
+    
     handleSubmit(e) {
         e.preventDefault();
         this.props.clearErrors();
