@@ -79,7 +79,7 @@ class TrackShowPage extends React.Component {
         const username = this.props.user ? this.props.user.username : null;
         const title = this.props.track ? this.props.track.title : null;
         const photo = this.props.track ? <img className="track-photo" src={this.props.track.photoUrl}/> : null;
-        const trackUserPhoto = this.props.user ? <img className="track-user-photo" src={this.props.user.photoUrl} /> : null;
+        const trackUserPhoto = this.props.user ? <img className="track-user-photo" src={this.props.user.photoUrl} onClick={this.redirectToUserPage}/> : null;
         const editButton = (this.props.track && this.props.track.user_id === this.props.currentUserId) ? <button className="edit-button" onClick={() => this.props.openModal('trackEditForm')}><img src={window.editIcon} alt="" />Edit</button> : null;
         const trashButton = (this.props.track && this.props.track.user_id === this.props.currentUserId) ? <button className="edit-button" onClick={this.deleteTrack}><img src={window.trashIcon} alt="" />Delete</button> : null;        
         const seekBar = (this.props.currentTrack && this.props.track.id === this.props.currentTrack.id) ? <SeekBar seekBarStyle={"long"} /> : <div className="empty-seek"></div>;
@@ -133,7 +133,7 @@ class TrackShowPage extends React.Component {
                     <div className="show-page-bottom-bottom">
                         <div className="show-page-bottom-left">
                             {trackUserPhoto}
-                            {username}
+                            <span className="track-user-username" onClick={this.redirectToUserPage}>{username}</span>
                         </div>
                         <div className="show-page-bottom-right">
                             {comments}
