@@ -129,7 +129,14 @@ class TrackShowPage extends React.Component {
                             {trashButton}
                         </div>
                     </div>
-                    {comments}
+                    <div className="show-page-bottom-bottom">
+                        <div className="show-page-bottom-left">
+                            
+                        </div>
+                        <div className="show-page-bottom-right">
+                            {comments}
+                        </div>
+                    </div>
                 </div>
                 
             </div>
