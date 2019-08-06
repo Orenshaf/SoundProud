@@ -83,6 +83,7 @@ class TrackShowPage extends React.Component {
         const editButton = (this.props.track && this.props.track.user_id === this.props.currentUserId) ? <button className="edit-button" onClick={() => this.props.openModal('trackEditForm')}><img src={window.editIcon} alt="" />Edit</button> : null;
         const trashButton = (this.props.track && this.props.track.user_id === this.props.currentUserId) ? <button className="edit-button" onClick={this.deleteTrack}><img src={window.trashIcon} alt="" />Delete</button> : null;        
         const seekBar = (this.props.currentTrack && this.props.track.id === this.props.currentTrack.id) ? <SeekBar seekBarStyle={"long"} /> : <div className="empty-seek"></div>;
+        const description = this.props.track ? this.props.track.description : null;
         let waveForm;
         if (this.props.currentTrack && this.props.track.id === this.props.currentTrack.id) {
             waveForm = <WaveForm trackUrl={this.props.track.trackUrl} active={true} waveStyle={"trackShowPage"}/>
@@ -136,6 +137,7 @@ class TrackShowPage extends React.Component {
                             <span className="track-user-username" onClick={this.redirectToUserPage}>{username}</span>
                         </div>
                         <div className="show-page-bottom-right">
+                            <div className="track-description">{description}</div>
                             {comments}
                         </div>
                     </div>

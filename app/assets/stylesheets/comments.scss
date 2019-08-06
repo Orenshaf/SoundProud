@@ -68,9 +68,16 @@
     height: 20px;
 }
 
+.comment-index-container {
+    border-top: 1px solid #f2f2f2;
+    margin-top: 10px;
+}
+
 .child-comment-index-container {
     width: 95%;
     margin-left: 40px;
+    border-top: 1px solid #f2f2f2;
+    margin-top: 10px;
 }
 
 .comment-reply-form:focus {
