@@ -186,19 +186,22 @@
     height: fit-content;
     padding: 0 20px;
     border-right: 1px solid #f2f2f2;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     margin-top: 10px;
 }
 
 .show-page-bottom-right {
-    width: 500px;
+    width: 650px;
     height: fit-content;
     padding-left: 20px;
 }
 
 .show-page-bottom-left {
-    width: 300px;
-    height: 400px;
+    width: 150px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0 0 20px;
 }
 
 .comment-divider {
@@ -209,3 +212,10 @@
 .show-page-bottom-bottom {
     display: flex;
 } 
+
+.track-user-photo {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+}
