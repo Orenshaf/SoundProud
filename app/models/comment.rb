@@ -6,7 +6,7 @@
 #  body          :text             not null
 #  user_id       :integer          not null
 #  track_id      :integer          not null
-#  track_time    :time
+#  track_time    :string
 #  parent_cmt_id :integer
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null

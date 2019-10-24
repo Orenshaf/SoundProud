@@ -38,6 +38,12 @@ class User < ApplicationRecord
         primary_key: :id,
         foreign_key: :user_id,
         class_name: 'Comment'
+    
+    has_many :likes, as: :likable
+
+    has_many :liked_tracks, through: :likes
+
+    has_many :liked_users, through: :likes
 
     def self.find_by_credentials(loginInfo, password)
         user = User.find_by(email: loginInfo) || User.find_by(profile_url: loginInfo)
